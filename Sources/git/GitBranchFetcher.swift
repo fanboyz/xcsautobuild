@@ -16,8 +16,9 @@ class GitBranchFetcher: BranchFetcher {
         copyRemoteBranchesToCIRemote()
         let branches = gitCommand("branch -r")
         return branches.componentsSeparatedByString("\n")
-            .map { $0.stringByTrimmingCharactersInSet(.whitespaceCharacterSet()) }
-            .filter { $0.hasPrefix(ciServerName) }
+            .map(byTrimmingWhitespace)
+            .filter(isCIServerBranch)
+            .map(byTimmingServerName)
     }
 
     private func copyRemoteBranchesToCIRemote() {
@@ -26,5 +27,17 @@ class GitBranchFetcher: BranchFetcher {
 
     private func gitCommand(arguments: String) -> String {
         return command.execute("/usr/bin/git \(arguments)")
+    }
+
+    private func byTrimmingWhitespace(branch: String) -> String {
+        return branch.stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
+    }
+
+    private func isCIServerBranch(branch: String) -> Bool {
+        return branch.hasPrefix(ciServerName)
+    }
+
+    private func byTimmingServerName(branch: String) -> String {
+        return branch.stringByReplacingCharactersInRange(branch.startIndex...branch.startIndex.advancedBy(ciServerName.characters.count), withString: "")
     }
 }
