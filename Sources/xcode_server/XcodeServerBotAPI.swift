@@ -9,6 +9,7 @@ import Foundation
 class XcodeServerBotAPI: BotCreator {
 
     private let network: Network
+    private let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
 
     init(network: Network) {
         self.network = network
@@ -16,7 +17,14 @@ class XcodeServerBotAPI: BotCreator {
 
     func createBot(forBranch branch: Branch) {
         let branch = branch.name
-        network.sendRequest(HTTPRequest(url: "https://seans-macbook-pro-2.local:20343/api/bots", method: .post, jsonBody: temporaryBotTemplate(forBranch: branch)))
+        network.sendRequest(HTTPRequest(url: endpoint + "bots", method: .post, jsonBody: temporaryBotTemplate(forBranch: branch)))
+    }
+
+    func getBots(completion: (([RemoteBot]) -> ())) {
+        let request = HTTPRequest(url: endpoint + "bots", method: .delete, jsonBody: nil)
+        network.sendRequest(request) { data in
+            completion(XCSGetBotsResponseParser().parse(response: data))
+        }
     }
 
     private func temporaryBotTemplate(forBranch branch: String) -> [String: AnyObject] {

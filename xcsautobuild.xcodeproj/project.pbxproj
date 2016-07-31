@@ -25,6 +25,10 @@
 		143DA7AF1D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A11D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift */; };
 		143DA7B01D46860C0019FDFA /* FlexiJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A31D46860C0019FDFA /* FlexiJSON.swift */; };
 		143DA7B11D46860C0019FDFA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 143DA7A41D46860C0019FDFA /* Info.plist */; };
+		1456EE271D4E55050044F458 /* BotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE261D4E55050044F458 /* BotDeleter.swift */; };
+		1456EE291D4E58C30044F458 /* RemoteBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE281D4E58C30044F458 /* RemoteBot.swift */; };
+		1456EE2E1D4E5F6D0044F458 /* XCSGetBotsResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE2D1D4E5F6D0044F458 /* XCSGetBotsResponseParser.swift */; };
+		1456EE331D4E5FFE0044F458 /* XCSGetBotsResponseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE321D4E5FFE0044F458 /* XCSGetBotsResponseParserTests.swift */; };
 		14578C9E1D495B9C0089DC7F /* Bot+JSONTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14578C9D1D495B9C0089DC7F /* Bot+JSONTransformable.swift */; };
 		14578CA01D4960CB0089DC7F /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14578C9F1D4960CB0089DC7F /* MockBotCreator.swift */; };
 		1459B3B01D3EBE9D004D6FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3AF1D3EBE9D004D6FF9 /* AppDelegate.swift */; };
@@ -80,6 +84,10 @@
 		143DA7A21D46860C0019FDFA /* FlexiJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexiJSON.h; sourceTree = "<group>"; };
 		143DA7A31D46860C0019FDFA /* FlexiJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexiJSON.swift; sourceTree = "<group>"; };
 		143DA7A41D46860C0019FDFA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1456EE261D4E55050044F458 /* BotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDeleter.swift; sourceTree = "<group>"; };
+		1456EE281D4E58C30044F458 /* RemoteBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteBot.swift; sourceTree = "<group>"; };
+		1456EE2D1D4E5F6D0044F458 /* XCSGetBotsResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotsResponseParser.swift; sourceTree = "<group>"; };
+		1456EE321D4E5FFE0044F458 /* XCSGetBotsResponseParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotsResponseParserTests.swift; sourceTree = "<group>"; };
 		14578C9D1D495B9C0089DC7F /* Bot+JSONTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bot+JSONTransformable.swift"; sourceTree = "<group>"; };
 		14578C9F1D4960CB0089DC7F /* MockBotCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotCreator.swift; sourceTree = "<group>"; };
 		1459B3AD1D3EBE9D004D6FF9 /* xcsautobuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xcsautobuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +180,54 @@
 				143DA7A41D46860C0019FDFA /* Info.plist */,
 			);
 			path = FlexiJSON;
+			sourceTree = "<group>";
+		};
+		1456EE2A1D4E5F450044F458 /* Bots */ = {
+			isa = PBXGroup;
+			children = (
+				1456EE2B1D4E5F450044F458 /* GET */,
+				1456EE2C1D4E5F450044F458 /* POST */,
+			);
+			path = Bots;
+			sourceTree = "<group>";
+		};
+		1456EE2B1D4E5F450044F458 /* GET */ = {
+			isa = PBXGroup;
+			children = (
+				1456EE2D1D4E5F6D0044F458 /* XCSGetBotsResponseParser.swift */,
+			);
+			path = GET;
+			sourceTree = "<group>";
+		};
+		1456EE2C1D4E5F450044F458 /* POST */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = POST;
+			sourceTree = "<group>";
+		};
+		1456EE2F1D4E5FF40044F458 /* Bots */ = {
+			isa = PBXGroup;
+			children = (
+				1456EE301D4E5FF40044F458 /* GET */,
+				1456EE311D4E5FF40044F458 /* POST */,
+			);
+			path = Bots;
+			sourceTree = "<group>";
+		};
+		1456EE301D4E5FF40044F458 /* GET */ = {
+			isa = PBXGroup;
+			children = (
+				1456EE321D4E5FFE0044F458 /* XCSGetBotsResponseParserTests.swift */,
+			);
+			path = GET;
+			sourceTree = "<group>";
+		};
+		1456EE311D4E5FF40044F458 /* POST */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = POST;
 			sourceTree = "<group>";
 		};
 		1459B3AE1D3EBE9D004D6FF9 /* xcsautobuild_macOS */ = {
@@ -294,6 +350,7 @@
 			children = (
 				1459B3F31D3EC56F004D6FF9 /* NewBranchesFetcher.swift */,
 				14E8575C1D46605A00ADAC5E /* BotCreator.swift */,
+				1456EE261D4E55050044F458 /* BotDeleter.swift */,
 			);
 			path = gateway;
 			sourceTree = "<group>";
@@ -326,9 +383,11 @@
 		14E8575E1D46617000ADAC5E /* xcode_server */ = {
 			isa = PBXGroup;
 			children = (
+				1456EE2A1D4E5F450044F458 /* Bots */,
 				14E857621D4661CE00ADAC5E /* XcodeServerBotAPI.swift */,
 				143DA7921D4676C40019FDFA /* Bot.swift */,
 				14578C9D1D495B9C0089DC7F /* Bot+JSONTransformable.swift */,
+				1456EE281D4E58C30044F458 /* RemoteBot.swift */,
 			);
 			path = xcode_server;
 			sourceTree = "<group>";
@@ -336,6 +395,7 @@
 		14E8575F1D46618200ADAC5E /* xcode_server */ = {
 			isa = PBXGroup;
 			children = (
+				1456EE2F1D4E5FF40044F458 /* Bots */,
 				14E857601D4661C300ADAC5E /* XcodeServerBotAPITests.swift */,
 				143DA7941D4684F40019FDFA /* Bot+JSONTransformableTests.swift */,
 			);
@@ -503,14 +563,17 @@
 				143DA7AC1D46860C0019FDFA /* FlexiJSON+NilLiteralConvertible.swift in Sources */,
 				143DA7B01D46860C0019FDFA /* FlexiJSON.swift in Sources */,
 				1459B3FB1D3EC56F004D6FF9 /* NewBranchFetchingInteractor.swift in Sources */,
+				1456EE271D4E55050044F458 /* BotDeleter.swift in Sources */,
 				1459B3F91D3EC56F004D6FF9 /* Branch.swift in Sources */,
 				14E8576D1D4664BC00ADAC5E /* HTTPRequest.swift in Sources */,
 				14578C9E1D495B9C0089DC7F /* Bot+JSONTransformable.swift in Sources */,
 				14E8575D1D46605A00ADAC5E /* BotCreator.swift in Sources */,
 				1459B3FC1D3EC56F004D6FF9 /* BranchDataStore.swift in Sources */,
 				143DA7A71D46860C0019FDFA /* FlexiJSON+DictionaryLiteralConvertible.swift in Sources */,
+				1456EE291D4E58C30044F458 /* RemoteBot.swift in Sources */,
 				142E54441D3ECC0B004648D6 /* GitBranchFetcher.swift in Sources */,
 				143DA7AA1D46860C0019FDFA /* FlexiJSON+Fragment.swift in Sources */,
+				1456EE2E1D4E5F6D0044F458 /* XCSGetBotsResponseParser.swift in Sources */,
 				143DA7A81D46860C0019FDFA /* FlexiJSON+Either.swift in Sources */,
 				1459B3B01D3EBE9D004D6FF9 /* AppDelegate.swift in Sources */,
 				143DA7A51D46860C0019FDFA /* FlexiJSON+ArrayLiteralConvertible.swift in Sources */,
@@ -533,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				143DA7951D4684F40019FDFA /* Bot+JSONTransformableTests.swift in Sources */,
+				1456EE331D4E5FFE0044F458 /* XCSGetBotsResponseParserTests.swift in Sources */,
 				14E857701D46673800ADAC5E /* MockNetwork.swift in Sources */,
 				1459B3E41D3EC432004D6FF9 /* BranchDataStoreTests.swift in Sources */,
 				14E857611D4661C300ADAC5E /* XcodeServerBotAPITests.swift in Sources */,
