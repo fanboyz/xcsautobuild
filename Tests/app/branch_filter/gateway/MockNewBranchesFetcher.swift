@@ -21,8 +21,11 @@ class MockBranchesDataStore: BranchesDataStore {
         return stubbedNewBranches
     }
 
+    var didGetDeletedBranches = false
+    var stubbedDeletedBranches = [Branch]()
     func getDeletedBranches() -> [Branch] {
-        return []
+        didGetDeletedBranches = true
+        return stubbedDeletedBranches
     }
 
     var didCommit = false

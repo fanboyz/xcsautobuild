@@ -7,6 +7,6 @@
 import Foundation
 
 protocol Network {
-    func sendRequest(request: HTTPRequest)
-    func sendRequest(request: HTTPRequest, completion: (NSData) -> ())
+    func send(request: HTTPRequest)
+    func send(request: HTTPRequest, completion: (NSData) -> ())
 }
