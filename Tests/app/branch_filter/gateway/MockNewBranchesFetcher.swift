@@ -7,12 +7,26 @@
 import XCTest
 @testable import xcsautobuild
 
-class MockNewBranchesFetcher: NewBranchesFetcher {
+class MockBranchesDataStore: BranchesDataStore {
 
-    var didFetchNewBranches = false
-    var stubbedBranches = [Branch]()
-    func fetchNewBranches(completion: ([Branch]) -> ()) {
-        didFetchNewBranches = true
-        completion(stubbedBranches)
+    var didLoad = false
+    func load() {
+        didLoad = true
+    }
+
+    var didGetNewBranches = false
+    var stubbedNewBranches = [Branch]()
+    func getNewBranches() -> [Branch] {
+        didGetNewBranches = true
+        return stubbedNewBranches
+    }
+
+    func getDeletedBranches() -> [Branch] {
+        return []
+    }
+
+    var didCommit = false
+    func commit() {
+        didCommit = true
     }
 }

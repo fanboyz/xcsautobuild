@@ -8,17 +8,18 @@ import Foundation
 
 class NewBranchFetchingInteractor: Command {
 
-    private let newBranchesFetcher: NewBranchesFetcher
+    private let branchesDataStore: BranchesDataStore
     private let botCreator: BotCreator
 
-    init(newBranchesFetcher: NewBranchesFetcher, botCreator: BotCreator) {
-        self.newBranchesFetcher = newBranchesFetcher
+    init(branchesDataStore: BranchesDataStore, botCreator: BotCreator) {
+        self.branchesDataStore = branchesDataStore
         self.botCreator = botCreator
     }
 
     func execute() {
-        newBranchesFetcher.fetchNewBranches { branches in
-            branches.forEach { self.botCreator.createBot(forBranch: $0.name) }
-        }
+        branchesDataStore.load()
+        let newBranches = branchesDataStore.getNewBranches()
+        branchesDataStore.commit()
+        newBranches.forEach { botCreator.createBot(forBranch: $0.name) }
     }
 }

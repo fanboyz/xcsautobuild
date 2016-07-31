@@ -6,6 +6,9 @@
 
 import Foundation
 
-protocol NewBranchesFetcher {
-    func fetchNewBranches(completion: ([Branch]) -> ())
+protocol BranchesDataStore {
+    func load()
+    func getNewBranches() -> [Branch]
+    func getDeletedBranches() -> [Branch]
+    func commit()
 }

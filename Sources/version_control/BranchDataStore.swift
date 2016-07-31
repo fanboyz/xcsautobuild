@@ -6,28 +6,31 @@
 
 import Foundation
 
-class BranchDataStore: NewBranchesFetcher {
+class BranchDataStore: BranchesDataStore {
 
     var branchNames = [String]()
     private let branchFetcher: BranchFetcher
+    private var remoteBranchNames = [String]()
 
     init(branchFetcher: BranchFetcher) {
         self.branchFetcher = branchFetcher
     }
 
-    func fetchNewBranches(completion: ([Branch]) -> ()) {
-        let remoteNames = branchFetcher.getRemoteBranchNames()
-        let newBranches = remoteNames.filter { !branchNames.contains($0) }
-        completion(newBranches.map { Branch(name: $0) })
+    func load() {
+        remoteBranchNames = branchFetcher.getRemoteBranchNames()
     }
 
-    func fetchDeletedBranches(completion: ([Branch] -> ())) {
-        let remoteNames = branchFetcher.getRemoteBranchNames()
-        let deletedBranches = branchNames.filter { !remoteNames.contains($0) }
-        completion(deletedBranches.map { Branch(name: $0) } )
+    func getNewBranches() -> [Branch] {
+        let newBranches = remoteBranchNames.filter { !branchNames.contains($0) }
+        return newBranches.map { Branch(name: $0) }
     }
 
-    func commitBranches() {
+    func getDeletedBranches() -> [Branch] {
+        let deletedBranches = branchNames.filter { !remoteBranchNames.contains($0) }
+        return deletedBranches.map { Branch(name: $0) }
+    }
+
+    func commit() {
         branchNames = branchFetcher.getRemoteBranchNames()
     }
 }

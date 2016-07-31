@@ -11,81 +11,115 @@ class BranchDataStoreTests: XCTestCase {
     
     var store: BranchDataStore!
     var mockedBranchFetcher: MockBranchFetcher!
-    let stubbedRemoteBranchNames = ["a", "b", "c"]
+    let testRemoteBranchNames = ["a", "b", "c"]
 
     override func setUp() {
         super.setUp()
         mockedBranchFetcher = MockBranchFetcher()
         store = BranchDataStore(branchFetcher: mockedBranchFetcher)
     }
-    
-    // MARK: - fetchNewBranches
-    
-    func test_fetchNewBranches_shouldFetchRemoteBranches() {
-        fetchNewBranches()
+
+    // MARK: - load
+
+    func test_load_shouldFetchRemoteBranches() {
+        load()
         XCTAssert(mockedBranchFetcher.didGetRemoteBranchNames)
     }
+    
+    // MARK: - getNewBranches
 
-    func test_fetchNewBranches_shouldReturnNewBranches_whenNoBranchesHaveBeenSaved() {
-        mockedBranchFetcher.stubbedRemoteBranchNames = stubbedRemoteBranchNames
-        XCTAssertEqual(fetchNewBranches(), stubbedRemoteBranches())
+    func test_getNewBranches_shouldReturnEmptyArray_whenNoRemoteBranches() {
+        XCTAssert(getNewBranches().isEmpty)
     }
 
-    func test_fetchNewBranches_shouldReturnEmptyArray_whenNoRemoteBranches() {
-        XCTAssert(fetchNewBranches().isEmpty)
+    func test_getNewBranches_shouldReturnNewBranches_whenNewRemoteBranchesHaveBeenAdded() {
+        loadBranchNames(testRemoteBranchNames)
+        XCTAssertEqual(getNewBranches(), testRemoteBranches())
     }
 
-    func test_fetchNewBranches_shouldReturnBranch_whenRemoteBranchMatchesSavedBranch() {
-        mockedBranchFetcher.stubbedRemoteBranchNames = ["a"]
-        commitBranches()
-        mockedBranchFetcher.stubbedRemoteBranchNames = stubbedRemoteBranchNames
-        XCTAssertEqual(fetchNewBranches(), [Branch(name: "b"), Branch(name: "c")])
+    func test_getNewBranches_shouldReturnNewBranches_whenARemoteBranchMatchesASavedBranch() {
+        commitBranchNames(["a"])
+        loadBranchNames(["a", "b", "c"])
+        XCTAssertEqual(getNewBranches(), [Branch(name: "b"), Branch(name: "c")])
     }
 
-    // MARK: - fetchDeletedBranches
-
-    func test_fetchDeletedBranches_shouldReturnEmptyArray_whenNoPreviousBranches() {
-        XCTAssert(fetchDeletedBranches().isEmpty)
+    func test_getNewBranches_shouldReturnEmptyArray_whenRemoteBranchesHaveNotChanged() {
+        commitBranchNames(testRemoteBranchNames)
+        loadBranchNames(testRemoteBranchNames)
+        XCTAssert(getNewBranches().isEmpty)
     }
 
-    func test_fetchDeletedBranches_shouldReturnBranch_whenRemoteBranchHasBeenRemoved() {
-        mockedBranchFetcher.stubbedRemoteBranchNames = stubbedRemoteBranchNames
-        commitBranches()
-        mockedBranchFetcher.stubbedRemoteBranchNames = ["a", "b"]
-        XCTAssertEqual(fetchDeletedBranches(), [Branch(name: "c")])
+    func test_getNewBranches_shouldReturnEmptyArray_whenRemoteBranchesHaveBeenDeleted() {
+        commitBranchNames(testRemoteBranchNames)
+        loadBranchNames([])
+        XCTAssert(getNewBranches().isEmpty)
     }
 
-    // MARK: - commitBranches
+    // MARK: - getDeletedBranches
 
-    func test_commitBranches_shouldStoreRemoteBranchNames() {
-        mockedBranchFetcher.stubbedRemoteBranchNames = stubbedRemoteBranchNames
-        commitBranches()
-        XCTAssertEqual(store.branchNames, stubbedRemoteBranchNames)
+    func test_getDeletedBranches_shouldReturnEmptyArray_whenNoPreviousBranches() {
+        XCTAssert(getDeletedBranches().isEmpty)
+    }
+
+    func test_getDeletedBranches_shouldReturnBranch_whenRemoteBranchHasBeenRemoved() {
+        commitBranchNames(testRemoteBranchNames)
+        loadBranchNames(["a", "b"])
+        XCTAssertEqual(getDeletedBranches(), [Branch(name: "c")])
+    }
+
+    func test_getDeletedBranches_shouldReturnEmptyArray_whenRemoteBranchesHaveBeenAdded() {
+        commitBranchNames(testRemoteBranchNames)
+        loadBranchNames(["a", "b", "c", "d"])
+        XCTAssert(getDeletedBranches().isEmpty)
+    }
+
+    func test_getDeletedBranches_shouldReturnEmptyArray_whenRemoteBranchesHaveNotChanged() {
+        commitBranchNames(testRemoteBranchNames)
+        loadBranchNames(testRemoteBranchNames)
+        XCTAssert(getDeletedBranches().isEmpty)
+    }
+
+    // MARK: - commit
+
+    func test_commit_shouldStoreRemoteBranchNames() {
+        mockedBranchFetcher.stubbedRemoteBranchNames = testRemoteBranchNames
+        store.commit()
+        XCTAssertEqual(store.branchNames, testRemoteBranchNames)
+    }
+
+    // MARK: - Integration
+
+    func test_newBranchesAndDeletedBranchesCanBeFetched() {
+        commitBranchNames(testRemoteBranchNames)
+        loadBranchNames(["a", "b", "d"])
+        XCTAssertEqual(getNewBranches(), [Branch(name: "d")])
+        XCTAssertEqual(getDeletedBranches(), [Branch(name: "c")])
     }
 
     // MARK: - Helpers
 
-    func fetchNewBranches() -> [Branch]! {
-        var branches: [Branch]!
-        store.fetchNewBranches { b in
-            branches = b
-        }
-        return branches
+    func load() {
+        store.load()
     }
 
-    func fetchDeletedBranches() -> [Branch]! {
-        var branches: [Branch]!
-        store.fetchDeletedBranches { b in
-            branches = b
-        }
-        return branches
+    func getNewBranches() -> [Branch] {
+        return store.getNewBranches()
+    }
+    func getDeletedBranches() -> [Branch] {
+        return store.getDeletedBranches()
     }
 
-    func commitBranches() {
-        store.commitBranches()
+    func testRemoteBranches() -> [Branch] {
+        return testRemoteBranchNames.map { Branch(name: $0) }
     }
 
-    func stubbedRemoteBranches() -> [Branch] {
-        return stubbedRemoteBranchNames.map { Branch(name: $0) }
+    func loadBranchNames(names: [String]) {
+        mockedBranchFetcher.stubbedRemoteBranchNames = names
+        load()
+    }
+
+    func commitBranchNames(names: [String]) {
+        loadBranchNames(names)
+        store.commit()
     }
 }
