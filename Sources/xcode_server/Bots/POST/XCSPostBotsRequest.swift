@@ -8,11 +8,9 @@ import Foundation
 
 class XCSPostBotsRequest: XCSRequest {
 
-    private let template: [String: AnyObject]
     let network: Network
 
-    init(template: [String: AnyObject], network: Network) {
-        self.template = template
+    init(network: Network) {
         self.network = network
     }
 

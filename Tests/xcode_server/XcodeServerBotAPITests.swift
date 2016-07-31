@@ -10,7 +10,6 @@ import XCTest
 class XcodeServerBotAPITests: XCTestCase {
     
     var api: XcodeServerBotAPI!
-    var mockedNetwork: MockNetwork!
     var mockedCreateBotRequest: MockXCSRequest<Bot, Void>!
     var mockedGetBotsRequest: MockXCSRequest<Void, [RemoteBot]>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
@@ -19,12 +18,10 @@ class XcodeServerBotAPITests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        mockedNetwork = MockNetwork()
         mockedCreateBotRequest = MockXCSRequest()
         mockedGetBotsRequest = MockXCSRequest()
         mockedDeleteBotRequest = MockXCSRequest()
         api = XcodeServerBotAPI(
-            network: mockedNetwork,
             createBotRequest: AnyXCSRequest(mockedCreateBotRequest),
             getBotsRequest: AnyXCSRequest(mockedGetBotsRequest),
             deleteBotRequest: AnyXCSRequest(mockedDeleteBotRequest)

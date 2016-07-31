@@ -8,19 +8,16 @@ import Foundation
 
 class XcodeServerBotAPI: BotCreator, BotDeleter {
 
-    private let network: Network
     private let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
     private let createBotRequest: AnyXCSRequest<Bot, Void>
     private let getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
 
     init(
-        network: Network,
         createBotRequest: AnyXCSRequest<Bot, Void>,
         getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>,
         deleteBotRequest: AnyXCSRequest<String, Void>
     ) {
-        self.network = network
         self.createBotRequest = createBotRequest
         self.getBotsRequest = getBotsRequest
         self.deleteBotRequest = deleteBotRequest

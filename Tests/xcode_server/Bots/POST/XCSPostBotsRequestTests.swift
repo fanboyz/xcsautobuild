@@ -13,7 +13,7 @@ class XCSPostBotsRequestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        request = XCSPostBotsRequest(template: [:], network: MockNetwork())
+        request = XCSPostBotsRequest(network: MockNetwork())
     }
     
     // MARK: - create
