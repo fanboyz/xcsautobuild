@@ -17,6 +17,12 @@ class AnyXCSRequestTests: XCTestCase {
         mockedRequest = MockXCSRequest()
         request = AnyXCSRequest(mockedRequest)
     }
+
+    // MARK: - network
+
+    func test_network() {
+        XCTAssert(request.network is MockNetwork)
+    }
     
     // MARK: - createRequest
     
