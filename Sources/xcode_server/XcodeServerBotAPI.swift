@@ -14,7 +14,8 @@ class XcodeServerBotAPI: BotCreator {
         self.network = network
     }
 
-    func createBot(forBranch branch: String) {
+    func createBot(forBranch branch: Branch) {
+        let branch = branch.name
         network.sendRequest(HTTPRequest(url: "https://seans-macbook-pro-2.local:20343/api/bots", method: .post, jsonBody: temporaryBotTemplate(forBranch: branch)))
     }
 

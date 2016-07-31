@@ -20,6 +20,6 @@ class NewBranchFetchingInteractor: Command {
         branchesDataStore.load()
         let newBranches = branchesDataStore.getNewBranches()
         branchesDataStore.commit()
-        newBranches.forEach { botCreator.createBot(forBranch: $0.name) }
+        newBranches.forEach { botCreator.createBot(forBranch: $0) }
     }
 }

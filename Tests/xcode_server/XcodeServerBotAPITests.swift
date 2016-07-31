@@ -22,7 +22,7 @@ class XcodeServerBotAPITests: XCTestCase {
     
     func test_createBot_shouldSendNetwork() {
         let expectedURL = "https://seans-macbook-pro-2.local:20343/api/bots"
-        api.createBot(forBranch: "master")
+        api.createBot(forBranch: Branch(name: "master"))
         XCTAssert(mockedNetwork.didSendRequest)
         XCTAssertEqual(mockedNetwork.invokedRequest?.method, .post)
         XCTAssertEqual(mockedNetwork.invokedRequest?.url, expectedURL)

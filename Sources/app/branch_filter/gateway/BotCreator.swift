@@ -7,5 +7,5 @@
 import Foundation
 
 protocol BotCreator {
-    func createBot(forBranch branch: String)
+    func createBot(forBranch branch: Branch)
 }

@@ -41,7 +41,8 @@ class NewBranchFetchingInteractorTests: XCTestCase {
         let newBranches = ["develop", "master"]
         stubNewBranchNames(newBranches)
         interactor.execute()
-        XCTAssertEqual(mockedBotCreator.invokedBranches, newBranches)
+        let result = mockedBotCreator.invokedBranches.map { $0.name }
+        XCTAssertEqual(result, newBranches)
     }
 
     // MARK: - Helpers

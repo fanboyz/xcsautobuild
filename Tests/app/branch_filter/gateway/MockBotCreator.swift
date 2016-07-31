@@ -10,8 +10,8 @@ import XCTest
 class MockBotCreator: BotCreator {
 
     var didCreateBot = false
-    var invokedBranches = [String]()
-    func createBot(forBranch branch: String) {
+    var invokedBranches = [Branch]()
+    func createBot(forBranch branch: Branch) {
         didCreateBot = true
         invokedBranches.append(branch)
     }
