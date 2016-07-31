@@ -6,17 +6,43 @@
 
 import Foundation
 
-func system(command: String, arguments: String...) -> String? {
-    let task = NSTask()
-    task.launchPath = command
-    task.arguments = arguments
+let command = CommandLine(directory: "~/source/xcsautobuild")
 
-    let pipe = NSPipe()
-    task.standardOutput = pipe
+struct CommandLine {
 
-    task.launch()
-    task.waitUntilExit()
+    let directory: String
 
-    let data = pipe.fileHandleForReading.readDataToEndOfFile()
-    return String(data: data, encoding: NSUTF8StringEncoding)
+    init(directory: String) {
+        self.directory = directory
+    }
+
+    func execute(command: String) -> String {
+        let components = command.componentsSeparatedByString(" ")
+
+        let task = NSTask()
+        task.currentDirectoryPath = directory
+        task.launchPath = self.command(from: components)
+        task.arguments = arguments(from: components)
+
+        let pipe = NSPipe()
+        task.standardOutput = pipe
+
+        task.launch()
+        task.waitUntilExit()
+
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        return String(data: data, encoding: NSUTF8StringEncoding)!
+    }
+
+    private func command(from components: [String]) -> String {
+        return components.first ?? ""
+    }
+
+    private func arguments(from components: [String]) -> [String] {
+        let count = components.count
+        if count > 1 {
+            return Array(components[1..<components.count])
+        }
+        return []
+    }
 }

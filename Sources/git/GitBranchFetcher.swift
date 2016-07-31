@@ -8,17 +8,23 @@ import Foundation
 
 class GitBranchFetcher: BranchFetcher {
 
-    private let git = "/usr/bin/git"
     private let remoteName = "origin"
+    private let ciServerName = "xcs"
 
     func getRemoteBranchNames() -> [String] {
-        let branches = system(git, arguments: "fetch", remoteName, "--prune")!
+        gitCommand("fetch --prune")
         copyRemoteBranchesToCIRemote()
-        return branches.componentsSeparatedByString("\n").filter { !$0.isEmpty }
+        let branches = gitCommand("branch -r")
+        return branches.componentsSeparatedByString("\n")
+            .map { $0.stringByTrimmingCharactersInSet(.whitespaceCharacterSet()) }
+            .filter { $0.hasPrefix(ciServerName) }
     }
 
     private func copyRemoteBranchesToCIRemote() {
-        let ciServerName = "ci"
-        system(git, arguments: "push", ciServerName, "--prune", "+refs/remotes/\(remoteName)/*:refs/heads/*")
+        gitCommand("push --prune \(ciServerName) +refs/remotes/\(remoteName)/*:refs/heads/*")
+    }
+
+    private func gitCommand(arguments: String) -> String {
+        return command.execute("/usr/bin/git \(arguments)")
     }
 }
