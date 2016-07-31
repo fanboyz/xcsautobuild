@@ -97,7 +97,7 @@ class XcodeServerBotAPITests: XCTestCase {
     }
 
     func stubMatchingBotResponse() {
-        mockedGetBotsRequest.stubbedResponse = [RemoteBot(id: botID, name: testBranch.name)]
+        mockedGetBotsRequest.stubbedResponse = [RemoteBot(id: botID, name: formattedTestBranchName())]
     }
 
     func stubUnmatchingBotResponse() {
@@ -106,8 +106,12 @@ class XcodeServerBotAPITests: XCTestCase {
 
     func stubMixedBotResponse() {
         mockedGetBotsRequest.stubbedResponse = [
-            RemoteBot(id: botID, name: testBranch.name),
+            RemoteBot(id: botID, name: formattedTestBranchName()),
             RemoteBot(id: botID, name: "unmatching name")
         ]
+    }
+
+    func formattedTestBranchName() -> String {
+        return "xcsautobuild [\(testBranch.name)]"
     }
 }

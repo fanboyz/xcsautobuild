@@ -15,7 +15,7 @@ class XCSDeleteBotRequest: XCSRequest {
     }
 
     func createRequest(data: String) -> HTTPRequest {
-        return HTTPRequest(url: endpoint + "bot/" + data, method: .delete, jsonBody: nil)
+        return HTTPRequest(url: endpoint + "bots/" + data, method: .delete, jsonBody: nil)
     }
 
     func parse(response data: NSData) -> Void? {
