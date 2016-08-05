@@ -1,23 +1,26 @@
 //
-//  BranchDataStore.swift
+//  FileBranchDataStore.swift
 //
 //
 //
 
 import Foundation
 
-class BranchDataStore: BranchesDataStore {
+class FileBranchDataStore: BranchesDataStore {
 
-    var branchNames = [String]()
+    private(set) var branchNames = [String]()
     private let branchFetcher: BranchFetcher
+    private let branchPersister: BranchPersister
     private var remoteBranchNames = [String]()
 
-    init(branchFetcher: BranchFetcher) {
+    init(branchFetcher: BranchFetcher, branchPersister: BranchPersister) {
         self.branchFetcher = branchFetcher
+        self.branchPersister = branchPersister
     }
 
     func load() {
         remoteBranchNames = branchFetcher.getRemoteBranchNames()
+        branchNames = branchPersister.load()
     }
 
     func getNewBranches() -> [Branch] {
@@ -32,5 +35,6 @@ class BranchDataStore: BranchesDataStore {
 
     func commit() {
         branchNames = branchFetcher.getRemoteBranchNames()
+        branchPersister.save(branchNames)
     }
 }

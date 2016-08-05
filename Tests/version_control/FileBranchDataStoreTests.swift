@@ -7,16 +7,18 @@
 import XCTest
 @testable import xcsautobuild
 
-class BranchDataStoreTests: XCTestCase {
+class FileBranchDataStoreTests: XCTestCase {
     
-    var store: BranchDataStore!
+    var store: FileBranchDataStore!
     var mockedBranchFetcher: MockBranchFetcher!
+    var mockedBranchPersister: MockBranchPersister!
     let testRemoteBranchNames = ["a", "b", "c"]
 
     override func setUp() {
         super.setUp()
         mockedBranchFetcher = MockBranchFetcher()
-        store = BranchDataStore(branchFetcher: mockedBranchFetcher)
+        mockedBranchPersister = MockBranchPersister()
+        store = FileBranchDataStore(branchFetcher: mockedBranchFetcher, branchPersister: mockedBranchPersister)
     }
 
     // MARK: - load
@@ -24,6 +26,11 @@ class BranchDataStoreTests: XCTestCase {
     func test_load_shouldFetchRemoteBranches() {
         load()
         XCTAssert(mockedBranchFetcher.didGetRemoteBranchNames)
+    }
+
+    func test_load_shouldLoadPersistedRemoteBranches() {
+        load()
+        XCTAssert(mockedBranchPersister.didLoad)
     }
     
     // MARK: - getNewBranches
@@ -81,10 +88,16 @@ class BranchDataStoreTests: XCTestCase {
 
     // MARK: - commit
 
-    func test_commit_shouldStoreRemoteBranchNames() {
+    func test_commit_shouldStoreRemoteBranchNamesLocally() {
         mockedBranchFetcher.stubbedRemoteBranchNames = testRemoteBranchNames
         store.commit()
         XCTAssertEqual(store.branchNames, testRemoteBranchNames)
+    }
+
+    func test_commit_shouldPersistRemoteBranchNames() {
+        mockedBranchFetcher.stubbedRemoteBranchNames = testRemoteBranchNames
+        store.commit()
+        XCTAssertEqual(mockedBranchPersister.invokedSavedBranches!, testRemoteBranchNames)
     }
 
     // MARK: - Integration
@@ -120,6 +133,6 @@ class BranchDataStoreTests: XCTestCase {
 
     func commitBranchNames(names: [String]) {
         loadBranchNames(names)
-        store.commit()
+        mockedBranchPersister.stubbedBranches = names
     }
 }

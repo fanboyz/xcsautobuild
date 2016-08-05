@@ -61,14 +61,17 @@
 		1459B3B41D3EBE9D004D6FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1459B3B31D3EBE9D004D6FF9 /* Assets.xcassets */; };
 		1459B3B71D3EBE9D004D6FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459B3B51D3EBE9D004D6FF9 /* Main.storyboard */; };
 		1459B3DB1D3EC077004D6FF9 /* BranchSyncingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3DA1D3EC077004D6FF9 /* BranchSyncingInteractorTests.swift */; };
-		1459B3E41D3EC432004D6FF9 /* BranchDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3E31D3EC432004D6FF9 /* BranchDataStoreTests.swift */; };
+		1459B3E41D3EC432004D6FF9 /* FileBranchDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3E31D3EC432004D6FF9 /* FileBranchDataStoreTests.swift */; };
 		1459B3F91D3EC56F004D6FF9 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F11D3EC56F004D6FF9 /* Branch.swift */; };
 		1459B3FA1D3EC56F004D6FF9 /* BranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F31D3EC56F004D6FF9 /* BranchesDataStore.swift */; };
 		1459B3FB1D3EC56F004D6FF9 /* BranchSyncingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F51D3EC56F004D6FF9 /* BranchSyncingInteractor.swift */; };
-		1459B3FC1D3EC56F004D6FF9 /* BranchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F71D3EC56F004D6FF9 /* BranchDataStore.swift */; };
+		1459B3FC1D3EC56F004D6FF9 /* FileBranchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F71D3EC56F004D6FF9 /* FileBranchDataStore.swift */; };
 		1459B3FD1D3EC56F004D6FF9 /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F81D3EC56F004D6FF9 /* BranchFetcher.swift */; };
 		1459B4001D3EC585004D6FF9 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3FF1D3EC585004D6FF9 /* Command.swift */; };
 		1459B4021D3EC595004D6FF9 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B4011D3EC595004D6FF9 /* MockBranchFetcher.swift */; };
+		14E53A4B1D551660006FCBF8 /* BranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A4A1D551660006FCBF8 /* BranchPersister.swift */; };
+		14E53A4D1D5516A9006FCBF8 /* FileBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A4C1D5516A9006FCBF8 /* FileBranchPersister.swift */; };
+		14E53A551D5517FC006FCBF8 /* MockBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A541D5517FC006FCBF8 /* MockBranchPersister.swift */; };
 		14E8575B1D465E8800ADAC5E /* MockNewBranchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8575A1D465E8800ADAC5E /* MockNewBranchesFetcher.swift */; };
 		14E8575D1D46605A00ADAC5E /* BotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8575C1D46605A00ADAC5E /* BotCreator.swift */; };
 		14E8576A1D46642600ADAC5E /* HTTPRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E857691D46642600ADAC5E /* HTTPRequestTests.swift */; };
@@ -147,14 +150,17 @@
 		1459B3BD1D3EBE9E004D6FF9 /* xcsautobuild_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xcsautobuild_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1459B3C31D3EBE9E004D6FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1459B3DA1D3EC077004D6FF9 /* BranchSyncingInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchSyncingInteractorTests.swift; sourceTree = "<group>"; };
-		1459B3E31D3EC432004D6FF9 /* BranchDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchDataStoreTests.swift; sourceTree = "<group>"; };
+		1459B3E31D3EC432004D6FF9 /* FileBranchDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchDataStoreTests.swift; sourceTree = "<group>"; };
 		1459B3F11D3EC56F004D6FF9 /* Branch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		1459B3F31D3EC56F004D6FF9 /* BranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchesDataStore.swift; sourceTree = "<group>"; };
 		1459B3F51D3EC56F004D6FF9 /* BranchSyncingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchSyncingInteractor.swift; sourceTree = "<group>"; };
-		1459B3F71D3EC56F004D6FF9 /* BranchDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchDataStore.swift; sourceTree = "<group>"; };
+		1459B3F71D3EC56F004D6FF9 /* FileBranchDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchDataStore.swift; sourceTree = "<group>"; };
 		1459B3F81D3EC56F004D6FF9 /* BranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFetcher.swift; sourceTree = "<group>"; };
 		1459B3FF1D3EC585004D6FF9 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		1459B4011D3EC595004D6FF9 /* MockBranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFetcher.swift; sourceTree = "<group>"; };
+		14E53A4A1D551660006FCBF8 /* BranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchPersister.swift; sourceTree = "<group>"; };
+		14E53A4C1D5516A9006FCBF8 /* FileBranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchPersister.swift; sourceTree = "<group>"; };
+		14E53A541D5517FC006FCBF8 /* MockBranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchPersister.swift; sourceTree = "<group>"; };
 		14E8575A1D465E8800ADAC5E /* MockNewBranchesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNewBranchesFetcher.swift; sourceTree = "<group>"; };
 		14E8575C1D46605A00ADAC5E /* BotCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotCreator.swift; sourceTree = "<group>"; };
 		14E857671D4662D300ADAC5E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -395,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				1459B3D61D3EC067004D6FF9 /* app */,
+				14E53A521D5517F0006FCBF8 /* data */,
 				1456EE461D4E71C10044F458 /* helpers */,
 				14E857661D46624B00ADAC5E /* network */,
 				1459B3E21D3EC403004D6FF9 /* version_control */,
@@ -442,7 +449,7 @@
 		1459B3E21D3EC403004D6FF9 /* version_control */ = {
 			isa = PBXGroup;
 			children = (
-				1459B3E31D3EC432004D6FF9 /* BranchDataStoreTests.swift */,
+				1459B3E31D3EC432004D6FF9 /* FileBranchDataStoreTests.swift */,
 				1459B4011D3EC595004D6FF9 /* MockBranchFetcher.swift */,
 			);
 			path = version_control;
@@ -453,6 +460,7 @@
 			children = (
 				1459B3EE1D3EC56F004D6FF9 /* app */,
 				142E543F1D3ECAFA004648D6 /* command_line */,
+				14E53A481D551600006FCBF8 /* data */,
 				1459B3FE1D3EC585004D6FF9 /* foundation */,
 				142E54421D3ECC03004648D6 /* git */,
 				14E857651D46623C00ADAC5E /* network */,
@@ -510,7 +518,7 @@
 		1459B3F61D3EC56F004D6FF9 /* version_control */ = {
 			isa = PBXGroup;
 			children = (
-				1459B3F71D3EC56F004D6FF9 /* BranchDataStore.swift */,
+				1459B3F71D3EC56F004D6FF9 /* FileBranchDataStore.swift */,
 				1459B3F81D3EC56F004D6FF9 /* BranchFetcher.swift */,
 			);
 			path = version_control;
@@ -522,6 +530,39 @@
 				1459B3FF1D3EC585004D6FF9 /* Command.swift */,
 			);
 			path = foundation;
+			sourceTree = "<group>";
+		};
+		14E53A481D551600006FCBF8 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				14E53A491D551600006FCBF8 /* persitence */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		14E53A491D551600006FCBF8 /* persitence */ = {
+			isa = PBXGroup;
+			children = (
+				14E53A4A1D551660006FCBF8 /* BranchPersister.swift */,
+				14E53A4C1D5516A9006FCBF8 /* FileBranchPersister.swift */,
+			);
+			path = persitence;
+			sourceTree = "<group>";
+		};
+		14E53A521D5517F0006FCBF8 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				14E53A531D5517F0006FCBF8 /* persistence */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		14E53A531D5517F0006FCBF8 /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				14E53A541D5517FC006FCBF8 /* MockBranchPersister.swift */,
+			);
+			path = persistence;
 			sourceTree = "<group>";
 		};
 		14E8575E1D46617000ADAC5E /* xcode_server */ = {
@@ -717,9 +758,10 @@
 				1459B3FB1D3EC56F004D6FF9 /* BranchSyncingInteractor.swift in Sources */,
 				1456EE271D4E55050044F458 /* BotDeleter.swift in Sources */,
 				1459B3F91D3EC56F004D6FF9 /* Branch.swift in Sources */,
+				14E53A4D1D5516A9006FCBF8 /* FileBranchPersister.swift in Sources */,
 				14E8576D1D4664BC00ADAC5E /* HTTPRequest.swift in Sources */,
 				14E8575D1D46605A00ADAC5E /* BotCreator.swift in Sources */,
-				1459B3FC1D3EC56F004D6FF9 /* BranchDataStore.swift in Sources */,
+				1459B3FC1D3EC56F004D6FF9 /* FileBranchDataStore.swift in Sources */,
 				1456EE601D4E8BC20044F458 /* XcodeServerBotAPI.swift in Sources */,
 				1456EE5B1D4E8BC20044F458 /* XCSGetBotsRequest.swift in Sources */,
 				143DA7A71D46860C0019FDFA /* FlexiJSON+DictionaryLiteralConvertible.swift in Sources */,
@@ -732,6 +774,7 @@
 				143DA7A51D46860C0019FDFA /* FlexiJSON+ArrayLiteralConvertible.swift in Sources */,
 				143DA7A91D46860C0019FDFA /* FlexiJSON+FloatLiteralConvertible.swift in Sources */,
 				143DA7A61D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift in Sources */,
+				14E53A4B1D551660006FCBF8 /* BranchPersister.swift in Sources */,
 				1456EE5E1D4E8BC20044F458 /* Bot.swift in Sources */,
 				1459B3FD1D3EC56F004D6FF9 /* BranchFetcher.swift in Sources */,
 				143DA7AE1D46860C0019FDFA /* FlexiJSON+SequenceType.swift in Sources */,
@@ -761,7 +804,7 @@
 				1456EE781D4E91270044F458 /* XCSDeleteBotRequestTests.swift in Sources */,
 				1456EE901D4E990A0044F458 /* FlexiJSON+ObjCTests.swift in Sources */,
 				1456EE6E1D4E8BF80044F458 /* XCSGetBotsRequestTests.swift in Sources */,
-				1459B3E41D3EC432004D6FF9 /* BranchDataStoreTests.swift in Sources */,
+				1459B3E41D3EC432004D6FF9 /* FileBranchDataStoreTests.swift in Sources */,
 				1456EE8A1D4E990A0044F458 /* FlexiJSON+BoolLiteralConvertibleTests.swift in Sources */,
 				1456EE721D4E8BF80044F458 /* MockXCSRequest.swift in Sources */,
 				1456EE8F1D4E990A0044F458 /* FlexiJSON+NilLiteralConvertibleTests.swift in Sources */,
@@ -778,6 +821,7 @@
 				14E8576A1D46642600ADAC5E /* HTTPRequestTests.swift in Sources */,
 				14E8575B1D465E8800ADAC5E /* MockNewBranchesFetcher.swift in Sources */,
 				1456EE711D4E8BF80044F458 /* AnyXCSRequestTests.swift in Sources */,
+				14E53A551D5517FC006FCBF8 /* MockBranchPersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
