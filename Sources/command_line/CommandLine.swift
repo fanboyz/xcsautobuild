@@ -6,11 +6,9 @@
 
 import Foundation
 
-let command = CommandLine(directory: "~/source/xcsautobuild")
-
 struct CommandLine {
 
-    let directory: String
+    private(set) var directory: String
 
     init(directory: String) {
         self.directory = directory
@@ -32,6 +30,17 @@ struct CommandLine {
 
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         return String(data: data, encoding: NSUTF8StringEncoding)!
+    }
+
+    mutating func cd(path: String) {
+        let result = execute("/usr/bin/cd \(path)")
+        if result == "" {
+            directory += "/" + path
+        }
+    }
+
+    func mkdir(path: String) {
+        execute("/bin/mkdir \(path)")
     }
 
     private func command(from components: [String]) -> String {

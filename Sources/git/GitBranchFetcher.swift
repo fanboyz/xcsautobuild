@@ -10,6 +10,11 @@ class GitBranchFetcher: BranchFetcher {
 
     private let remoteName = "origin"
     private let ciServerName = "xcs"
+    private let commandLine: CommandLine
+
+    init(commandLine: CommandLine) {
+        self.commandLine = commandLine
+    }
 
     func getRemoteBranchNames() -> [String] {
         gitCommand("fetch --prune")
@@ -26,7 +31,7 @@ class GitBranchFetcher: BranchFetcher {
     }
 
     private func gitCommand(arguments: String) -> String {
-        return command.execute("/usr/bin/git \(arguments)")
+        return commandLine.execute("/usr/bin/git \(arguments)")
     }
 
     private func byTrimmingWhitespace(branch: String) -> String {

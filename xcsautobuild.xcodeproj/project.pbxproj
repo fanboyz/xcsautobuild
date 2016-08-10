@@ -23,6 +23,21 @@
 		143DA7AF1D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A11D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift */; };
 		143DA7B01D46860C0019FDFA /* FlexiJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A31D46860C0019FDFA /* FlexiJSON.swift */; };
 		143DA7B11D46860C0019FDFA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 143DA7A41D46860C0019FDFA /* Info.plist */; };
+		144434451D5BA5C800025F90 /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14578C9F1D4960CB0089DC7F /* MockBotCreator.swift */; };
+		144434461D5BA60E00025F90 /* BranchSyncingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F51D3EC56F004D6FF9 /* BranchSyncingInteractor.swift */; };
+		144434471D5BA61300025F90 /* BranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F31D3EC56F004D6FF9 /* BranchesDataStore.swift */; };
+		144434481D5BA61900025F90 /* BotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE261D4E55050044F458 /* BotDeleter.swift */; };
+		144434491D5BA62400025F90 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F11D3EC56F004D6FF9 /* Branch.swift */; };
+		1444344A1D5BA63700025F90 /* BotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8575C1D46605A00ADAC5E /* BotCreator.swift */; };
+		1444344B1D5BA63C00025F90 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3FF1D3EC585004D6FF9 /* Command.swift */; };
+		1444344C1D5BA66E00025F90 /* FileBranchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F71D3EC56F004D6FF9 /* FileBranchDataStore.swift */; };
+		1444344D1D5BA67600025F90 /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F81D3EC56F004D6FF9 /* BranchFetcher.swift */; };
+		1444344E1D5BA67900025F90 /* BranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A4A1D551660006FCBF8 /* BranchPersister.swift */; };
+		1444344F1D5BA6E200025F90 /* GitBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142E54431D3ECC0B004648D6 /* GitBranchFetcher.swift */; };
+		144434501D5BA75F00025F90 /* FileBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A4C1D5516A9006FCBF8 /* FileBranchPersister.swift */; };
+		144434531D5BA78300025F90 /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434521D5BA78300025F90 /* MockCommand.swift */; };
+		144434541D5BA78600025F90 /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434521D5BA78300025F90 /* MockCommand.swift */; };
+		144434551D5BA7B000025F90 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE3A1D4E650C0044F458 /* MockBotDeleter.swift */; };
 		1456EE271D4E55050044F458 /* BotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE261D4E55050044F458 /* BotDeleter.swift */; };
 		1456EE371D4E62F10044F458 /* BotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE361D4E62F10044F458 /* BotsFetcher.swift */; };
 		1456EE3B1D4E650C0044F458 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE3A1D4E650C0044F458 /* MockBotDeleter.swift */; };
@@ -69,18 +84,24 @@
 		1459B3FD1D3EC56F004D6FF9 /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3F81D3EC56F004D6FF9 /* BranchFetcher.swift */; };
 		1459B4001D3EC585004D6FF9 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B3FF1D3EC585004D6FF9 /* Command.swift */; };
 		1459B4021D3EC595004D6FF9 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459B4011D3EC595004D6FF9 /* MockBranchFetcher.swift */; };
+		14CC5CBB1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBA1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift */; };
+		14CC5CBD1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBC1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift */; };
+		14CC5CC01D591CBF00F1CA28 /* TestsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBF1D591CBF00F1CA28 /* TestsHelpers.swift */; };
+		14CC5CC11D591E6F00F1CA28 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142E54401D3ECB13004648D6 /* CommandLine.swift */; };
 		14E53A4B1D551660006FCBF8 /* BranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A4A1D551660006FCBF8 /* BranchPersister.swift */; };
 		14E53A4D1D5516A9006FCBF8 /* FileBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A4C1D5516A9006FCBF8 /* FileBranchPersister.swift */; };
 		14E53A551D5517FC006FCBF8 /* MockBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A541D5517FC006FCBF8 /* MockBranchPersister.swift */; };
-		14E53A5F1D551E6B006FCBF8 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A5E1D551E6B006FCBF8 /* AcceptanceTests.m */; };
-		14E53A621D551E6B006FCBF8 /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A611D551E6B006FCBF8 /* FixtureExample.swift */; };
-		14E53A661D551E6B006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A651D551E6B006FCBF8 /* Empty.xib */; };
+		14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A6E1D552875006FCBF8 /* AcceptanceTests.m */; };
+		14E53A751D5528F8006FCBF8 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A741D5528F8006FCBF8 /* ShouldAddABotWhenANewBranchIsFound.swift */; };
+		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14E8575B1D465E8800ADAC5E /* MockNewBranchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8575A1D465E8800ADAC5E /* MockNewBranchesFetcher.swift */; };
 		14E8575D1D46605A00ADAC5E /* BotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8575C1D46605A00ADAC5E /* BotCreator.swift */; };
 		14E8576A1D46642600ADAC5E /* HTTPRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E857691D46642600ADAC5E /* HTTPRequestTests.swift */; };
 		14E8576D1D4664BC00ADAC5E /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8576B1D4664B800ADAC5E /* HTTPRequest.swift */; };
 		14E8576E1D46652900ADAC5E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E857671D4662D300ADAC5E /* Network.swift */; };
 		14E857701D46673800ADAC5E /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8576F1D46673800ADAC5E /* MockNetwork.swift */; };
+		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
+		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
 		D56C833677A4D1C73532AD81 /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +114,20 @@
 			remoteInfo = xcsautobuild_macOS;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14EEB6081D5A52DA0074C72D /* Copy Carthage dSYM */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */,
+			);
+			name = "Copy Carthage dSYM";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		142E543D1D3EC8DF004648D6 /* BranchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchTests.swift; sourceTree = "<group>"; };
@@ -112,6 +147,7 @@
 		143DA7A21D46860C0019FDFA /* FlexiJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexiJSON.h; sourceTree = "<group>"; };
 		143DA7A31D46860C0019FDFA /* FlexiJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexiJSON.swift; sourceTree = "<group>"; };
 		143DA7A41D46860C0019FDFA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144434521D5BA78300025F90 /* MockCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCommand.swift; sourceTree = "<group>"; };
 		1456EE261D4E55050044F458 /* BotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDeleter.swift; sourceTree = "<group>"; };
 		1456EE361D4E62F10044F458 /* BotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotsFetcher.swift; sourceTree = "<group>"; };
 		1456EE3A1D4E650C0044F458 /* MockBotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotDeleter.swift; sourceTree = "<group>"; };
@@ -162,22 +198,27 @@
 		1459B3F81D3EC56F004D6FF9 /* BranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFetcher.swift; sourceTree = "<group>"; };
 		1459B3FF1D3EC585004D6FF9 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		1459B4011D3EC595004D6FF9 /* MockBranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFetcher.swift; sourceTree = "<group>"; };
+		14CC5CBA1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldDeleteBotWhenAnOldBranchIsDeleted.swift; sourceTree = "<group>"; };
+		14CC5CBC1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldPersistBranchesBetweenLaunches.swift; sourceTree = "<group>"; };
+		14CC5CBF1D591CBF00F1CA28 /* TestsHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsHelpers.swift; sourceTree = "<group>"; };
 		14E53A4A1D551660006FCBF8 /* BranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchPersister.swift; sourceTree = "<group>"; };
 		14E53A4C1D5516A9006FCBF8 /* FileBranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchPersister.swift; sourceTree = "<group>"; };
 		14E53A541D5517FC006FCBF8 /* MockBranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchPersister.swift; sourceTree = "<group>"; };
 		14E53A5B1D551E6B006FCBF8 /* AcceptanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcceptanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		14E53A5E1D551E6B006FCBF8 /* AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcceptanceTests.m; sourceTree = "<group>"; };
-		14E53A611D551E6B006FCBF8 /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
-		14E53A631D551E6B006FCBF8 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
-		14E53A641D551E6B006FCBF8 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		14E53A651D551E6B006FCBF8 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		14E53A671D551E6B006FCBF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14E53A6D1D552875006FCBF8 /* AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		14E53A6E1D552875006FCBF8 /* AcceptanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptanceTests.m; sourceTree = "<group>"; };
+		14E53A6F1D552875006FCBF8 /* SlimTables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
+		14E53A741D5528F8006FCBF8 /* ShouldAddABotWhenANewBranchIsFound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldAddABotWhenANewBranchIsFound.swift; sourceTree = "<group>"; };
+		14E53A761D552933006FCBF8 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Empty.xib; path = AcceptanceTests/Empty.xib; sourceTree = SOURCE_ROOT; };
 		14E8575A1D465E8800ADAC5E /* MockNewBranchesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNewBranchesFetcher.swift; sourceTree = "<group>"; };
 		14E8575C1D46605A00ADAC5E /* BotCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotCreator.swift; sourceTree = "<group>"; };
 		14E857671D4662D300ADAC5E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		14E857691D46642600ADAC5E /* HTTPRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTests.swift; sourceTree = "<group>"; };
 		14E8576B1D4664B800ADAC5E /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		14E8576F1D46673800ADAC5E /* MockNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
+		14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
+		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
 		5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0DEDDCEA517D9139E233AC /* Pods-AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		94DC8739FF38FC1AE9389FD6 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56C833677A4D1C73532AD81 /* Pods_AcceptanceTests.framework in Frameworks */,
+				14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +297,14 @@
 				143DA7A41D46860C0019FDFA /* Info.plist */,
 			);
 			path = FlexiJSON;
+			sourceTree = "<group>";
+		};
+		144434511D5BA77700025F90 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				144434521D5BA78300025F90 /* MockCommand.swift */,
+			);
+			path = foundation;
 			sourceTree = "<group>";
 		};
 		1456EE461D4E71C10044F458 /* helpers */ = {
@@ -424,6 +474,7 @@
 			children = (
 				1459B3D61D3EC067004D6FF9 /* app */,
 				14E53A521D5517F0006FCBF8 /* data */,
+				144434511D5BA77700025F90 /* foundation */,
 				1456EE461D4E71C10044F458 /* helpers */,
 				14E857661D46624B00ADAC5E /* network */,
 				1459B3E21D3EC403004D6FF9 /* version_control */,
@@ -554,6 +605,14 @@
 			path = foundation;
 			sourceTree = "<group>";
 		};
+		14CC5CBE1D591C9F00F1CA28 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14CC5CBF1D591CBF00F1CA28 /* TestsHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		14E53A481D551600006FCBF8 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,29 +650,40 @@
 			isa = PBXGroup;
 			children = (
 				14E53A671D551E6B006FCBF8 /* Info.plist */,
-				14E53A601D551E6B006FCBF8 /* Fixtures */,
-				14E53A5D1D551E6B006FCBF8 /* Supporting Files */,
+				14E53A6B1D55283A006FCBF8 /* Fixtures */,
+				14CC5CBE1D591C9F00F1CA28 /* Helpers */,
+				14E53A6C1D552875006FCBF8 /* Supporting Files */,
 			);
 			path = AcceptanceTests;
 			sourceTree = "<group>";
 		};
-		14E53A5D1D551E6B006FCBF8 /* Supporting Files */ = {
+		14E53A6B1D55283A006FCBF8 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				14E53A5E1D551E6B006FCBF8 /* AcceptanceTests.m */,
-				14E53A631D551E6B006FCBF8 /* SlimTables.h */,
-				14E53A641D551E6B006FCBF8 /* AcceptanceTests-Bridging-Header.h */,
-				14E53A651D551E6B006FCBF8 /* Empty.xib */,
+				14E53A731D5528ED006FCBF8 /* BotManagement */,
 			);
-			name = "Supporting Files";
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
-		14E53A601D551E6B006FCBF8 /* Fixtures */ = {
+		14E53A6C1D552875006FCBF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				14E53A611D551E6B006FCBF8 /* FixtureExample.swift */,
+				14E53A6D1D552875006FCBF8 /* AcceptanceTests-Bridging-Header.h */,
+				14E53A6E1D552875006FCBF8 /* AcceptanceTests.m */,
+				14E53A761D552933006FCBF8 /* Empty.xib */,
+				14E53A6F1D552875006FCBF8 /* SlimTables.h */,
 			);
-			name = Fixtures;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14E53A731D5528ED006FCBF8 /* BotManagement */ = {
+			isa = PBXGroup;
+			children = (
+				14E53A741D5528F8006FCBF8 /* ShouldAddABotWhenANewBranchIsFound.swift */,
+				14CC5CBA1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift */,
+				14CC5CBC1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift */,
+			);
+			path = BotManagement;
 			sourceTree = "<group>";
 		};
 		14E8575E1D46617000ADAC5E /* xcode_server */ = {
@@ -664,6 +734,8 @@
 		1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */,
+				14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */,
 				5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */,
 			);
 			name = Frameworks;
@@ -759,9 +831,11 @@
 				14E53A561D551E6B006FCBF8 /* Sources */,
 				14E53A571D551E6B006FCBF8 /* Frameworks */,
 				14E53A581D551E6B006FCBF8 /* Resources */,
-				14E53A591D551E6B006FCBF8 /* ShellScript */,
+				14E53A591D551E6B006FCBF8 /* FitNesse */,
 				A59FB1C6A8B6DD6F00FEA73C /* [CP] Embed Pods Frameworks */,
 				7A8776CEC9253BE5C37E6390 /* [CP] Copy Pods Resources */,
+				14EEB6071D5A52560074C72D /* Copy Carthage Frameworks */,
+				14EEB6081D5A52DA0074C72D /* Copy Carthage dSYM */,
 			);
 			buildRules = (
 			);
@@ -841,25 +915,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14E53A661D551E6B006FCBF8 /* Empty.xib in Resources */,
+				14E53A771D552933006FCBF8 /* Empty.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14E53A591D551E6B006FCBF8 /* ShellScript */ = {
+		14E53A591D551E6B006FCBF8 /* FitNesse */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = FitNesse;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Validate Project Build Settings\nif [ -z \"${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}\" ]; then\n   echo \"Missing expected OCSlimProject build settings. Running '$ pod update' may fix this problem\"\n   exit 1\nfi\n\n# Export Build Environment to Bundle Location\nENV_TARGET=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/env.sh\n\nfunction exportTestRunnerEnv {\n    mkdir -p \"$(dirname \"$ENV_TARGET\")\" && touch \"$ENV_TARGET\"\n    export | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)|(EXECUTABLE_PATH)' > $ENV_TARGET\n}\n\n# Write Test Runner Script To Project Root\nTESTRUNNER_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/RunTestsTargetWithSlimPort\nTESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\nfunction writeTestRunnerScript {\n    \n    if [ -f \"$TESTRUNNER_TARGET\" ]; then\n        rm $TESTRUNNER_TARGET\n    fi\n    \n    echo '#!/bin/sh' > $TESTRUNNER_TARGET\n    echo $TESTRUNNER_SOURCE '$1' >> $TESTRUNNER_TARGET\n    chmod +x $TESTRUNNER_TARGET\n    \n}\n\n# Symbolic Link LaunchFitnesse to Project Root\nLAUNCHFITNESSE_SCRIPTNAME=LaunchFitnesse\nLAUNCHFITNESSE_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\nLAUNCHFITNESSE_TARGET=${PROJECT_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\n\nfunction linkFitnesseScript {\n    \n    if [ -L $LAUNCHFITNESSE_TARGET ]; then\n        unlink $LAUNCHFITNESSE_TARGET\n    fi\n    \n    ln -s $LAUNCHFITNESSE_SOURCE $(dirname \"$LAUNCHFITNESSE_TARGET\")\n}\n\n\n###\n\nexportTestRunnerEnv\nwriteTestRunnerScript\nlinkFitnesseScript";
+		};
+		14EEB6071D5A52560074C72D /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/ObjectiveGit.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		5CADF7E42E68951D9E8AD523 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -962,6 +1052,7 @@
 				1456EE921D4E990A0044F458 /* FlexiJSON+StringLiteralConvertibleTests.swift in Sources */,
 				1456EE6F1D4E8BF80044F458 /* XCSPostBotsRequestTests.swift in Sources */,
 				1456EE741D4E8BF80044F458 /* XCSRequestTests.swift in Sources */,
+				144434531D5BA78300025F90 /* MockCommand.swift in Sources */,
 				14E857701D46673800ADAC5E /* MockNetwork.swift in Sources */,
 				1456EE931D4E990A0044F458 /* FlexiJSONTests.swift in Sources */,
 				1456EE701D4E8BF80044F458 /* Bot+JSONTransformableTests.swift in Sources */,
@@ -995,8 +1086,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14E53A621D551E6B006FCBF8 /* FixtureExample.swift in Sources */,
-				14E53A5F1D551E6B006FCBF8 /* AcceptanceTests.m in Sources */,
+				1444344A1D5BA63700025F90 /* BotCreator.swift in Sources */,
+				1444344D1D5BA67600025F90 /* BranchFetcher.swift in Sources */,
+				1444344C1D5BA66E00025F90 /* FileBranchDataStore.swift in Sources */,
+				144434471D5BA61300025F90 /* BranchesDataStore.swift in Sources */,
+				144434451D5BA5C800025F90 /* MockBotCreator.swift in Sources */,
+				144434501D5BA75F00025F90 /* FileBranchPersister.swift in Sources */,
+				14E53A751D5528F8006FCBF8 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
+				1444344B1D5BA63C00025F90 /* Command.swift in Sources */,
+				14CC5CBD1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift in Sources */,
+				14CC5CBB1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */,
+				144434491D5BA62400025F90 /* Branch.swift in Sources */,
+				144434551D5BA7B000025F90 /* MockBotDeleter.swift in Sources */,
+				144434481D5BA61900025F90 /* BotDeleter.swift in Sources */,
+				144434541D5BA78600025F90 /* MockCommand.swift in Sources */,
+				144434461D5BA60E00025F90 /* BranchSyncingInteractor.swift in Sources */,
+				14CC5CC11D591E6F00F1CA28 /* CommandLine.swift in Sources */,
+				14CC5CC01D591CBF00F1CA28 /* TestsHelpers.swift in Sources */,
+				14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */,
+				1444344F1D5BA6E200025F90 /* GitBranchFetcher.swift in Sources */,
+				1444344E1D5BA67900025F90 /* BranchPersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,6 +1355,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1268,7 +1381,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = codes.seanhenry.AcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "AcceptanceTests/AcceptanceTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AcceptanceTests/Supporting Files/AcceptanceTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1296,6 +1410,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1311,7 +1429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = codes.seanhenry.AcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "AcceptanceTests/AcceptanceTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AcceptanceTests/Supporting Files/AcceptanceTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
