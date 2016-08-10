@@ -4,3 +4,10 @@
 |feature          |1                        |
 |feature,develop  |2                        |
 
+!2 Should delete bot when an old branch is deleted
+|Should delete bot when an old branch is deleted |
+|old branches   |branches|number of deleted bots?|
+|feature        |        |1                      |
+|feature,develop|feature |1                      |
+|feature,develop|        |2                      |
+

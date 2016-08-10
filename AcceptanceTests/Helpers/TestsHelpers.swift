@@ -7,5 +7,5 @@
 import Foundation
 
 func commaSeparatedList(from string: String) -> [String] {
-    return string.componentsSeparatedByString(",")
+    return string.componentsSeparatedByString(",").filter { $0 != "" }
 }
