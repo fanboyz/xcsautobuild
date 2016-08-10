@@ -38,6 +38,7 @@
 		144434531D5BA78300025F90 /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434521D5BA78300025F90 /* MockCommand.swift */; };
 		144434541D5BA78600025F90 /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434521D5BA78300025F90 /* MockCommand.swift */; };
 		144434551D5BA7B000025F90 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE3A1D4E650C0044F458 /* MockBotDeleter.swift */; };
+		144434571D5BDB8900025F90 /* TwoRemoteGitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */; };
 		1456EE271D4E55050044F458 /* BotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE261D4E55050044F458 /* BotDeleter.swift */; };
 		1456EE371D4E62F10044F458 /* BotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE361D4E62F10044F458 /* BotsFetcher.swift */; };
 		1456EE3B1D4E650C0044F458 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE3A1D4E650C0044F458 /* MockBotDeleter.swift */; };
@@ -148,6 +149,7 @@
 		143DA7A31D46860C0019FDFA /* FlexiJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexiJSON.swift; sourceTree = "<group>"; };
 		143DA7A41D46860C0019FDFA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144434521D5BA78300025F90 /* MockCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCommand.swift; sourceTree = "<group>"; };
+		144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoRemoteGitBuilder.swift; sourceTree = "<group>"; };
 		1456EE261D4E55050044F458 /* BotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDeleter.swift; sourceTree = "<group>"; };
 		1456EE361D4E62F10044F458 /* BotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotsFetcher.swift; sourceTree = "<group>"; };
 		1456EE3A1D4E650C0044F458 /* MockBotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotDeleter.swift; sourceTree = "<group>"; };
@@ -609,6 +611,7 @@
 			isa = PBXGroup;
 			children = (
 				14CC5CBF1D591CBF00F1CA28 /* TestsHelpers.swift */,
+				144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1103,6 +1106,7 @@
 				144434461D5BA60E00025F90 /* BranchSyncingInteractor.swift in Sources */,
 				14CC5CC11D591E6F00F1CA28 /* CommandLine.swift in Sources */,
 				14CC5CC01D591CBF00F1CA28 /* TestsHelpers.swift in Sources */,
+				144434571D5BDB8900025F90 /* TwoRemoteGitBuilder.swift in Sources */,
 				14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */,
 				1444344F1D5BA6E200025F90 /* GitBranchFetcher.swift in Sources */,
 				1444344E1D5BA67900025F90 /* BranchPersister.swift in Sources */,

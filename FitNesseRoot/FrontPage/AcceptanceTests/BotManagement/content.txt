@@ -1,0 +1,6 @@
+!2 Should add a bot when a new branch is found
+|Should add a bot when a new branch is found|
+|branches         |number of created bots?  |
+|feature          |1                        |
+|feature,develop  |2                        |
+
