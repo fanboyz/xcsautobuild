@@ -33,6 +33,7 @@ class TwoRemoteGitBuilder {
     }
 
     func add(branch branch: String) {
+        guard try! remoteRepo.localBranches().indexOf({ $0.shortName == branch }) == nil else { return }
         let currentBranch = try! remoteRepo.currentBranch()
         try! remoteRepo.createBranchNamed(branch, fromOID: currentBranch.OID!, message: nil)
     }
