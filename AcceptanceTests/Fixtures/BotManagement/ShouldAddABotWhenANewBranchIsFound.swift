@@ -43,7 +43,7 @@ class ShouldAddABotWhenANewBranchIsFound: NSObject, SlimDecisionTable {
         git = TwoRemoteGitBuilder()
         branchesArray.forEach { git.add(branch: $0) }
         mockedBotCreator = MockBotCreator()
-        let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(commandLine: CommandLine(directory: git.localURL.path!)), branchPersister: FileBranchPersister(file: testDataStoreFile))
+        let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: FileBranchPersister(file: testDataStoreFile))
         interactor = BranchSyncingInteractor(branchesDataStore: dataStore, botCreator: mockedBotCreator, botDeleter: MockBotDeleter())
     }
 }

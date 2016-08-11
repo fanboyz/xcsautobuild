@@ -50,7 +50,7 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
         mockedBotDeleter = MockBotDeleter()
         let persister = FileBranchPersister(file: testDataStoreFile)
         persister.save(oldBranchesArray)
-        let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(commandLine: CommandLine(directory: git.localURL.path!)), branchPersister: persister)
+        let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: persister)
         interactor = BranchSyncingInteractor(branchesDataStore: dataStore, botCreator: MockBotCreator(), botDeleter: mockedBotDeleter)
     }
 }

@@ -5,25 +5,27 @@
 //
 
 import Foundation
+import ObjectiveGit
 
 class GitBranchFetcher: BranchFetcher {
 
     private let remoteName = "origin"
     private let ciServerName = "xcs"
     private let commandLine: CommandLine
+    private let repo: GTRepository
 
-    init(commandLine: CommandLine) {
-        self.commandLine = commandLine
+    init?(directory: String) {
+        commandLine = CommandLine(directory: directory)
+        repo = try! GTRepository(URL: NSURL(fileURLWithPath: directory))
     }
 
     func getRemoteBranchNames() -> [String] {
-        gitCommand("fetch --prune")
+        guard let remote = try? GTRemote(name: remoteName, inRepository: repo) else { return [] }
+        try! repo.fetchRemote(remote, withOptions: [GTRepositoryRemoteOptionsFetchPrune: true], progress: nil)
         copyRemoteBranchesToCIRemote()
-        let branches = gitCommand("branch -r")
-        return branches.componentsSeparatedByString("\n")
-            .map(byTrimmingWhitespace)
-            .filter(isCIServerBranch)
-            .map(byTimmingServerName)
+        let branches = try! repo.remoteBranches()
+        return branches.filter { $0.remoteName == ciServerName }
+                       .flatMap { $0.shortName }
     }
 
     private func copyRemoteBranchesToCIRemote() {
@@ -32,17 +34,5 @@ class GitBranchFetcher: BranchFetcher {
 
     private func gitCommand(arguments: String) -> String {
         return commandLine.execute("/usr/bin/git \(arguments)")
-    }
-
-    private func byTrimmingWhitespace(branch: String) -> String {
-        return branch.stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
-    }
-
-    private func isCIServerBranch(branch: String) -> Bool {
-        return branch.hasPrefix(ciServerName)
-    }
-
-    private func byTimmingServerName(branch: String) -> String {
-        return branch.stringByReplacingCharactersInRange(branch.startIndex...branch.startIndex.advancedBy(ciServerName.characters.count), withString: "")
     }
 }
