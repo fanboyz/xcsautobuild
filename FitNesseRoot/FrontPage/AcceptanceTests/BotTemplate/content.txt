@@ -1,0 +1,17 @@
+!2 Should create template from bot name
+| Should create template from bot name |
+| bot name | available bots | created template? |
+| nonexistant | bot1 | no |
+| bot1 | bot1 | yes |
+| bot2 | bot1,bot2 | yes |
+
+!2 Should persist bot template
+| Should persist bot template |
+| bot name | available bots | did persist? |
+| bot1 | bot1 | yes |
+
+!2 Should overwrite existing bot template
+| Should overwrite existing bot template |
+| bot name | available bots | did overwrite template? |
+| bot1 | bot1 | yes |
+| bot2 | bot1 | no |

@@ -41,7 +41,7 @@ private func createBot() -> Bot {
         triggers: [before, after],
         sourceControlBlueprint: blueprint
     )
-    return Bot(name: "I am a bot", configuration: configuration)
+    return Bot(name: "bot1", configuration: configuration)
 }
 
 let testRepoFingerprint = "93138D460F513226B44C11D1DC747F2BE36A21CE"
@@ -50,6 +50,8 @@ let testBot = createBot()
 let testEndpoint = "https://seans-macbook-pro-2.local:20343/api/"
 let testRequest = HTTPRequest(url: "https://test.com", method: .get, jsonBody: [:])
 let testBranch = Branch(name: "test")
+let testBotTemplate = BotTemplate(name: testBot.name, data: FlexiJSON(dictionary: testBot.toJSON()).data!)
+let testData = "data".dataUsingEncoding(NSUTF8StringEncoding)!
 
 func Assert(@autoclosure expression: () throws -> BooleanType?, @autoclosure _ message: () -> String = "", file: StaticString = #file, line: UInt = #line) {
     XCTAssert(try expression() ?? false, message, file: file, line: line)
