@@ -7,10 +7,10 @@
 import Foundation
 
 typealias URL = String
-enum HTTPMethod {
-    case get
-    case post
-    case delete
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case delete = "DELETE"
 }
 
 struct HTTPRequest: Equatable {

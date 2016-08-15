@@ -122,6 +122,11 @@
 		1484B5821D60B46000319088 /* FlexiJSON+SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A01D46860C0019FDFA /* FlexiJSON+SequenceType.swift */; };
 		1484B5831D60B46000319088 /* FlexiJSON+StringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A11D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift */; };
 		1484B5841D60B46000319088 /* FlexiJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A31D46860C0019FDFA /* FlexiJSON.swift */; };
+		1484B5871D62370900319088 /* NSURLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B5861D62370900319088 /* NSURLSessionNetwork.swift */; };
+		1484B5881D62370900319088 /* NSURLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B5861D62370900319088 /* NSURLSessionNetwork.swift */; };
+		1484B58B1D62372200319088 /* NSURLSessionNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B58A1D62372200319088 /* NSURLSessionNetworkTests.swift */; };
+		1484B58D1D62383400319088 /* MockNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B58C1D62383400319088 /* MockNSURLSession.swift */; };
+		1484B58F1D623A2200319088 /* MockNSURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B58E1D623A2200319088 /* MockNSURLSessionDataTask.swift */; };
 		14CC5CBB1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBA1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift */; };
 		14CC5CBD1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBC1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift */; };
 		14CC5CC01D591CBF00F1CA28 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBF1D591CBF00F1CA28 /* TestHelpers.swift */; };
@@ -282,6 +287,10 @@
 		1484B5721D60B05E00319088 /* BotTemplateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateTests.swift; sourceTree = "<group>"; };
 		1484B5741D60B35100319088 /* MockDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		1484B5761D60B37B00319088 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		1484B5861D62370900319088 /* NSURLSessionNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetwork.swift; sourceTree = "<group>"; };
+		1484B58A1D62372200319088 /* NSURLSessionNetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetworkTests.swift; sourceTree = "<group>"; };
+		1484B58C1D62383400319088 /* MockNSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSession.swift; sourceTree = "<group>"; };
+		1484B58E1D623A2200319088 /* MockNSURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSessionDataTask.swift; sourceTree = "<group>"; };
 		14CC5CBA1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldDeleteBotWhenAnOldBranchIsDeleted.swift; sourceTree = "<group>"; };
 		14CC5CBC1D59194300F1CA28 /* ShouldPersistBranchesBetweenLaunches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldPersistBranchesBetweenLaunches.swift; sourceTree = "<group>"; };
 		14CC5CBF1D591CBF00F1CA28 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
@@ -390,6 +399,8 @@
 				144434521D5BA78300025F90 /* MockCommand.swift */,
 				1484B56F1D60AEB400319088 /* MockNSData.swift */,
 				1484B5741D60B35100319088 /* MockDataLoader.swift */,
+				1484B58C1D62383400319088 /* MockNSURLSession.swift */,
+				1484B58E1D623A2200319088 /* MockNSURLSessionDataTask.swift */,
 			);
 			path = foundation;
 			sourceTree = "<group>";
@@ -775,6 +786,22 @@
 			path = entity;
 			sourceTree = "<group>";
 		};
+		1484B5851D6236FE00319088 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				1484B5861D62370900319088 /* NSURLSessionNetwork.swift */,
+			);
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
+		1484B5891D62371900319088 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				1484B58A1D62372200319088 /* NSURLSessionNetworkTests.swift */,
+			);
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
 		14CC5CBE1D591C9F00F1CA28 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -890,6 +917,7 @@
 		14E857651D46623C00ADAC5E /* network */ = {
 			isa = PBXGroup;
 			children = (
+				1484B5851D6236FE00319088 /* NSURLSession */,
 				14E857671D4662D300ADAC5E /* Network.swift */,
 				14E8576B1D4664B800ADAC5E /* HTTPRequest.swift */,
 			);
@@ -899,6 +927,7 @@
 		14E857661D46624B00ADAC5E /* network */ = {
 			isa = PBXGroup;
 			children = (
+				1484B5891D62371900319088 /* NSURLSession */,
 				14E857691D46642600ADAC5E /* HTTPRequestTests.swift */,
 				14E8576F1D46673800ADAC5E /* MockNetwork.swift */,
 			);
@@ -1210,6 +1239,7 @@
 				143DA7AA1D46860C0019FDFA /* FlexiJSON+Fragment.swift in Sources */,
 				143DA7A81D46860C0019FDFA /* FlexiJSON+Either.swift in Sources */,
 				1459B3B01D3EBE9D004D6FF9 /* AppDelegate.swift in Sources */,
+				1484B5871D62370900319088 /* NSURLSessionNetwork.swift in Sources */,
 				143DA7A51D46860C0019FDFA /* FlexiJSON+ArrayLiteralConvertible.swift in Sources */,
 				143DA7A91D46860C0019FDFA /* FlexiJSON+FloatLiteralConvertible.swift in Sources */,
 				143DA7A61D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift in Sources */,
@@ -1254,6 +1284,8 @@
 				1484B55C1D609FCF00319088 /* MockBotTemplatesFetcher.swift in Sources */,
 				1456EE721D4E8BF80044F458 /* MockXCSRequest.swift in Sources */,
 				1456EE8F1D4E990A0044F458 /* FlexiJSON+NilLiteralConvertibleTests.swift in Sources */,
+				1484B58F1D623A2200319088 /* MockNSURLSessionDataTask.swift in Sources */,
+				1484B58B1D62372200319088 /* NSURLSessionNetworkTests.swift in Sources */,
 				14578CA01D4960CB0089DC7F /* MockBotCreator.swift in Sources */,
 				142E543E1D3EC8DF004648D6 /* BranchTests.swift in Sources */,
 				1484B56C1D60AD2B00319088 /* FileBotTemplatePersisterTests.swift in Sources */,
@@ -1269,6 +1301,7 @@
 				14E8576A1D46642600ADAC5E /* HTTPRequestTests.swift in Sources */,
 				14E8575B1D465E8800ADAC5E /* MockNewBranchesFetcher.swift in Sources */,
 				1456EE711D4E8BF80044F458 /* AnyXCSRequestTests.swift in Sources */,
+				1484B58D1D62383400319088 /* MockNSURLSession.swift in Sources */,
 				14E53A551D5517FC006FCBF8 /* MockBranchPersister.swift in Sources */,
 				1484B5701D60AEB400319088 /* MockNSData.swift in Sources */,
 			);
@@ -1285,6 +1318,7 @@
 				1484B57F1D60B46000319088 /* FlexiJSON+IntegerLiteralConvertible.swift in Sources */,
 				1444344C1D5BA66E00025F90 /* FileBranchDataStore.swift in Sources */,
 				1484B57B1D60B46000319088 /* FlexiJSON+DictionaryLiteralConvertible.swift in Sources */,
+				1484B5881D62370900319088 /* NSURLSessionNetwork.swift in Sources */,
 				144434471D5BA61300025F90 /* BranchesDataStore.swift in Sources */,
 				144434451D5BA5C800025F90 /* MockBotCreator.swift in Sources */,
 				144434501D5BA75F00025F90 /* FileBranchPersister.swift in Sources */,
