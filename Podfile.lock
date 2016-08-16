@@ -2,14 +2,32 @@ PODS:
   - cslim (1.1.3)
   - OCSlimProject (1.2):
     - cslim
+  - OHHTTPStubs (5.1.0):
+    - OHHTTPStubs/Default (= 5.1.0)
+  - OHHTTPStubs/Core (5.1.0)
+  - OHHTTPStubs/Default (5.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.1.0)
+  - OHHTTPStubs/Swift (5.1.0):
+    - OHHTTPStubs/Core
 
 DEPENDENCIES:
   - OCSlimProject (= 1.2)
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
 
 SPEC CHECKSUMS:
   cslim: acd60006b3d87c180f008f7c9074bd583c345f98
   OCSlimProject: 066615f2932b2073c537f2bfecd5d1c83fd46452
+  OHHTTPStubs: 592f74439d2d72615115cf99a954237a3fbe26e5
 
-PODFILE CHECKSUM: 016d310e2bd30097722af7cce3ce80f4971e2df5
+PODFILE CHECKSUM: 00535088050d4958c9943c5159c8ecb4215dde1b
 
 COCOAPODS: 1.0.1

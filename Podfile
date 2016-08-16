@@ -4,4 +4,6 @@
 target 'AcceptanceTests' do
   use_frameworks!
   pod "OCSlimProject", "1.2"
+  pod "OHHTTPStubs"
+  pod "OHHTTPStubs/Swift"
 end

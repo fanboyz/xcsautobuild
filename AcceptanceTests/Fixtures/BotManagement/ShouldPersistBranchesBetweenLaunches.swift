@@ -9,33 +9,41 @@ import Foundation
 @objc(ShouldPersistBranchesBetweenLaunches)
 class ShouldPersistBranchesBetweenLaunches: NSObject, SlimDecisionTable {
 
+    // MARK: - Input
     var savedBranches: String!
     var branches: String!
-    var numberOfCreatedBots: NSNumber!
-    var numberOfDeletedBots: NSNumber!
-
     var savedBranchesArray: [String]! {
         return commaSeparatedList(from: savedBranches)
     }
-
     var branchesArray: [String]! {
         return commaSeparatedList(from: branches)
     }
-
-    var git: TwoRemoteGitBuilder!
-    var mockedBotDeleter: MockBotDeleter!
-    var mockedBotCreator: MockBotCreator!
-    var interactor: BranchSyncingInteractor!
-
-    var testDataStoreFile: String {
-        return NSTemporaryDirectory() + "data_store"
+    var deletedBranchesIndicies: [String] {
+        return savedBranchesArray.enumerate().flatMap { branchesArray.contains($0.1) ? nil : String($0.0) }
+    }
+    var savedBranchNames: [String] {
+        return savedBranchesArray.map({ api.branchNameToBotName($0) })
+    }
+    var savedBranchIDs: [String] {
+        return savedBranchesArray.enumerate().map { String($0.0) }
     }
 
+    // MARK: - Output
+    var numberOfCreatedBots: NSNumber!
+    var numberOfDeletedBots: NSNumber!
+
+    // MARK: - Test
+    var network: MockNetwork!
+    var git: TwoRemoteGitBuilder!
+    var interactor: BranchSyncingInteractor!
+
     func reset() {
+        network = nil
         branches = nil
+        savedBranches = nil
         numberOfDeletedBots = nil
+        numberOfCreatedBots = nil
         git = nil
-        mockedBotDeleter = nil
         interactor = nil
         _ = try? NSFileManager.defaultManager().removeItemAtPath(testDataStoreFile)
     }
@@ -43,18 +51,21 @@ class ShouldPersistBranchesBetweenLaunches: NSObject, SlimDecisionTable {
     func execute() {
         setUp()
         interactor.execute()
-        numberOfCreatedBots = mockedBotCreator.invokedBranches.count
-        numberOfDeletedBots = mockedBotDeleter.invokedBranches.count
+        wait()
+        numberOfCreatedBots = network.createBotCount
+        numberOfDeletedBots = network.deleteBotCount
     }
 
     private func setUp() {
+        network = MockNetwork()
+        network.expectCreateBot()
+        network.stubGetBots(withNames: savedBranchNames, ids: savedBranchIDs)
+        deletedBranchesIndicies.forEach { network.expectDeleteBot(id: $0) }
         git = TwoRemoteGitBuilder()
         branchesArray.forEach { git.add(branch: $0) }
-        mockedBotCreator = MockBotCreator()
-        mockedBotDeleter = MockBotDeleter()
         let persister = FileBranchPersister(file: testDataStoreFile)
         persister.save(savedBranchesArray)
         let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: persister)
-        interactor = BranchSyncingInteractor(branchesDataStore: dataStore, botCreator: mockedBotCreator, botDeleter: mockedBotDeleter)
+        interactor = BranchSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api)
     }
 }

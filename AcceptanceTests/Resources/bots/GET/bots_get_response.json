@@ -1,0 +1,60 @@
+{
+    "count": 1,
+    "results": [
+                {
+                "_id": "6139a72b95fdeec94b49ec0a1f00191a",
+                "_rev": "9-1a7225e512247695659d68458a7213a3",
+                "group": {
+                "name": "59D49C8B-F537-45D6-A3D8-4DD442234AD8"
+                },
+                "configuration": {
+                "sourceControlBlueprint": {
+                "DVTSourceControlWorkspaceBlueprintLocationsKey": {
+                "C214B4F4246A49E51CAE71AA5C1349A716302EB4": {
+                "DVTSourceControlBranchIdentifierKey": "master",
+                "DVTSourceControlBranchOptionsKey": 1,
+                "DVTSourceControlWorkspaceBlueprintLocationTypeKey": "DVTSourceControlBranch"
+                }
+                },
+                "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey": "C214B4F4246A49E51CAE71AA5C1349A716302EB4",
+                "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey": {},
+                "DVTSourceControlWorkspaceBlueprintRemoteRepositoryAuthenticationStrategiesKey": {
+                "C214B4F4246A49E51CAE71AA5C1349A716302EB4": {
+                "DVTSourceControlWorkspaceBlueprintRemoteRepositoryAuthenticationTypeKey": "DVTSourceControlBasicAuthenticationStrategy"
+                }
+                },
+                "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey": {},
+                "DVTSourceControlWorkspaceBlueprintIdentifierKey": "BE8E81BF-8B79-4FFF-AC68-63C5576E0B16",
+                "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey": {
+                "C214B4F4246A49E51CAE71AA5C1349A716302EB4": "xcsautobuild"
+                },
+                "DVTSourceControlWorkspaceBlueprintNameKey": "xcsautobuild",
+                "DVTSourceControlWorkspaceBlueprintVersion": 204,
+                "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey": "xcsautobuild.xcodeproj",
+                "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey": [
+                                                                            {
+                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositoryEnforceTrustCertFingerprintKey": true,
+                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey": "https://seans-macbook-pro-2.local/git/xcsautobuild.git",
+                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositoryTrustedCertFingerprintKey": "93138D460F513226B44C11D1DC747F2BE36A21CE",
+                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey": "C214B4F4246A49E51CAE71AA5C1349A716302EB4",
+                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey": "com.apple.dt.Xcode.sourcecontrol.Git"
+                                                                            }
+                                                                            ]
+                },
+                "triggers": [],
+                "exportsProductFromArchive": true,
+                "builtFromClean": 0,
+                "performsAnalyzeAction": true,
+                "periodicScheduleInterval": 0,
+                "performsTestAction": false,
+                "schemeName": "xcsautobuild_macOS",
+                "scheduleType": 2
+                },
+                "name": "xcsautobuild [master]",
+                "sourceControlBlueprintIdentifier": "B2D744BF-D07B-4A79-AF82-C2C5509B7ECE",
+                "integration_counter": 1,
+                "doc_type": "bot",
+                "tinyID": "A33FF82"
+                }
+                ]
+}
