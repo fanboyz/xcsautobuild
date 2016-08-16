@@ -5,7 +5,6 @@
 //
 
 import Foundation
-import XCTest
 @testable import xcsautobuild
 
 private func createBot() -> Bot {
@@ -52,8 +51,4 @@ let testRequest = HTTPRequest(url: testURL.absoluteString, method: .get, jsonBod
 let testBranch = Branch(name: "test")
 let testBotTemplate = BotTemplate(name: testBot.name, data: FlexiJSON(dictionary: testBot.toJSON()).data!)
 let testData = "data".dataUsingEncoding(NSUTF8StringEncoding)!
-
-func Assert(@autoclosure expression: () throws -> BooleanType?, @autoclosure _ message: () -> String = "", file: StaticString = #file, line: UInt = #line) {
-    XCTAssert(try expression() ?? false, message, file: file, line: line)
-}
 let testURL = NSURL(string: "https://test.com")!
