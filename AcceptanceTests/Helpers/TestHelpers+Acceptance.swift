@@ -26,6 +26,7 @@ let testHost = "seans-macbook-pro-2.local"
 let testBundle = NSBundle(forClass: testBundleClass)
 let testBotID = "6139a72b95fdeec94b49ec0a1f00191a"
 let testDataStoreFile = NSTemporaryDirectory() + "data_store"
+let testTemplateFile = NSTemporaryDirectory() + "templates"
 
 func waitUntil(@autoclosure condition: () -> Bool) {
     while !condition() {

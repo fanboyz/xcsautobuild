@@ -45,6 +45,14 @@ class MockNetwork {
             return OHHTTPStubsResponse(data: json.data!, statusCode: 200, headers: nil)
         }
     }
+
+    func stubGetBot(withID id: String, name: String) {
+        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { request in
+            var json = FlexiJSON(data: load("bot_get_response", "json"))
+            json["name"] = FlexiJSON(string: name)
+            return OHHTTPStubsResponse(data: json.data!, statusCode: 200, headers: nil)
+        }
+    }
 }
 
 func empty(statusCode: Int32) -> OHHTTPStubsResponse {
