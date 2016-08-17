@@ -12,15 +12,18 @@ class XcodeServerBotAPI: BotCreator, BotDeleter {
     private let createBotRequest: AnyXCSRequest<Bot, Void>
     private let getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
+    private let getBotRequest: AnyXCSRequest<String, NSData>
 
     init(
         createBotRequest: AnyXCSRequest<Bot, Void>,
         getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>,
-        deleteBotRequest: AnyXCSRequest<String, Void>
+        deleteBotRequest: AnyXCSRequest<String, Void>,
+        getBotRequest: AnyXCSRequest<String, NSData>
     ) {
         self.createBotRequest = createBotRequest
         self.getBotsRequest = getBotsRequest
         self.deleteBotRequest = deleteBotRequest
+        self.getBotRequest = getBotRequest
     }
 
     func createBot(forBranch branch: Branch) {
@@ -53,7 +56,27 @@ class XcodeServerBotAPI: BotCreator, BotDeleter {
         return Bot(name: branchNameToBotName(branch), configuration: configuration)
     }
 
-    private func branchNameToBotName(branch: String) -> String {
+    func branchNameToBotName(branch: String) -> String {
         return "xcsautobuild [\(branch)]"
+    }
+}
+
+extension XcodeServerBotAPI: BotTemplatesFetcher {
+
+    func fetchBotTemplates(completion: ([BotTemplate]) -> ()) {
+        getBots { [unowned self] bots in
+            let templates = self.fetchTemplates(forRemoteBots: bots)
+            completion(templates)
+        }
+    }
+
+    private func fetchTemplates(forRemoteBots bots: [RemoteBot]) -> [BotTemplate] {
+        return bots.flatMap { fetchTemplate(forRemoteBot: $0) }
+    }
+
+    private func fetchTemplate(forRemoteBot bot: RemoteBot) -> BotTemplate? {
+        guard let data = getBotRequest.send(bot.id),
+                  name = FlexiJSON(data: data)["name"].string else { return nil }
+        return BotTemplate(name: name, data: data)
     }
 }

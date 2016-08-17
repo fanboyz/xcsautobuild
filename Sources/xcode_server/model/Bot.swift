@@ -8,7 +8,7 @@ import Foundation
 
 struct Bot {
 
-    let name: String
+    var name: String
     let configuration: Configuration
 
     struct Configuration {

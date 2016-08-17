@@ -36,4 +36,11 @@ class MockXCSRequest<RequestDataType, ResponseType>: XCSRequest {
         invokedData = data
         completion(stubbedResponse)
     }
+
+    func send(data: RequestDataType) -> ResponseType? {
+        didSend = true
+        didSendCount += 1
+        invokedData = data
+        return stubbedResponse
+    }
 }
