@@ -72,7 +72,7 @@ extension CommandLine {
     }
 
     private func removeTestDirectory() {
-        execute("/bin/rm -rf \(CommandLine.tempDirectory)\(CommandLine.testDirectoryName)")
+        _ = try? NSFileManager.defaultManager().removeItemAtPath("\(CommandLine.tempDirectory)\(CommandLine.testDirectoryName)")
     }
 
     private func createTestDirectory() {

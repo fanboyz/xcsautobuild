@@ -15,7 +15,7 @@ class MockNetwork {
 
     var createBotCount = 0
     func expectCreateBot() {
-        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots")) { _ in
+        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots")) { [unowned self] _ in
             self.createBotCount += 1
             return json("bots_post_response")
         }
@@ -23,7 +23,7 @@ class MockNetwork {
 
     var deleteBotCount = 0
     func expectDeleteBot(id id: String) {
-        stub(isHost(testHost) && isMethodDELETE() && isPath("/api/bots/\(id)")) { _ in
+        stub(isHost(testHost) && isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
             self.deleteBotCount += 1
             return empty(204)
         }

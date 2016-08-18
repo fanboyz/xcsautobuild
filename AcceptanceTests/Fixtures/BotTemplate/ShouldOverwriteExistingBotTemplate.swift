@@ -1,13 +1,13 @@
 //
-//  ShouldPersistBotTemplate.swift
+//  ShouldOverwriteExistingBotTemplate.swift
 //
 //
 //
 
 import Foundation
 
-@objc(ShouldPersistBotTemplate)
-class ShouldPersistBotTemplate: NSObject, SlimDecisionTable {
+@objc(ShouldOverwriteExistingBotTemplate)
+class ShouldOverwriteExistingBotTemplate: NSObject, SlimDecisionTable {
 
     // MARK: - inputs
     var botName: String!
@@ -17,11 +17,12 @@ class ShouldPersistBotTemplate: NSObject, SlimDecisionTable {
     }
 
     // MARK: - outputs
-    var didPersist: String!
+    var didOverwriteTemplate: String!
 
     // MARK: - test
     var interactor: BotTemplateCreatingInteractor!
     var network: MockNetwork!
+    var finished = false
     var persister: FileBotTemplatePersister!
 
     func reset() {
@@ -29,7 +30,7 @@ class ShouldPersistBotTemplate: NSObject, SlimDecisionTable {
         availableBots = nil
         network = nil
         persister = nil
-        didPersist = nil
+        didOverwriteTemplate = nil
         _ = try? NSFileManager.defaultManager().removeItemAtPath(testTemplateFile)
     }
 
@@ -38,21 +39,22 @@ class ShouldPersistBotTemplate: NSObject, SlimDecisionTable {
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }
         persister = FileBotTemplatePersister(file: testTemplateFile)
+        persister.save(testBotTemplate)
         interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateSaver: persister)
         interactor.botName = botName
         interactor.output = self
         interactor.execute()
-        waitUntil(didPersist != nil)
+        waitUntil(didOverwriteTemplate != nil)
     }
 }
 
-extension ShouldPersistBotTemplate: BotTemplateCreatingInteractorOutput {
+extension ShouldOverwriteExistingBotTemplate: BotTemplateCreatingInteractorOutput {
 
     func didCreateTemplate() {
-        didPersist = persister.load() != nil ? yes : no
+        didOverwriteTemplate = yes
     }
 
     func didFailToFindTemplate() {
-        didPersist = no
+        didOverwriteTemplate = no
     }
 }
