@@ -1,12 +1,12 @@
 //
-//  BranchSyncingInteractor.swift
+//  BotSyncingInteractor.swift
 //
 //
 //
 
 import Foundation
 
-class BranchSyncingInteractor: Command {
+class BotSyncingInteractor: Command {
 
     private let branchesDataStore: BranchesDataStore
     private let botCreator: BotCreator

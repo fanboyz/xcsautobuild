@@ -1,5 +1,5 @@
 //
-//  BranchSyncingInteractorTests.swift
+//  BotSyncingInteractorTests.swift
 //
 //
 //
@@ -7,9 +7,9 @@
 import XCTest
 @testable import xcsautobuild
 
-class BranchSyncingInteractorTests: XCTestCase {
+class BotSyncingInteractorTests: XCTestCase {
     
-    var interactor: BranchSyncingInteractor!
+    var interactor: BotSyncingInteractor!
     var mockedDataStore: MockBranchesDataStore!
     var mockedBotCreator: MockBotCreator!
     var mockedBotDeleter: MockBotDeleter!
@@ -19,7 +19,7 @@ class BranchSyncingInteractorTests: XCTestCase {
         mockedDataStore = MockBranchesDataStore()
         mockedBotCreator = MockBotCreator()
         mockedBotDeleter = MockBotDeleter()
-        interactor = BranchSyncingInteractor(branchesDataStore: mockedDataStore, botCreator: mockedBotCreator, botDeleter: mockedBotDeleter)
+        interactor = BotSyncingInteractor(branchesDataStore: mockedDataStore, botCreator: mockedBotCreator, botDeleter: mockedBotDeleter)
     }
     
     // MARK: - execute

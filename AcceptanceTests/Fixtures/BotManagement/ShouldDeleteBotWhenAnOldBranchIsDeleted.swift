@@ -33,7 +33,7 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
 
     // MARK: - Test
     var git: TwoRemoteGitBuilder!
-    var interactor: BranchSyncingInteractor!
+    var interactor: BotSyncingInteractor!
     var network: MockNetwork!
 
     func reset() {
@@ -62,6 +62,6 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
         let persister = FileBranchPersister(file: testDataStoreFile)
         persister.save(oldBranchesArray)
         let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: persister)
-        interactor = BranchSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api)
+        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api)
     }
 }
