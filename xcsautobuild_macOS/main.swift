@@ -12,7 +12,8 @@ class TestAppDelegate: NSResponder, NSApplicationDelegate {
 }
 
 autoreleasepool {
-    NSApplication.sharedApplication()
-    NSApp.delegate = NSProcessInfo.processInfo().environment["TEST"] != nil ? TestAppDelegate() : AppDelegate()
-    NSApplicationMain(Process.argc, Process.unsafeArgv)
+    let application = NSApplication.sharedApplication()
+    let delegate: NSApplicationDelegate = NSProcessInfo.processInfo().environment["TEST"] != nil ? TestAppDelegate() : AppDelegate()
+    application.delegate = delegate
+    application.run()
 }

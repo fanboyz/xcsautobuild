@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -667,7 +668,76 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="oEo-mP-dD0" customClass="TextFieldBotTemplateView" customModule="xcsautobuild" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7p-cf-Vyf">
+                                        <rect key="frame" x="8" y="240" width="464" height="22"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-6t-Q2m">
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="22"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="E.g. My Template Bot" drawsBackground="YES" id="cX9-PT-EgM">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <action selector="didClickActionButton:" target="oEo-mP-dD0" id="cbM-uG-rse"/>
+                                                </connections>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-5S-P48">
+                                                <rect key="frame" x="370" y="-6.5" width="75" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Fetch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55o-Cy-ApA">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="didClickActionButton:" target="oEo-mP-dD0" id="bAY-BT-Z0O"/>
+                                                </connections>
+                                            </button>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jZd-tC-bkG">
+                                                <rect key="frame" x="445" y="2.5" width="21" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✅" id="v4f-vL-Rdf">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="J7p-cf-Vyf" secondAttribute="trailing" constant="8" id="H1Y-S0-ugg"/>
+                                    <constraint firstItem="J7p-cf-Vyf" firstAttribute="top" secondItem="oEo-mP-dD0" secondAttribute="top" constant="8" id="OSd-hA-HPS"/>
+                                    <constraint firstItem="J7p-cf-Vyf" firstAttribute="leading" secondItem="oEo-mP-dD0" secondAttribute="leading" constant="8" id="VOk-fd-bnc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="botNameField" destination="ogq-6t-Q2m" id="mLk-uB-gGd"/>
+                                    <outlet property="resultLabel" destination="jZd-tC-bkG" id="Lfp-ty-wBO"/>
+                                </connections>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="oEo-mP-dD0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="aC4-So-quC"/>
+                            <constraint firstAttribute="trailing" secondItem="oEo-mP-dD0" secondAttribute="trailing" id="bF0-mt-uUI"/>
+                            <constraint firstItem="oEo-mP-dD0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="jgh-Sl-r3w"/>
+                            <constraint firstAttribute="bottom" secondItem="oEo-mP-dD0" secondAttribute="bottom" id="lBj-nu-fA1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="templateView" destination="oEo-mP-dD0" id="eVG-u3-wAS"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

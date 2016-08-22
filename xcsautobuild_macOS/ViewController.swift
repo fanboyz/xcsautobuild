@@ -9,4 +9,5 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    @IBOutlet var templateView: TextFieldBotTemplateView!
 }
