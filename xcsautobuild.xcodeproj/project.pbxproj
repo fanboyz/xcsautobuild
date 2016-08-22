@@ -28,6 +28,15 @@
 		143EE44E1D6B71C2002A2436 /* TextFieldBotTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE44D1D6B71C2002A2436 /* TextFieldBotTemplateView.swift */; };
 		143EE4501D6B75D1002A2436 /* BotTemplateLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE44F1D6B75D1002A2436 /* BotTemplateLauncher.swift */; };
 		143EE4521D6B769C002A2436 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4511D6B769C002A2436 /* Constants.swift */; };
+		143EE4591D6B84FB002A2436 /* MainThreadCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */; };
+		143EE45B1D6B851E002A2436 /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45A1D6B851E002A2436 /* GCDHelper.swift */; };
+		143EE45E1D6B8543002A2436 /* GCDHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */; };
+		143EE4601D6B85AA002A2436 /* MockMainThreadCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */; };
+		143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */; };
+		143EE4631D6B90D6002A2436 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4511D6B769C002A2436 /* Constants.swift */; };
+		143EE4641D6B90E9002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */; };
+		143EE4651D6B90EF002A2436 /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45A1D6B851E002A2436 /* GCDHelper.swift */; };
+		143EE4661D6B90F2002A2436 /* MainThreadCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */; };
 		144434581D5CF69B00025F90 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		144434591D5CF69B00025F90 /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1444345E1D5D1EDF00025F90 /* ObjectiveGit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -252,6 +261,11 @@
 		143EE44D1D6B71C2002A2436 /* TextFieldBotTemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBotTemplateView.swift; sourceTree = "<group>"; };
 		143EE44F1D6B75D1002A2436 /* BotTemplateLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLauncher.swift; sourceTree = "<group>"; };
 		143EE4511D6B769C002A2436 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainThreadCompletable.swift; sourceTree = "<group>"; };
+		143EE45A1D6B851E002A2436 /* GCDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDHelper.swift; sourceTree = "<group>"; };
+		143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDHelperTests.swift; sourceTree = "<group>"; };
+		143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainThreadCompletable.swift; sourceTree = "<group>"; };
+		143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadedXcodeServerBotAPI.swift; sourceTree = "<group>"; };
 		144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoRemoteGitBuilder.swift; sourceTree = "<group>"; };
 		144434601D5D208100025F90 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1456EE7E1D4E990A0044F458 /* FlexiJSON+ArrayLiteralConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ArrayLiteralConvertibleTests.swift"; sourceTree = "<group>"; };
@@ -446,6 +460,24 @@
 				143EE44D1D6B71C2002A2436 /* TextFieldBotTemplateView.swift */,
 			);
 			path = "Bot Template";
+			sourceTree = "<group>";
+		};
+		143EE4571D6B84F0002A2436 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */,
+				143EE45A1D6B851E002A2436 /* GCDHelper.swift */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		143EE45C1D6B8539002A2436 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */,
+				143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */,
+			);
+			path = Thread;
 			sourceTree = "<group>";
 		};
 		1456EE7D1D4E990A0044F458 /* Tests */ = {
@@ -676,6 +708,7 @@
 		14C559E51D6899AF003B704C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				143EE4571D6B84F0002A2436 /* Thread */,
 				14C559E61D6899AF003B704C /* Command.swift */,
 				14C559E71D6899AF003B704C /* DataLoader.swift */,
 			);
@@ -725,6 +758,7 @@
 				14C559FB1D6899AF003B704C /* Model */,
 				14C559FE1D6899AF003B704C /* Request */,
 				14C55A011D6899AF003B704C /* XcodeServerBotAPI.swift */,
+				143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */,
 			);
 			path = "Xcode Server";
 			sourceTree = "<group>";
@@ -900,6 +934,7 @@
 		14C55A5A1D6899BE003B704C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				143EE45C1D6B8539002A2436 /* Thread */,
 				14C55A5B1D6899BE003B704C /* MockCommand.swift */,
 				14C55A5C1D6899BE003B704C /* MockDataLoader.swift */,
 				14C55A5D1D6899BE003B704C /* MockNSData.swift */,
@@ -1348,6 +1383,7 @@
 				1459B3B21D3EBE9D004D6FF9 /* ViewController.swift in Sources */,
 				143DA7AB1D46860C0019FDFA /* FlexiJSON+IntegerLiteralConvertible.swift in Sources */,
 				14C55A1E1D6899AF003B704C /* FileBranchPersister.swift in Sources */,
+				143EE4591D6B84FB002A2436 /* MainThreadCompletable.swift in Sources */,
 				14C55A3C1D6899AF003B704C /* AnyXCSRequest.swift in Sources */,
 				14C55A2C1D6899AF003B704C /* FileBranchDataStore.swift in Sources */,
 				14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
@@ -1382,12 +1418,14 @@
 				143DA7A61D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift in Sources */,
 				143EE4481D6B6F27002A2436 /* BotTemplateEventHandler.swift in Sources */,
 				14C55A0C1D6899AF003B704C /* BranchesDataStore.swift in Sources */,
+				143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
 				14C55A341D6899AF003B704C /* XCSGetBotsRequest.swift in Sources */,
 				143DA7AE1D46860C0019FDFA /* FlexiJSON+SequenceType.swift in Sources */,
 				14C55A3E1D6899AF003B704C /* XCSRequest.swift in Sources */,
 				14C55A221D6899AF003B704C /* DataLoader.swift in Sources */,
 				14C55A1C1D6899AF003B704C /* FileBotTemplatePersister.swift in Sources */,
 				143EE4461D6B6DD8002A2436 /* BotTemplateView.swift in Sources */,
+				143EE45B1D6B851E002A2436 /* GCDHelper.swift in Sources */,
 				143DA7AF1D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift in Sources */,
 				143EE4521D6B769C002A2436 /* Constants.swift in Sources */,
 				14C55A1A1D6899AF003B704C /* BranchPersister.swift in Sources */,
@@ -1413,6 +1451,7 @@
 				14C55A861D6899BE003B704C /* MockBranchPersister.swift in Sources */,
 				14C55A8B1D6899BE003B704C /* MockNSURLSessionDataTask.swift in Sources */,
 				143EE4421D6B6CFB002A2436 /* BotTemplatePresenterTests.swift in Sources */,
+				143EE4601D6B85AA002A2436 /* MockMainThreadCompletable.swift in Sources */,
 				14C55A881D6899BE003B704C /* MockDataLoader.swift in Sources */,
 				143EE44A1D6B7066002A2436 /* MockTemplateCreatingInteractor.swift in Sources */,
 				14C55A981D6899BE003B704C /* AnyXCSRequestTests.swift in Sources */,
@@ -1420,6 +1459,7 @@
 				14C55A8D1D6899BE003B704C /* TestHelpers.swift in Sources */,
 				14C55A901D6899BE003B704C /* NSURLSessionNetworkTests.swift in Sources */,
 				1456EE8B1D4E990A0044F458 /* FlexiJSON+DictionaryLiteralConvertibleTests.swift in Sources */,
+				143EE45E1D6B8543002A2436 /* GCDHelperTests.swift in Sources */,
 				14C55A811D6899BE003B704C /* MockBotTemplateSaver.swift in Sources */,
 				1456EE901D4E990A0044F458 /* FlexiJSON+ObjCTests.swift in Sources */,
 				14C55A991D6899BE003B704C /* MockXCSRequest.swift in Sources */,
@@ -1453,6 +1493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143EE4651D6B90EF002A2436 /* GCDHelper.swift in Sources */,
 				1484B60A1D6267FC00319088 /* ShouldPersistBranchesBetweenLaunches.swift in Sources */,
 				14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				1484B6181D63992C00319088 /* MockNetwork.swift in Sources */,
@@ -1465,6 +1506,7 @@
 				14C55A2F1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				14C55A171D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */,
 				14C55A0B1D6899AF003B704C /* BotsFetcher.swift in Sources */,
+				143EE4661D6B90F2002A2436 /* MainThreadCompletable.swift in Sources */,
 				14C55A291D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
 				1484B6061D6267F000319088 /* TwoRemoteGitBuilder.swift in Sources */,
 				1484B5DB1D62676200319088 /* FlexiJSON+DictionaryLiteralConvertible.swift in Sources */,
@@ -1492,6 +1534,8 @@
 				1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */,
 				14C55A271D6899AF003B704C /* Network.swift in Sources */,
 				1484B5D91D62676200319088 /* FlexiJSON+ArrayLiteralConvertible.swift in Sources */,
+				143EE4641D6B90E9002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
+				143EE4631D6B90D6002A2436 /* Constants.swift in Sources */,
 				14C55A091D6899AF003B704C /* BotDeleter.swift in Sources */,
 				14C55A3F1D6899AF003B704C /* XCSRequest.swift in Sources */,
 				1484B5E31D62676200319088 /* FlexiJSON+StringLiteralConvertible.swift in Sources */,

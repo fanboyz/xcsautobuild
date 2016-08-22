@@ -22,7 +22,7 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
         return oldBranchesArray.enumerate().flatMap { branchesArray.contains($0.1) ? nil : String($0.0) }
     }
     var oldBranchNames: [String] {
-        return oldBranchesArray.map({ api.branchNameToBotName($0) })
+        return oldBranchesArray.map({ XcodeServerBotAPI.branchNameToBotName($0) })
     }
     var oldBranchIDs: [String] {
         return oldBranchesArray.enumerate().map { String($0.0) }

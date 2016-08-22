@@ -12,14 +12,7 @@ func commaSeparatedList(from string: String) -> [String] {
 
 let yes = "yes"
 let no = "no"
-let networkConfiguration = NSURLSessionNetwork.Configuration(username: "username", password: "password")
-let network = NSURLSessionNetwork(configuration: networkConfiguration)
-let api = XcodeServerBotAPI(
-    createBotRequest: AnyXCSRequest(XCSPostBotsRequest(network: network)),
-    getBotsRequest: AnyXCSRequest(XCSGetBotsRequest(network: network)),
-    deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
-    getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network))
-)
+let api = Constants.api
 class TestClass {}
 let testBundleClass = TestClass.self
 let testHost = "seans-macbook-pro-2.local"
