@@ -66,6 +66,6 @@ class ShouldPersistBranchesBetweenLaunches: NSObject, SlimDecisionTable {
         let persister = FileBranchPersister(file: testDataStoreFile)
         persister.save(savedBranchesArray)
         let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: persister)
-        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api)
+        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api, branchFilter: TransparentBranchFilter())
     }
 }

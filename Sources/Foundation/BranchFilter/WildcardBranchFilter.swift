@@ -13,7 +13,8 @@ class WildcardBranchFilter: BranchFilter {
         if filterString == "" { return [] }
         let escaped = escapeSpecialCharacters(in: filterString)
         let pattern = replaceWildcardWithRegexWildcard(escaped)
-        return filterBranches(branches, withPattern: pattern)
+        let strictPattern = matchFromBeginningAndToEnd(pattern)
+        return filterBranches(branches, withPattern: strictPattern)
     }
 
     private func escapeSpecialCharacters(in string: String) -> String {
@@ -33,5 +34,9 @@ class WildcardBranchFilter: BranchFilter {
     private func specialCharacterPattern() -> String {
         // matches []()+?{}^$.|/\
         return "([\\[\\]\\(\\)\\+\\?\\{\\}\\^\\$\\.\\|\\/\\\\])"
+    }
+
+    private func matchFromBeginningAndToEnd(pattern: String) -> String {
+        return "^" + pattern + "$"
     }
 }

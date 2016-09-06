@@ -69,6 +69,16 @@ class WildcardBranchFilterTests: XCTestCase {
         filterBranches() // should not crash
     }
 
+    func test_filterBranches_shouldStartMatchingFromBeginningOfTheString() {
+        filter.filterString = "evelop"
+        XCTAssert(filterBranches().isEmpty)
+    }
+
+    func test_filterBranches_shouldStopMatchingAtEndOfTheString() {
+        filter.filterString = "develo"
+        XCTAssert(filterBranches().isEmpty)
+    }
+
     // MARK: - Helpers
 
     func filterBranches() -> [Branch] {

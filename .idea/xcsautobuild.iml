@@ -125,6 +125,7 @@
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Helpers/Network/MockNetwork.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Helpers/TwoRemoteGitBuilder.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Helpers/TestHelpers+Acceptance.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Helpers/Mocks/TransparentBranchFilter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Supporting Files/AcceptanceTests-Bridging-Header.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Supporting Files/AcceptanceTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Supporting Files/SlimTables.h" isTestSource="false" />

@@ -183,10 +183,17 @@
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
+		35CDF027F04C3A9896B138EB /* MockNewBranchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A4A1D6899BE003B704C /* MockNewBranchesFetcher.swift */; };
+		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
+		35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
+		35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
 		35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF588AD0C837979D5A9DE /* BranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */; };
 		35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */; };
 		35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
+		35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */; };
+		35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A481D6899BE003B704C /* MockBotCreator.swift */; };
+		35CDFF0050E8FC91B03987A8 /* TransparentBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */; };
 		35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */; };
 		D56C833677A4D1C73532AD81 /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */; };
 /* End PBXBuildFile section */
@@ -380,6 +387,7 @@
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldFilterBranchesFromPattern.swift; sourceTree = "<group>"; };
 		35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
+		35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
 		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
 		5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1064,6 +1072,7 @@
 				1484B6161D6398CF00319088 /* Network */,
 				14CC5CBF1D591CBF00F1CA28 /* TestHelpers+Acceptance.swift */,
 				144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */,
+				35CDFA702D87C142BA20BA61 /* Mocks */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1127,6 +1136,14 @@
 				35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */,
 			);
 			path = BranchFilter;
+			sourceTree = "<group>";
+		};
+		35CDFA702D87C142BA20BA61 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		35CDFDD0BD47F74DF30C9A3B /* BranchFilter */ = {
@@ -1596,6 +1613,13 @@
 				1484B5DD1D62676200319088 /* FlexiJSON+FloatLiteralConvertible.swift in Sources */,
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
 				35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */,
+				35CDF027F04C3A9896B138EB /* MockNewBranchesFetcher.swift in Sources */,
+				35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */,
+				35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */,
+				35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */,
+				35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */,
+				35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */,
+				35CDFF0050E8FC91B03987A8 /* TransparentBranchFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

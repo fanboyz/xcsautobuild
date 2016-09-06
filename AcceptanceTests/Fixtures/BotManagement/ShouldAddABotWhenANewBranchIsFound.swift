@@ -45,6 +45,6 @@ class ShouldAddABotWhenANewBranchIsFound: NSObject, SlimDecisionTable {
         git = TwoRemoteGitBuilder()
         branchesArray.forEach { git.add(branch: $0) }
         let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: FileBranchPersister(file: testDataStoreFile))
-        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api)
+        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api, branchFilter: TransparentBranchFilter())
     }
 }

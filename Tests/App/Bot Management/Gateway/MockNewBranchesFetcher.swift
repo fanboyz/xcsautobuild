@@ -4,7 +4,6 @@
 //
 //
 
-import XCTest
 @testable import xcsautobuild
 
 class MockBranchesDataStore: BranchesDataStore {

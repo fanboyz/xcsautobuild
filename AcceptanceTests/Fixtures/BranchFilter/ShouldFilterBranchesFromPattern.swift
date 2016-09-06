@@ -18,11 +18,23 @@ class ShouldFilterBranchesFromPattern: NSObject, SlimDecisionTable {
     var createdBots: String!
 
     // MARK: - Test
+    var network: MockNetwork!
+    var git: TwoRemoteGitBuilder!
+    var interactor: BotSyncingInteractor!
+
     func reset() {
         pattern = nil
         createdBots = nil
     }
 
     func execute() {
+        let dataStore = MockBranchesDataStore()
+        let mockedBotCreator = MockBotCreator()
+        dataStore.stubbedNewBranches = branchesArray.map { Branch(name: $0) }
+        let filter = WildcardBranchFilter()
+        filter.filterString = pattern
+        let interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: mockedBotCreator, botDeleter: MockBotDeleter(), branchFilter: filter)
+        interactor.execute()
+        createdBots = commaSeparatedString(from: mockedBotCreator.invokedBranches.map { $0.name })
     }
 }

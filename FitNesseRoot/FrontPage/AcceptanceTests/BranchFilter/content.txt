@@ -1,5 +1,5 @@
 !3 Should filter branches from pattern
-The user may use exact matches or wildcards (*) to match one or more branches. 
+The user may use exact matches or wildcards (*) to match one or more branches.
 
 |Should filter branches from pattern                                                                          |
 |pattern  |branches                                         |created bots?                                    |
@@ -11,3 +11,4 @@ The user may use exact matches or wildcards (*) to match one or more branches. 
 |feature/*|feature,feature/1,feature/2,feature/3            |feature/1,feature/2,feature/3                    |
 |*hotfix  |hotfix,hotfix/1,prefix/hotfix                    |hotfix,prefix/hotfix                             |
 |*release*|release,release/1,prefix/release,prefix/release/1|release,release/1,prefix/release,prefix/release/1|
+|*ea*     |develop,feature/1,hotfix/2,release3              |feature/1,release3                               |
