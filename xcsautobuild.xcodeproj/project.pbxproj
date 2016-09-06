@@ -183,7 +183,9 @@
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
+		35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF588AD0C837979D5A9DE /* BranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */; };
+		35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */; };
 		35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
 		35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */; };
 		D56C833677A4D1C73532AD81 /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */; };
@@ -377,7 +379,9 @@
 		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldFilterBranchesFromPattern.swift; sourceTree = "<group>"; };
+		35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
+		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
 		5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0DEDDCEA517D9139E233AC /* Pods-AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		94DC8739FF38FC1AE9389FD6 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -718,6 +722,7 @@
 				143EE4571D6B84F0002A2436 /* Thread */,
 				14C559E61D6899AF003B704C /* Command.swift */,
 				14C559E71D6899AF003B704C /* DataLoader.swift */,
+				35CDF45E34B91196C78E1883 /* BranchFilter */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -948,6 +953,7 @@
 				14C55A5D1D6899BE003B704C /* MockNSData.swift */,
 				14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */,
 				14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */,
+				35CDFDD0BD47F74DF30C9A3B /* BranchFilter */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1113,6 +1119,22 @@
 				5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35CDF45E34B91196C78E1883 /* BranchFilter */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */,
+			);
+			path = BranchFilter;
+			sourceTree = "<group>";
+		};
+		35CDFDD0BD47F74DF30C9A3B /* BranchFilter */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */,
+			);
+			path = BranchFilter;
 			sourceTree = "<group>";
 		};
 		35CDFE9D7928A5965DAA6E17 /* BranchFilter */ = {
@@ -1448,6 +1470,7 @@
 				14C55A1A1D6899AF003B704C /* BranchPersister.swift in Sources */,
 				14C55A301D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */,
 				35CDF588AD0C837979D5A9DE /* BranchFilter.swift in Sources */,
+				35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1505,6 +1528,7 @@
 				14C55A7E1D6899BE003B704C /* MockNewBranchesFetcher.swift in Sources */,
 				14C55A831D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift in Sources */,
 				35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */,
+				35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

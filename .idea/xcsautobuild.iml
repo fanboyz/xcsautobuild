@@ -6,6 +6,7 @@
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.2/DerivedData/xcsautobuild-gkpkrrmmodmkcxdzoijcksyhetmv/Build/Intermediates/Pods.build/Debug/cslim.build/DerivedSources" />
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.2/DerivedData/xcsautobuild-gkpkrrmmodmkcxdzoijcksyhetmv/Build/Intermediates/xcsautobuild.build/Debug/AcceptanceTests.build/DerivedSources" />
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.2/DerivedData/xcsautobuild-gkpkrrmmodmkcxdzoijcksyhetmv/Build/Intermediates/xcsautobuild.build/Debug/xcsautobuild_macOS.build/DerivedSources" />
+    <content url="file://$USER_HOME$/Library/Caches/AppCode2016.2/DerivedData/xcsautobuild-gkpkrrmmodmkcxdzoijcksyhetmv/Build/Intermediates/xcsautobuild.build/Debug/xcsautobuild_macOSTests.build/DerivedSources" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild.xcodeproj/Configs/Project.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
@@ -42,6 +43,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Sources/Network/Network.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Network/NSURLSession/NSURLSessionNetwork.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Network/HTTPRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/BranchFilter/WildcardBranchFilter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/Thread/GCDHelper.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/Thread/MainThreadCompletable.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/Command.swift" isTestSource="false" />
@@ -92,10 +94,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/MockCommand.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/MockNSURLSessionDataTask.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/MockNSData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/MockDataLoader.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/MockNSURLSession.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/MockDataLoader.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/Thread/GCDHelperTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/Thread/MockMainThreadCompletable.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/BranchFilter/WildcardBranchFilterTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Version Control/FileBranchDataStoreTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Version Control/MockBranchFetcher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBotDeleter.swift" isTestSource="false" />
