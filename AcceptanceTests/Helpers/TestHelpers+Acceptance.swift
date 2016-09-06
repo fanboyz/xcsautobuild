@@ -10,6 +10,13 @@ func commaSeparatedList(from string: String) -> [String] {
     return string.componentsSeparatedByString(",").filter { $0 != "" }
 }
 
+func commaSeparatedString(from array: [String]) -> String {
+    if let first = array.first {
+        return array[array.startIndex.advancedBy(1)..<array.endIndex].reduce(first) { $0 + "," + $1 }
+    }
+    return "nil"
+}
+
 let yes = "yes"
 let no = "no"
 let api = Constants.api

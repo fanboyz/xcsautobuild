@@ -119,6 +119,7 @@
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Supporting Files/AcceptanceTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Supporting Files/SlimTables.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BranchFilter/ShouldFilterBranchesFromPattern.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotManagement/ShouldPersistBranchesBetweenLaunches.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotManagement/ShouldAddABotWhenANewBranchIsFound.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotManagement/ShouldDeleteBotWhenAnOldBranchIsDeleted.swift" isTestSource="false" />

@@ -183,6 +183,7 @@
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
+		35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */; };
 		D56C833677A4D1C73532AD81 /* Pods_AcceptanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -372,6 +373,7 @@
 		14E53A761D552933006FCBF8 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Empty.xib; path = AcceptanceTests/Empty.xib; sourceTree = SOURCE_ROOT; };
 		14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
 		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
+		35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldFilterBranchesFromPattern.swift; sourceTree = "<group>"; };
 		5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0DEDDCEA517D9139E233AC /* Pods-AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		94DC8739FF38FC1AE9389FD6 /* Pods-AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1071,6 +1073,7 @@
 			children = (
 				14E53A731D5528ED006FCBF8 /* BotManagement */,
 				1484B5451D609C8B00319088 /* BotTemplate */,
+				35CDFE9D7928A5965DAA6E17 /* BranchFilter */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -1106,6 +1109,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		35CDFE9D7928A5965DAA6E17 /* BranchFilter */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */,
+			);
+			path = BranchFilter;
+			sourceTree = "<group>";
+		};
 		9EC587D270EB844A35E1D35C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1115,24 +1126,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		"___RootGroup_" = {
+		_____Configs_ /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				"_____Configs_" /* Configs */,
-				143DA7961D46860C0019FDFA /* FlexiJSON */,
-				14C559C91D6899AF003B704C /* Sources */,
-				14C55A421D6899BE003B704C /* Tests */,
-				1459B3AE1D3EBE9D004D6FF9 /* xcsautobuild_macOS */,
-				1459B3C01D3EBE9E004D6FF9 /* xcsautobuild_macOSTests */,
-				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
-				"____Products_" /* Products */,
-				9EC587D270EB844A35E1D35C /* Pods */,
-				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
+				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
 			);
+			name = Configs;
 			sourceTree = "<group>";
 		};
-		"____Products_" /* Products */ = {
+		____Products_ /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1459B3AD1D3EBE9D004D6FF9 /* xcsautobuild.app */,
@@ -1142,12 +1144,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		"_____Configs_" /* Configs */ = {
+		___RootGroup_ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+				__PBXFileRef_Package.swift /* Package.swift */,
+				_____Configs_ /* Configs */,
+				143DA7961D46860C0019FDFA /* FlexiJSON */,
+				14C559C91D6899AF003B704C /* Sources */,
+				14C55A421D6899BE003B704C /* Tests */,
+				1459B3AE1D3EBE9D004D6FF9 /* xcsautobuild_macOS */,
+				1459B3C01D3EBE9E004D6FF9 /* xcsautobuild_macOSTests */,
+				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
+				____Products_ /* Products */,
+				9EC587D270EB844A35E1D35C /* Pods */,
+				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
 			);
-			name = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1241,7 +1252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */;
+			buildConfigurationList = ___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1249,8 +1260,8 @@
 				en,
 				Base,
 			);
-			mainGroup = "___RootGroup_";
-			productRefGroup = "____Products_" /* Products */;
+			mainGroup = ___RootGroup_;
+			productRefGroup = ____Products_ /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1552,6 +1563,7 @@
 				14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */,
 				1484B5DD1D62676200319088 /* FlexiJSON+FloatLiteralConvertible.swift in Sources */,
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
+				35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1900,14 +1912,7 @@
 			};
 			name = Release;
 		};
-		"_____Release_" /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		"_______Debug_" /* Debug */ = {
+		_______Debug_ /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
 			buildSettings = {
@@ -1915,6 +1920,13 @@
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
+		};
+		_____Release_ /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1946,11 +1958,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		"___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */ = {
+		___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				"_______Debug_" /* Debug */,
-				"_____Release_" /* Release */,
+				_______Debug_ /* Debug */,
+				_____Release_ /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
