@@ -13,13 +13,20 @@ class BotSyncingInteractorTests: XCTestCase {
     var mockedDataStore: MockBranchesDataStore!
     var mockedBotCreator: MockBotCreator!
     var mockedBotDeleter: MockBotDeleter!
+    var mockedBranchFilter: MockBranchFilter!
 
     override func setUp() {
         super.setUp()
         mockedDataStore = MockBranchesDataStore()
         mockedBotCreator = MockBotCreator()
         mockedBotDeleter = MockBotDeleter()
-        interactor = BotSyncingInteractor(branchesDataStore: mockedDataStore, botCreator: mockedBotCreator, botDeleter: mockedBotDeleter)
+        mockedBranchFilter = MockBranchFilter()
+        interactor = BotSyncingInteractor(
+                branchesDataStore: mockedDataStore,
+                botCreator: mockedBotCreator,
+                botDeleter: mockedBotDeleter,
+                branchFilter: mockedBranchFilter
+            )
     }
     
     // MARK: - execute
@@ -43,8 +50,7 @@ class BotSyncingInteractorTests: XCTestCase {
         let newBranches = ["develop", "master"]
         stubNewBranchNames(newBranches)
         interactor.execute()
-        let result = mockedBotCreator.invokedBranches.map { $0.name }
-        XCTAssertEqual(result, newBranches)
+        XCTAssertEqual(createdBotNames(), newBranches)
     }
 
     func test_execute_shouldGetDeletedBranches() {
@@ -56,19 +62,40 @@ class BotSyncingInteractorTests: XCTestCase {
         let deletedBranches = ["develop", "feature/123"]
         stubDeletedBranchNames(deletedBranches)
         interactor.execute()
-        let result = mockedBotDeleter.invokedBranches.map { $0.name }
-        XCTAssertEqual(result, deletedBranches)
+        XCTAssertEqual(deletedBotNames(), deletedBranches)
+    }
+
+    func test_execute_shouldFilterBranches() {
+        let createdBranches = ["1", "2"]
+        stubNewBranchNames(createdBranches)
+        mockedBranchFilter.stubbedFilteredBranches = [Branch(name: "filtered")]
+        interactor.execute()
+        XCTAssertEqual(filteredBranchNames(), createdBranches)
+        XCTAssertEqual(createdBotNames(), ["filtered"])
     }
 
     // MARK: - Helpers
 
     func stubNewBranchNames(names: [String]) {
         let branches = names.map { Branch(name: $0) }
+        mockedBranchFilter.stubbedFilteredBranches = branches
         mockedDataStore.stubbedNewBranches = branches
     }
 
     func stubDeletedBranchNames(names: [String]) {
         let branches = names.map { Branch(name: $0) }
         mockedDataStore.stubbedDeletedBranches = branches
+    }
+
+    func createdBotNames() -> [String] {
+        return mockedBotCreator.invokedBranches.map { $0.name }
+    }
+
+    func deletedBotNames() -> [String] {
+        return mockedBotDeleter.invokedBranches.map { $0.name }
+    }
+
+    func filteredBranchNames() -> [String] {
+        return mockedBranchFilter.invokedBranches!.map { $0.name }
     }
 }
