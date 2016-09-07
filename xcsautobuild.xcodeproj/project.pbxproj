@@ -724,7 +724,7 @@
 				143EE4571D6B84F0002A2436 /* Thread */,
 				14C559E61D6899AF003B704C /* Command.swift */,
 				14C559E71D6899AF003B704C /* DataLoader.swift */,
-				35CDF45E34B91196C78E1883 /* BranchFilter */,
+				35CDF45E34B91196C78E1883 /* Branch Filter */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1134,12 +1134,12 @@
 			path = Gateway;
 			sourceTree = "<group>";
 		};
-		35CDF45E34B91196C78E1883 /* BranchFilter */ = {
+		35CDF45E34B91196C78E1883 /* Branch Filter */ = {
 			isa = PBXGroup;
 			children = (
 				35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */,
 			);
-			path = BranchFilter;
+			path = "Branch Filter";
 			sourceTree = "<group>";
 		};
 		35CDF4E6C7D8E4CFEF85D070 /* Branch Filter */ = {
