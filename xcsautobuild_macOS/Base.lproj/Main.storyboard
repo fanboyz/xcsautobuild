@@ -687,7 +687,7 @@
                                                 </connections>
                                             </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-5S-P48">
-                                                <rect key="frame" x="370" y="-6.5" width="75" height="32"/>
+                                                <rect key="frame" x="370" y="-7" width="75" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Fetch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55o-Cy-ApA">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -697,7 +697,7 @@
                                                 </connections>
                                             </button>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jZd-tC-bkG">
-                                                <rect key="frame" x="445" y="2.5" width="21" height="17"/>
+                                                <rect key="frame" x="445" y="2" width="21" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✅" id="v4f-vL-Rdf">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -720,7 +720,7 @@
                                         <rect key="frame" x="8" y="210" width="203" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CfY-0C-Uia">
-                                                <rect key="frame" x="-2" y="2.5" width="49" height="17"/>
+                                                <rect key="frame" x="-2" y="2" width="49" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pattern" id="BsR-cA-a6a">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -776,7 +776,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="KDD-q3-Oak" userLabel="Branch Filter DI" customClass="GlobalBranchFilter" customModule="xcsautobuild" customModuleProvider="target">
                     <connections>
-                        <outlet property="stringPatternProvider" destination="PX5-KI-Fgp" id="92A-Bu-tlp"/>
+                        <outlet property="patternDataStoreProvider" destination="PX5-KI-Fgp" id="qTr-lg-SOF"/>
                     </connections>
                 </customObject>
             </objects>
