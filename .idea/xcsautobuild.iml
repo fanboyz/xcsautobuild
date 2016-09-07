@@ -10,55 +10,56 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild.xcodeproj/Configs/Project.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+ArrayLiteralConvertible.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+ObjC.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+IntegerLiteralConvertible.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+StringLiteralConvertible.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+Fragment.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+ObjC.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+Either.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+BooleanLiteralConvertible.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+NilLiteralConvertible.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+IntegerLiteralConvertible.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+ObjCTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+FragmentTests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+FloatLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+IntegerLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+StringLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+NilLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSONTests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+FloatLiteralConvertibleTests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+ArrayLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+DictionaryLiteralConvertibleTests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+ArrayLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+BoolLiteralConvertibleTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/Tests/FlexiJSON+SequenceTypeTests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+StringLiteralConvertible.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+DictionaryLiteralConvertible.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+Either.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+NilLiteralConvertible.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+SequenceType.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+FloatLiteralConvertible.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FlexiJSON/FlexiJSON+ArrayLiteralConvertible.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Version Control/FileBranchDataStore.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Version Control/BranchFetcher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Version Control/Git/GitBranchFetcher.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Branch Filter/BranchFilterView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Bot Template/TextFieldBotTemplateView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Data/Persitence/FileBotTemplatePersister.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Data/Persitence/BranchPersister.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Data/Persitence/FileBranchPersister.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Network/Network.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Network/NSURLSession/NSURLSessionNetwork.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Network/HTTPRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/POST/XCSPostBotsRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/DELETE/XCSDeleteBotRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/GET/XCSGetBotsRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/GET/XCSGetBotRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Model/Bot+JSONTransformable.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Model/Bot.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Request/AnyXCSRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Request/XCSRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/XcodeServerBotAPI.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/ThreadedXcodeServerBotAPI.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/BranchFilter/WildcardBranchFilter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/Thread/GCDHelper.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/Thread/MainThreadCompletable.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/Command.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Foundation/DataLoader.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Network/HTTPRequest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Network/NSURLSession/NSURLSessionNetwork.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Network/Network.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Command Line/CommandLine.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/POST/XCSPostBotsRequest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/DELETE/XCSDeleteBotRequest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/GET/XCSGetBotsRequest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/bots/GET/XCSGetBotRequest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Model/Bot.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Model/Bot+JSONTransformable.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Request/AnyXCSRequest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/Request/XCSRequest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/XcodeServerBotAPI.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/Xcode Server/ThreadedXcodeServerBotAPI.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BranchesDataStore.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BotDeleter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BotsFetcher.swift" isTestSource="false" />
@@ -67,13 +68,15 @@
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Entity/Branch.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Entity/RemoteBot.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Interactor/BotSyncingInteractor.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/View/BotTemplateEventHandler.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/View/BotTemplatePresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/View/BotTemplateView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/View/BotTemplatePresenter.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/View/BotTemplateEventHandler.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/Gateway/BotNamesFetcher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/Gateway/BotTemplateSaver.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/Entity/BotTemplate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/Interactor/BotTemplateCreatingInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Branch Filter/Gateway/PatternDataStore.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/Dependency Injection/GlobalBranchFilter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOSTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Xcode Server/bots/POST/XCSPostBotsRequestTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Xcode Server/bots/DELETE/XCSDeleteBotRequestTests.swift" isTestSource="false" />
@@ -101,21 +104,23 @@
       <sourceFolder url="file://$MODULE_DIR$/Tests/Foundation/BranchFilter/WildcardBranchFilterTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Version Control/FileBranchDataStoreTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Version Control/MockBranchFetcher.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBotDeleter.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBranchFilter.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBotCreator.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockNewBranchesFetcher.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Entity/BranchTests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Interactor/BotSyncingInteractorTests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Branch Filter/Gateway/MockPatternDataStoreProvider.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Branch Filter/Gateway/GlobalBranchFilterTests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/BotTemplateLauncher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/View/BotTemplatePresenterTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/View/MockBotTemplateView.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/BotTemplateLauncher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/Gateway/MockBotTemplatesFetcher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/Gateway/MockBotTemplateSaver.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/Entity/BotTemplateTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/Interactor/MockTemplateCreatingInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/Interactor/MockBotTemplateCreatingInteractorOutput.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Templates/Interactor/BotTemplateCreatingInteractorTests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBotDeleter.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBranchFilter.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockBotCreator.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Gateway/MockNewBranchesFetcher.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Entity/BranchTests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tests/App/Bot Management/Interactor/BotSyncingInteractorTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Package.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Resources/bots/POST/bots_post_response.json" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Resources/bots/DELETE/bots_delete_response.json" isTestSource="false" />
@@ -137,10 +142,10 @@
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotTemplate/ShouldPersistBotTemplate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotTemplate/ShouldCreateTemplateFromBotName.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotTemplate/ShouldOverwriteExistingBotTemplate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/ViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/main.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Constants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Base.lproj/Main.storyboard" isTestSource="false" />
@@ -150,37 +155,37 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/Compatibility.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubs+NSURLSessionConfiguration.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/Swift/OHHTTPStubsSwift.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubsResponse.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubs.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/Swift/OHHTTPStubsSwift.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OCSlimProject/Pod/Classes/OCSlimProject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/OCSlimProject/Pod/Support/SharedSupport/fitnesse-standalone.jar" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OCSlimProject/Pod/Support/SharedSupport/LaunchFitnesse" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/OCSlimProject/Pod/Support/SharedSupport/fitnesse-standalone.jar" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OCSlimProject/Pod/Support/SharedSupport/LICENCE.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OCSlimProject/Pod/Support/OSX/RunTestsTargetWithSlimPort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-frameworks.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-acknowledgements.markdown" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-acknowledgements.markdown" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-acknowledgements.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-AcceptanceTests/Pods-AcceptanceTests.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OHHTTPStubs/OHHTTPStubs-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/OCSlimProject/ResourceBundle-OCSlimProject-Mac-Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/cslim/cslim-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/cslim/cslim.modulemap" isTestSource="false" />
@@ -197,7 +202,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/CSlim/SlimListDeserializer.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/Com/SocketServer.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/Com/TcpComLink.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSlimToObjectiveCBridge.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/StatementExecutor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSStatementExecutor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSInstanceCreator.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/Fixtures.m" isTestSource="false" />
@@ -209,7 +214,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSException.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSMethodCaller.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSObjectiveCtoCBridge.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/StatementExecutor.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/src/ExecutorObjectiveC/OCSlimToObjectiveCBridge.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/include/CSlim/SlimList.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/include/CSlim/SlimConnectionHandler.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/cslim/include/CSlim/Slim.h" isTestSource="false" />
