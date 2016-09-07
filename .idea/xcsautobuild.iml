@@ -36,6 +36,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Sources/Version Control/FileBranchDataStore.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Version Control/BranchFetcher.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Version Control/Git/GitBranchFetcher.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Main/Constants.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Main/ViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Main/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Main/main.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Branch Filter/BranchFilterView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/macOS/Bot Template/TextFieldBotTemplateView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Data/Persitence/FileBotTemplatePersister.swift" isTestSource="false" />
@@ -61,8 +65,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Sources/Network/Network.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Command Line/CommandLine.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BranchesDataStore.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BotDeleter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BotsFetcher.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BotDeleter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BotCreator.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Gateway/BranchFilter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Management/Entity/Branch.swift" isTestSource="false" />
@@ -77,7 +81,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Bot Templates/Interactor/BotTemplateCreatingInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/App/Branch Filter/Gateway/PatternDataStore.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sources/Dependency Injection/GlobalBranchFilter.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOSTests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Resources/macOS/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Resources/macOS/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Resources/macOSTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Xcode Server/bots/POST/XCSPostBotsRequestTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Xcode Server/bots/DELETE/XCSDeleteBotRequestTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tests/Xcode Server/bots/GET/XCSGetBotsRequestTests.swift" isTestSource="false" />
@@ -142,12 +148,6 @@
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotTemplate/ShouldPersistBotTemplate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotTemplate/ShouldCreateTemplateFromBotName.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AcceptanceTests/Fixtures/BotTemplate/ShouldOverwriteExistingBotTemplate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/ViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/main.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Constants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/xcsautobuild_macOS/Base.lproj/Main.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Carthage/Build/Mac/ObjectiveGit.framework.dSYM" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/OHHTTPStubs/OHHTTPStubs/Sources/OHHTTPStubsResponse.h" isTestSource="false" />
