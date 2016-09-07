@@ -28,54 +28,54 @@ class WildcardBranchFilterTests: XCTestCase {
     }
 
     func test_filterBranches_shouldReturnAllBranches_whenOnlyWildcard() {
-        filter.filterString = "*"
+        filter.pattern = "*"
         XCTAssertEqual(filterBranches(), branches)
     }
 
     func test_filterBranches_shouldReturnExactMatch() {
-        filter.filterString = "feature/2"
+        filter.pattern = "feature/2"
         XCTAssertEqual(filterBranches(), [Branch(name: "feature/2")])
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenSuffixedWithWildcard() {
-        filter.filterString = "feature/*"
+        filter.pattern = "feature/*"
         XCTAssertEqual(filterBranches(), featureBranches)
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenPrefixedWithWildcard() {
-        filter.filterString = "*/1"
+        filter.pattern = "*/1"
         XCTAssertEqual(filterBranches(), oneBranches)
     }
     
     func test_filterBranches_shouldReturnPartialMatches_whenPrefixedAndSuffixedWithWildcard() {
-        filter.filterString = "*e*"
+        filter.pattern = "*e*"
         XCTAssertEqual(filterBranches(), eBranches)
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenMultipleWildcards() {
-        filter.filterString = "*dev*p*"
+        filter.pattern = "*dev*p*"
         XCTAssertEqual(filterBranches(), developBranches)
     }
 
     func test_filterBranches_shouldMatchRegexSpecialCharacters() {
         let specialCharacters = "[]()+?{}^$.|/\\"
-        filter.filterString = specialCharacters
+        filter.pattern = specialCharacters
         let branches = [Branch(name: specialCharacters)]
         XCTAssertEqual(filter.filterBranches(branches), branches)
     }
 
     func test_filterBranches_shouldIgnoreInvalidRegex() {
-        filter.filterString = "[(])"
+        filter.pattern = "[(])"
         filterBranches() // should not crash
     }
 
     func test_filterBranches_shouldStartMatchingFromBeginningOfTheString() {
-        filter.filterString = "evelop"
+        filter.pattern = "evelop"
         XCTAssert(filterBranches().isEmpty)
     }
 
     func test_filterBranches_shouldStopMatchingAtEndOfTheString() {
-        filter.filterString = "develo"
+        filter.pattern = "develo"
         XCTAssert(filterBranches().isEmpty)
     }
 

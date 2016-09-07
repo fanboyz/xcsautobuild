@@ -4,22 +4,22 @@
 
 import Foundation
 
-class WildcardBranchFilter: BranchFilter {
+class WildcardBranchFilter: BranchFilter, StringPattern {
 
-    var filterString = ""
+    var pattern = ""
     private let wildcard = "*"
 
     func filterBranches(branches: [Branch]) -> [Branch] {
-        if filterString == "" { return [] }
-        let escaped = escapeSpecialCharacters(in: filterString)
-        let pattern = replaceWildcardWithRegexWildcard(escaped)
-        let strictPattern = matchFromBeginningAndToEnd(pattern)
+        if pattern == "" { return [] }
+        let escaped = escapeSpecialCharacters(in: pattern)
+        let regexPattern = replaceWildcardWithRegexWildcard(escaped)
+        let strictPattern = matchFromBeginningAndToEnd(regexPattern)
         return filterBranches(branches, withPattern: strictPattern)
     }
 
     private func escapeSpecialCharacters(in string: String) -> String {
         let matching = try! NSRegularExpression(pattern: specialCharacterPattern(), options: [])
-        return matching.stringByReplacingMatchesInString(filterString, options: [], range: NSRange(0..<filterString.utf16.count), withTemplate: "\\\\$1")
+        return matching.stringByReplacingMatchesInString(pattern, options: [], range: NSRange(0..<pattern.utf16.count), withTemplate: "\\\\$1")
     }
 
     private func filterBranches(branches: [Branch], withPattern pattern: String) -> [Branch] {
