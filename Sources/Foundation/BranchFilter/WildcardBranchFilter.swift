@@ -4,7 +4,7 @@
 
 import Foundation
 
-class WildcardBranchFilter: BranchFilter, StringPattern {
+class WildcardBranchFilter: BranchFilter, PatternDataStore {
 
     var pattern = ""
     private let wildcard = "*"
