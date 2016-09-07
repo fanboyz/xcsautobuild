@@ -1,7 +1,5 @@
 //
-//  BotDeleter.swift
-//
-//
+//  Copyright (c) 2016 Sean Henry
 //
 
 import Foundation

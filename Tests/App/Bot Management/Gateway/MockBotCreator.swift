@@ -1,7 +1,5 @@
 //
-//  MockBotCreator.swift
-//
-//
+//  Copyright (c) 2016 Sean Henry
 //
 
 @testable import xcsautobuild
