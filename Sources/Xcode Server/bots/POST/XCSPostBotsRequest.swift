@@ -12,8 +12,8 @@ class XCSPostBotsRequest: XCSRequest {
         self.network = network
     }
 
-    func createRequest(data: Bot) -> HTTPRequest {
-        return HTTPRequest(url: endpoint + "bots", method: .post, jsonBody: data.toJSON())
+    func createRequest(data: [String: AnyObject]) -> HTTPRequest {
+        return HTTPRequest(url: endpoint + "bots", method: .post, jsonBody: data)
     }
 
     func parse(response data: NSData) -> Void? {

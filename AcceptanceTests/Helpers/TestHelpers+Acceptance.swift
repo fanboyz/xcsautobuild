@@ -39,3 +39,7 @@ func wait(for seconds: NSTimeInterval = 0.05) {
 func load(fileName: String, _ ext: String) -> NSData! {
     return NSData(contentsOfFile: testBundle.pathForResource(fileName, ofType: ext)!)
 }
+
+func fitnesseString(from bool: Bool) -> String {
+    return bool ? yes : no
+}

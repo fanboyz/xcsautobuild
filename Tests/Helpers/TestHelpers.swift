@@ -50,3 +50,10 @@ let testBranch = Branch(name: "test")
 let testBotTemplate = BotTemplate(name: testBot.name, data: FlexiJSON(dictionary: testBot.toJSON()).data!)
 let testData = "data".dataUsingEncoding(NSUTF8StringEncoding)!
 let testURL = NSURL(string: "https://test.com")!
+
+extension String {
+
+    var utf8Data: NSData {
+        return dataUsingEncoding(NSUTF8StringEncoding)!
+    }
+}

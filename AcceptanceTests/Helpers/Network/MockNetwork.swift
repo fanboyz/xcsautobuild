@@ -12,8 +12,10 @@ class MockNetwork {
     }
 
     var createBotCount = 0
+    var invokedBotData: NSData?
     func expectCreateBot() {
-        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots")) { [unowned self] _ in
+        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots")) { [unowned self] request in
+            self.invokedBotData = request.OHHTTPStubs_HTTPBody()
             self.createBotCount += 1
             return json("bots_post_response")
         }

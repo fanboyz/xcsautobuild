@@ -18,7 +18,7 @@ class XCSPostBotsRequestTests: XCTestCase {
 
     func test_create_shouldSendNetworkRequest() {
         let expectedURL = testEndpoint + "bots"
-        let request = self.request.createRequest(testBot)
+        let request = self.request.createRequest([:])
         XCTAssertEqual(request.method, HTTPMethod.post)
         XCTAssertEqual(request.url, expectedURL)
     }

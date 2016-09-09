@@ -4,7 +4,7 @@
 
 import Foundation
 
-class FileBotTemplatePersister: BotTemplateSaver {
+class FileBotTemplatePersister: BotTemplateSaver, BotTemplateLoader {
 
     private let file: String
     private let dataLoader: DataLoader

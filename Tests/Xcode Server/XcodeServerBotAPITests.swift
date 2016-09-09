@@ -8,15 +8,17 @@ import XCTest
 class XcodeServerBotAPITests: XCTestCase {
     
     var api: XcodeServerBotAPI!
-    var mockedCreateBotRequest: MockXCSRequest<Bot, Void>!
+    var mockedCreateBotRequest: MockXCSRequest<[String: AnyObject], Void>!
     var mockedGetBotsRequest: MockXCSRequest<Void, [RemoteBot]>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedGetBotRequest: MockXCSRequest<String, NSData>!
+    var mockedTemplateLoader: MockBotTemplateLoader!
     let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
     let botID = "123"
     let botData: NSData = {
         return FlexiJSON(dictionary: testBot.toJSON()).data!
     }()
+    let botJSON = ["name": "template"]
     
     override func setUp() {
         super.setUp()
@@ -24,19 +26,35 @@ class XcodeServerBotAPITests: XCTestCase {
         mockedGetBotsRequest = MockXCSRequest()
         mockedDeleteBotRequest = MockXCSRequest()
         mockedGetBotRequest = MockXCSRequest()
+        mockedTemplateLoader = MockBotTemplateLoader()
         api = XcodeServerBotAPI(
             createBotRequest: AnyXCSRequest(mockedCreateBotRequest),
             getBotsRequest: AnyXCSRequest(mockedGetBotsRequest),
             deleteBotRequest: AnyXCSRequest(mockedDeleteBotRequest),
-            getBotRequest: AnyXCSRequest(mockedGetBotRequest)
+            getBotRequest: AnyXCSRequest(mockedGetBotRequest),
+            botTemplateLoader: mockedTemplateLoader
         )
     }
     
     // MARK: - createBot
     
     func test_createBot_shouldSendRequest() {
-        api.createBot(forBranch: Branch(name: "master"))
+        stubValidBotTemplate()
+        createBot()
         XCTAssert(mockedCreateBotRequest.didSend)
+    }
+
+    func test_createBot_shouldRenamedSendTemplateBot() {
+        let expected = ["name": "xcsautobuild [master]"]
+        stubValidBotTemplate()
+        createBot()
+        XCTAssertEqual(mockedCreateBotRequest.invokedData! as NSDictionary, expected)
+    }
+
+    func test_createBot_shouldNotSendRequest_whenTemplateIsNotDictionary() {
+        stubInvalidBotTemplate()
+        createBot()
+        XCTAssertFalse((mockedCreateBotRequest.didSend))
     }
 
     // MARK: - getBots
@@ -113,6 +131,18 @@ class XcodeServerBotAPITests: XCTestCase {
     }
 
     // MARK: - Helpers
+
+    func createBot() {
+        api.createBot(forBranch: Branch(name: "master"))
+    }
+
+    func stubValidBotTemplate() {
+        mockedTemplateLoader.stubbedTemplate = BotTemplate(name: "", data: FlexiJSON(dictionary: botJSON).data!)
+    }
+
+    func stubInvalidBotTemplate() {
+        mockedTemplateLoader.stubbedTemplate = BotTemplate(name: "", data: "not dictionary".dataUsingEncoding(NSUTF8StringEncoding)!)
+    }
 
     func getBots() {
         api.getBots { b in }
