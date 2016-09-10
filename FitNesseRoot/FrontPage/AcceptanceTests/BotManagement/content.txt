@@ -1,4 +1,4 @@
-!2 Should add a bot when a new branch is found with no saved data
+!2 Should add a bot when a new branch is found
 |Should add a bot when a new branch is found|
 |branches         |number of created bots?  |
 |feature          |1                        |
@@ -11,7 +11,7 @@
 |feature,develop|feature |1                      |
 |feature,develop|        |2                      |
 
-!2 Should create and delete bots branches between launches 
+!2 Should create and delete bots between launches when branches change
 |Should persist branches between launches                                       |
 |saved branches |branches       |number of created bots?|number of deleted bots?|
 |feature        |feature,develop|1                      |0                      |
