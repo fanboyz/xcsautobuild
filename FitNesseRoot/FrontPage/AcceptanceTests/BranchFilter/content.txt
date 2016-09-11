@@ -12,3 +12,8 @@ The user may use exact matches or wildcards (*) to match one or more branches.
 |*hotfix  |hotfix,hotfix/1,prefix/hotfix                    |hotfix,prefix/hotfix                             |
 |*release*|release,release/1,prefix/release,prefix/release/1|release,release/1,prefix/release,prefix/release/1|
 |*ea*     |develop,feature/1,hotfix/2,release3              |feature/1,release3                               |
+
+!3 Should delete a bot when the pattern is changed
+|Should delete a bot when the pattern is changed|
+|existing bot id          |bot deleted?         |
+|valid_bot_id             |no                   |

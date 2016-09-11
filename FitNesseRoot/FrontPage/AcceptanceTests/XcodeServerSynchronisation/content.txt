@@ -1,0 +1,13 @@
+!2 Should create a bot when out of sync with Xcode server
+|Should create a bot when out of sync with Xcode server|
+|existing bot ID    |bot created?    |branch bot ID?   |
+|                   |yes             |new_bot_id       |
+|invalid_bot_id     |yes             |new_bot_id       |
+|valid_bot_id       |no              |valid_bot_id     |
+
+!2 Should delete a bot when out of sync with Xcode server
+|Should delete a bot when out of sync with Xcode server|
+|existing bot ID    |bot deleted?   |branch deleted?   |
+|                   |no             |yes               |
+|invalid_bot_id     |no             |yes               |
+|valid_bot_id       |yes            |yes               |
