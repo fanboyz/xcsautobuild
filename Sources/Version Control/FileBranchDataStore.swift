@@ -21,9 +21,8 @@ class FileBranchDataStore: BranchesDataStore {
         branchNames = branchPersister.load()
     }
 
-    func getNewBranches() -> [Branch] {
-        let newBranches = remoteBranchNames.filter { !branchNames.contains($0) }
-        return newBranches.map { Branch(name: $0) }
+    func getAllBranches() -> [Branch] {
+        return remoteBranchNames.map { Branch(name: $0) }
     }
 
     func getDeletedBranches() -> [Branch] {

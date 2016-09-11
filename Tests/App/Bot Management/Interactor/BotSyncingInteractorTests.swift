@@ -36,7 +36,7 @@ class BotSyncingInteractorTests: XCTestCase {
 
     func test_execute_shouldGetNewBranches() {
         interactor.execute()
-        XCTAssert(mockedDataStore.didGetNewBranches)
+        XCTAssert(mockedDataStore.didGetAllBranches)
     }
 
     func test_execute_shouldCommit() {
@@ -77,7 +77,7 @@ class BotSyncingInteractorTests: XCTestCase {
     func stubNewBranchNames(names: [String]) {
         let branches = names.map { Branch(name: $0) }
         mockedBranchFilter.stubbedFilteredBranches = branches
-        mockedDataStore.stubbedNewBranches = branches
+        mockedDataStore.stubbedAllBranches = branches
     }
 
     func stubDeletedBranchNames(names: [String]) {

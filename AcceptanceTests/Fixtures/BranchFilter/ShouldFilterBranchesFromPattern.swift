@@ -30,7 +30,7 @@ class ShouldFilterBranchesFromPattern: NSObject, SlimDecisionTable {
     func execute() {
         let dataStore = MockBranchesDataStore()
         let mockedBotCreator = MockBotCreator()
-        dataStore.stubbedNewBranches = branchesArray.map { Branch(name: $0) }
+        dataStore.stubbedAllBranches = branchesArray.map { Branch(name: $0) }
         let filter = WildcardBranchFilter()
         filter.pattern = pattern
         let interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: mockedBotCreator, botDeleter: MockBotDeleter(), branchFilter: filter)

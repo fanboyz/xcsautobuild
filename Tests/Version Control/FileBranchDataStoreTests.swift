@@ -30,34 +30,12 @@ class FileBranchDataStoreTests: XCTestCase {
         load()
         XCTAssert(mockedBranchPersister.didLoad)
     }
-    
-    // MARK: - getNewBranches
 
-    func test_getNewBranches_shouldReturnEmptyArray_whenNoRemoteBranches() {
-        XCTAssert(getNewBranches().isEmpty)
-    }
+    // MARK: - getAllBranches
 
-    func test_getNewBranches_shouldReturnNewBranches_whenNewRemoteBranchesHaveBeenAdded() {
+    func test_getAllBranches_shouldReturnAllBranches() {
         loadBranchNames(testRemoteBranchNames)
-        XCTAssertEqual(getNewBranches(), testRemoteBranches())
-    }
-
-    func test_getNewBranches_shouldReturnNewBranches_whenARemoteBranchMatchesASavedBranch() {
-        commitBranchNames(["a"])
-        loadBranchNames(["a", "b", "c"])
-        XCTAssertEqual(getNewBranches(), [Branch(name: "b"), Branch(name: "c")])
-    }
-
-    func test_getNewBranches_shouldReturnEmptyArray_whenRemoteBranchesHaveNotChanged() {
-        commitBranchNames(testRemoteBranchNames)
-        loadBranchNames(testRemoteBranchNames)
-        XCTAssert(getNewBranches().isEmpty)
-    }
-
-    func test_getNewBranches_shouldReturnEmptyArray_whenRemoteBranchesHaveBeenDeleted() {
-        commitBranchNames(testRemoteBranchNames)
-        loadBranchNames([])
-        XCTAssert(getNewBranches().isEmpty)
+        XCTAssertEqual(getAllBranches(), testRemoteBranches())
     }
 
     // MARK: - getDeletedBranches
@@ -100,10 +78,9 @@ class FileBranchDataStoreTests: XCTestCase {
 
     // MARK: - Integration
 
-    func test_newBranchesAndDeletedBranchesCanBeFetched() {
+    func test_deletedBranchesCanBeFetched() {
         commitBranchNames(testRemoteBranchNames)
         loadBranchNames(["a", "b", "d"])
-        XCTAssertEqual(getNewBranches(), [Branch(name: "d")])
         XCTAssertEqual(getDeletedBranches(), [Branch(name: "c")])
     }
 
@@ -113,8 +90,8 @@ class FileBranchDataStoreTests: XCTestCase {
         store.load()
     }
 
-    func getNewBranches() -> [Branch] {
-        return store.getNewBranches()
+    func getAllBranches() -> [Branch] {
+        return store.getAllBranches()
     }
     func getDeletedBranches() -> [Branch] {
         return store.getDeletedBranches()

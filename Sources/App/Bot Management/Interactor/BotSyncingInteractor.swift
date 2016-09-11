@@ -20,10 +20,10 @@ class BotSyncingInteractor: Command {
 
     func execute() {
         branchesDataStore.load()
-        let newBranches = branchFilter.filterBranches(branchesDataStore.getNewBranches())
+        let allBranches = branchFilter.filterBranches(branchesDataStore.getAllBranches())
         let deletedBranches = branchesDataStore.getDeletedBranches()
         branchesDataStore.commit()
-        newBranches.forEach { botCreator.createBot(forBranch: $0) }
+        allBranches.forEach { botCreator.createBot(forBranch: $0) }
         deletedBranches.forEach { botDeleter.deleteBot(forBranch: $0) }
     }
 }

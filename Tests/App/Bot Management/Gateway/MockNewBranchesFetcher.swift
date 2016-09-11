@@ -11,11 +11,11 @@ class MockBranchesDataStore: BranchesDataStore {
         didLoad = true
     }
 
-    var didGetNewBranches = false
-    var stubbedNewBranches = [Branch]()
-    func getNewBranches() -> [Branch] {
-        didGetNewBranches = true
-        return stubbedNewBranches
+    var didGetAllBranches = false
+    var stubbedAllBranches = [Branch]()
+    func getAllBranches() -> [Branch] {
+        didGetAllBranches = true
+        return stubbedAllBranches
     }
 
     var didGetDeletedBranches = false
