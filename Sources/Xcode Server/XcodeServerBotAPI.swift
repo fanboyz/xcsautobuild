@@ -34,14 +34,14 @@ class XcodeServerBotAPI: BotCreator, BotDeleter {
 
     func deleteBot(forBranch branch: Branch) {
         getBots { bots in
-            bots.filter { $0.name == XcodeServerBotAPI.branchNameToBotName(branch.name) }
+            bots.filter { $0.name == Constants.convertBranchNameToBotName(branch.name) }
                 .forEach { self.deleteBot(id: $0.id) }
         }
     }
 
     func getBots(completion: (([RemoteBot]) -> ())) {
-        getBotsRequest.send(()) { bots in
-            completion(bots ?? [])
+        getBotsRequest.send(()) { response in
+            completion(response?.data ?? [])
         }
     }
 
@@ -52,14 +52,10 @@ class XcodeServerBotAPI: BotCreator, BotDeleter {
     private func loadTemplateJSON(forBranch branch: Branch) -> FlexiJSON? {
         guard let data = botTemplateLoader.load()?.data else { return nil }
         var json = FlexiJSON(data: data)
-        json["name"] = FlexiJSON(string: XcodeServerBotAPI.branchNameToBotName(branch.name))
+        json["name"] = FlexiJSON(string: Constants.convertBranchNameToBotName(branch.name))
         return json
     }
 
-    // TODO: move me
-    static func branchNameToBotName(branch: String) -> String {
-        return "xcsautobuild [\(branch)]"
-    }
 }
 
 extension XcodeServerBotAPI: BotTemplatesFetcher {
@@ -76,7 +72,7 @@ extension XcodeServerBotAPI: BotTemplatesFetcher {
     }
 
     private func fetchTemplate(forRemoteBot bot: RemoteBot) -> BotTemplate? {
-        guard let data = getBotRequest.send(bot.id),
+        guard let data = getBotRequest.send(bot.id)?.data,
                   name = FlexiJSON(data: data)["name"].string else { return nil }
         return BotTemplate(name: name, data: data)
     }

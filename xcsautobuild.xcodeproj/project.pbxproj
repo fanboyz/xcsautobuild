@@ -192,6 +192,7 @@
 		35CDF756528B834A8338B6F4 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */; };
 		35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A481D6899BE003B704C /* MockBotCreator.swift */; };
 		35CDF771662991B62EFC3BC1 /* MockXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */; };
+		35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */; };
 		35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */; };
 		35CDF93CA017E30867B153BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1333C289C523B4D465D /* Constants.swift */; };
 		35CDF942D90479BE7BAC1B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1333C289C523B4D465D /* Constants.swift */; };
@@ -202,8 +203,10 @@
 		35CDFD0F1C687E352115D612 /* GlobalBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF854E75C81C9C33F68EE /* GlobalBranchFilter.swift */; };
 		35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */; };
 		35CDFD609F164E5024D51C34 /* GlobalBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF854E75C81C9C33F68EE /* GlobalBranchFilter.swift */; };
+		35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
 		35CDFE6CCCD18435EAC3D896 /* MockPatternDataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7164807ABB4743D2D36 /* MockPatternDataStoreProvider.swift */; };
 		35CDFE95A5FCB752CC14DC62 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFF4D4F61AB5A7592A1B7 /* main.swift */; };
+		35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
 		35CDFF0050E8FC91B03987A8 /* TransparentBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */; };
 		35CDFF158D160F3BB854B510 /* PatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */; };
 		35CDFFACEDCE7B7716CCD36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */; };
@@ -385,8 +388,10 @@
 		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
 		35CDF1333C289C523B4D465D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
+		35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniserTests.swift; sourceTree = "<group>"; };
 		35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDF276E9296DFDC4AD5BF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranchesDataStore.swift; sourceTree = "<group>"; };
 		35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateBotFromTemplate.swift; sourceTree = "<group>"; };
 		35CDF4C666C73E7EA22D8969 /* FileXCSBranchesDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileXCSBranchesDataStoreTests.swift; sourceTree = "<group>"; };
@@ -1154,6 +1159,7 @@
 				35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */,
 				35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */,
 				35CDF544D9207869F43D2FDF /* XCSBranch.swift */,
+				35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */,
 			);
 			path = Synchronisation;
 			sourceTree = "<group>";
@@ -1189,6 +1195,7 @@
 				35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */,
 				35CDF4C666C73E7EA22D8969 /* FileXCSBranchesDataStoreTests.swift */,
 				35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */,
+				35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */,
 			);
 			path = Synchronisation;
 			sourceTree = "<group>";
@@ -1616,6 +1623,7 @@
 				35CDFA3520BE3215E9E66397 /* FileXCSBranchesDataStore.swift in Sources */,
 				35CDF56C9E5BC7809F43B9CF /* XCSBranch.swift in Sources */,
 				35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */,
+				35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1678,6 +1686,7 @@
 				35CDF67DFA6C24351C1C57E2 /* FileXCSBranchesDataStoreTests.swift in Sources */,
 				35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */,
 				35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */,
+				35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1758,6 +1767,7 @@
 				35CDF6A2FBC7C445C9902B59 /* XCSBranch.swift in Sources */,
 				35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */,
 				35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */,
+				35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,8 @@ let testBot = createBot()
 let testEndpoint = "https://seans-macbook-pro-2.local:20343/api/"
 let testRequest = HTTPRequest(url: testURL.absoluteString, method: .get, jsonBody: [:])
 let testBranch = Branch(name: "test")
-let testBotTemplate = BotTemplate(name: testBot.name, data: FlexiJSON(dictionary: testBot.toJSON()).data!)
+let testTemplateJSON = ["name": "template bot", "id": "bot_id"]
+let testBotTemplate = BotTemplate(name: testTemplateJSON["name"]!, data: FlexiJSON(dictionary: testTemplateJSON).data!)
 let testData = "data".dataUsingEncoding(NSUTF8StringEncoding)!
 let testURL = NSURL(string: "https://test.com")!
 
