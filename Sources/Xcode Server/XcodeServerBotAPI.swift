@@ -4,32 +4,21 @@
 
 import Foundation
 
-class XcodeServerBotAPI: BotCreator, BotDeleter {
+class XcodeServerBotAPI: BotDeleter {
 
     private let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
-    private let createBotRequest: AnyXCSRequest<[String: AnyObject], Void>
     private let getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
     private let getBotRequest: AnyXCSRequest<String, NSData>
-    private let botTemplateLoader: BotTemplateLoader
 
     init(
-        createBotRequest: AnyXCSRequest<[String: AnyObject], Void>,
         getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>,
         deleteBotRequest: AnyXCSRequest<String, Void>,
-        getBotRequest: AnyXCSRequest<String, NSData>,
-        botTemplateLoader: BotTemplateLoader
+        getBotRequest: AnyXCSRequest<String, NSData>
     ) {
-        self.createBotRequest = createBotRequest
         self.getBotsRequest = getBotsRequest
         self.deleteBotRequest = deleteBotRequest
         self.getBotRequest = getBotRequest
-        self.botTemplateLoader = botTemplateLoader
-    }
-
-    func createBot(forBranch branch: Branch) {
-        guard let dictionary = loadTemplateJSON(forBranch: branch)?.dictionary else { return }
-        createBotRequest.send(dictionary) { _ in }
     }
 
     func deleteBot(forBranch branch: Branch) {
@@ -48,14 +37,6 @@ class XcodeServerBotAPI: BotCreator, BotDeleter {
     func deleteBot(id id: String) {
         deleteBotRequest.send(id) { _ in }
     }
-
-    private func loadTemplateJSON(forBranch branch: Branch) -> FlexiJSON? {
-        guard let data = botTemplateLoader.load()?.data else { return nil }
-        var json = FlexiJSON(data: data)
-        json["name"] = FlexiJSON(string: Constants.convertBranchNameToBotName(branch.name))
-        return json
-    }
-
 }
 
 extension XcodeServerBotAPI: BotTemplatesFetcher {

@@ -4,7 +4,7 @@
 
 import Foundation
 
-class ThreadedXcodeServerBotAPI: BotCreator, BotDeleter, BotTemplatesFetcher {
+class ThreadedXcodeServerBotAPI: BotDeleter, BotTemplatesFetcher {
 
     private let api: XcodeServerBotAPI
     private let queue: dispatch_queue_t = {
@@ -14,12 +14,6 @@ class ThreadedXcodeServerBotAPI: BotCreator, BotDeleter, BotTemplatesFetcher {
 
     init(api: XcodeServerBotAPI) {
         self.api = api
-    }
-
-    func createBot(forBranch branch: Branch) {
-        doAsync {
-            self.api.createBot(forBranch: branch)
-        }
     }
 
     func deleteBot(forBranch branch: Branch) {
