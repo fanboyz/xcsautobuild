@@ -5,5 +5,5 @@
 import Foundation
 
 protocol BranchFetcher {
-    func getRemoteBranchNames() -> [String]
+    func fetchBranches() -> [Branch]
 }

@@ -28,7 +28,8 @@ class FileXCSBranchesDataStore: XCSBranchesDataStore {
     }
 
     private func save(branches branches: [String: [String: AnyObject]]) {
-        (branches as NSDictionary).writeToFile(file, atomically: true)
+        let dictionary = branches as NSDictionary
+        dictionary.writeToFile(file, atomically: true)
     }
 }
 

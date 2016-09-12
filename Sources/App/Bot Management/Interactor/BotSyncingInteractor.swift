@@ -6,24 +6,19 @@ import Foundation
 
 class BotSyncingInteractor: Command {
 
-    private let branchesDataStore: BranchesDataStore
+    private let branchFetcher: BranchFetcher
     private let botCreator: BotCreator
-    private let botDeleter: BotDeleter
     private let branchFilter: BranchFilter
 
-    init(branchesDataStore: BranchesDataStore, botCreator: BotCreator, botDeleter: BotDeleter, branchFilter: BranchFilter) {
-        self.branchesDataStore = branchesDataStore
+    init(branchFetcher: BranchFetcher, botCreator: BotCreator, branchFilter: BranchFilter) {
+        self.branchFetcher = branchFetcher
         self.botCreator = botCreator
-        self.botDeleter = botDeleter
         self.branchFilter = branchFilter
     }
 
     func execute() {
-        branchesDataStore.load()
-        let allBranches = branchFilter.filterBranches(branchesDataStore.getAllBranches())
-        let deletedBranches = branchesDataStore.getDeletedBranches()
-        branchesDataStore.commit()
-        allBranches.forEach { botCreator.createBot(forBranch: $0) }
-        deletedBranches.forEach { botDeleter.deleteBot(forBranch: $0) }
+        let allBranches = branchFetcher.fetchBranches()
+        let filteredBranches = branchFilter.filterBranches(allBranches)
+        filteredBranches.forEach { botCreator.createBot(forBranch: $0) }
     }
 }

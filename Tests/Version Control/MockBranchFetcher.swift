@@ -2,15 +2,15 @@
 //  Copyright (c) 2016 Sean Henry
 //
 
-import XCTest
+import Foundation
 @testable import xcsautobuild
 
 class MockBranchFetcher: BranchFetcher {
 
-    var stubbedRemoteBranchNames = [String]()
-    var didGetRemoteBranchNames = false
-    func getRemoteBranchNames() -> [String] {
-        didGetRemoteBranchNames = true
-        return stubbedRemoteBranchNames
+    var stubbedBranches = [Branch]()
+    var didFetchBranches = false
+    func fetchBranches() -> [Branch] {
+        didFetchBranches = true
+        return stubbedBranches
     }
 }

@@ -84,8 +84,6 @@
 		14C55A091D6899AF003B704C /* BotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D11D6899AF003B704C /* BotDeleter.swift */; };
 		14C55A0A1D6899AF003B704C /* BotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D21D6899AF003B704C /* BotsFetcher.swift */; };
 		14C55A0B1D6899AF003B704C /* BotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D21D6899AF003B704C /* BotsFetcher.swift */; };
-		14C55A0C1D6899AF003B704C /* BranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D31D6899AF003B704C /* BranchesDataStore.swift */; };
-		14C55A0D1D6899AF003B704C /* BranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D31D6899AF003B704C /* BranchesDataStore.swift */; };
 		14C55A0E1D6899AF003B704C /* BotSyncingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D51D6899AF003B704C /* BotSyncingInteractor.swift */; };
 		14C55A0F1D6899AF003B704C /* BotSyncingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D51D6899AF003B704C /* BotSyncingInteractor.swift */; };
 		14C55A101D6899AF003B704C /* BotTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559D81D6899AF003B704C /* BotTemplate.swift */; };
@@ -98,12 +96,8 @@
 		14C55A171D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DD1D6899AF003B704C /* BotTemplateCreatingInteractor.swift */; };
 		14C55A181D6899AF003B704C /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DF1D6899AF003B704C /* CommandLine.swift */; };
 		14C55A191D6899AF003B704C /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DF1D6899AF003B704C /* CommandLine.swift */; };
-		14C55A1A1D6899AF003B704C /* BranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E21D6899AF003B704C /* BranchPersister.swift */; };
-		14C55A1B1D6899AF003B704C /* BranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E21D6899AF003B704C /* BranchPersister.swift */; };
 		14C55A1C1D6899AF003B704C /* FileBotTemplatePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E31D6899AF003B704C /* FileBotTemplatePersister.swift */; };
 		14C55A1D1D6899AF003B704C /* FileBotTemplatePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E31D6899AF003B704C /* FileBotTemplatePersister.swift */; };
-		14C55A1E1D6899AF003B704C /* FileBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E41D6899AF003B704C /* FileBranchPersister.swift */; };
-		14C55A1F1D6899AF003B704C /* FileBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E41D6899AF003B704C /* FileBranchPersister.swift */; };
 		14C55A201D6899AF003B704C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E61D6899AF003B704C /* Command.swift */; };
 		14C55A211D6899AF003B704C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E61D6899AF003B704C /* Command.swift */; };
 		14C55A221D6899AF003B704C /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E71D6899AF003B704C /* DataLoader.swift */; };
@@ -116,8 +110,6 @@
 		14C55A291D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */; };
 		14C55A2A1D6899AF003B704C /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EE1D6899AF003B704C /* BranchFetcher.swift */; };
 		14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EE1D6899AF003B704C /* BranchFetcher.swift */; };
-		14C55A2C1D6899AF003B704C /* FileBranchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EF1D6899AF003B704C /* FileBranchDataStore.swift */; };
-		14C55A2D1D6899AF003B704C /* FileBranchDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EF1D6899AF003B704C /* FileBranchDataStore.swift */; };
 		14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F11D6899AF003B704C /* GitBranchFetcher.swift */; };
 		14C55A2F1D6899AF003B704C /* GitBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F11D6899AF003B704C /* GitBranchFetcher.swift */; };
 		14C55A301D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F51D6899AF003B704C /* XCSDeleteBotRequest.swift */; };
@@ -141,7 +133,6 @@
 		14C55A7B1D6899BE003B704C /* BranchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A461D6899BE003B704C /* BranchTests.swift */; };
 		14C55A7C1D6899BE003B704C /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A481D6899BE003B704C /* MockBotCreator.swift */; };
 		14C55A7D1D6899BE003B704C /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
-		14C55A7E1D6899BE003B704C /* MockNewBranchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A4A1D6899BE003B704C /* MockNewBranchesFetcher.swift */; };
 		14C55A7F1D6899BE003B704C /* BotSyncingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A4C1D6899BE003B704C /* BotSyncingInteractorTests.swift */; };
 		14C55A801D6899BE003B704C /* BotTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A4F1D6899BE003B704C /* BotTemplateTests.swift */; };
 		14C55A811D6899BE003B704C /* MockBotTemplateSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A511D6899BE003B704C /* MockBotTemplateSaver.swift */; };
@@ -149,7 +140,6 @@
 		14C55A831D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A541D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift */; };
 		14C55A841D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A551D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift */; };
 		14C55A851D6899BE003B704C /* FileBotTemplatePersisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A581D6899BE003B704C /* FileBotTemplatePersisterTests.swift */; };
-		14C55A861D6899BE003B704C /* MockBranchPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A591D6899BE003B704C /* MockBranchPersister.swift */; };
 		14C55A871D6899BE003B704C /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5B1D6899BE003B704C /* MockCommand.swift */; };
 		14C55A881D6899BE003B704C /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5C1D6899BE003B704C /* MockDataLoader.swift */; };
 		14C55A891D6899BE003B704C /* MockNSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5D1D6899BE003B704C /* MockNSData.swift */; };
@@ -160,7 +150,6 @@
 		14C55A8E1D6899BE003B704C /* HTTPRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A641D6899BE003B704C /* HTTPRequestTests.swift */; };
 		14C55A8F1D6899BE003B704C /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A651D6899BE003B704C /* MockNetwork.swift */; };
 		14C55A901D6899BE003B704C /* NSURLSessionNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A671D6899BE003B704C /* NSURLSessionNetworkTests.swift */; };
-		14C55A911D6899BE003B704C /* FileBranchDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A691D6899BE003B704C /* FileBranchDataStoreTests.swift */; };
 		14C55A921D6899BE003B704C /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		14C55A931D6899BE003B704C /* XCSDeleteBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6E1D6899BE003B704C /* XCSDeleteBotRequestTests.swift */; };
 		14C55A941D6899BE003B704C /* XCSGetBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A701D6899BE003B704C /* XCSGetBotRequestTests.swift */; };
@@ -176,10 +165,10 @@
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
-		35CDF027F04C3A9896B138EB /* MockNewBranchesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A4A1D6899BE003B704C /* MockNewBranchesFetcher.swift */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
 		35CDF1767F0F3594D82388C6 /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
+		35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7CC983EAEAD723DDF7D /* ViewController.swift */; };
 		35CDF2D7853E79BB308C6C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDFCF8BEDBEDDBDCEC328A /* Main.storyboard */; };
 		35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
@@ -326,23 +315,19 @@
 		14C559D01D6899AF003B704C /* BotCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotCreator.swift; sourceTree = "<group>"; };
 		14C559D11D6899AF003B704C /* BotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDeleter.swift; sourceTree = "<group>"; };
 		14C559D21D6899AF003B704C /* BotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotsFetcher.swift; sourceTree = "<group>"; };
-		14C559D31D6899AF003B704C /* BranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchesDataStore.swift; sourceTree = "<group>"; };
 		14C559D51D6899AF003B704C /* BotSyncingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSyncingInteractor.swift; sourceTree = "<group>"; };
 		14C559D81D6899AF003B704C /* BotTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplate.swift; sourceTree = "<group>"; };
 		14C559DA1D6899AF003B704C /* BotNamesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNamesFetcher.swift; sourceTree = "<group>"; };
 		14C559DB1D6899AF003B704C /* BotTemplateSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateSaver.swift; sourceTree = "<group>"; };
 		14C559DD1D6899AF003B704C /* BotTemplateCreatingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateCreatingInteractor.swift; sourceTree = "<group>"; };
 		14C559DF1D6899AF003B704C /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
-		14C559E21D6899AF003B704C /* BranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchPersister.swift; sourceTree = "<group>"; };
 		14C559E31D6899AF003B704C /* FileBotTemplatePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBotTemplatePersister.swift; sourceTree = "<group>"; };
-		14C559E41D6899AF003B704C /* FileBranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchPersister.swift; sourceTree = "<group>"; };
 		14C559E61D6899AF003B704C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		14C559E71D6899AF003B704C /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		14C559E91D6899AF003B704C /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		14C559EA1D6899AF003B704C /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetwork.swift; sourceTree = "<group>"; };
 		14C559EE1D6899AF003B704C /* BranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFetcher.swift; sourceTree = "<group>"; };
-		14C559EF1D6899AF003B704C /* FileBranchDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchDataStore.swift; sourceTree = "<group>"; };
 		14C559F11D6899AF003B704C /* GitBranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitBranchFetcher.swift; sourceTree = "<group>"; };
 		14C559F51D6899AF003B704C /* XCSDeleteBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDeleteBotRequest.swift; sourceTree = "<group>"; };
 		14C559F71D6899AF003B704C /* XCSGetBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotRequest.swift; sourceTree = "<group>"; };
@@ -356,7 +341,6 @@
 		14C55A461D6899BE003B704C /* BranchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchTests.swift; sourceTree = "<group>"; };
 		14C55A481D6899BE003B704C /* MockBotCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotCreator.swift; sourceTree = "<group>"; };
 		14C55A491D6899BE003B704C /* MockBotDeleter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotDeleter.swift; sourceTree = "<group>"; };
-		14C55A4A1D6899BE003B704C /* MockNewBranchesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNewBranchesFetcher.swift; sourceTree = "<group>"; };
 		14C55A4C1D6899BE003B704C /* BotSyncingInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSyncingInteractorTests.swift; sourceTree = "<group>"; };
 		14C55A4F1D6899BE003B704C /* BotTemplateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateTests.swift; sourceTree = "<group>"; };
 		14C55A511D6899BE003B704C /* MockBotTemplateSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateSaver.swift; sourceTree = "<group>"; };
@@ -364,7 +348,6 @@
 		14C55A541D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateCreatingInteractorTests.swift; sourceTree = "<group>"; };
 		14C55A551D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateCreatingInteractorOutput.swift; sourceTree = "<group>"; };
 		14C55A581D6899BE003B704C /* FileBotTemplatePersisterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBotTemplatePersisterTests.swift; sourceTree = "<group>"; };
-		14C55A591D6899BE003B704C /* MockBranchPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchPersister.swift; sourceTree = "<group>"; };
 		14C55A5B1D6899BE003B704C /* MockCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCommand.swift; sourceTree = "<group>"; };
 		14C55A5C1D6899BE003B704C /* MockDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		14C55A5D1D6899BE003B704C /* MockNSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSData.swift; sourceTree = "<group>"; };
@@ -375,7 +358,6 @@
 		14C55A641D6899BE003B704C /* HTTPRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTests.swift; sourceTree = "<group>"; };
 		14C55A651D6899BE003B704C /* MockNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		14C55A671D6899BE003B704C /* NSURLSessionNetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetworkTests.swift; sourceTree = "<group>"; };
-		14C55A691D6899BE003B704C /* FileBranchDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBranchDataStoreTests.swift; sourceTree = "<group>"; };
 		14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFetcher.swift; sourceTree = "<group>"; };
 		14C55A6E1D6899BE003B704C /* XCSDeleteBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDeleteBotRequestTests.swift; sourceTree = "<group>"; };
 		14C55A701D6899BE003B704C /* XCSGetBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotRequestTests.swift; sourceTree = "<group>"; };
@@ -669,7 +651,6 @@
 				14C559D01D6899AF003B704C /* BotCreator.swift */,
 				14C559D11D6899AF003B704C /* BotDeleter.swift */,
 				14C559D21D6899AF003B704C /* BotsFetcher.swift */,
-				14C559D31D6899AF003B704C /* BranchesDataStore.swift */,
 				35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */,
 			);
 			path = Gateway;
@@ -739,9 +720,7 @@
 		14C559E11D6899AF003B704C /* Persitence */ = {
 			isa = PBXGroup;
 			children = (
-				14C559E21D6899AF003B704C /* BranchPersister.swift */,
 				14C559E31D6899AF003B704C /* FileBotTemplatePersister.swift */,
-				14C559E41D6899AF003B704C /* FileBranchPersister.swift */,
 			);
 			path = Persitence;
 			sourceTree = "<group>";
@@ -779,7 +758,6 @@
 			isa = PBXGroup;
 			children = (
 				14C559EE1D6899AF003B704C /* BranchFetcher.swift */,
-				14C559EF1D6899AF003B704C /* FileBranchDataStore.swift */,
 				14C559F01D6899AF003B704C /* Git */,
 			);
 			path = "Version Control";
@@ -906,7 +884,6 @@
 			children = (
 				14C55A481D6899BE003B704C /* MockBotCreator.swift */,
 				14C55A491D6899BE003B704C /* MockBotDeleter.swift */,
-				14C55A4A1D6899BE003B704C /* MockNewBranchesFetcher.swift */,
 				35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */,
 			);
 			path = Gateway;
@@ -972,7 +949,6 @@
 			isa = PBXGroup;
 			children = (
 				14C55A581D6899BE003B704C /* FileBotTemplatePersisterTests.swift */,
-				14C55A591D6899BE003B704C /* MockBranchPersister.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -1021,7 +997,6 @@
 		14C55A681D6899BE003B704C /* Version Control */ = {
 			isa = PBXGroup;
 			children = (
-				14C55A691D6899BE003B704C /* FileBranchDataStoreTests.swift */,
 				14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */,
 			);
 			path = "Version Control";
@@ -1579,10 +1554,8 @@
 				14C55A141D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
 				14C55A0A1D6899AF003B704C /* BotsFetcher.swift in Sources */,
 				143DA7AB1D46860C0019FDFA /* FlexiJSON+IntegerLiteralConvertible.swift in Sources */,
-				14C55A1E1D6899AF003B704C /* FileBranchPersister.swift in Sources */,
 				143EE4591D6B84FB002A2436 /* MainThreadCompletable.swift in Sources */,
 				14C55A3C1D6899AF003B704C /* AnyXCSRequest.swift in Sources */,
-				14C55A2C1D6899AF003B704C /* FileBranchDataStore.swift in Sources */,
 				14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				143DA7AD1D46860C0019FDFA /* FlexiJSON+ObjC.swift in Sources */,
 				143DA7AC1D46860C0019FDFA /* FlexiJSON+NilLiteralConvertible.swift in Sources */,
@@ -1612,7 +1585,6 @@
 				14C55A381D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */,
 				143DA7A61D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift in Sources */,
 				143EE4481D6B6F27002A2436 /* BotTemplateEventHandler.swift in Sources */,
-				14C55A0C1D6899AF003B704C /* BranchesDataStore.swift in Sources */,
 				143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
 				14C55A341D6899AF003B704C /* XCSGetBotsRequest.swift in Sources */,
 				143DA7AE1D46860C0019FDFA /* FlexiJSON+SequenceType.swift in Sources */,
@@ -1622,7 +1594,6 @@
 				143EE4461D6B6DD8002A2436 /* BotTemplateView.swift in Sources */,
 				143EE45B1D6B851E002A2436 /* GCDHelper.swift in Sources */,
 				143DA7AF1D46860C0019FDFA /* FlexiJSON+StringLiteralConvertible.swift in Sources */,
-				14C55A1A1D6899AF003B704C /* BranchPersister.swift in Sources */,
 				14C55A301D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */,
 				35CDF588AD0C837979D5A9DE /* BranchFilter.swift in Sources */,
 				35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */,
@@ -1655,7 +1626,6 @@
 				14C55A8A1D6899BE003B704C /* MockNSURLSession.swift in Sources */,
 				14C55A851D6899BE003B704C /* FileBotTemplatePersisterTests.swift in Sources */,
 				14C55A951D6899BE003B704C /* XCSGetBotsRequestTests.swift in Sources */,
-				14C55A861D6899BE003B704C /* MockBranchPersister.swift in Sources */,
 				14C55A8B1D6899BE003B704C /* MockNSURLSessionDataTask.swift in Sources */,
 				143EE4421D6B6CFB002A2436 /* BotTemplatePresenterTests.swift in Sources */,
 				143EE4601D6B85AA002A2436 /* MockMainThreadCompletable.swift in Sources */,
@@ -1687,11 +1657,9 @@
 				14C55A971D6899BE003B704C /* Bot+JSONTransformableTests.swift in Sources */,
 				1456EE8C1D4E990A0044F458 /* FlexiJSON+FloatLiteralConvertibleTests.swift in Sources */,
 				14C55A961D6899BE003B704C /* XCSPostBotsRequestTests.swift in Sources */,
-				14C55A911D6899BE003B704C /* FileBranchDataStoreTests.swift in Sources */,
 				14C55A9B1D6899BE003B704C /* XcodeServerBotAPITests.swift in Sources */,
 				1456EE8E1D4E990A0044F458 /* FlexiJSON+IntegerLiteralConvertibleTests.swift in Sources */,
 				1456EE891D4E990A0044F458 /* FlexiJSON+ArrayLiteralConvertibleTests.swift in Sources */,
-				14C55A7E1D6899BE003B704C /* MockNewBranchesFetcher.swift in Sources */,
 				14C55A831D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift in Sources */,
 				35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */,
 				35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */,
@@ -1713,7 +1681,6 @@
 				14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				1484B6181D63992C00319088 /* MockNetwork.swift in Sources */,
 				1484B5E41D62676200319088 /* FlexiJSON.swift in Sources */,
-				14C55A2D1D6899AF003B704C /* FileBranchDataStore.swift in Sources */,
 				1484B6091D6267FC00319088 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */,
 				14C55A9C1D689A24003B704C /* TestHelpers.swift in Sources */,
 				1484B6071D6267F500319088 /* ShouldCreateTemplateFromBotName.swift in Sources */,
@@ -1726,7 +1693,6 @@
 				1484B6061D6267F000319088 /* TwoRemoteGitBuilder.swift in Sources */,
 				1484B5DB1D62676200319088 /* FlexiJSON+DictionaryLiteralConvertible.swift in Sources */,
 				14C55A151D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
-				14C55A1F1D6899AF003B704C /* FileBranchPersister.swift in Sources */,
 				1484B5DF1D62676200319088 /* FlexiJSON+IntegerLiteralConvertible.swift in Sources */,
 				14C55A071D6899AF003B704C /* BotCreator.swift in Sources */,
 				14C55A131D6899AF003B704C /* BotNamesFetcher.swift in Sources */,
@@ -1735,7 +1701,6 @@
 				14C55A3D1D6899AF003B704C /* AnyXCSRequest.swift in Sources */,
 				14C55A1D1D6899AF003B704C /* FileBotTemplatePersister.swift in Sources */,
 				14C55A211D6899AF003B704C /* Command.swift in Sources */,
-				14C55A1B1D6899AF003B704C /* BranchPersister.swift in Sources */,
 				14C55A0F1D6899AF003B704C /* BotSyncingInteractor.swift in Sources */,
 				14C55A251D6899AF003B704C /* HTTPRequest.swift in Sources */,
 				14C55A371D6899AF003B704C /* XCSPostBotsRequest.swift in Sources */,
@@ -1760,14 +1725,12 @@
 				14887E211D663C5F009E245C /* ShouldPersistBotTemplate.swift in Sources */,
 				14C55A391D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */,
 				1484B5DA1D62676200319088 /* FlexiJSON+BooleanLiteralConvertible.swift in Sources */,
-				14C55A0D1D6899AF003B704C /* BranchesDataStore.swift in Sources */,
 				1484B5DC1D62676200319088 /* FlexiJSON+Either.swift in Sources */,
 				1484B5E01D62676200319088 /* FlexiJSON+NilLiteralConvertible.swift in Sources */,
 				14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */,
 				1484B5DD1D62676200319088 /* FlexiJSON+FloatLiteralConvertible.swift in Sources */,
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
 				35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */,
-				35CDF027F04C3A9896B138EB /* MockNewBranchesFetcher.swift in Sources */,
 				35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */,
 				35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */,
 				35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */,
@@ -1784,6 +1747,7 @@
 				35CDF95AF2F1667B94A4044A /* XCSBranchesDataStore.swift in Sources */,
 				35CDF48DDE12AED013496C64 /* FileXCSBranchesDataStore.swift in Sources */,
 				35CDF6A2FBC7C445C9902B59 /* XCSBranch.swift in Sources */,
+				35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

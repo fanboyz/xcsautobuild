@@ -37,7 +37,7 @@ class ShouldCreateBotFromTemplate: NSObject, SlimDecisionTable {
         network.expectCreateBot()
         git = TwoRemoteGitBuilder()
         git.add(branch: "develop")
-        let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: FileBranchPersister(file: testDataStoreFile))
-        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api, branchFilter: TransparentBranchFilter())
+        let branchFetcher = GitBranchFetcher(directory: git.localURL.path!)!
+        interactor = BotSyncingInteractor(branchFetcher: branchFetcher, botCreator: api, branchFilter: TransparentBranchFilter())
     }
 }

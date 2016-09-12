@@ -24,6 +24,7 @@ class GitBranchFetcher: BranchFetcher {
         let branches = try! repo.remoteBranches()
         return branches.filter { $0.remoteName == ciServerName }
                        .flatMap { $0.shortName }
+                       .map { Branch(name: $0) }
     }
 
     private func copyRemoteBranchesToCIRemote() {
