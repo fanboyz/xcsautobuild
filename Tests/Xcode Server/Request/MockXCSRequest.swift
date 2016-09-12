@@ -20,22 +20,22 @@ class MockXCSRequest<RequestDataType, ResponseType>: XCSRequest {
     }
 
     var didParse = false
-    var stubbedResponse: ResponseType?
+    var stubbedResponse: XCSResponse<ResponseType>?
     func parse(response data: NSData) -> ResponseType? {
         didParse = true
-        return stubbedResponse
+        return stubbedResponse?.data
     }
 
     var didSend = false
     var didSendCount = 0
-    func send(data: RequestDataType, completion: (ResponseType?) -> ()) {
+    func send(data: RequestDataType, completion: (XCSResponse<ResponseType>?) -> ()) {
         didSend = true
         didSendCount += 1
         invokedData = data
         completion(stubbedResponse)
     }
 
-    func send(data: RequestDataType) -> ResponseType? {
+    func send(data: RequestDataType) -> XCSResponse<ResponseType>? {
         didSend = true
         didSendCount += 1
         invokedData = data

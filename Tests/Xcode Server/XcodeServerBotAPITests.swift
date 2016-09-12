@@ -149,30 +149,34 @@ class XcodeServerBotAPITests: XCTestCase {
     }
 
     func stubMatchingBotResponse() {
-        mockedGetBotsRequest.stubbedResponse = [RemoteBot(id: botID, name: formattedTestBranchName())]
+        stubGetBotsResponse(with: [RemoteBot(id: botID, name: formattedTestBranchName())])
     }
 
     func stubUnmatchingBotResponse() {
-        mockedGetBotsRequest.stubbedResponse = [RemoteBot(id: botID, name: "unmatching name")]
+        stubGetBotsResponse(with: [RemoteBot(id: botID, name: "unmatching name")])
     }
 
     func stubMixedBotResponse() {
-        mockedGetBotsRequest.stubbedResponse = [
+        stubGetBotsResponse(with: [
             RemoteBot(id: botID, name: formattedTestBranchName()),
             RemoteBot(id: botID, name: "unmatching name")
-        ]
+        ])
     }
 
     func stubGetBotsResponse() {
-        mockedGetBotsRequest.stubbedResponse = [RemoteBot(id: "123", name: "bot1")]
+        stubGetBotsResponse(with: [RemoteBot(id: "123", name: "bot1")])
+    }
+
+    func stubGetBotsResponse(with bots: [RemoteBot]) {
+        mockedGetBotsRequest.stubbedResponse = XCSResponse(data: bots, statusCode: 200)
     }
 
     func stubGetBotResponse() {
-        mockedGetBotRequest.stubbedResponse = botData
+        mockedGetBotRequest.stubbedResponse = XCSResponse(data: botData, statusCode: 200)
     }
 
     func stubBadGetBotResponse() {
-        mockedGetBotRequest.stubbedResponse = NSData()
+        mockedGetBotRequest.stubbedResponse = XCSResponse(data: NSData(), statusCode: 200)
     }
 
     func formattedTestBranchName() -> String {

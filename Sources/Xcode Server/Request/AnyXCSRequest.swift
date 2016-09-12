@@ -7,7 +7,7 @@ import Foundation
 class AnyXCSRequest<RequestDataType, ResponseType>: XCSRequest {
 
     var network: Network { return _networkGetter() }
-    private let _send: (RequestDataType, (ResponseType?) -> ()) -> ()
+    private let _send: (RequestDataType, (XCSResponse<ResponseType>?) -> ()) -> ()
     private let _networkGetter: (() -> (Network))
     private let _createRequest: (RequestDataType) -> (HTTPRequest)
     private let _parse: (NSData) -> (ResponseType?)
@@ -27,7 +27,7 @@ class AnyXCSRequest<RequestDataType, ResponseType>: XCSRequest {
         return _parse(data)
     }
 
-    func send(data: RequestDataType, completion: (ResponseType?) -> ()) {
+    func send(data: RequestDataType, completion: (XCSResponse<ResponseType>?) -> ()) {
         _send(data, completion)
     }
 }

@@ -28,7 +28,13 @@ class XCSRequestTests: XCTestCase {
         XCTAssert(request.didCreateRequest)
     }
 
-    func test_send_shouldParseResponse() {
+    func test_send_shouldNotParseResponse_whenNoResponseData() {
+        send()
+        XCTAssertFalse(request.didParse)
+    }
+
+    func test_send_shouldParseResponse_whenResponseData() {
+        stubResponse()
         send()
         XCTAssert(request.didParse)
     }
@@ -41,6 +47,16 @@ class XCSRequestTests: XCTestCase {
         XCTAssert(didCallCompletion)
     }
 
+    func test_send_shouldCompleteWithNil_whenNoData() {
+        stubResponse(data: nil)
+        XCTAssertNil(send())
+    }
+
+    func test_send_shouldCompleteWithNil_whenNoStatusCode() {
+        stubResponse(statusCode: nil)
+        XCTAssertNil(send())
+    }
+
     // MARK: - send (sync)
 
     func test_sendSync_shouldCreateRequest() {
@@ -48,7 +64,13 @@ class XCSRequestTests: XCTestCase {
         XCTAssert(request.didCreateRequest)
     }
 
-    func test_sendSync_shouldParseResponse() {
+    func test_sendSync_shouldNotParseResponse_whenNoResponseData() {
+        request.send("")
+        XCTAssertFalse(request.didParse)
+    }
+
+    func test_sendSync_shouldParseResponse_whenResponseData() {
+        stubResponse()
         request.send("")
         XCTAssert(request.didParse)
     }
@@ -56,14 +78,24 @@ class XCSRequestTests: XCTestCase {
     func test_sendSync_shouldBlockUntilFinished() {
         let parsed = "hello".dataUsingEncoding(NSUTF8StringEncoding)!
         mockedNetwork.stubbedResponse = parsed
+        mockedNetwork.stubbedStatusCode = 200
         let response = request.send("")
-        XCTAssertEqual(response, parsed)
+        XCTAssertEqual(response?.data, parsed)
     }
 
     // MARK: - Helpers
 
-    func send() {
-        request.send("") { _ in }
+    func send() -> XCSResponse<NSData>? {
+        var response: XCSResponse<NSData>?
+        request.send("") { r in
+            response = r
+        }
+        return response
+    }
+
+    func stubResponse(data data: NSData? = NSData(), statusCode: Int? = 200) {
+        mockedNetwork.stubbedResponse = data
+        mockedNetwork.stubbedStatusCode = statusCode
     }
 
     class TestXCSRequest: XCSRequest {

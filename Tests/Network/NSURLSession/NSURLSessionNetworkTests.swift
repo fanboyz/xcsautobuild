@@ -33,13 +33,14 @@ class NSURLSessionNetworkTests: XCTestCase {
         XCTAssert(mockedSession.stubbedDataTask.didResume)
     }
 
-    func test_sendRequest_shouldCompleteWithEmptyData_whenNoData() {
-        XCTAssertEqual(sendRequest(), NSData())
+    func test_sendRequest_shouldCompleteWithNoData_whenNoData() {
+        mockedSession.stubbedData = nil
+        XCTAssertNil(sendRequest().data)
     }
 
     func test_sendRequest_shouldCompleteWithData() {
         mockedSession.stubbedData = testData
-        XCTAssertEqual(sendRequest(), testData)
+        XCTAssertEqual(sendRequest().data, testData)
     }
 
     func test_sendRequest_shouldSetHeaders() {
@@ -72,14 +73,23 @@ class NSURLSessionNetworkTests: XCTestCase {
         XCTAssertEqual(mockedSession.invokedRequest?.URL, testURL)
     }
 
+    func test_sendRequest_shouldReturnNilStatusCode_whenResponseIsNil() {
+        XCTAssertNil(sendRequest().statusCode)
+    }
+
+    func test_sendRequest_shouldReturnNilStatusCode_whenWrongType() {
+        mockedSession.stubbedResponse = NSURLResponse(URL: testURL, MIMEType: nil, expectedContentLength: 0, textEncodingName: nil)
+        XCTAssertNil(sendRequest().statusCode)
+    }
+
     // MARK: - Helpers
 
-    func sendRequest() -> NSData {
-        var data: NSData!
-        network.send(testRequest) { d in
-            data = d
+    func sendRequest() -> (data: NSData?, statusCode: Int?) {
+        var response: (NSData?, Int?)!
+        network.send(testRequest) { r in
+            response = r
         }
-        return data
+        return response
     }
 
     func createPostRequest() -> HTTPRequest {

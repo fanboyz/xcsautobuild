@@ -28,9 +28,10 @@ class NSURLSessionNetwork: Network {
         self.configuration = configuration
     }
 
-    func send(request: HTTPRequest, completion: ((NSData) -> ())?) {
-        let task = session.dataTaskWithRequest(buildRequest(request)) { data, _, _ in
-            completion?(data ?? NSData())
+    func send(request: HTTPRequest, completion: ((NSData?, Int?) -> ())?) {
+        let task = session.dataTaskWithRequest(buildRequest(request)) { data, response, _ in
+            let httpResponse = response as? NSHTTPURLResponse
+            completion?(data, httpResponse?.statusCode)
         }
         task.resume()
     }

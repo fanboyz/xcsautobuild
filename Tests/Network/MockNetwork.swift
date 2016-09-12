@@ -9,11 +9,11 @@ class MockNetwork: Network {
 
     var didSendRequest = false
     var invokedRequest: HTTPRequest?
-    var stubbedResponse = NSData()
-
-    func send(request: HTTPRequest, completion: ((NSData) -> ())?) {
+    var stubbedResponse: NSData?
+    var stubbedStatusCode: Int?
+    func send(request: HTTPRequest, completion: ((NSData?, Int?) -> ())?) {
         didSendRequest = true
         invokedRequest = request
-        completion?(stubbedResponse)
+        completion?(stubbedResponse, stubbedStatusCode)
     }
 }
