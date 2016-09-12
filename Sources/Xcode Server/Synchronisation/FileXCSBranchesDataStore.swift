@@ -13,6 +13,7 @@ class FileXCSBranchesDataStore: XCSBranchesDataStore {
     }
 
     func load() -> [XCSBranch] {
+        return loadBranches().flatMap { XCSBranch(dictionary: $0.1) }
     }
 
     func load(fromBranchName name: String) -> XCSBranch? {

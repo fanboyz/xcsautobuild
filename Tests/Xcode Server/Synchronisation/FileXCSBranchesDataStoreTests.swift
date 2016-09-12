@@ -11,6 +11,9 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
     var store: FileXCSBranchesDataStore!
     var branch: XCSBranch!
     let file = NSTemporaryDirectory() + "TestXCSBranches"
+    let develop = XCSBranch(name: "develop", botID: "master_bot_id")
+    let master = XCSBranch(name: "master", botID: "develop_bot_id")
+    let branchWithNoBotID = XCSBranch(name: "develop", botID: nil)
 
     override func setUp() {
         super.setUp()
@@ -26,62 +29,68 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
     // MARK: - save
 
     func test_save_shouldSaveBranchWithoutBotID() {
-        branch = branchWithNoBotID()
-        save()
-        XCTAssertEqual(load(), branch)
+        let branch = branchWithNoBotID
+        save(branch)
+        XCTAssertEqual(load(branchNamed: branchWithNoBotID.name), branch)
     }
 
     func test_save_shouldSaveBranchWithBotID() {
-        branch = branch(withName: "master")
-        save()
-        XCTAssertEqual(load(), branch)
+        save(master)
+        XCTAssertEqual(load(branchNamed: "master"), master)
     }
 
     func test_save_shouldOverwriteBranch() {
-        branch = branchWithNoBotID()
-        save()
-        branch = branch(withName: "master")
-        save()
-        XCTAssertEqual(load(), branch)
+        save(XCSBranch(name: "master", botID: "different"))
+        save(master)
+        XCTAssertEqual(load(branchNamed: "master"), master)
     }
 
     func test_save_shouldReturnNil_whenNoBranch() {
-        branch = branch(withName: "develop")
-        XCTAssertNil(load())
+        XCTAssertNil(load(branchNamed: "develop"))
     }
 
     func test_save_shouldSaveAndLoadMultipleBranches() {
-        branch = branch(withName: "develop")
-        save()
-        branch = branch(withName: "master")
-        save()
-        XCTAssertEqual(load(withName: "develop"), branch(withName: "develop"))
-        XCTAssertEqual(load(withName: "master"), branch(withName: "master"))
+        save(develop)
+        save(master)
+        XCTAssertEqual(load(branchNamed: "develop"), develop)
+        XCTAssertEqual(load(branchNamed: "master"), master)
+    }
+
+    // MARK: - load
+
+    func test_load_shouldLoadAllSavedBranches() {
+        save(develop)
+        save(master)
+        let loaded = load()
+        XCTAssert(loaded.contains(develop))
+        XCTAssert(loaded.contains(master))
+        XCTAssertEqual(loaded.count, 2)
+    }
+
+    func test_load_shouldIgnoreBadFile() {
+        writeBadFile()
+        XCTAssert(load().isEmpty)
     }
 
     // MARK: - Helpers
 
-    func save() {
-        store.save(branch: branch)
+    func save(branch: XCSBranch? = nil) {
+        store.save(branch: branch ?? self.branch)
     }
 
-    func load() -> XCSBranch? {
-        return store.load(fromBranchName: branch.name)
+    func load() -> [XCSBranch] {
+        return store.load()
     }
 
-    func load(withName name: String) -> XCSBranch? {
+    func load(branchNamed name: String) -> XCSBranch? {
         return store.load(fromBranchName: name)
-    }
-
-    func branchWithNoBotID() -> XCSBranch {
-        return XCSBranch(name: "develop", botID: nil)
-    }
-
-    func branch(withName name: String) -> XCSBranch {
-        return XCSBranch(name: name, botID: "123")
     }
 
     func deleteFile() {
         _ = try? NSFileManager.defaultManager().removeItemAtPath(file)
+    }
+
+    func writeBadFile() {
+        try! "invalid!".writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding)
     }
 }
