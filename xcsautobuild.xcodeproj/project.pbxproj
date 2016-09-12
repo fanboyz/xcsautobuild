@@ -166,8 +166,10 @@
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
+		35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
 		35CDF1767F0F3594D82388C6 /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
+		35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
 		35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7CC983EAEAD723DDF7D /* ViewController.swift */; };
 		35CDF2D7853E79BB308C6C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDFCF8BEDBEDDBDCEC328A /* Main.storyboard */; };
@@ -195,6 +197,7 @@
 		35CDF942D90479BE7BAC1B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1333C289C523B4D465D /* Constants.swift */; };
 		35CDF95AF2F1667B94A4044A /* XCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */; };
 		35CDFA3520BE3215E9E66397 /* FileXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */; };
+		35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
 		35CDFBCCB72B9D290AF85CF2 /* GlobalBranchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF693CE4844D9C23D3200 /* GlobalBranchFilterTests.swift */; };
 		35CDFD0F1C687E352115D612 /* GlobalBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF854E75C81C9C33F68EE /* GlobalBranchFilter.swift */; };
 		35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */; };
@@ -382,6 +385,7 @@
 		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
 		35CDF1333C289C523B4D465D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
+		35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDF276E9296DFDC4AD5BF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranchesDataStore.swift; sourceTree = "<group>"; };
 		35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateBotFromTemplate.swift; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 		35CDF99F4BCD0800B6F4B869 /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDataStore.swift; sourceTree = "<group>"; };
 		35CDFA8D2FEFC2F134648AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = xcsautobuild_macOS/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterView.swift; sourceTree = "<group>"; };
 		35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLoader.swift; sourceTree = "<group>"; };
@@ -652,6 +657,7 @@
 				14C559D11D6899AF003B704C /* BotDeleter.swift */,
 				14C559D21D6899AF003B704C /* BotsFetcher.swift */,
 				35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */,
+				35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */,
 			);
 			path = Gateway;
 			sourceTree = "<group>";
@@ -885,6 +891,7 @@
 				14C55A481D6899BE003B704C /* MockBotCreator.swift */,
 				14C55A491D6899BE003B704C /* MockBotDeleter.swift */,
 				35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */,
+				35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */,
 			);
 			path = Gateway;
 			sourceTree = "<group>";
@@ -1608,6 +1615,7 @@
 				35CDF66BB9CB5812FE8C2450 /* XCSBranchesDataStore.swift in Sources */,
 				35CDFA3520BE3215E9E66397 /* FileXCSBranchesDataStore.swift in Sources */,
 				35CDF56C9E5BC7809F43B9CF /* XCSBranch.swift in Sources */,
+				35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1669,6 +1677,7 @@
 				35CDF771662991B62EFC3BC1 /* MockXCSBranchesDataStore.swift in Sources */,
 				35CDF67DFA6C24351C1C57E2 /* FileXCSBranchesDataStoreTests.swift in Sources */,
 				35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */,
+				35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1748,6 +1757,7 @@
 				35CDF48DDE12AED013496C64 /* FileXCSBranchesDataStore.swift in Sources */,
 				35CDF6A2FBC7C445C9902B59 /* XCSBranch.swift in Sources */,
 				35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */,
+				35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

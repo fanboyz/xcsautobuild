@@ -12,6 +12,9 @@ class FileXCSBranchesDataStore: XCSBranchesDataStore {
         self.file = file
     }
 
+    func load() -> [XCSBranch] {
+    }
+
     func load(fromBranchName name: String) -> XCSBranch? {
         let branches = loadBranches()
         return XCSBranch(dictionary: branches[name])

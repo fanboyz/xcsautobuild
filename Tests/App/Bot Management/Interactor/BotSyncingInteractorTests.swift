@@ -9,54 +9,86 @@ class BotSyncingInteractorTests: XCTestCase {
     
     var interactor: BotSyncingInteractor!
     var mockedBranchFetcher: MockBranchFetcher!
-    var mockedBotCreator: MockBotCreator!
+    var mockedBotSynchroniser: MockBotSynchroniser!
     var mockedBranchFilter: MockBranchFilter!
+    var mockedBranchesDataStore: MockXCSBranchesDataStore!
+    let masterBranch = XCSBranch(name: "master", botID: "bot_id")
+    let developBranch = XCSBranch(name: "develop", botID: "bot_id_2")
 
     override func setUp() {
         super.setUp()
         mockedBranchFetcher = MockBranchFetcher()
-        mockedBotCreator = MockBotCreator()
+        mockedBotSynchroniser = MockBotSynchroniser()
         mockedBranchFilter = MockBranchFilter()
+        mockedBranchesDataStore = MockXCSBranchesDataStore()
         interactor = BotSyncingInteractor(
                 branchFetcher: mockedBranchFetcher,
-                botCreator: mockedBotCreator,
-                branchFilter: mockedBranchFilter
+                botSynchroniser: mockedBotSynchroniser,
+                branchFilter: mockedBranchFilter,
+                branchesDataStore: mockedBranchesDataStore
             )
     }
     
     // MARK: - execute
 
     func test_execute_shouldFetchBranches() {
-        interactor.execute()
+        execute()
         XCTAssert(mockedBranchFetcher.didFetchBranches)
     }
 
-    func test_execute_shouldCreateNewBotForEachBranch() {
-        let newBranches = ["develop", "master"]
-        stubNewBranchNames(newBranches)
-        interactor.execute()
-        XCTAssertEqual(createdBotNames(), newBranches)
+    func test_execute_shouldSyncBranch_whenExistsInStoredBranches() {
+        stubFetchedBranchNames(["master"])
+        stubStoredBranch(masterBranch)
+        execute()
+        XCTAssertEqual(synchronisedBranches(), [masterBranch])
+    }
+
+    func test_execute_shouldSyncBranches_whenTheyExistInStoredBranches() {
+        stubFetchedBranchNames(["develop", "master"])
+        stubStoredBranches([masterBranch, developBranch])
+        execute()
+        XCTAssertEqual(synchronisedBranches(), [masterBranch, developBranch])
+    }
+
+    func test_execute_shouldSyncBranches_whenTheyDoNotExistInStoredBranches() {
+        stubFetchedBranchNames(["new"])
+        execute()
+        XCTAssertEqual(synchronisedBranches(), [XCSBranch(name: "new", botID: nil)])
     }
 
     func test_execute_shouldFilterBranches() {
-        let createdBranches = ["1", "2"]
-        stubNewBranchNames(createdBranches)
-        mockedBranchFilter.stubbedFilteredBranches = [Branch(name: "filtered")]
+        let expected = [XCSBranch(name: "3", botID: nil)]
+        let fetchedBranches = ["1", "2", "3"]
+        stubFetchedBranchNames(fetchedBranches)
+        stubStoredBranches(expected)
+        mockedBranchFilter.stubbedFilteredBranches = [Branch(name: "3")]
         interactor.execute()
-        XCTAssertEqual(filteredBranchNames(), createdBranches)
-        XCTAssertEqual(createdBotNames(), ["filtered"])
+        XCTAssertEqual(filteredBranchNames(), fetchedBranches)
+        XCTAssertEqual(synchronisedBranches(), expected)
     }
 
     // MARK: - Helpers
 
-    func stubNewBranchNames(names: [String]) {
+    func execute() {
+        interactor.execute()
+    }
+
+    func stubFetchedBranchNames(names: [String]) {
         let branches = names.map { Branch(name: $0) }
         mockedBranchFilter.stubbedFilteredBranches = branches
         mockedBranchFetcher.stubbedBranches = branches
     }
 
-    func createdBotNames() -> [String] {
-        return mockedBotCreator.invokedBranches.map { $0.name }
+    func stubStoredBranch(branch: XCSBranch) {
+        stubStoredBranches([branch])
+    }
+
+    func stubStoredBranches(branches: [XCSBranch]) {
+        mockedBranchesDataStore.stubbedBranches = branches
+    }
+
+    func synchronisedBranches() -> [XCSBranch] {
+        return mockedBotSynchroniser.invokedBranches
     }
 
     func filteredBranchNames() -> [String] {

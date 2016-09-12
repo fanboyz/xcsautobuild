@@ -6,5 +6,6 @@ import Foundation
 
 protocol XCSBranchesDataStore {
     func load(fromBranchName name: String) -> XCSBranch?
+    func load() -> [XCSBranch]
     func save(branch branch: XCSBranch)
 }
