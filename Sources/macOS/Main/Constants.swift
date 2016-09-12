@@ -13,4 +13,11 @@ class Constants {
             getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Constants.network))
         ))
     }()
+
+    static let botSynchroniser: XCSBotSynchroniser = {
+        return XCSBotSynchroniser(
+            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Constants.network)),
+            createBotRequest: AnyXCSRequest(XCSPostBotsRequest(network: Constants.network)),
+            botTemplateLoader: FileBotTemplatePersister(file: templateFile))
+    }()
 }
