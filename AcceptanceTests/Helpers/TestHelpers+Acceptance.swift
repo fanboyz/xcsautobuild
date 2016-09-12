@@ -18,6 +18,7 @@ func commaSeparatedString(from array: [String]) -> String {
 let yes = "yes"
 let no = "no"
 let api = Constants.api
+let botSynchroniser = Constants.botSynchroniser
 class TestClass {}
 let testBundleClass = TestClass.self
 let testHost = "seans-macbook-pro-2.local"

@@ -20,7 +20,7 @@ class ShouldPersistBranchesBetweenLaunches: NSObject, SlimDecisionTable {
         return savedBranchesArray.enumerate().flatMap { branchesArray.contains($0.1) ? nil : String($0.0) }
     }
     var savedBranchNames: [String] {
-        return savedBranchesArray.map({ XcodeServerBotAPI.branchNameToBotName($0) })
+        return savedBranchesArray.map({ Constants.convertBranchNameToBotName($0) })
     }
     var savedBranchIDs: [String] {
         return savedBranchesArray.enumerate().map { String($0.0) }
