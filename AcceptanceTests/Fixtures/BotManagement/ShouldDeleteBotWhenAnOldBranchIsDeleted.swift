@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldDeleteBotWhenAnOldBranchIsDeleted)
-class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
+class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable {
 
     // MARK: - Input
     var oldBranches: String!
@@ -34,17 +34,10 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
     var interactor: BotSyncingInteractor!
     var network: MockNetwork!
 
-    func reset() {
-        branches = nil
-        oldBranches = nil
+    override func setUp() {
         numberOfDeletedBots = nil
-        git = nil
-        network = nil
-        interactor = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testDataStoreFile)
     }
 
-    func execute() {
         setUp()
         interactor.execute()
         waitUntil(network.deleteBotCount != 0)
@@ -62,4 +55,5 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: NSObject, SlimDecisionTable {
         let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: persister)
         interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api, branchFilter: TransparentBranchFilter())
     }
+    override func test() {
 }

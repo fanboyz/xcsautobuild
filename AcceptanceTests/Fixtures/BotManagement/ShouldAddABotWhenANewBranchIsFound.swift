@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldAddABotWhenANewBranchIsFound)
-class ShouldAddABotWhenANewBranchIsFound: NSObject, SlimDecisionTable {
+class ShouldAddABotWhenANewBranchIsFound: DecisionTable {
 
     // MARK: - Input
     var branches: String!
@@ -21,20 +21,15 @@ class ShouldAddABotWhenANewBranchIsFound: NSObject, SlimDecisionTable {
     var git: TwoRemoteGitBuilder!
     var interactor: BotSyncingInteractor!
 
-    func reset() {
-        branches = nil
+    override func setUp() {
         numberOfCreatedBots = nil
-        git = nil
-        interactor = nil
-        network = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testDataStoreFile)
     }
 
-    func execute() {
         setUp()
         interactor.execute()
         waitUntil(network.createBotCount != 0)
         numberOfCreatedBots = network.createBotCount
+    override func test() {
     }
 
     func setUp() {

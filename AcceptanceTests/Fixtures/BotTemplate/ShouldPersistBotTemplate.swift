@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldPersistBotTemplate)
-class ShouldPersistBotTemplate: NSObject, SlimDecisionTable {
+class ShouldPersistBotTemplate: DecisionTable {
 
     // MARK: - inputs
     var botName: String!
@@ -22,16 +22,11 @@ class ShouldPersistBotTemplate: NSObject, SlimDecisionTable {
     var network: MockNetwork!
     var persister: FileBotTemplatePersister!
 
-    func reset() {
-        botName = nil
-        availableBots = nil
-        network = nil
-        persister = nil
+    override func setUp() {
         didPersist = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testTemplateFile)
     }
 
-    func execute() {
+    override func test() {
         network = MockNetwork()
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }

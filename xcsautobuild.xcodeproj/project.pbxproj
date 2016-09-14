@@ -38,6 +38,8 @@
 		144434581D5CF69B00025F90 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		144434591D5CF69B00025F90 /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1444345E1D5D1EDF00025F90 /* ObjectiveGit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14491D5D1D89D583007BB3E3 /* DecisionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14491D5C1D89D583007BB3E3 /* DecisionTable.swift */; };
+		14491D621D89D949007BB3E3 /* GitFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14491D611D89D949007BB3E3 /* GitFixture.swift */; };
 		1456EE891D4E990A0044F458 /* FlexiJSON+ArrayLiteralConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE7E1D4E990A0044F458 /* FlexiJSON+ArrayLiteralConvertibleTests.swift */; };
 		1456EE8A1D4E990A0044F458 /* FlexiJSON+BoolLiteralConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE7F1D4E990A0044F458 /* FlexiJSON+BoolLiteralConvertibleTests.swift */; };
 		1456EE8B1D4E990A0044F458 /* FlexiJSON+DictionaryLiteralConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1456EE801D4E990A0044F458 /* FlexiJSON+DictionaryLiteralConvertibleTests.swift */; };
@@ -297,6 +299,8 @@
 		143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainThreadCompletable.swift; sourceTree = "<group>"; };
 		143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadedXcodeServerBotAPI.swift; sourceTree = "<group>"; };
 		144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoRemoteGitBuilder.swift; sourceTree = "<group>"; };
+		14491D5C1D89D583007BB3E3 /* DecisionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionTable.swift; sourceTree = "<group>"; };
+		14491D611D89D949007BB3E3 /* GitFixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitFixture.swift; sourceTree = "<group>"; };
 		1456EE7E1D4E990A0044F458 /* FlexiJSON+ArrayLiteralConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ArrayLiteralConvertibleTests.swift"; sourceTree = "<group>"; };
 		1456EE7F1D4E990A0044F458 /* FlexiJSON+BoolLiteralConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+BoolLiteralConvertibleTests.swift"; sourceTree = "<group>"; };
 		1456EE801D4E990A0044F458 /* FlexiJSON+DictionaryLiteralConvertibleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+DictionaryLiteralConvertibleTests.swift"; sourceTree = "<group>"; };
@@ -530,6 +534,15 @@
 				143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */,
 			);
 			path = Thread;
+			sourceTree = "<group>";
+		};
+		14491D5E1D89D87A007BB3E3 /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				14491D5C1D89D583007BB3E3 /* DecisionTable.swift */,
+				14491D611D89D949007BB3E3 /* GitFixture.swift */,
+			);
+			path = Lifecycle;
 			sourceTree = "<group>";
 		};
 		1456EE7D1D4E990A0044F458 /* Tests */ = {
@@ -1084,6 +1097,7 @@
 		14CC5CBE1D591C9F00F1CA28 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				14491D5E1D89D87A007BB3E3 /* Lifecycle */,
 				1484B6161D6398CF00319088 /* Network */,
 				14CC5CBF1D591CBF00F1CA28 /* TestHelpers+Acceptance.swift */,
 				144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */,
@@ -1305,15 +1319,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		_____Configs_ /* Configs */ = {
+		"___RootGroup_" = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Configs_" /* Configs */,
+				143DA7961D46860C0019FDFA /* FlexiJSON */,
+				14C559C91D6899AF003B704C /* Sources */,
+				14C55A421D6899BE003B704C /* Tests */,
+				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
+				"____Products_" /* Products */,
+				9EC587D270EB844A35E1D35C /* Pods */,
+				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
+				35CDF6DE58051E7356102D09 /* Resources */,
 			);
-			name = Configs;
 			sourceTree = "<group>";
 		};
-		____Products_ /* Products */ = {
+		"____Products_" /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1459B3AD1D3EBE9D004D6FF9 /* xcsautobuild.app */,
@@ -1323,20 +1345,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		___RootGroup_ = {
+		"_____Configs_" /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				_____Configs_ /* Configs */,
-				143DA7961D46860C0019FDFA /* FlexiJSON */,
-				14C559C91D6899AF003B704C /* Sources */,
-				14C55A421D6899BE003B704C /* Tests */,
-				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
-				____Products_ /* Products */,
-				9EC587D270EB844A35E1D35C /* Pods */,
-				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
-				35CDF6DE58051E7356102D09 /* Resources */,
+				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
 			);
+			name = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1430,7 +1444,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */;
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1438,8 +1452,8 @@
 				en,
 				Base,
 			);
-			mainGroup = ___RootGroup_;
-			productRefGroup = ____Products_ /* Products */;
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1732,6 +1746,7 @@
 				14C55A311D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */,
 				14C55A411D6899AF003B704C /* XcodeServerBotAPI.swift in Sources */,
 				1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */,
+				14491D621D89D949007BB3E3 /* GitFixture.swift in Sources */,
 				14C55A271D6899AF003B704C /* Network.swift in Sources */,
 				1484B5D91D62676200319088 /* FlexiJSON+ArrayLiteralConvertible.swift in Sources */,
 				143EE4641D6B90E9002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
@@ -1764,6 +1779,7 @@
 				35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */,
 				35CDFFE5459A887962EC27FA /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift in Sources */,
 				35CDF756528B834A8338B6F4 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift in Sources */,
+				14491D5D1D89D583007BB3E3 /* DecisionTable.swift in Sources */,
 				35CDF95AF2F1667B94A4044A /* XCSBranchesDataStore.swift in Sources */,
 				35CDF48DDE12AED013496C64 /* FileXCSBranchesDataStore.swift in Sources */,
 				35CDF6A2FBC7C445C9902B59 /* XCSBranch.swift in Sources */,
@@ -2120,7 +2136,14 @@
 			};
 			name = Release;
 		};
-		_______Debug_ /* Debug */ = {
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
 			buildSettings = {
@@ -2128,13 +2151,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
-		};
-		_____Release_ /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -2166,11 +2182,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */ = {
+		"___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				_______Debug_ /* Debug */,
-				_____Release_ /* Release */,
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

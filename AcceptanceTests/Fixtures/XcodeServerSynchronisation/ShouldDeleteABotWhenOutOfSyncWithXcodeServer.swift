@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldDeleteABotWhenOutOfSyncWithXcodeServer)
-class ShouldDeleteABotWhenOutOfSyncWithXcodeServer: NSObject, SlimDecisionTable {
+class ShouldDeleteABotWhenOutOfSyncWithXcodeServer: DecisionTable {
 
     // MARK: - Input
     var existingBotID: String!
@@ -15,13 +15,12 @@ class ShouldDeleteABotWhenOutOfSyncWithXcodeServer: NSObject, SlimDecisionTable 
     var branchDeleted: String!
 
     // MARK: - Test
-    func reset() {
-        existingBotID = nil
+    override func setUp() {
         botDeleted = nil
         branchDeleted = nil
     }
 
-    func execute() {
+    override func test() {
 
     }
 }

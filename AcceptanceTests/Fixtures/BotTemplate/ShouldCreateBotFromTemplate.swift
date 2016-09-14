@@ -5,39 +5,30 @@
 import Foundation
 
 @objc(ShouldCreateBotFromTemplate)
-class ShouldCreateBotFromTemplate: NSObject, SlimDecisionTable {
+class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
 
     // MARK: - Output
     var createdBotFromTemplate: String!
 
     // MARK: - Test
     var network: MockNetwork!
-    var git: TwoRemoteGitBuilder!
+    var gitBuilder: TwoRemoteGitBuilder!
     var interactor: BotSyncingInteractor!
     let templateBotData = "{\"name\":\"xcsautobuild [develop]\"}".utf8Data
 
-    func reset() {
-        createdBotFromTemplate = nil
-        network = nil
-        git = nil
-        interactor = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testDataStoreFile)
+    override func setUp() {
+        FileBotTemplatePersister(file: Constants.templateFile).save(BotTemplate(name: "", data: templateBotData))
+        network = MockNetwork()
+        network.expectCreateBot()
+        setUpGit(branches: "develop")
+        let branchFetcher = GitBranchFetcher(directory: testLocalGitURL.path!)!
+        interactor = BotSyncingInteractor(branchFetcher: branchFetcher, botSynchroniser: testBotSynchroniser, branchFilter: TransparentBranchFilter(), branchesDataStore: MockXCSBranchesDataStore())
     }
 
-    func execute() {
+    override func test() {
         setUp()
         interactor.execute()
         waitUntil(network.createBotCount != 0)
         createdBotFromTemplate = fitnesseString(from: network.invokedBotData == templateBotData)
-    }
-
-    func setUp() {
-        FileBotTemplatePersister(file: Constants.templateFile).save(BotTemplate(name: "", data: templateBotData))
-        network = MockNetwork()
-        network.expectCreateBot()
-        git = TwoRemoteGitBuilder()
-        git.add(branch: "develop")
-        let branchFetcher = GitBranchFetcher(directory: git.localURL.path!)!
-        interactor = BotSyncingInteractor(branchFetcher: branchFetcher, botSynchroniser: botSynchroniser, branchFilter: TransparentBranchFilter(), branchesDataStore: MockXCSBranchesDataStore())
     }
 }

@@ -18,14 +18,20 @@ func commaSeparatedString(from array: [String]) -> String {
 let yes = "yes"
 let no = "no"
 let api = Constants.api
-let botSynchroniser = Constants.botSynchroniser
+let testBotSynchroniser = Constants.botSynchroniser
 class TestClass {}
 let testBundleClass = TestClass.self
 let testHost = "seans-macbook-pro-2.local"
 let testBundle = NSBundle(forClass: testBundleClass)
 let testBotID = "6139a72b95fdeec94b49ec0a1f00191a"
-let testDataStoreFile = NSTemporaryDirectory() + "data_store"
-let testTemplateFile = NSTemporaryDirectory() + "templates"
+let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
+let testDataStoreFile = testPath + "data_store"
+let testTemplateFile = testPath + "templates"
+let testGitPath = testPath + "git/"
+let testLocalGitURL = NSURL(fileURLWithPath: testGitPath + "local")
+let testRemoteGitURL = NSURL(fileURLWithPath: testGitPath + "origin")
+let testXCSGitURL = NSURL(fileURLWithPath: testGitPath + "xcs")
+let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path!)
 
 func waitUntil(@autoclosure condition: () -> Bool) {
     while !condition() {

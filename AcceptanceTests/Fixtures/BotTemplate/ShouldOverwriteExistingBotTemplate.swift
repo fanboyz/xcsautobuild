@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldOverwriteExistingBotTemplate)
-class ShouldOverwriteExistingBotTemplate: NSObject, SlimDecisionTable {
+class ShouldOverwriteExistingBotTemplate: DecisionTable {
 
     // MARK: - inputs
     var botName: String!
@@ -23,16 +23,12 @@ class ShouldOverwriteExistingBotTemplate: NSObject, SlimDecisionTable {
     var finished = false
     var persister: FileBotTemplatePersister!
 
-    func reset() {
-        botName = nil
-        availableBots = nil
-        network = nil
-        persister = nil
+    override func setUp() {
+        finished = false
         didOverwriteTemplate = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testTemplateFile)
     }
 
-    func execute() {
+    override func test() {
         network = MockNetwork()
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }

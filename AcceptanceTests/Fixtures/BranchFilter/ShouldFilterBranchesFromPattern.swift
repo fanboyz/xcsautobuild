@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldFilterBranchesFromPattern)
-class ShouldFilterBranchesFromPattern: NSObject, SlimDecisionTable {
+class ShouldFilterBranchesFromPattern: DecisionTable {
 
     // MARK: - Input
     var pattern: String!
@@ -22,12 +22,11 @@ class ShouldFilterBranchesFromPattern: NSObject, SlimDecisionTable {
     var git: TwoRemoteGitBuilder!
     var interactor: BotSyncingInteractor!
 
-    func reset() {
-        pattern = nil
+    override func setUp() {
         createdBots = nil
     }
 
-    func execute() {
+    override func test() {
         let branchFetcher = MockBranchFetcher()
         let mockedBotSynchroniser = MockBotSynchroniser()
         branchFetcher.stubbedBranches = branchesArray.map { Branch(name: $0) }

@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldCreateTemplateFromBotName)
-class ShouldCreateTemplateFromBotName: NSObject, SlimDecisionTable {
+class ShouldCreateTemplateFromBotName: DecisionTable {
 
     // MARK: - input
     var botName: String!
@@ -21,15 +21,11 @@ class ShouldCreateTemplateFromBotName: NSObject, SlimDecisionTable {
     var interactor: BotTemplateCreatingInteractor!
     var network: MockNetwork!
 
-    func reset() {
-        botName = nil
-        availableBots = nil
+    override func setUp() {
         createdTemplate = nil
-        network = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testTemplateFile)
     }
 
-    func execute() {
+    override func test() {
         network = MockNetwork()
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }

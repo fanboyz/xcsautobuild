@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldPersistBranchesBetweenLaunches)
-class ShouldPersistBranchesBetweenLaunches: NSObject, SlimDecisionTable {
+class ShouldPersistBranchesBetweenLaunches: DecisionTable {
 
     // MARK: - Input
     var savedBranches: String!
@@ -35,23 +35,17 @@ class ShouldPersistBranchesBetweenLaunches: NSObject, SlimDecisionTable {
     var git: TwoRemoteGitBuilder!
     var interactor: BotSyncingInteractor!
 
-    func reset() {
-        network = nil
-        branches = nil
-        savedBranches = nil
+    override func setUp() {
         numberOfDeletedBots = nil
         numberOfCreatedBots = nil
-        git = nil
-        interactor = nil
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(testDataStoreFile)
     }
 
-    func execute() {
         setUp()
         interactor.execute()
         wait()
         numberOfCreatedBots = network.createBotCount
         numberOfDeletedBots = network.deleteBotCount
+    override func test() {
     }
 
     private func setUp() {

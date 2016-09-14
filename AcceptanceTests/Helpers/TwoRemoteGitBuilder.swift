@@ -10,15 +10,15 @@ class TwoRemoteGitBuilder {
     private let localRepo: GTRepository
     private let remoteRepo: GTRepository
     private let xcsRepo: GTRepository
-    private let commandLine = CommandLine.createTestCommandLine()
     private let remoteURL: NSURL
     private let xcsURL: NSURL
     let localURL: NSURL
+    var localPath: String { return localURL.path! }
 
-    init() {
-        remoteURL = NSURL(fileURLWithPath: "\(commandLine.directory)/origin")
-        localURL = NSURL(fileURLWithPath: "\(commandLine.directory)/local")
-        xcsURL = NSURL(fileURLWithPath: "\(commandLine.directory)/xcs")
+    init(localURL: NSURL, remoteURL: NSURL, xcsURL: NSURL) {
+        self.localURL = localURL
+        self.remoteURL = remoteURL
+        self.xcsURL = xcsURL
         remoteRepo = TwoRemoteGitBuilder.createRemote(remoteURL)
         localRepo = TwoRemoteGitBuilder.createLocal(from: remoteURL, to: localURL)
         xcsRepo = TwoRemoteGitBuilder.createRemote(xcsURL)
@@ -27,7 +27,7 @@ class TwoRemoteGitBuilder {
     }
 
     deinit {
-        commandLine.removeTestDirectory()
+        removeRepos()
     }
 
     func add(branch branch: String) {
@@ -54,26 +54,14 @@ class TwoRemoteGitBuilder {
     private func createXCSRemote() {
         try! GTRemote.createRemoteWithName("xcs", URLString: xcsURL.path!, inRepository: localRepo)
     }
-}
 
-extension CommandLine {
-
-    private static var tempDirectory: String { return NSTemporaryDirectory() }
-    private static var testDirectoryName: String { return "fitnesse_tests" }
-
-    private static func createTestCommandLine() -> CommandLine {
-        var commandLine = CommandLine(directory: tempDirectory)
-        commandLine.removeTestDirectory()
-        commandLine.createTestDirectory()
-        commandLine.cd(testDirectoryName)
-        return commandLine
+    private func removeRepos() {
+        TwoRemoteGitBuilder.remove(file: remoteURL)
+        TwoRemoteGitBuilder.remove(file: xcsURL)
+        TwoRemoteGitBuilder.remove(file: localURL)
     }
 
-    private func removeTestDirectory() {
-        _ = try? NSFileManager.defaultManager().removeItemAtPath("\(CommandLine.tempDirectory)\(CommandLine.testDirectoryName)")
-    }
-
-    private func createTestDirectory() {
-        mkdir(CommandLine.testDirectoryName)
+    private static func remove(file file: NSURL) {
+        _ = try? NSFileManager.defaultManager().removeItemAtURL(file)
     }
 }

@@ -46,11 +46,19 @@ class MockNetwork {
         }
     }
 
+    var stubbedGetBotResponseID = "6139a72b95fdeec94b49ec0a1f00191a"
     func stubGetBot(withID id: String, name: String) {
-        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { request in
+        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { [unowned self] request in
             var json = FlexiJSON(data: load("bot_get_response", "json"))
             json["name"] = FlexiJSON(string: name)
+            json["id"] = FlexiJSON(string: self.stubbedGetBotResponseID)
             return OHHTTPStubsResponse(data: json.data!, statusCode: 200, headers: nil)
+        }
+    }
+
+    func stubGetBotError(withID id: String, statusCode: Int32) {
+        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { _ in
+            OHHTTPStubsResponse(data: NSData(), statusCode: statusCode, headers: nil)
         }
     }
 }
