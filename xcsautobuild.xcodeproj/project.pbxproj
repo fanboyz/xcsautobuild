@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1400495D1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1400495C1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift */; };
 		143DA7A51D46860C0019FDFA /* FlexiJSON+ArrayLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7971D46860C0019FDFA /* FlexiJSON+ArrayLiteralConvertible.swift */; };
 		143DA7A61D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7981D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift */; };
 		143DA7A71D46860C0019FDFA /* FlexiJSON+DictionaryLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7991D46860C0019FDFA /* FlexiJSON+DictionaryLiteralConvertible.swift */; };
@@ -178,6 +179,7 @@
 		35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF356A1580E398FD1CD12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */; };
 		35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
+		35CDF37021A21EDE02A72C01 /* XCSResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFA23CE88E81AA01AA7B7 /* XCSResponseTests.swift */; };
 		35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
 		35CDF48DDE12AED013496C64 /* FileXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */; };
@@ -273,6 +275,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1400495C1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeServerSynchronisation.swift; sourceTree = "<group>"; };
 		143DA7971D46860C0019FDFA /* FlexiJSON+ArrayLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ArrayLiteralConvertible.swift"; sourceTree = "<group>"; };
 		143DA7981D46860C0019FDFA /* FlexiJSON+BooleanLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+BooleanLiteralConvertible.swift"; sourceTree = "<group>"; };
 		143DA7991D46860C0019FDFA /* FlexiJSON+DictionaryLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+DictionaryLiteralConvertible.swift"; sourceTree = "<group>"; };
@@ -416,6 +419,7 @@
 		35CDF854E75C81C9C33F68EE /* GlobalBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF99F4BCD0800B6F4B869 /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDataStore.swift; sourceTree = "<group>"; };
+		35CDFA23CE88E81AA01AA7B7 /* XCSResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponseTests.swift; sourceTree = "<group>"; };
 		35CDFA8D2FEFC2F134648AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = xcsautobuild_macOS/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
@@ -1090,6 +1094,7 @@
 				14C55A771D6899BE003B704C /* AnyXCSRequestTests.swift */,
 				14C55A781D6899BE003B704C /* MockXCSRequest.swift */,
 				14C55A791D6899BE003B704C /* XCSRequestTests.swift */,
+				35CDFA23CE88E81AA01AA7B7 /* XCSResponseTests.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1165,6 +1170,7 @@
 			children = (
 				35CDF99F4BCD0800B6F4B869 /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift */,
 				35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */,
+				1400495C1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift */,
 			);
 			path = XcodeServerSynchronisation;
 			sourceTree = "<group>";
@@ -1319,23 +1325,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		"___RootGroup_" = {
+		_____Configs_ /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				"_____Configs_" /* Configs */,
-				143DA7961D46860C0019FDFA /* FlexiJSON */,
-				14C559C91D6899AF003B704C /* Sources */,
-				14C55A421D6899BE003B704C /* Tests */,
-				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
-				"____Products_" /* Products */,
-				9EC587D270EB844A35E1D35C /* Pods */,
-				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
-				35CDF6DE58051E7356102D09 /* Resources */,
+				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
 			);
+			name = Configs;
 			sourceTree = "<group>";
 		};
-		"____Products_" /* Products */ = {
+		____Products_ /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1459B3AD1D3EBE9D004D6FF9 /* xcsautobuild.app */,
@@ -1345,12 +1343,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		"_____Configs_" /* Configs */ = {
+		___RootGroup_ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+				__PBXFileRef_Package.swift /* Package.swift */,
+				_____Configs_ /* Configs */,
+				143DA7961D46860C0019FDFA /* FlexiJSON */,
+				14C559C91D6899AF003B704C /* Sources */,
+				14C55A421D6899BE003B704C /* Tests */,
+				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
+				____Products_ /* Products */,
+				9EC587D270EB844A35E1D35C /* Pods */,
+				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
+				35CDF6DE58051E7356102D09 /* Resources */,
 			);
-			name = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1444,7 +1450,7 @@
 					};
 				};
 			};
-			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */;
+			buildConfigurationList = ___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1452,8 +1458,8 @@
 				en,
 				Base,
 			);
-			mainGroup = "___RootGroup_";
-			productRefGroup = "____Products_" /* Products */;
+			mainGroup = ___RootGroup_;
+			productRefGroup = ____Products_ /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1703,6 +1709,7 @@
 				35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */,
 				35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */,
 				35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */,
+				35CDF37021A21EDE02A72C01 /* XCSResponseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1712,6 +1719,7 @@
 			files = (
 				143EE4651D6B90EF002A2436 /* GCDHelper.swift in Sources */,
 				1484B60A1D6267FC00319088 /* ShouldPersistBranchesBetweenLaunches.swift in Sources */,
+				1400495D1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift in Sources */,
 				14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				1484B6181D63992C00319088 /* MockNetwork.swift in Sources */,
 				1484B5E41D62676200319088 /* FlexiJSON.swift in Sources */,
@@ -2136,14 +2144,7 @@
 			};
 			name = Release;
 		};
-		"_____Release_" /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		"_______Debug_" /* Debug */ = {
+		_______Debug_ /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
 			buildSettings = {
@@ -2151,6 +2152,13 @@
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
+		};
+		_____Release_ /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -2182,11 +2190,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		"___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */ = {
+		___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				"_______Debug_" /* Debug */,
-				"_____Release_" /* Release */,
+				_______Debug_ /* Debug */,
+				_____Release_ /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

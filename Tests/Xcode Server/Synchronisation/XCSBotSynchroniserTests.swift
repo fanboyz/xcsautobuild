@@ -11,6 +11,7 @@ class XCSBotSynchroniserTests: XCTestCase {
     var syncer: XCSBotSynchroniser!
     var mockedGetBotRequest: MockXCSRequest<String, NSData>!
     var mockedCreateBotRequest: MockXCSRequest<[String: AnyObject], String>!
+    var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedTemplateLoader: MockBotTemplateLoader!
     let master = XCSBranch(name: "master", botID: "master_bot_id")
     let newBranch = XCSBranch(name: "new", botID: nil)
@@ -20,11 +21,13 @@ class XCSBotSynchroniserTests: XCTestCase {
         super.setUp()
         mockedGetBotRequest = MockXCSRequest()
         mockedCreateBotRequest = MockXCSRequest()
+        mockedDeleteBotRequest = MockXCSRequest()
         mockedTemplateLoader = MockBotTemplateLoader()
         syncer = XCSBotSynchroniser(
-                getBotRequest: AnyXCSRequest(mockedGetBotRequest),
-                createBotRequest: AnyXCSRequest(mockedCreateBotRequest),
-                botTemplateLoader: mockedTemplateLoader
+            getBotRequest: AnyXCSRequest(mockedGetBotRequest),
+            createBotRequest: AnyXCSRequest(mockedCreateBotRequest),
+            deleteBotRequest: AnyXCSRequest(mockedDeleteBotRequest),
+            botTemplateLoader: mockedTemplateLoader
         )
         stubValidTemplate()
     }
@@ -95,12 +98,46 @@ class XCSBotSynchroniserTests: XCTestCase {
         XCTAssertEqual(synchroniseBot(from: master), master)
     }
 
+    // MARK: - deleteBot
+
+    func test_deleteBot_shouldCompleteWithTrue_whenNoBotID() {
+        XCTAssert(deleteBot(from: newBranch))
+    }
+
+    func test_deleteBot_shouldCompleteWithTrue_whenNetworkRespondsWith404NotFound() {
+        stubDeleteBotResponse(statusCode: 404)
+        XCTAssert(deleteBot(from: master))
+    }
+
+    func test_deleteBot_shouldCompleteWithTrue_whenNetworkRequestSucceeds() {
+        stubDeleteBotResponse(statusCode: 204)
+        XCTAssert(deleteBot(from: master))
+    }
+
+    func test_deleteBot_shouldCompleteWithFalse_whenNetworkRequestFails() {
+        stubInvalidDeleteBotResponse()
+        XCTAssertFalse(deleteBot(from: master))
+    }
+
+    func test_deleteBot_shouldCompleteWithFalse_whenNetworkRespondsWithBadStatusCode() {
+        stubDeleteBotResponse(statusCode: 500)
+        XCTAssertFalse(deleteBot(from: master))
+    }
+
     // MARK: - Helpers
 
     func synchroniseBot(from branch: XCSBranch) -> XCSBranch {
         var result: XCSBranch!
         syncer.synchroniseBot(fromBranch: branch) { b in
             result = b
+        }
+        return result
+    }
+
+    func deleteBot(from branch: XCSBranch) -> Bool {
+        var result: Bool!
+        syncer.deleteBot(fromBranch: branch) { r in
+            result = r
         }
         return result
     }
@@ -137,5 +174,13 @@ class XCSBotSynchroniserTests: XCTestCase {
 
     func stubValidGetBotResponse() {
         mockedGetBotRequest.stubbedResponse = XCSResponse(data: NSData(), statusCode: 200)
+    }
+
+    func stubDeleteBotResponse(statusCode statusCode: Int) {
+        mockedDeleteBotRequest.stubbedResponse = XCSResponse(data: (), statusCode: statusCode)
+    }
+
+    func stubInvalidDeleteBotResponse() {
+        mockedDeleteBotRequest.stubbedResponse = nil
     }
 }

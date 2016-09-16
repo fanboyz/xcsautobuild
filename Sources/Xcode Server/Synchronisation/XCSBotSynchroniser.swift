@@ -8,15 +8,18 @@ class XCSBotSynchroniser: BotSynchroniser {
 
     private let getBotRequest: AnyXCSRequest<String, NSData>
     private let createBotRequest: AnyXCSRequest<[String: AnyObject], String>
+    private let deleteBotRequest: AnyXCSRequest<String, Void>
     private let botTemplateLoader: BotTemplateLoader
 
     init(
         getBotRequest: AnyXCSRequest<String, NSData>,
         createBotRequest: AnyXCSRequest<[String: AnyObject], String>,
+        deleteBotRequest: AnyXCSRequest<String, Void>,
         botTemplateLoader: BotTemplateLoader
     ) {
         self.getBotRequest = getBotRequest
         self.createBotRequest = createBotRequest
+        self.deleteBotRequest = deleteBotRequest
         self.botTemplateLoader = botTemplateLoader
     }
 
@@ -30,6 +33,15 @@ class XCSBotSynchroniser: BotSynchroniser {
             return
         }
         completion(branch)
+    }
+
+    func deleteBot(fromBranch branch: XCSBranch, completion: Bool -> ()) {
+        guard let botID = branch.botID else {
+            completion(true)
+            return
+        }
+        let response = deleteBotRequest.send(botID)
+        completion(isBotDeleted(fromResponse: response))
     }
 
     private func loadTemplateJSON(forBranch branch: XCSBranch) -> [String: AnyObject]? {
@@ -49,5 +61,10 @@ class XCSBotSynchroniser: BotSynchroniser {
 
     private func doesBotExist(withID botID: String) -> Bool {
         return getBotRequest.send(botID)?.statusCode != 404
+    }
+
+    private func isBotDeleted(fromResponse response: XCSResponse<Void>?) -> Bool {
+        guard let response = response else { return false }
+        return response.isSuccess || response.statusCode == 404
     }
 }

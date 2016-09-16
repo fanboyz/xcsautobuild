@@ -17,5 +17,8 @@ class MockBotSynchroniser: BotSynchroniser {
         invokedBranches.append(branch)
         completion(stubbedBranch ?? branch)
     }
+
+    func deleteBot(fromBranch branch: XCSBranch, completion: Bool -> ()) {
+    }
 }
 
