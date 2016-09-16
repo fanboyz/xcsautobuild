@@ -23,8 +23,10 @@ class BotSyncingInteractor: Command {
         let storedBranches = branchesDataStore.load()
         let newBranches = findNewBranches(in: filteredBranches, byExcludingMatchingBranchesIn: storedBranches)
         let existingBranches = findExistingBranches(in: storedBranches, byMatchingBranchesIn: filteredBranches)
+        let deletedBranches = findExpiredBranches(in : storedBranches, byMatchingBranchesIn: filteredBranches)
         synchroniseBots(from: newBranches)
         synchroniseBots(from: existingBranches)
+        deleteBots(from: deletedBranches)
     }
 
     private func fetchFilteredBranches() -> [Branch] {
@@ -45,6 +47,12 @@ class BotSyncingInteractor: Command {
     private func findExistingBranches(in branches: [XCSBranch], byMatchingBranchesIn matching: [Branch]) -> [XCSBranch] {
         return branches.filter { branch in
             matching.contains(sameNames(branch))
+        }
+    }
+
+    private func findExpiredBranches(in branches: [XCSBranch], byMatchingBranchesIn matching: [Branch]) -> [XCSBranch] {
+        return branches.filter { branch in
+            !matching.contains(sameNames(branch))
         }
     }
 
@@ -72,5 +80,16 @@ class BotSyncingInteractor: Command {
 
     private func newBranch(fromName name: String) -> XCSBranch {
         return XCSBranch(name: name, botID: nil)
+    }
+
+    private func deleteBots(from branches: [XCSBranch]) {
+        branches.forEach(deleteBot)
+    }
+
+    private func deleteBot(from branch: XCSBranch) {
+        botSynchroniser.deleteBot(fromBranch: branch) { [weak self] result in
+            guard result else { return }
+            self?.branchesDataStore.delete(branch: branch)
+        }
     }
 }

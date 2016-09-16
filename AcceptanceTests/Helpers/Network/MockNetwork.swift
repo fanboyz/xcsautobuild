@@ -26,9 +26,15 @@ class MockNetwork {
 
     var deleteBotCount = 0
     func expectDeleteBot(id id: String) {
-        stub(isHost(testHost) && isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
+        stub(isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
             self.deleteBotCount += 1
             return empty(204)
+        }
+    }
+
+    func expectDeleteBotNotFound(id id: String) {
+        stub(isMethodDELETE() && isPath("/api/bots/\(id)")) { _ in
+            return empty(404)
         }
     }
 

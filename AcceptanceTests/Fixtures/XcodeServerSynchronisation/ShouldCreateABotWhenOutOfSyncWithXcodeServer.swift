@@ -14,9 +14,10 @@ class ShouldCreateABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
     // MARK: - Test
 
     override func setUp() {
+        super.setUp()
         botCreated = nil
         branchBotID = nil
-        super.setUp()
+        setUpGit(branches: branch)
     }
 
     override func test() {
@@ -26,7 +27,7 @@ class ShouldCreateABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
     }
 
     override func setUpMockedNetwork() {
-        mockedNetwork = MockNetwork()
+        super.setUpMockedNetwork()
         mockedNetwork.expectCreateBot()
         mockedNetwork.stubGetBot(withID: validBotID, name: "develop")
         mockedNetwork.stubGetBotError(withID: invalidBotID, statusCode: 404)

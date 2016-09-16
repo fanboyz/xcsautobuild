@@ -14,23 +14,25 @@ class ShouldDeleteABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
     // MARK: - Test
 
     override func setUp() {
+        super.setUp()
         botDeleted = nil
         branchDeleted = nil
-        super.setUp()
+        setUpGit(branches: ["different_branch"])
     }
 
     override func test() {
         super.test()
-        botDeleted = fitnesseString(from: mockedNetwork.createBotCount == 1)
-        branchDeleted = fitnesseString(from: branchesDataStore.load(fromBranchName: "develop") == nil)
+        botDeleted = fitnesseString(from: mockedNetwork.deleteBotCount == 1)
+        branchDeleted = fitnesseString(from: branchesDataStore.load(fromBranchName: branch) == nil)
     }
 
     override func setUpMockedNetwork() {
-        mockedNetwork = MockNetwork()
-        if let id = botID {
-            mockedNetwork.expectDeleteBot(id: id)
-        }
-        mockedNetwork.stubGetBot(withID: validBotID, name: "develop")
+        super.setUpMockedNetwork()
+        mockedNetwork.expectCreateBot()
+        mockedNetwork.expectDeleteBot(id: validBotID)
+        mockedNetwork.expectDeleteBotNotFound(id: invalidBotID)
+        print(existingBotID )
+        mockedNetwork.stubGetBot(withID: validBotID, name: branch)
         mockedNetwork.stubGetBotError(withID: invalidBotID, statusCode: 404)
     }
 }

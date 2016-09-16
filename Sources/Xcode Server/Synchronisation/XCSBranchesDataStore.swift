@@ -8,4 +8,5 @@ protocol XCSBranchesDataStore {
     func load() -> [XCSBranch]
     func load(fromBranchName name: String) -> XCSBranch?
     func save(branch branch: XCSBranch)
+    func delete(branch branch: XCSBranch)
 }

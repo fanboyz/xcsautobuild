@@ -19,10 +19,10 @@ class DecisionTable: NSObject, SlimDecisionTable {
 
     func reset() {
         createFiles()
-        setUp()
     }
 
     func execute() {
+        setUp()
         test()
         tearDown()
         removeFiles()

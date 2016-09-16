@@ -13,7 +13,7 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
     let file = NSTemporaryDirectory() + "TestXCSBranches"
     let develop = XCSBranch(name: "develop", botID: "master_bot_id")
     let master = XCSBranch(name: "master", botID: "develop_bot_id")
-    let branchWithNoBotID = XCSBranch(name: "develop", botID: nil)
+    let branchWithNoBotID = XCSBranch(name: "new", botID: nil)
 
     override func setUp() {
         super.setUp()
@@ -72,6 +72,29 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
         XCTAssert(load().isEmpty)
     }
 
+    // MARK: - delete
+
+    func test_delete_shouldRemoveBranch() {
+        save(develop)
+        delete(develop)
+        XCTAssert(load().isEmpty)
+    }
+
+    func test_delete_shouldNotRemoveAnyBranches_whenNotAMatchingBranch() {
+        save(develop)
+        save(master)
+        delete(branchWithNoBotID)
+        let loaded = load()
+        XCTAssert(loaded.contains(develop))
+        XCTAssert(loaded.contains(master))
+    }
+
+    func test_delete_shouldRemoveBranch_whenOnlyTheNameMatches() {
+        save(develop)
+        delete(XCSBranch(name: develop.name, botID: "a_different_id"))
+        XCTAssert(load().isEmpty)
+    }
+
     // MARK: - Helpers
 
     func save(branch: XCSBranch? = nil) {
@@ -84,6 +107,10 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
 
     func load(branchNamed name: String) -> XCSBranch? {
         return store.load(fromBranchName: name)
+    }
+
+    func delete(branch: XCSBranch) {
+        store.delete(branch: branch)
     }
 
     func deleteFile() {

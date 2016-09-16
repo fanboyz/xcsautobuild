@@ -8,17 +8,25 @@ import Foundation
 class MockBotSynchroniser: BotSynchroniser {
 
     var didSynchroniseBot = false
-    var invokedBranch: XCSBranch?
-    var invokedBranches = [XCSBranch]()
-    var stubbedBranch: XCSBranch?
+    var invokedSynchronisedBranch: XCSBranch?
+    var invokedSynchronisedBranches = [XCSBranch]()
+    var stubbedSynchronisedBranch: XCSBranch?
     func synchroniseBot(fromBranch branch: XCSBranch, completion: (XCSBranch) -> ()) {
         didSynchroniseBot = true
-        invokedBranch = branch
-        invokedBranches.append(branch)
-        completion(stubbedBranch ?? branch)
+        invokedSynchronisedBranch = branch
+        invokedSynchronisedBranches.append(branch)
+        completion(stubbedSynchronisedBranch ?? branch)
     }
 
+    var didDeleteBot = false
+    var invokedDeletedBranch: XCSBranch?
+    var invokedDeletedBranches = [XCSBranch]()
+    var stubbedDeletionResult = false
     func deleteBot(fromBranch branch: XCSBranch, completion: Bool -> ()) {
+        didDeleteBot = true
+        invokedDeletedBranch = branch
+        invokedDeletedBranches.append(branch)
+        completion(stubbedDeletionResult)
     }
 }
 

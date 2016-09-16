@@ -27,6 +27,12 @@ class FileXCSBranchesDataStore: XCSBranchesDataStore {
         save(branches: branches)
     }
 
+    func delete(branch branch: XCSBranch) {
+        var branches = loadBranches()
+        branches.removeValueForKey(branch.name)
+        save(branches: branches)
+    }
+
     private func loadBranches() -> [String: [String: AnyObject]] {
         return NSDictionary(contentsOfFile: file) as? [String: [String: AnyObject]] ?? [:]
     }

@@ -8,22 +8,29 @@ import Foundation
 class MockXCSBranchesDataStore: XCSBranchesDataStore {
 
     var didLoad = false
-    var invokedBranchName: String?
-    var stubbedBranch: XCSBranch?
+    var invokedLoadedBranchName: String?
+    var stubbedLoadedBranch: XCSBranch?
     func load(fromBranchName name: String) -> XCSBranch? {
         didLoad = true
-        invokedBranchName = name
-        return stubbedBranch
+        invokedLoadedBranchName = name
+        return stubbedLoadedBranch
     }
 
-    var stubbedBranches = [XCSBranch]()
+    var stubbedLoadedBranches = [XCSBranch]()
     func load() -> [XCSBranch] {
         didLoad = true
-        return stubbedBranches
+        return stubbedLoadedBranches
     }
 
-    var invokedBranch: XCSBranch?
+    var invokedSavedBranch: XCSBranch?
     func save(branch branch: XCSBranch) {
-        invokedBranch = branch
+        invokedSavedBranch = branch
+    }
+
+    var didDelete = false
+    var invokedDeletedBranch: XCSBranch?
+    func delete(branch branch: XCSBranch) {
+        didDelete = true
+        invokedDeletedBranch = branch
     }
 }
