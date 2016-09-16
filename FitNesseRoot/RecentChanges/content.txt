@@ -1,7 +1,7 @@
-|FrontPage.AcceptanceTests.BotManagement||18:54:19 Mon, Sep 12, 2016|
-|FrontPage.AcceptanceTests.XcodeServerSynchronisation||11:07:03 Sun, Sep 11, 2016|
+|FrontPage.AcceptanceTests.BotManagement||23:39:30 Fri, Sep 16, 2016|
+|FrontPage.AcceptanceTests.BranchFilter||23:23:33 Fri, Sep 16, 2016|
+|FrontPage.AcceptanceTests.XcodeServerSynchronisation||22:55:16 Fri, Sep 16, 2016|
 |FrontPage.AcceptanceTests.BotTemplate||21:04:22 Fri, Sep 09, 2016|
-|FrontPage.AcceptanceTests.BranchFilter||19:25:09 Thu, Sep 08, 2016|
 |FrontPage.AcceptanceTests.RepositoryConfiguration||21:05:10 Wed, Sep 07, 2016|
 |FrontPage||20:40:15 Fri, Aug 05, 2016|
 |FrontPage.AcceptanceTests||20:39:53 Fri, Aug 05, 2016|

@@ -1,3 +1,5 @@
+''These tests assumes that the existing branches are in sync with Xcode Server and therefore will not require a bot to be created.''
+
 !2 Should add a bot when a new branch is found
 |Should add a bot when a new branch is found|
 |branches         |number of created bots?  |
@@ -12,7 +14,6 @@
 |feature,develop|        |2                      |
 
 !2 Should create and delete bots between launches when branches change
-This test assumes that the existing branches are in sync with Xcode Server and therefore will not require a bot to be created.
 |Should persist branches between launches                                       |
 |saved branches |branches       |number of created bots?|number of deleted bots?|
 |feature        |feature,develop|1                      |0                      |

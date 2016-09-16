@@ -5,7 +5,7 @@
 import Foundation
 
 @objc(ShouldAddABotWhenANewBranchIsFound)
-class ShouldAddABotWhenANewBranchIsFound: DecisionTable {
+class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
 
     // MARK: - Input
     var branches: String!
@@ -18,26 +18,25 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable {
 
     // MARK: - Test
     var network: MockNetwork!
-    var git: TwoRemoteGitBuilder!
+    var gitBuilder: TwoRemoteGitBuilder!
     var interactor: BotSyncingInteractor!
 
     override func setUp() {
         numberOfCreatedBots = nil
+        network = MockNetwork()
+        network.expectCreateBot()
+        setUpGit(branches: branchesArray)
+        interactor = BotSyncingInteractor(
+            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path!)!,
+            botSynchroniser: testBotSynchroniser,
+            branchFilter: TransparentBranchFilter(),
+            branchesDataStore: FileXCSBranchesDataStore(file: testDataStoreFile)
+        )
     }
 
-        setUp()
+    override func test() {
         interactor.execute()
         waitUntil(network.createBotCount != 0)
         numberOfCreatedBots = network.createBotCount
-    override func test() {
-    }
-
-    func setUp() {
-        network = MockNetwork()
-        network.expectCreateBot()
-        git = TwoRemoteGitBuilder()
-        branchesArray.forEach { git.add(branch: $0) }
-        let dataStore = FileBranchDataStore(branchFetcher: GitBranchFetcher(directory: git.localURL.path!)!, branchPersister: FileBranchPersister(file: testDataStoreFile))
-        interactor = BotSyncingInteractor(branchesDataStore: dataStore, botCreator: api, botDeleter: api, branchFilter: TransparentBranchFilter())
     }
 }
