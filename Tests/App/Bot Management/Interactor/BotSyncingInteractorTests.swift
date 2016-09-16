@@ -62,9 +62,27 @@ class BotSyncingInteractorTests: XCTestCase {
         stubFetchedBranchNames(fetchedBranches)
         stubStoredBranches(expected)
         mockedBranchFilter.stubbedFilteredBranches = [Branch(name: "3")]
-        interactor.execute()
+        execute()
         XCTAssertEqual(filteredBranchNames(), fetchedBranches)
         XCTAssertEqual(synchronisedBranches(), expected)
+    }
+
+    func test_execute_shouldSaveSynchronisationResults_whenNewBranch() {
+        let newBranch = XCSBranch(name: "master", botID: nil)
+        stubFetchedBranchNames(["master"])
+        mockedBotSynchroniser.stubbedBranch = newBranch
+        execute()
+        XCTAssertEqual(mockedBranchesDataStore.invokedBranch, newBranch)
+    }
+
+    func test_execute_shouldSaveSynchronisationResults_whenExistingBranchOutOfSync() {
+        let invalidBranch = XCSBranch(name: "master", botID: "invalid_bot_id")
+        let validBranch = XCSBranch(name: "master", botID: "valid_bot_id")
+        stubFetchedBranchNames(["master"])
+        stubStoredBranch(invalidBranch)
+        mockedBotSynchroniser.stubbedBranch = validBranch
+        execute()
+        XCTAssertEqual(mockedBranchesDataStore.invokedBranch, validBranch)
     }
 
     // MARK: - Helpers

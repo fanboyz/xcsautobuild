@@ -50,7 +50,7 @@ class XCSBotSynchroniserTests: XCTestCase {
     func test_synchroniseBot_shouldCreateBot_whenBotIsNotFound() {
         mockedGetBotRequest.stubbedResponse = XCSResponse(data: NSData(), statusCode: 404)
         synchroniseBot(from: master)
-        XCTAssertEqual(mockedCreateBotRequest.invokedData as? NSDictionary, modifiedTemplateJSON(withName: "master"))
+        XCTAssertEqual(mockedCreateBotRequest.invokedData as NSDictionary?, modifiedTemplateJSON(withName: "master"))
     }
 
     func test_synchroniseBot_shouldNotCreateBot_whenBotIsFound() {

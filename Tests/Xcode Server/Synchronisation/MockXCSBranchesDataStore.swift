@@ -22,6 +22,8 @@ class MockXCSBranchesDataStore: XCSBranchesDataStore {
         return stubbedBranches
     }
 
+    var invokedBranch: XCSBranch?
     func save(branch branch: XCSBranch) {
+        invokedBranch = branch
     }
 }

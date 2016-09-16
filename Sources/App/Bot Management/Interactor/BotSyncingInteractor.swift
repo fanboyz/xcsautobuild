@@ -53,11 +53,21 @@ class BotSyncingInteractor: Command {
     }
 
     private func synchroniseBots(from branches: [Branch]) {
-        branches.forEach { botSynchroniser.synchroniseBot(fromBranch: newBranch(fromName: $0.name)) }
+        branches.map(toXCSBranch).forEach(synchroniseBot)
+    }
+
+    private func toXCSBranch(branch: Branch) -> XCSBranch {
+        return newBranch(fromName: branch.name)
     }
 
     private func synchroniseBots(from branches: [XCSBranch]) {
-        branches.forEach { botSynchroniser.synchroniseBot(fromBranch: $0) }
+        branches.forEach(synchroniseBot)
+    }
+
+    private func synchroniseBot(from branch: XCSBranch) {
+        botSynchroniser.synchroniseBot(fromBranch: branch) { [weak self] resultBranch in
+            self?.branchesDataStore.save(branch: resultBranch)
+        }
     }
 
     private func newBranch(fromName name: String) -> XCSBranch {

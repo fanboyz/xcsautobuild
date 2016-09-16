@@ -20,7 +20,7 @@ class XCSBotSynchroniser: BotSynchroniser {
         self.botTemplateLoader = botTemplateLoader
     }
 
-    func synchroniseBot(fromBranch branch: XCSBranch) {
+    func synchroniseBot(fromBranch branch: XCSBranch, completion: (XCSBranch) -> ()) {
         guard let template = loadTemplateJSON(forBranch: branch) else { return }
         guard let botID = branch.botID else {
             createBotRequest.send(template)
