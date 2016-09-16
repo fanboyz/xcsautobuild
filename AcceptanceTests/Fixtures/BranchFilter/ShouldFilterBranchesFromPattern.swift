@@ -34,6 +34,6 @@ class ShouldFilterBranchesFromPattern: DecisionTable {
         filter.pattern = pattern
         let interactor = BotSyncingInteractor(branchFetcher: branchFetcher, botSynchroniser: mockedBotSynchroniser, branchFilter: filter, branchesDataStore: MockXCSBranchesDataStore())
         interactor.execute()
-        createdBots = commaSeparatedString(from: mockedBotSynchroniser.invokedBranches.map { $0.name })
+        createdBots = commaSeparatedString(from: mockedBotSynchroniser.invokedSynchronisedBranches.map { $0.name })
     }
 }

@@ -34,12 +34,12 @@ let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path!)
 
 func waitUntil(@autoclosure condition: () -> Bool) {
     while !condition() {
-        wait()
+        wait(for: 0.05)
     }
 }
 
-func wait(for seconds: NSTimeInterval = 0.05) {
-    NSThread.sleepForTimeInterval(0.05)
+func wait(for seconds: NSTimeInterval) {
+    NSThread.sleepForTimeInterval(seconds)
 }
 
 func load(fileName: String, _ ext: String) -> NSData! {
