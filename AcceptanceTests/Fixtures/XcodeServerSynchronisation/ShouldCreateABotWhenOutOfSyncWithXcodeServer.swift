@@ -53,6 +53,6 @@ class ShouldCreateABotWhenOutOfSyncWithXcodeServer: DecisionTable, GitFixture {
         mockedNetwork.expectCreateBot()
         mockedNetwork.stubGetBot(withID: validBotID, name: "develop")
         mockedNetwork.stubGetBotError(withID: invalidBotID, statusCode: 404)
-        mockedNetwork.stubbedGetBotResponseID = newBotID
+        mockedNetwork.stubbedCreatedBotID = newBotID
     }
 }

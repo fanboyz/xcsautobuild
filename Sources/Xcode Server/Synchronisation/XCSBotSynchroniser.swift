@@ -7,13 +7,13 @@ import Foundation
 class XCSBotSynchroniser: BotSynchroniser {
 
     private let getBotRequest: AnyXCSRequest<String, NSData>
-    private let createBotRequest: AnyXCSRequest<[String: AnyObject], Void>
+    private let createBotRequest: AnyXCSRequest<[String: AnyObject], String>
     private let botTemplateLoader: BotTemplateLoader
 
     init(
-            getBotRequest: AnyXCSRequest<String, NSData>,
-            createBotRequest: AnyXCSRequest<[String: AnyObject], Void>,
-            botTemplateLoader: BotTemplateLoader
+        getBotRequest: AnyXCSRequest<String, NSData>,
+        createBotRequest: AnyXCSRequest<[String: AnyObject], String>,
+        botTemplateLoader: BotTemplateLoader
     ) {
         self.getBotRequest = getBotRequest
         self.createBotRequest = createBotRequest
@@ -21,14 +21,15 @@ class XCSBotSynchroniser: BotSynchroniser {
     }
 
     func synchroniseBot(fromBranch branch: XCSBranch, completion: (XCSBranch) -> ()) {
-        guard let template = loadTemplateJSON(forBranch: branch) else { return }
-        guard let botID = branch.botID else {
-            createBotRequest.send(template)
+        guard let template = loadTemplateJSON(forBranch: branch) else {
+            completion(branch)
             return
         }
-        if !doesBotExist(withID: botID) {
-            createBotRequest.send(template)
+        guard let botID = branch.botID where doesBotExist(withID: botID) else {
+            createBot(forNewBranch: branch, template: template, completion: completion)
+            return
         }
+        completion(branch)
     }
 
     private func loadTemplateJSON(forBranch branch: XCSBranch) -> [String: AnyObject]? {
@@ -36,6 +37,14 @@ class XCSBotSynchroniser: BotSynchroniser {
         var json = FlexiJSON(data: data)
         json["name"] = FlexiJSON(string: Constants.convertBranchNameToBotName(branch.name))
         return json.dictionary
+    }
+
+    private func createBot(forNewBranch branch: XCSBranch, template: [String: AnyObject], completion: (XCSBranch) -> ()) {
+        if let newBotID = createBotRequest.send(template)?.data {
+            completion(XCSBranch(name: branch.name, botID: newBotID))
+        } else {
+            completion(branch)
+        }
     }
 
     private func doesBotExist(withID botID: String) -> Bool {

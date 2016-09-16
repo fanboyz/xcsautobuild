@@ -25,7 +25,12 @@ class XCSPostBotsRequestTests: XCTestCase {
 
     // MARK: - parse
 
-    func test_parse_shouldReturnVoid() {
-        XCTAssertNotNil(request.parse(response: NSData()))
+    func test_parse_shouldReturnBotID() {
+        let json = FlexiJSON(jsonString: "{ \"_id\": \"bot_id\"}")
+        XCTAssertEqual(request.parse(response: json.data!), "bot_id")
+    }
+
+    func test_parse_shouldReturnNil_whenCannotParseData() {
+        XCTAssertNil(request.parse(response: testData))
     }
 }

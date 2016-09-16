@@ -23,7 +23,6 @@ class TestClass {}
 let testBundleClass = TestClass.self
 let testHost = "seans-macbook-pro-2.local"
 let testBundle = NSBundle(forClass: testBundleClass)
-let testBotID = "6139a72b95fdeec94b49ec0a1f00191a"
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"

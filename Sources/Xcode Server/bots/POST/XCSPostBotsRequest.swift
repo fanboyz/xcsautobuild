@@ -16,7 +16,7 @@ class XCSPostBotsRequest: XCSRequest {
         return HTTPRequest(url: endpoint + "bots", method: .post, jsonBody: data)
     }
 
-    func parse(response data: NSData) -> Void? {
-        return ()
+    func parse(response data: NSData) -> String? {
+        return FlexiJSON(data: data)["_id"].string
     }
 }
