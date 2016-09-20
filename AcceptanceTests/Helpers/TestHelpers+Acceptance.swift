@@ -18,7 +18,14 @@ func commaSeparatedString(from array: [String]) -> String {
 let yes = "yes"
 let no = "no"
 let api = Constants.api
-let testBotSynchroniser = Constants.botSynchroniser
+let testBotSynchroniser: BotSynchroniser = {
+    return XCSBotSynchroniser(
+        getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Constants.network)),
+        duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: Constants.network)),
+        deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Constants.network)),
+        botTemplateLoader: FileBotTemplatePersister(file: testTemplateFile)
+    )
+}()
 class TestClass {}
 let testBundleClass = TestClass.self
 let testHost = "seans-macbook-pro-2.local"
@@ -32,9 +39,14 @@ let testRemoteGitURL = NSURL(fileURLWithPath: testGitPath + "origin")
 let testXCSGitURL = NSURL(fileURLWithPath: testGitPath + "xcs")
 let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path!)
 
-func waitUntil(@autoclosure condition: () -> Bool) {
+func waitUntil(@autoclosure condition: () -> Bool, limit: Int = 20) {
+    var count = 0
     while !condition() {
         wait(for: 0.05)
+        count += 1
+        if (count == limit) {
+            break
+        }
     }
 }
 

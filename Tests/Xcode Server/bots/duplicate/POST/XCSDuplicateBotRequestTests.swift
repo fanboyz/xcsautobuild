@@ -19,10 +19,12 @@ class XCSDuplicateBotRequestTests: XCTestCase {
 
     func test_createRequest_shouldSendNetworkRequest() {
         let id = "bot_id"
+        let name = "Bot Name"
         let expectedURL = testEndpoint + "bots/\(id)/duplicate"
-        let request = self.request.createRequest(id)
+        let request = self.request.createRequest(DuplicateBotRequestData(id: id, name: name))
         XCTAssertEqual(request.method, HTTPMethod.post)
         XCTAssertEqual(request.url, expectedURL)
+        XCTAssertEqual(request.jsonBody as NSDictionary?, ["name": name])
     }
 
     // MARK: - parse

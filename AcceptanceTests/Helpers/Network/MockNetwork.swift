@@ -11,15 +11,15 @@ class MockNetwork {
         OHHTTPStubs.removeAllStubs()
     }
 
-    var createBotCount = 0
-    var invokedBotData: NSData?
-    var stubbedCreatedBotID = "6139a72b95fdeec94b49ec0a1f00191a"
-    func expectCreateBot() {
-        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots")) { [unowned self] request in
-            self.invokedBotData = request.OHHTTPStubs_HTTPBody()
-            self.createBotCount += 1
+    var duplicateBotCount = 0
+    var invokedDuplicateBotResponse: NSData?
+    var stubbedDuplicatedBotID = "6139a72b95fdeec94b49ec0a1f00191a"
+    func expectDuplicateBot(id id: String) {
+        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots/\(id)/duplicate")) { [unowned self] request in
+            self.invokedDuplicateBotResponse = request.OHHTTPStubs_HTTPBody()
+            self.duplicateBotCount += 1
             var json = FlexiJSON(data: load("bots_post_response", "json"))
-            json["_id"] = FlexiJSON(string: self.stubbedCreatedBotID)
+            json["_id"] = FlexiJSON(string: self.stubbedDuplicatedBotID)
             return OHHTTPStubsResponse(data: json.data!, statusCode: 201, headers: nil)
         }
     }
@@ -59,7 +59,7 @@ class MockNetwork {
         stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { request in
             var json = FlexiJSON(data: load("bot_get_response", "json"))
             json["name"] = FlexiJSON(string: name)
-            json["id"] = FlexiJSON(string: id)
+            json["_id"] = FlexiJSON(string: id)
             return OHHTTPStubsResponse(data: json.data!, statusCode: 200, headers: nil)
         }
     }

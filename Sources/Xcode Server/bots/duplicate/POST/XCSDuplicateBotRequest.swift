@@ -12,8 +12,8 @@ class XCSDuplicateBotRequest: XCSRequest {
         self.network = network
     }
 
-    func createRequest(data: String) -> HTTPRequest {
-        return HTTPRequest(url: endpoint + "bots/\(data)/duplicate", method: .post, jsonBody: nil)
+    func createRequest(data: DuplicateBotRequestData) -> HTTPRequest {
+        return HTTPRequest(url: endpoint + "bots/\(data.id)/duplicate", method: .post, jsonBody: ["name": data.name])
     }
 
     func parse(response data: NSData) -> String? {

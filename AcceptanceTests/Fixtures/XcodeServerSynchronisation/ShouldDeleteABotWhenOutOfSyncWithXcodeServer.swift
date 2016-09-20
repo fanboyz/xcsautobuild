@@ -28,11 +28,10 @@ class ShouldDeleteABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
 
     override func setUpMockedNetwork() {
         super.setUpMockedNetwork()
-        mockedNetwork.expectCreateBot()
         mockedNetwork.expectDeleteBot(id: validBotID)
         mockedNetwork.expectDeleteBotNotFound(id: invalidBotID)
-        print(existingBotID )
         mockedNetwork.stubGetBot(withID: validBotID, name: branch)
         mockedNetwork.stubGetBotError(withID: invalidBotID, statusCode: 404)
+        mockedNetwork.stubbedDuplicatedBotID = newBotID
     }
 }

@@ -7,29 +7,29 @@ import Foundation
 class XCSBotSynchroniser: BotSynchroniser {
 
     private let getBotRequest: AnyXCSRequest<String, NSData>
-    private let createBotRequest: AnyXCSRequest<[String: AnyObject], String>
+    private let duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
     private let botTemplateLoader: BotTemplateLoader
 
     init(
         getBotRequest: AnyXCSRequest<String, NSData>,
-        createBotRequest: AnyXCSRequest<[String: AnyObject], String>,
+        duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>,
         deleteBotRequest: AnyXCSRequest<String, Void>,
         botTemplateLoader: BotTemplateLoader
     ) {
         self.getBotRequest = getBotRequest
-        self.createBotRequest = createBotRequest
+        self.duplicateBotRequest = duplicateBotRequest
         self.deleteBotRequest = deleteBotRequest
         self.botTemplateLoader = botTemplateLoader
     }
 
     func synchroniseBot(fromBranch branch: XCSBranch, completion: (XCSBranch) -> ()) {
-        guard let template = loadTemplateJSON(forBranch: branch) else {
+        guard let templateID = loadTemplateID(forBranch: branch) else {
             completion(branch)
             return
         }
         guard let botID = branch.botID where doesBotExist(withID: botID) else {
-            createBot(forNewBranch: branch, template: template, completion: completion)
+            createBot(forNewBranch: branch, templateID: templateID, completion: completion)
             return
         }
         completion(branch)
@@ -44,15 +44,14 @@ class XCSBotSynchroniser: BotSynchroniser {
         completion(isBotDeleted(fromResponse: response))
     }
 
-    private func loadTemplateJSON(forBranch branch: XCSBranch) -> [String: AnyObject]? {
+    private func loadTemplateID(forBranch branch: XCSBranch) -> String? {
         guard let data = botTemplateLoader.load()?.data else { return nil }
-        var json = FlexiJSON(data: data)
-        json["name"] = FlexiJSON(string: Constants.convertBranchNameToBotName(branch.name))
-        return json.dictionary
+        return FlexiJSON(data: data)["_id"].string
     }
 
-    private func createBot(forNewBranch branch: XCSBranch, template: [String: AnyObject], completion: (XCSBranch) -> ()) {
-        if let newBotID = createBotRequest.send(template)?.data {
+    private func createBot(forNewBranch branch: XCSBranch, templateID: String, completion: (XCSBranch) -> ()) {
+        let templateData = DuplicateBotRequestData(id: templateID, name: Constants.convertBranchNameToBotName(branch.name))
+        if let newBotID = duplicateBotRequest.send(templateData)?.data {
             completion(XCSBranch(name: branch.name, botID: newBotID))
         } else {
             completion(branch)

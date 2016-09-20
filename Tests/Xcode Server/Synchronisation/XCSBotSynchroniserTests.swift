@@ -10,7 +10,7 @@ class XCSBotSynchroniserTests: XCTestCase {
 
     var syncer: XCSBotSynchroniser!
     var mockedGetBotRequest: MockXCSRequest<String, NSData>!
-    var mockedCreateBotRequest: MockXCSRequest<[String: AnyObject], String>!
+    var mockedDuplicateBotRequest: MockXCSRequest<DuplicateBotRequestData, String>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedTemplateLoader: MockBotTemplateLoader!
     let master = XCSBranch(name: "master", botID: "master_bot_id")
@@ -20,12 +20,12 @@ class XCSBotSynchroniserTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockedGetBotRequest = MockXCSRequest()
-        mockedCreateBotRequest = MockXCSRequest()
+        mockedDuplicateBotRequest = MockXCSRequest()
         mockedDeleteBotRequest = MockXCSRequest()
         mockedTemplateLoader = MockBotTemplateLoader()
         syncer = XCSBotSynchroniser(
             getBotRequest: AnyXCSRequest(mockedGetBotRequest),
-            createBotRequest: AnyXCSRequest(mockedCreateBotRequest),
+            duplicateBotRequest: AnyXCSRequest(mockedDuplicateBotRequest),
             deleteBotRequest: AnyXCSRequest(mockedDeleteBotRequest),
             botTemplateLoader: mockedTemplateLoader
         )
@@ -38,12 +38,13 @@ class XCSBotSynchroniserTests: XCTestCase {
         stubNoTemplate()
         synchroniseBot(from: master)
         XCTAssertFalse(mockedGetBotRequest.didSend)
-        XCTAssertFalse(mockedCreateBotRequest.didSend)
+        XCTAssertFalse(mockedDuplicateBotRequest.didSend)
     }
 
     func test_synchroniseBot_shouldCreateBot_whenNoBotID() {
         synchroniseBot(from: newBranch)
-        XCTAssertEqual(mockedCreateBotRequest.invokedData as NSDictionary?, modifiedTemplateJSON(withName: "new"))
+        XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.id, testTemplateBotID)
+        XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.name, botName(for: newBranch))
     }
 
     func test_synchroniseBot_shouldSendGetBotRequest() {
@@ -54,19 +55,20 @@ class XCSBotSynchroniserTests: XCTestCase {
     func test_synchroniseBot_shouldCreateBot_whenBotIsNotFound() {
         stubNotFoundGetBotResponse()
         synchroniseBot(from: master)
-        XCTAssertEqual(mockedCreateBotRequest.invokedData as NSDictionary?, modifiedTemplateJSON(withName: "master"))
+        XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.id, testTemplateBotID)
+        XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.name, botName(for: master))
     }
 
     func test_synchroniseBot_shouldNotCreateBot_whenBotIsFound() {
         stubValidGetBotResponse()
         synchroniseBot(from: master)
-        XCTAssertFalse(mockedCreateBotRequest.didSend)
+        XCTAssertFalse(mockedDuplicateBotRequest.didSend)
     }
 
     func test_synchroniseBot_shouldNotCreateBot_whenNoResponse() {
         stubInvalidGetBotResponse()
         synchroniseBot(from: master)
-        XCTAssertFalse(mockedCreateBotRequest.didSend)
+        XCTAssertFalse(mockedDuplicateBotRequest.didSend)
     }
 
     func test_synchroniseBot_shouldCompleteWithSameBranch_whenNoTemplate() {
@@ -81,7 +83,6 @@ class XCSBotSynchroniserTests: XCTestCase {
     }
 
     func test_synchroniseBot_shouldCompleteWithSameBranch_whenBotIDDoesNotExist_andNetworkRequestFails() {
-        let fetchedBranch = XCSBranch(name: newBranch.name, botID: newBotID)
         stubInvalidCreateBotResponse()
         XCTAssertEqual(synchroniseBot(from: newBranch), newBranch)
     }
@@ -142,12 +143,6 @@ class XCSBotSynchroniserTests: XCTestCase {
         return result
     }
 
-    func modifiedTemplateJSON(withName name: String) -> [String: AnyObject] {
-        var json = testTemplateBotJSON
-        json["name"] = "xcsautobuild [\(name)]"
-        return json
-    }
-
     func stubValidTemplate() {
         mockedTemplateLoader.stubbedTemplate = testBotTemplate
     }
@@ -157,11 +152,11 @@ class XCSBotSynchroniserTests: XCTestCase {
     }
 
     func stubValidCreateBotResponse(botID botID: String) {
-        mockedCreateBotRequest.stubbedResponse = XCSResponse(data: botID, statusCode: 200)
+        mockedDuplicateBotRequest.stubbedResponse = XCSResponse(data: botID, statusCode: 200)
     }
 
     func stubInvalidCreateBotResponse() {
-        mockedCreateBotRequest.stubbedResponse = nil
+        mockedDuplicateBotRequest.stubbedResponse = nil
     }
 
     func stubInvalidGetBotResponse() {
@@ -182,5 +177,9 @@ class XCSBotSynchroniserTests: XCTestCase {
 
     func stubInvalidDeleteBotResponse() {
         mockedDeleteBotRequest.stubbedResponse = nil
+    }
+
+    func botName(for branch: XCSBranch) -> String {
+        return "xcsautobuild [\(branch.name)]"
     }
 }
