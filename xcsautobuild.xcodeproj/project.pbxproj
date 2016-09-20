@@ -175,7 +175,9 @@
 		35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
 		35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7CC983EAEAD723DDF7D /* ViewController.swift */; };
+		35CDF217D99486016220533C /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
 		35CDF2D7853E79BB308C6C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDFCF8BEDBEDDBDCEC328A /* Main.storyboard */; };
+		35CDF2E6C2BA770DCCF95532 /* XCSDuplicateBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF63E4BB29DD8ABF38CC8 /* XCSDuplicateBotRequestTests.swift */; };
 		35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF356A1580E398FD1CD12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */; };
 		35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
@@ -208,6 +210,7 @@
 		35CDFD0F1C687E352115D612 /* GlobalBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF854E75C81C9C33F68EE /* GlobalBranchFilter.swift */; };
 		35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */; };
 		35CDFD609F164E5024D51C34 /* GlobalBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF854E75C81C9C33F68EE /* GlobalBranchFilter.swift */; };
+		35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
 		35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
 		35CDFE46EEFE41F27F51E883 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDFE6CCCD18435EAC3D896 /* MockPatternDataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7164807ABB4743D2D36 /* MockPatternDataStoreProvider.swift */; };
@@ -408,6 +411,7 @@
 		35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranchTests.swift; sourceTree = "<group>"; };
 		35CDF544D9207869F43D2FDF /* XCSBranch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranch.swift; sourceTree = "<group>"; };
 		35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
+		35CDF63E4BB29DD8ABF38CC8 /* XCSDuplicateBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDuplicateBotRequestTests.swift; sourceTree = "<group>"; };
 		35CDF693CE4844D9C23D3200 /* GlobalBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBranchFilterTests.swift; sourceTree = "<group>"; };
 		35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockXCSBranchesDataStore.swift; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 		35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
 		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
+		35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDuplicateBotRequest.swift; sourceTree = "<group>"; };
 		35CDFF3C8B451B517F3E93E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35CDFF4D4F61AB5A7592A1B7 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5630D124BA7A9B7E6356AAB9 /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -820,6 +825,7 @@
 				14C559F41D6899AF003B704C /* DELETE */,
 				14C559F61D6899AF003B704C /* GET */,
 				14C559F91D6899AF003B704C /* POST */,
+				35CDF22CD5A6DCD8D0F243C9 /* duplicate */,
 			);
 			path = bots;
 			sourceTree = "<group>";
@@ -1051,6 +1057,7 @@
 				14C55A6D1D6899BE003B704C /* DELETE */,
 				14C55A6F1D6899BE003B704C /* GET */,
 				14C55A721D6899BE003B704C /* POST */,
+				35CDFBAF3CF0BE1DF1F97F75 /* duplicate */,
 			);
 			path = bots;
 			sourceTree = "<group>";
@@ -1186,6 +1193,14 @@
 			path = Synchronisation;
 			sourceTree = "<group>";
 		};
+		35CDF22CD5A6DCD8D0F243C9 /* duplicate */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF8A686373A336C206EF4 /* POST */,
+			);
+			path = duplicate;
+			sourceTree = "<group>";
+		};
 		35CDF43A55E580DCE550A155 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
@@ -1239,6 +1254,14 @@
 			path = Gateway;
 			sourceTree = "<group>";
 		};
+		35CDF8A686373A336C206EF4 /* POST */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */,
+			);
+			path = POST;
+			sourceTree = "<group>";
+		};
 		35CDF8D2591576FB4125D908 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1266,12 +1289,28 @@
 			path = "Dependency Injection";
 			sourceTree = "<group>";
 		};
+		35CDFBAF3CF0BE1DF1F97F75 /* duplicate */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFC45100FD9F1F9BAA3EC /* POST */,
+			);
+			path = duplicate;
+			sourceTree = "<group>";
+		};
 		35CDFBB6DDA7E77C8A374D0B /* Branch Filter */ = {
 			isa = PBXGroup;
 			children = (
 				35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */,
 			);
 			path = "Branch Filter";
+			sourceTree = "<group>";
+		};
+		35CDFC45100FD9F1F9BAA3EC /* POST */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF63E4BB29DD8ABF38CC8 /* XCSDuplicateBotRequestTests.swift */,
+			);
+			path = POST;
 			sourceTree = "<group>";
 		};
 		35CDFDD0BD47F74DF30C9A3B /* BranchFilter */ = {
@@ -1646,6 +1685,7 @@
 				35CDF56C9E5BC7809F43B9CF /* XCSBranch.swift in Sources */,
 				35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */,
 				35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */,
+				35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1710,6 +1750,7 @@
 				35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */,
 				35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */,
 				35CDF37021A21EDE02A72C01 /* XCSResponseTests.swift in Sources */,
+				35CDF2E6C2BA770DCCF95532 /* XCSDuplicateBotRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1796,6 +1837,7 @@
 				35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */,
 				35CDFE46EEFE41F27F51E883 /* MockBotSynchroniser.swift in Sources */,
 				35CDFA725F09957C1F56892B /* MockXCSBranchesDataStore.swift in Sources */,
+				35CDF217D99486016220533C /* XCSDuplicateBotRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
