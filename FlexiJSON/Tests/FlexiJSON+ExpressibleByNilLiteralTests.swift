@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+BoolLiteralConvertibleTests.swift
+//  FlexiJSON+ExpressibleByNilLiteralTests.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -24,12 +24,12 @@
 import XCTest
 @testable import xcsautobuild
 
-class FlexiJSON_BoolLiteralConvertibleTests: XCTestCase {
+class FlexiJSON_ExpressibleByNilLiteralTests: XCTestCase {
     
-    func test_boolLiteralConvertible() {
-        let dictionary = ["key": true]
+    func test_init_nilLiteral() {
+        let dictionary = ["key": 123]
         var json = FlexiJSON(dictionary: dictionary)
-        json["key"] = false
-        XCTAssertEqual(json["key"].bool, false)
+        json["key"] = nil
+        XCTAssertNotNil(json["key"].null)
     }
 }

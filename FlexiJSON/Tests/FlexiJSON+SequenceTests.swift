@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+SequenceTypeTests.swift
+//  FlexiJSON+SequenceTests.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -24,7 +24,7 @@
 import XCTest
 @testable import xcsautobuild
 
-class FlexiJSON_SequenceTypeTests: XCTestCase {
+class FlexiJSON_SequenceTests: XCTestCase {
 
     func test_generate_shouldHaveZeroCount_whenNotArrayOrDictionary() {
         let json = FlexiJSON(bool: false)

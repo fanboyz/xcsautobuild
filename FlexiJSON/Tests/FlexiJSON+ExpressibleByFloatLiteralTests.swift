@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+ArrayLiteralConvertibleTests.swift
+//  FlexiJSON+ExpressibleByFloatLiteralTests.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -9,10 +9,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-//
+// 
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-//
+// 
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,15 +24,12 @@
 import XCTest
 @testable import xcsautobuild
 
-class FlexiJSON_ArrayLiteralConvertibleTests: XCTestCase {
+class FlexiJSON_ExpressibleByFloatLiteralTests: XCTestCase {
 
-    func test_arrayLiteralConvertible() {
-        let dictionary = ["key": ["value", 123]]
+    func test_init_floatLiteral() {
+        let dictionary = ["key": 0.99]
         var json = FlexiJSON(dictionary: dictionary)
-        json["key"] = ["value"]
-
-        let array = json["key"].array as? [String]
-        XCTAssertEqual(array?[0], "value")
-        XCTAssertEqual(array?.count, 1)
+        json["key"] = 0.11
+        XCTAssertEqual(json["key"].double, 0.11)
     }
 }

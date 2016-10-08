@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+StringLiteralConvertibleTests.swift
+//  FlexiJSON+ExpressibleByBooleanLiteral.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -9,10 +9,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-//
+// 
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-//
+// 
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,15 +21,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import XCTest
-@testable import xcsautobuild
+import Swift
 
-class FlexiJSON_StringLiteralConvertibleTests: XCTestCase {
-    
-    func test_stringLiteralConvertable() {
-        let dictionary = ["key": "value"]
-        var json = FlexiJSON(dictionary: dictionary)
-        json["key"] = "new value"
-        XCTAssertEqual(json["key"].string, "new value")
+extension FlexiJSON: ExpressibleByBooleanLiteral {
+
+    public init(booleanLiteral value: Bool) {
+        self.init(bool: value)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+BooleanLiteralConvertible.swift
+//  FlexiJSON+ExpressibleByDictionaryLiteralTests.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -21,11 +21,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Swift
+import XCTest
+@testable import xcsautobuild
 
-extension FlexiJSON: ExpressibleByBooleanLiteral {
+class FlexiJSON_ExpressibleByDictionaryLiteralTests: XCTestCase {
 
-    public init(booleanLiteral value: Bool) {
-        self.init(bool: value)
+    func test_init_dictionaryLiteral() {
+        var json = FlexiJSON(dictionary: ["1": 123])
+        json["1"] = ["3": 456, "4": "string", "5": ["string"], "6": NSNull(), "7": true]
+
+        let expected = FlexiJSON(dictionary: ["3": 456, "4": "string", "5": ["string"], "6": NSNull(), "7": true])
+        let result = json["1"]
+        XCTAssertEqual(result, expected)
     }
 }

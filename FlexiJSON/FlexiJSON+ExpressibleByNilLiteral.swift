@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+DictionaryLiteralConvertible.swift
+//  FlexiJSON+ExpressibleByNilLiteral.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -23,14 +23,9 @@
 
 import Swift
 
-extension FlexiJSON: ExpressibleByDictionaryLiteral {
+extension FlexiJSON: ExpressibleByNilLiteral {
 
-    public init(dictionaryLiteral elements: (String, Any)...) {
-        let dictionary = elements.reduce([String: Any]()) { d, pair in
-            var d = d
-            d[pair.0] = pair.1
-            return d
-        }
-        self.init(dictionary: dictionary)
+    public init(nilLiteral value: ()) {
+        self.init(null: JSONNull())
     }
 }

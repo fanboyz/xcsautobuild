@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+ArrayLiteralConvertible.swift
+//  FlexiJSON+ExpressibleByFloatLiteral.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -23,9 +23,9 @@
 
 import Swift
 
-extension FlexiJSON: ExpressibleByArrayLiteral {
+extension FlexiJSON: ExpressibleByFloatLiteral {
 
-    public init(arrayLiteral elements: Any...) {
-        self.init(array: elements)
+    public init(floatLiteral value: Double) {
+        self.init(double: value)
     }
 }
