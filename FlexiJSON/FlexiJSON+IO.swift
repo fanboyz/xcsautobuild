@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+ObjC.swift
+//  FlexiJSON+IO.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //

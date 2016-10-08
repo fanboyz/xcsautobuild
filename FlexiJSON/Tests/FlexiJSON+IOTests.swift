@@ -1,5 +1,5 @@
 //
-//  FlexiJSON+ObjCTests.swift
+//  FlexiJSON+IOTests.swift
 //
 //  Copyright © 2016 Sean Henry. All rights reserved.
 //
@@ -24,7 +24,7 @@
 import XCTest
 @testable import xcsautobuild
 
-class FlexiJSON_ObjCTests: XCTestCase {
+class FlexiJSON_IOTests: XCTestCase {
     
     // MARK: - init data
 
