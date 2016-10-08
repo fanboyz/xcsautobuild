@@ -31,7 +31,7 @@ class BotSyncingInteractor: Command {
 
     private func fetchFilteredBranches() -> [Branch] {
         let allBranches = branchFetcher.fetchBranches()
-        return branchFilter.filterBranches(allBranches)
+        return branchFilter.filter(allBranches)
     }
 
     private func findNewBranches(in branches: [Branch], byExcludingMatchingBranchesIn excluding: [XCSBranch]) -> [Branch] {

@@ -9,12 +9,12 @@ class WildcardBranchFilter: BranchFilter, PatternDataStore {
     var pattern = ""
     private let wildcard = "*"
 
-    func filterBranches(_ branches: [Branch]) -> [Branch] {
+    func filter(_ branches: [Branch]) -> [Branch] {
         if pattern == "" { return [] }
         let escaped = escapeSpecialCharacters(in: pattern)
         let regexPattern = replaceWildcardWithRegexWildcard(escaped)
         let strictPattern = matchFromBeginningAndToEnd(regexPattern)
-        return filterBranches(branches, withPattern: strictPattern)
+        return filter(branches, withPattern: strictPattern)
     }
 
     private func escapeSpecialCharacters(in string: String) -> String {
@@ -22,7 +22,7 @@ class WildcardBranchFilter: BranchFilter, PatternDataStore {
         return matching.stringByReplacingMatches(in: pattern, options: [], range: NSRange(0..<pattern.utf16.count), withTemplate: "\\\\$1")
     }
 
-    private func filterBranches(_ branches: [Branch], withPattern pattern: String) -> [Branch] {
+    private func filter(_ branches: [Branch], withPattern pattern: String) -> [Branch] {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         return branches.filter { regex.numberOfMatches(in: $0.name, options: [], range: NSMakeRange(0, $0.name.characters.count)) > 0 }
     }

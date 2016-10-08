@@ -61,7 +61,7 @@ class WildcardBranchFilterTests: XCTestCase {
         let specialCharacters = "[]()+?{}^$.|/\\"
         filter.pattern = specialCharacters
         let branches = [Branch(name: specialCharacters)]
-        XCTAssertEqual(filter.filterBranches(branches), branches)
+        XCTAssertEqual(filter.filter(branches), branches)
     }
 
     func test_filterBranches_shouldIgnoreInvalidRegex() {
@@ -82,6 +82,6 @@ class WildcardBranchFilterTests: XCTestCase {
     // MARK: - Helpers
 
     func filterBranches() -> [Branch] {
-        return filter.filterBranches(branches)
+        return filter.filter(branches)
     }
 }

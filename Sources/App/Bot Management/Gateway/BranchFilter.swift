@@ -5,5 +5,5 @@
 import Foundation
 
 protocol BranchFilter {
-    func filterBranches(_ branches: [Branch]) -> [Branch]
+    func filter(_ branches: [Branch]) -> [Branch]
 }

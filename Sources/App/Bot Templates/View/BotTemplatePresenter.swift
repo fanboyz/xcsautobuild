@@ -18,7 +18,7 @@ class BotTemplatePresenter {
 
 extension BotTemplatePresenter: BotTemplateEventHandler {
 
-    func create(templateFromName name: String) {
+    func createTemplate(fromName name: String) {
         templateCreatingInteractor.botName = name
         templateCreatingInteractor.execute()
     }

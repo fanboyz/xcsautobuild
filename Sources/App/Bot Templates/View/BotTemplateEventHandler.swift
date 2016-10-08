@@ -5,5 +5,5 @@
 import Foundation
 
 protocol BotTemplateEventHandler {
-    func create(templateFromName name: String)
+    func createTemplate(fromName name: String)
 }

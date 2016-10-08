@@ -48,6 +48,6 @@ class BotTemplatePresenterTests: XCTestCase {
     // MARK: - Helpers
 
     func createTemplateFromName() {
-        presenter.create(templateFromName: testName)
+        presenter.createTemplate(fromName: testName)
     }
 }

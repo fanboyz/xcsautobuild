@@ -27,11 +27,11 @@ class BotTemplateCreatingInteractor: Command, BotNamable {
 
     func execute() {
         botTemplatesFetcher.fetchBotTemplates { [weak self] templates in
-            self?.handleFetchedTemplates(templates)
+            self?.handle(fetchedTemplates: templates)
         }
     }
 
-    private func handleFetchedTemplates(_ templates: [BotTemplate]) {
+    private func handle(fetchedTemplates templates: [BotTemplate]) {
         let matching = templates.filter { $0.name == botName }.first
         guard let template = matching else {
             output?.didFailToFindTemplate()
