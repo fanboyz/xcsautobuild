@@ -97,7 +97,7 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
 
     // MARK: - Helpers
 
-    func save(branch: XCSBranch? = nil) {
+    func save(_ branch: XCSBranch? = nil) {
         store.save(branch: branch ?? self.branch)
     }
 
@@ -109,15 +109,15 @@ class FileXCSBranchesDataStoreTests: XCTestCase {
         return store.load(fromBranchName: name)
     }
 
-    func delete(branch: XCSBranch) {
+    func delete(_ branch: XCSBranch) {
         store.delete(branch: branch)
     }
 
     func deleteFile() {
-        _ = try? NSFileManager.defaultManager().removeItemAtPath(file)
+        _ = try? FileManager.default.removeItem(atPath: file)
     }
 
     func writeBadFile() {
-        try! "invalid!".writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding)
+        try! "invalid!".write(toFile: file, atomically: true, encoding: String.Encoding.utf8)
     }
 }

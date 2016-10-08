@@ -55,12 +55,12 @@ let testBotName = "test bot"
 let testBotID = "test_bot_id"
 let testBotJSON = ["name": testBotName, "_id": testBotID]
 let testBotData = FlexiJSON(dictionary: testBotJSON).data!
-let testData = "data".dataUsingEncoding(NSUTF8StringEncoding)!
-let testURL = NSURL(string: "https://test.com")!
+let testData = "data".data(using: String.Encoding.utf8)!
+let testURL = URL(string: "https://test.com")!
 
 extension String {
 
-    var utf8Data: NSData {
-        return dataUsingEncoding(NSUTF8StringEncoding)!
+    var utf8Data: Data {
+        return data(using: String.Encoding.utf8)!
     }
 }

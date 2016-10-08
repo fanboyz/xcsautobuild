@@ -12,11 +12,11 @@ protocol GitFixture: class {
 
 extension GitFixture {
 
-    func setUpGit(branches branches: String...) {
+    func setUpGit(branches: String...) {
         setUpGit(branches: branches)
     }
 
-    func setUpGit(branches branches: [String]) {
+    func setUpGit(branches: [String]) {
         remove(file: testLocalGitURL)
         remove(file: testRemoteGitURL)
         remove(file: testXCSGitURL)
@@ -27,7 +27,7 @@ extension GitFixture {
         }
     }
 
-    func remove(file file: NSURL) {
-        _ = try? NSFileManager.defaultManager().removeItemAtURL(file)
+    func remove(file: URL) {
+        _ = try? FileManager.default.removeItem(at: file)
     }
 }

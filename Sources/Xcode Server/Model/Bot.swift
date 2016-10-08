@@ -67,7 +67,7 @@ struct Bot {
                 case before
                 case after(Conditions)
 
-                struct Conditions: OptionSetType {
+                struct Conditions: OptionSet {
 
                     static let onWarnings = Conditions(rawValue: 1)
                     static let onBuildErrors = Conditions(rawValue: 2)

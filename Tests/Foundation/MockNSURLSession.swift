@@ -4,15 +4,15 @@
 
 import Foundation
 
-class MockNSURLSession: NSURLSession {
+class MockNSURLSession: URLSession {
     
     var didCreateDataTask = false
-    var stubbedData: NSData?
-    var stubbedResponse: NSURLResponse?
+    var stubbedData: Data?
+    var stubbedResponse: URLResponse?
     var stubbedError: NSError?
     var stubbedDataTask = MockNSURLSessionDataTask()
-    var invokedRequest: NSURLRequest?
-    override func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    var invokedRequest: URLRequest?
+    override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         didCreateDataTask = true
         invokedRequest = request
         completionHandler(stubbedData, stubbedResponse, stubbedError)

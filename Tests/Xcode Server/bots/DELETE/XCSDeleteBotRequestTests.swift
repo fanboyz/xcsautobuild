@@ -26,6 +26,6 @@ class XCSDeleteBotRequestTests: XCTestCase {
     // MARK: - parse
 
     func test_parse() {
-        XCTAssertNotNil(request.parse(response: NSData()))
+        XCTAssertNotNil(request.parse(response: Data()))
     }
 }

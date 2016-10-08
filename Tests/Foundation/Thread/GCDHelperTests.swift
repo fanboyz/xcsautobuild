@@ -67,21 +67,21 @@ class GCDHelperTests: XCTestCase {
 
     // MARK: - Helpers
 
-    func wrapInMainThread(closure: () -> ()) {
+    func wrapInMainThread(_ closure: () -> ()) {
         helper.wrapInMainThread(closure)()
     }
 
-    func wrapInMainThreadAsync(closure: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
+    func wrapInMainThreadAsync(_ closure: @escaping () -> ()) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
             self.helper.wrapInMainThread(closure)()
         }
     }
 
     func waitForOneLoop() {
-        let expectation = expectationWithDescription(#function)
-        NSOperationQueue.mainQueue().addOperationWithBlock {
+        let expectation = self.expectation(description: #function)
+        OperationQueue.main.addOperation {
             expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(5, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
 }

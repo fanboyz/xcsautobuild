@@ -10,10 +10,10 @@ class XcodeServerBotAPITests: XCTestCase {
     var api: XcodeServerBotAPI!
     var mockedGetBotsRequest: MockXCSRequest<Void, [RemoteBot]>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
-    var mockedGetBotRequest: MockXCSRequest<String, NSData>!
+    var mockedGetBotRequest: MockXCSRequest<String, Data>!
     let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
     let botID = "123"
-    let botData: NSData = {
+    let botData: Data = {
         return FlexiJSON(dictionary: testBot.toJSON()).data!
     }()
     let botJSON = ["name": "template"]
@@ -137,7 +137,7 @@ class XcodeServerBotAPITests: XCTestCase {
     }
 
     func stubBadGetBotResponse() {
-        mockedGetBotRequest.stubbedResponse = XCSResponse(data: NSData(), statusCode: 200)
+        mockedGetBotRequest.stubbedResponse = XCSResponse(data: Data(), statusCode: 200)
     }
 
     func formattedTestBranchName() -> String {

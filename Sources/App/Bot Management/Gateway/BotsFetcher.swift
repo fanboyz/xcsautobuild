@@ -5,5 +5,5 @@
 import Foundation
 
 protocol BotsFetcher {
-    func getBots(completion: (([RemoteBot]) -> ()))
+    func getBots(_ completion: (([RemoteBot]) -> ()))
 }

@@ -6,13 +6,13 @@ import Foundation
 
 class XCSBotSynchroniser: BotSynchroniser {
 
-    private let getBotRequest: AnyXCSRequest<String, NSData>
+    private let getBotRequest: AnyXCSRequest<String, Data>
     private let duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
     private let botTemplateLoader: BotTemplateLoader
 
     init(
-        getBotRequest: AnyXCSRequest<String, NSData>,
+        getBotRequest: AnyXCSRequest<String, Data>,
         duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>,
         deleteBotRequest: AnyXCSRequest<String, Void>,
         botTemplateLoader: BotTemplateLoader
@@ -28,14 +28,14 @@ class XCSBotSynchroniser: BotSynchroniser {
             completion(branch)
             return
         }
-        guard let botID = branch.botID where doesBotExist(withID: botID) else {
+        guard let botID = branch.botID , doesBotExist(withID: botID) else {
             createBot(forNewBranch: branch, templateID: templateID, completion: completion)
             return
         }
         completion(branch)
     }
 
-    func deleteBot(fromBranch branch: XCSBranch, completion: Bool -> ()) {
+    func deleteBot(fromBranch branch: XCSBranch, completion: (Bool) -> ()) {
         guard let botID = branch.botID else {
             completion(true)
             return

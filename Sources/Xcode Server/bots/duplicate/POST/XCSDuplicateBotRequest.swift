@@ -12,11 +12,11 @@ class XCSDuplicateBotRequest: XCSRequest {
         self.network = network
     }
 
-    func createRequest(data: DuplicateBotRequestData) -> HTTPRequest {
+    func createRequest(_ data: DuplicateBotRequestData) -> HTTPRequest {
         return HTTPRequest(url: endpoint + "bots/\(data.id)/duplicate", method: .post, jsonBody: ["name": data.name])
     }
 
-    func parse(response data: NSData) -> String? {
+    func parse(response data: Data) -> String? {
         return FlexiJSON(data: data)["_id"].string
     }
 }

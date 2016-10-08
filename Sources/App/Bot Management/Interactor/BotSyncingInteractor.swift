@@ -36,27 +36,27 @@ class BotSyncingInteractor: Command {
 
     private func findNewBranches(in branches: [Branch], byExcludingMatchingBranchesIn excluding: [XCSBranch]) -> [Branch] {
         return branches.filter { branch in
-            return !excluding.contains(sameNames(branch))
+            return !excluding.contains(where: sameNames(branch))
         }
     }
 
-    private func sameNames(branch: Branch) -> (XCSBranch) -> Bool {
+    private func sameNames(_ branch: Branch) -> (XCSBranch) -> Bool {
         return { other in branch.name == other.name }
     }
 
     private func findExistingBranches(in branches: [XCSBranch], byMatchingBranchesIn matching: [Branch]) -> [XCSBranch] {
         return branches.filter { branch in
-            matching.contains(sameNames(branch))
+            matching.contains(where: sameNames(branch))
         }
     }
 
     private func findExpiredBranches(in branches: [XCSBranch], byMatchingBranchesIn matching: [Branch]) -> [XCSBranch] {
         return branches.filter { branch in
-            !matching.contains(sameNames(branch))
+            !matching.contains(where: sameNames(branch))
         }
     }
 
-    private func sameNames(branch: XCSBranch) -> (Branch) -> Bool {
+    private func sameNames(_ branch: XCSBranch) -> (Branch) -> Bool {
         return { other in branch.name == other.name }
     }
 
@@ -64,7 +64,7 @@ class BotSyncingInteractor: Command {
         branches.map(toXCSBranch).forEach(synchroniseBot)
     }
 
-    private func toXCSBranch(branch: Branch) -> XCSBranch {
+    private func toXCSBranch(_ branch: Branch) -> XCSBranch {
         return newBranch(fromName: branch.name)
     }
 

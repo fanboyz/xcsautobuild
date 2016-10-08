@@ -41,7 +41,7 @@ class FileBotTemplatePersisterTests: XCTestCase {
     }
 
     func test_load_shouldReturnNil_whenNoBotNameInData() {
-        mockedDataLoader.stubbedData = NSData()
+        mockedDataLoader.stubbedData = Data()
         XCTAssertNil(persister.load())
     }
 }

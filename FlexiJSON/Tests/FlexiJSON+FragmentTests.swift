@@ -226,7 +226,7 @@ class FlexiJSON_Fragment: XCTestCase {
 
     // MARK: - Helpers
 
-    func allTypesDictionary() -> [String : AnyObject] {
+    func allTypesDictionary() -> [String : Any] {
         return [
             "string": "string",
             "int": 123,
@@ -264,7 +264,7 @@ class FlexiJSON_Fragment: XCTestCase {
         ]
     }
 
-    func allTypesArray() -> [AnyObject] {
+    func allTypesArray() -> [Any] {
         return [
             "string",
             123,

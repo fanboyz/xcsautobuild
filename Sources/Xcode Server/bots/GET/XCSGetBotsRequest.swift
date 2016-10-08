@@ -12,15 +12,15 @@ class XCSGetBotsRequest: XCSRequest {
         self.network = network
     }
 
-    func createRequest(data: Void) -> HTTPRequest {
+    func createRequest(_ data: Void) -> HTTPRequest {
         return HTTPRequest(url: endpoint + "bots", method: .get, jsonBody: nil)
     }
 
-    func parse(response data: NSData) -> [RemoteBot]? {
+    func parse(response data: Data) -> [RemoteBot]? {
         return FlexiJSON(data: data)["results"].flatMap(toBot)
     }
 
-    private func toBot(json: FlexiJSON) -> RemoteBot? {
+    private func toBot(_ json: FlexiJSON) -> RemoteBot? {
         if let id = json["_id"].string,
             let name = json["name"].string {
             return RemoteBot(id: id, name: name)

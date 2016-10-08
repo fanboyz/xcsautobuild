@@ -8,7 +8,7 @@ import XCTest
 class XCSGetBotsRequestTests: XCTestCase {
     
     var request: XCSGetBotsRequest!
-    var response: NSData!
+    var response: Data!
     
     override func setUp() {
         super.setUp()
@@ -55,9 +55,9 @@ class XCSGetBotsRequestTests: XCTestCase {
         return request.parse(response: response)
     }
 
-    func stubArrayResponse(array: [AnyObject]) {
+    func stubArrayResponse(_ array: [AnyObject]) {
         let object = ["results": array]
-        let data = try! NSJSONSerialization.dataWithJSONObject(object, options: [])
+        let data = try! JSONSerialization.data(withJSONObject: object, options: [])
         response = data
     }
 }

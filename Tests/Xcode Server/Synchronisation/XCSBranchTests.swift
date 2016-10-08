@@ -25,7 +25,7 @@ class XCSBranchTests: XCTestCase {
     // MARK: - Helpers
 
     func isEqual(
-            name name: String = "name",
+            name: String = "name",
             botID: String = "botID"
     ) -> Bool {
         let branch = XCSBranch(name: "name", botID: "botID")

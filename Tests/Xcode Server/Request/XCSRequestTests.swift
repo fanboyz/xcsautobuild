@@ -76,7 +76,7 @@ class XCSRequestTests: XCTestCase {
     }
 
     func test_sendSync_shouldBlockUntilFinished() {
-        let parsed = "hello".dataUsingEncoding(NSUTF8StringEncoding)!
+        let parsed = "hello".data(using: String.Encoding.utf8)!
         mockedNetwork.stubbedResponse = parsed
         mockedNetwork.stubbedStatusCode = 200
         let response = request.send("")
@@ -93,7 +93,7 @@ class XCSRequestTests: XCTestCase {
         return response
     }
 
-    func stubResponse(data data: NSData? = NSData(), statusCode: Int? = 200) {
+    func stubResponse(data: Data? = Data(), statusCode: Int? = 200) {
         mockedNetwork.stubbedResponse = data
         mockedNetwork.stubbedStatusCode = statusCode
     }
@@ -106,13 +106,13 @@ class XCSRequestTests: XCTestCase {
         }
 
         var didCreateRequest = false
-        func createRequest(data: String) -> HTTPRequest {
+        func createRequest(_ data: String) -> HTTPRequest {
             didCreateRequest = true
             return testRequest
         }
 
         var didParse = false
-        func parse(response data: NSData) -> NSData? {
+        func parse(response data: Data) -> Data? {
             didParse = true
             return data
         }

@@ -14,11 +14,11 @@ enum HTTPMethod: String {
 struct HTTPRequest: Equatable {
     var url: URL
     var method: HTTPMethod
-    var jsonBody: [String: AnyObject]?
+    var jsonBody: [String: Any]?
 }
 
 func ==(lhs: HTTPRequest, rhs: HTTPRequest) -> Bool {
     return lhs.url == rhs.url
         && lhs.method == rhs.method
-        && lhs.jsonBody as NSDictionary? == rhs.jsonBody
+        && lhs.jsonBody as NSDictionary? == rhs.jsonBody as NSDictionary?
 }

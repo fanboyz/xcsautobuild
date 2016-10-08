@@ -23,7 +23,7 @@
 
 import Swift
 
-extension FlexiJSON: BooleanLiteralConvertible {
+extension FlexiJSON: ExpressibleByBooleanLiteral {
 
     public init(booleanLiteral value: Bool) {
         self.init(bool: value)

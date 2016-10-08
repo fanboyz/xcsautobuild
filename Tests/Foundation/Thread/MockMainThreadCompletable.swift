@@ -9,7 +9,7 @@ class MockMainThreadCompletable: MainThreadCompletable {
 
     var didWrapInMainThread = false
     var didCompleteOnMainThread = false
-    func wrapInMainThread<T>(closure: ((T) -> ())?) -> (T) -> () {
+    func wrapInMainThread<T>(_ closure: ((T) -> ())?) -> (T) -> () {
         didWrapInMainThread = true
         return { arguments in
             self.didCompleteOnMainThread = closure != nil

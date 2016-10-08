@@ -6,18 +6,18 @@ import Foundation
 
 extension Bot {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         return [
             "name": name,
             "configuration": configuration.toJSON(),
-            "group": ["name": NSUUID().UUIDString]
+            "group": ["name": UUID().uuidString]
         ]
     }
 }
 
 extension Bot.Configuration {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         return [
             "schemeName": schemeName,
             "performsAnalyzeAction": performsAnalyzeAction,
@@ -33,8 +33,8 @@ extension Bot.Configuration {
 
 extension Bot.Configuration.Schedule {
 
-    func toJSON() -> [String: AnyObject] {
-        let result: [String: AnyObject] = [
+    func toJSON() -> [String: Any] {
+        let result: [String: Any] = [
             "scheduleType": toInt(),
             "periodicScheduleInterval": 0
         ]
@@ -47,7 +47,7 @@ extension Bot.Configuration.Schedule {
 
 extension Bot.Configuration.Schedule.Period {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         switch self {
         case .hourly(let minuteOfIntegration):
             return [
@@ -70,7 +70,7 @@ extension Bot.Configuration.Schedule.Period {
 
 extension Bot.Configuration.TestAction {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         let result = [
             "performsTestAction": toBool(),
             ]
@@ -92,8 +92,8 @@ extension Bot.Configuration.TestAction {
 
 extension Bot.Configuration.Trigger {
 
-    func toJSON() -> [String: AnyObject] {
-        let result: [String: AnyObject] = [
+    func toJSON() -> [String: Any] {
+        let result: [String: Any] = [
             "phase": phase.toInt(),
             "name": name,
             "scriptBody": scriptBody,
@@ -120,7 +120,7 @@ extension Bot.Configuration.Trigger.Phase {
 
 extension Bot.Configuration.Trigger.Phase.Conditions {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         return [
             "onWarnings": contains(.onWarnings),
             "onBuildErrors": contains(.onBuildErrors),
@@ -134,7 +134,7 @@ extension Bot.Configuration.Trigger.Phase.Conditions {
 
 extension Bot.Configuration.Blueprint {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         return [
             "DVTSourceControlWorkspaceBlueprintLocationsKey": location.toJSON(remoteID: primaryRemoteID),
             "DVTSourceControlWorkspaceBlueprintNameKey": projectName,
@@ -154,7 +154,7 @@ extension Bot.Configuration.Blueprint {
 
 extension Bot.Configuration.Blueprint.Repository {
 
-    func toJSON(remoteID remoteID: String) -> [String: AnyObject] {
+    func toJSON(remoteID: String) -> [String: Any] {
         return [
             "DVTSourceControlWorkspaceBlueprintRemoteRepositoryEnforceTrustCertFingerprintKey": true,
             "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey": remoteID,
@@ -167,7 +167,7 @@ extension Bot.Configuration.Blueprint.Repository {
 
 extension Bot.Configuration.Blueprint.Location {
 
-    func toJSON(remoteID remoteID: String) -> [String: AnyObject] {
+    func toJSON(remoteID: String) -> [String: Any] {
         return [
             remoteID: [
                 "DVTSourceControlBranchIdentifierKey": branchName,
@@ -180,7 +180,7 @@ extension Bot.Configuration.Blueprint.Location {
 
 extension Bot.Configuration.Blueprint.AuthenticationStrategy {
 
-    func toJSON() -> [String: AnyObject] {
+    func toJSON() -> [String: Any] {
         guard case let .basic(username, password) = self else { return [:] }
         return [
             "DVTSourceControlWorkspaceBlueprintRemoteRepositoryUsernameKey": username,
@@ -190,7 +190,7 @@ extension Bot.Configuration.Blueprint.AuthenticationStrategy {
     }
 }
 
-private func +(lhs: [String: AnyObject], rhs: [String: AnyObject]) -> [String: AnyObject] {
+private func +(lhs: [String: Any], rhs: [String: Any]) -> [String: Any] {
     var result = lhs
     for (key, value) in rhs {
         result[key] = value

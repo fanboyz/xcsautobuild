@@ -4,7 +4,7 @@
 
 import Foundation
 
-class MockNSURLSessionDataTask: NSURLSessionDataTask {
+class MockNSURLSessionDataTask: URLSessionDataTask {
 
     var didResume = false
     override func resume() {

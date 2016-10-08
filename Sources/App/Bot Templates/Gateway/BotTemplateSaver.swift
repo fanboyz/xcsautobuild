@@ -5,5 +5,5 @@
 import Foundation
 
 protocol BotTemplateSaver {
-    func save(template: BotTemplate)
+    func save(_ template: BotTemplate)
 }

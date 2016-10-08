@@ -76,7 +76,7 @@ class BotTemplateCreatingInteractorTests: XCTestCase {
     }
 
     func stubNonMatchingTemplate() {
-        let template = BotTemplate(name: "nonmatching", data: NSData())
+        let template = BotTemplate(name: "nonmatching", data: Data())
         mockedBotTemplatesFetcher.stubbedBotTemplates = [template]
     }
 }

@@ -22,7 +22,7 @@ class BotTemplateTests: XCTestCase {
     }
 
     func test_shouldNotBeEqual_whenDataIsDifferent() {
-        let data = "wrong".dataUsingEncoding(NSUTF8StringEncoding)!
+        let data = "wrong".data(using: String.Encoding.utf8)!
         let template = BotTemplate(name: "name", data: testData)
         let expected = BotTemplate(name: "name", data: data)
         XCTAssertNotEqual(template, expected)

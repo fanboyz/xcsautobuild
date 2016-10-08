@@ -128,17 +128,17 @@ class BotSyncingInteractorTests: XCTestCase {
         interactor.execute()
     }
 
-    func stubFetchedBranchNames(names: [String]) {
+    func stubFetchedBranchNames(_ names: [String]) {
         let branches = names.map { Branch(name: $0) }
         mockedBranchFilter.stubbedFilteredBranches = branches
         mockedBranchFetcher.stubbedBranches = branches
     }
 
-    func stubStoredBranch(branch: XCSBranch) {
+    func stubStoredBranch(_ branch: XCSBranch) {
         stubStoredBranches([branch])
     }
 
-    func stubStoredBranches(branches: [XCSBranch]) {
+    func stubStoredBranches(_ branches: [XCSBranch]) {
         mockedBranchesDataStore.stubbedLoadedBranches = branches
     }
 

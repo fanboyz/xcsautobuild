@@ -23,22 +23,22 @@
 
 import Swift
 
-extension FlexiJSON: SequenceType {
+extension FlexiJSON: Sequence {
 
-    public func generate() -> AnyGenerator<FlexiJSON> {
+    public func makeIterator() -> AnyIterator<FlexiJSON> {
         if let array = array {
-            return AnyGenerator(array.map(arrayToFlexiJSON).generate())
+            return AnyIterator(array.map(arrayToFlexiJSON).makeIterator())
         } else if let dictionary = dictionary {
-            return AnyGenerator(dictionary.map(dictionaryToFlexiJSON).generate())
+            return AnyIterator(dictionary.map(dictionaryToFlexiJSON).makeIterator())
         }
-        return AnyGenerator(IndexingGenerator([]))
+        return AnyIterator(IndexingIterator(_elements: []))
     }
 
-    private func arrayToFlexiJSON(value: AnyObject) -> FlexiJSON {
+    private func arrayToFlexiJSON(_ value: Any) -> FlexiJSON {
         return FlexiJSON(fragment: .from(value))
     }
 
-    private func dictionaryToFlexiJSON(keyValue: (String, AnyObject)) -> FlexiJSON {
+    private func dictionaryToFlexiJSON(_ keyValue: (String, Any)) -> FlexiJSON {
         return FlexiJSON(fragment: .from([keyValue.0: keyValue.1]))
     }
 }

@@ -5,5 +5,5 @@
 import Foundation
 
 protocol BotTemplatesFetcher {
-    func fetchBotTemplates(completion: ([BotTemplate]) -> ())
+    func fetchBotTemplates(_ completion: @escaping ([BotTemplate]) -> ())
 }

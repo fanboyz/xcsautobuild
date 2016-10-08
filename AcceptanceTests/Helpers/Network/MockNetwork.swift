@@ -12,9 +12,9 @@ class MockNetwork {
     }
 
     var duplicateBotCount = 0
-    var invokedDuplicateBotResponse: NSData?
+    var invokedDuplicateBotResponse: Data?
     var stubbedDuplicatedBotID = "6139a72b95fdeec94b49ec0a1f00191a"
-    func expectDuplicateBot(id id: String) {
+    func expectDuplicateBot(id: String) {
         stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots/\(id)/duplicate")) { [unowned self] request in
             self.invokedDuplicateBotResponse = request.OHHTTPStubs_HTTPBody()
             self.duplicateBotCount += 1
@@ -25,14 +25,14 @@ class MockNetwork {
     }
 
     var deleteBotCount = 0
-    func expectDeleteBot(id id: String) {
+    func expectDeleteBot(id: String) {
         stub(isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
             self.deleteBotCount += 1
             return empty(204)
         }
     }
 
-    func expectDeleteBotNotFound(id id: String) {
+    func expectDeleteBotNotFound(id: String) {
         stub(isMethodDELETE() && isPath("/api/bots/\(id)")) { _ in
             return empty(404)
         }
@@ -66,16 +66,16 @@ class MockNetwork {
 
     func stubGetBotError(withID id: String, statusCode: Int32) {
         stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { _ in
-            OHHTTPStubsResponse(data: NSData(), statusCode: statusCode, headers: nil)
+            OHHTTPStubsResponse(data: Data(), statusCode: statusCode, headers: nil)
         }
     }
 }
 
-func empty(statusCode: Int32) -> OHHTTPStubsResponse {
+func empty(_ statusCode: Int32) -> OHHTTPStubsResponse {
     return OHHTTPStubsResponse(data: NSData(), statusCode: statusCode, headers: nil)
 }
 
-func json(fileName: String) -> OHHTTPStubsResponse {
+func json(_ fileName: String) -> OHHTTPStubsResponse {
     let file = testBundle.pathForResource(fileName, ofType: "json")!
     return fixture(file, headers: nil)
 }

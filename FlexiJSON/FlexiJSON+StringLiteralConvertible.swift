@@ -23,7 +23,7 @@
 
 import Swift
 
-extension FlexiJSON: StringLiteralConvertible {
+extension FlexiJSON: ExpressibleByStringLiteral {
 
     public init(stringLiteral value: StringLiteralType) {
         self.init(string: value)

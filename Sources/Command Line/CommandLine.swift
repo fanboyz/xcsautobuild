@@ -12,32 +12,32 @@ struct CommandLine {
         self.directory = directory
     }
 
-    func execute(command: String) -> String {
-        let components = command.componentsSeparatedByString(" ")
+    func execute(_ command: String) -> String {
+        let components = command.components(separatedBy: " ")
 
-        let task = NSTask()
+        let task = Process()
         task.currentDirectoryPath = directory
         task.launchPath = self.command(from: components)
         task.arguments = arguments(from: components)
 
-        let pipe = NSPipe()
+        let pipe = Pipe()
         task.standardOutput = pipe
 
         task.launch()
         task.waitUntilExit()
 
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        return String(data: data, encoding: NSUTF8StringEncoding)!
+        return String(data: data, encoding: String.Encoding.utf8)!
     }
 
-    mutating func cd(path: String) {
+    mutating func cd(_ path: String) {
         let result = execute("/usr/bin/cd \(path)")
         if result == "" {
             directory += "/" + path
         }
     }
 
-    func mkdir(path: String) {
+    func mkdir(_ path: String) {
         execute("/bin/mkdir \(path)")
     }
 

@@ -6,7 +6,7 @@ import Foundation
 
 struct BotTemplate: Equatable {
     let name: String
-    let data: NSData
+    let data: Data
 }
 
 func ==(lhs: BotTemplate, rhs: BotTemplate) -> Bool {

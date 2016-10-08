@@ -23,7 +23,7 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
     }
 
     var oldBranchIDs: [String] {
-        return oldBranchesArray.enumerate().map { String($0.0) }
+        return oldBranchesArray.enumerated().map { String($0.0) }
     }
 
     // MARK: - Output
@@ -53,6 +53,6 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
     override func test() {
         interactor.execute()
         waitUntil(network.deleteBotCount != 0)
-        numberOfDeletedBots = network.deleteBotCount
+        numberOfDeletedBots = network.deleteBotCount as NSNumber!
     }
 }

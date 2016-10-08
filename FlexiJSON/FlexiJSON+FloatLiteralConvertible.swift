@@ -23,7 +23,7 @@
 
 import Swift
 
-extension FlexiJSON: FloatLiteralConvertible {
+extension FlexiJSON: ExpressibleByFloatLiteral {
 
     public init(floatLiteral value: Double) {
         self.init(double: value)

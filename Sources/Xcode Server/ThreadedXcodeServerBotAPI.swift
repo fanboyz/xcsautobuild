@@ -7,9 +7,8 @@ import Foundation
 class ThreadedXcodeServerBotAPI: BotDeleter, BotTemplatesFetcher {
 
     private let api: XcodeServerBotAPI
-    private let queue: dispatch_queue_t = {
-        let attributes = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_BACKGROUND, 0);
-        return dispatch_queue_create("codes.seanhenry.xcs.network.queue", attributes)
+    private let queue: DispatchQueue = {
+        return DispatchQueue(label: "codes.seanhenry.xcs.network.queue", qos: .background, target: nil)
     }()
 
     init(api: XcodeServerBotAPI) {
@@ -22,17 +21,17 @@ class ThreadedXcodeServerBotAPI: BotDeleter, BotTemplatesFetcher {
         }
     }
 
-    func fetchBotTemplates(completion: ([BotTemplate]) -> ()) {
+    func fetchBotTemplates(_ completion: @escaping ([BotTemplate]) -> ()) {
         doAsync { 
             self.api.fetchBotTemplates(self.wrapInMainThread(completion))
         }
     }
 
-    private func doAsync(work: () -> ()) {
-        dispatch_async(queue, work)
+    private func doAsync(_ work: @escaping () -> ()) {
+        queue.async(execute: work)
     }
 
-    private func wrapInMainThread<T>(work: (T) -> ()) -> (T) -> () {
+    private func wrapInMainThread<T>(_ work: @escaping (T) -> ()) -> (T) -> () {
         return GCDHelper().wrapInMainThread(work)
     }
 }

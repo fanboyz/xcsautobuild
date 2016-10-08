@@ -29,14 +29,14 @@ class DecisionTable: NSObject, SlimDecisionTable {
     }
 
     private func createFiles() {
-        create(directory: NSURL(fileURLWithPath: testGitPath))
+        create(directory: URL(fileURLWithPath: testGitPath))
     }
 
-    private func create(directory directory: NSURL) {
-        _ = try? NSFileManager.defaultManager().createDirectoryAtURL(directory, withIntermediateDirectories: true, attributes: nil)
+    private func create(directory: URL) {
+        _ = try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
     }
 
     private func removeFiles() {
-        _ = try? NSFileManager.defaultManager().removeItemAtURL(NSURL(fileURLWithPath: testPath))
+        _ = try? FileManager.default.removeItem(at: URL(fileURLWithPath: testPath))
     }
 }

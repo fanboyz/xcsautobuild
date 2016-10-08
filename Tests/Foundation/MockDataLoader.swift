@@ -7,8 +7,8 @@ import XCTest
 
 class MockDataLoader: DataLoader {
 
-    var stubbedData: NSData?
-    func loadData(from file: String) -> NSData? {
+    var stubbedData: Data?
+    func loadData(from file: String) -> Data? {
         return stubbedData
     }
 }

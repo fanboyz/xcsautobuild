@@ -6,9 +6,9 @@ import Foundation
 
 class BotTemplatePresenter {
 
-    typealias TemplateCreatingInteractor = protocol<Command, BotNamable>
-    private weak var view: BotTemplateView?
-    private var templateCreatingInteractor: TemplateCreatingInteractor
+    typealias TemplateCreatingInteractor = Command & BotNamable
+    fileprivate weak var view: BotTemplateView?
+    fileprivate var templateCreatingInteractor: TemplateCreatingInteractor
 
     init(view: BotTemplateView, templateCreatingInteractor: TemplateCreatingInteractor) {
         self.view = view

@@ -6,12 +6,12 @@ import Foundation
 import AppKit
 
 class TestAppDelegate: NSResponder, NSApplicationDelegate {
-    func applicationDidFinishLaunching(notification: NSNotification) {}
+    func applicationDidFinishLaunching(_ notification: Notification) {}
 }
 
 autoreleasepool {
-    let application = NSApplication.sharedApplication()
-    let delegate: NSApplicationDelegate = NSProcessInfo.processInfo().environment["TEST"] != nil ? TestAppDelegate() : AppDelegate()
+    let application = NSApplication.shared()
+    let delegate: NSApplicationDelegate = ProcessInfo.processInfo.environment["TEST"] != nil ? TestAppDelegate() : AppDelegate()
     application.delegate = delegate
     application.run()
 }

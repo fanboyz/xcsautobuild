@@ -53,24 +53,24 @@ class NSURLSessionNetworkTests: XCTestCase {
 
     func test_sendRequest_shouldSetHTTPMethod() {
         network.send(createPostRequest(), completion: nil)
-        XCTAssertEqual(mockedSession.invokedRequest?.HTTPMethod, "POST")
+        XCTAssertEqual(mockedSession.invokedRequest?.httpMethod, "POST")
         sendRequest()
-        XCTAssertEqual(mockedSession.invokedRequest?.HTTPMethod, "GET")
+        XCTAssertEqual(mockedSession.invokedRequest?.httpMethod, "GET")
     }
 
     func test_sendRequest_shouldSetBody_whenPOST() {
         network.send(createPostRequest(), completion: nil)
-        XCTAssertEqual(mockedSession.invokedRequest?.HTTPBody, jsonData())
+        XCTAssertEqual(mockedSession.invokedRequest?.httpBody, jsonData())
     }
 
     func test_sendRequest_shouldNotSetBody_whenGET() {
         network.send(createGetRequestWithJSON(), completion: nil)
-        XCTAssertNil(mockedSession.invokedRequest?.HTTPBody)
+        XCTAssertNil(mockedSession.invokedRequest?.httpBody)
     }
 
     func test_sendRequest_shouldSetURL() {
         sendRequest()
-        XCTAssertEqual(mockedSession.invokedRequest?.URL, testURL)
+        XCTAssertEqual(mockedSession.invokedRequest?.url, testURL)
     }
 
     func test_sendRequest_shouldReturnNilStatusCode_whenResponseIsNil() {
@@ -78,14 +78,14 @@ class NSURLSessionNetworkTests: XCTestCase {
     }
 
     func test_sendRequest_shouldReturnNilStatusCode_whenWrongType() {
-        mockedSession.stubbedResponse = NSURLResponse(URL: testURL, MIMEType: nil, expectedContentLength: 0, textEncodingName: nil)
+        mockedSession.stubbedResponse = URLResponse(URL: testURL, MIMEType: nil, expectedContentLength: 0, textEncodingName: nil)
         XCTAssertNil(sendRequest().statusCode)
     }
 
     // MARK: - Helpers
 
-    func sendRequest() -> (data: NSData?, statusCode: Int?) {
-        var response: (NSData?, Int?)!
+    func sendRequest() -> (data: Data?, statusCode: Int?) {
+        var response: (Data?, Int?)!
         network.send(testRequest) { r in
             response = r
         }
@@ -100,13 +100,13 @@ class NSURLSessionNetworkTests: XCTestCase {
         return HTTPRequest(url: "", method: .get, jsonBody: json())
     }
 
-    func json() -> [String: AnyObject] {
+    func json() -> [String: Any] {
         return [
             "hello": "world"
         ]
     }
 
-    func jsonData() -> NSData {
-        return try! NSJSONSerialization.dataWithJSONObject(json(), options: [])
+    func jsonData() -> Data {
+        return try! JSONSerialization.data(withJSONObject: json(), options: [])
     }
 }

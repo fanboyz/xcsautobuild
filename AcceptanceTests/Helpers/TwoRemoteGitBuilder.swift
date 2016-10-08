@@ -10,12 +10,12 @@ class TwoRemoteGitBuilder {
     private let localRepo: GTRepository
     private let remoteRepo: GTRepository
     private let xcsRepo: GTRepository
-    private let remoteURL: NSURL
-    private let xcsURL: NSURL
-    let localURL: NSURL
-    var localPath: String { return localURL.path! }
+    private let remoteURL: URL
+    private let xcsURL: URL
+    let localURL: URL
+    var localPath: String { return localURL.path }
 
-    init(localURL: NSURL, remoteURL: NSURL, xcsURL: NSURL) {
+    init(localURL: URL, remoteURL: URL, xcsURL: URL) {
         self.localURL = localURL
         self.remoteURL = remoteURL
         self.xcsURL = xcsURL
@@ -30,29 +30,29 @@ class TwoRemoteGitBuilder {
         removeRepos()
     }
 
-    func add(branch branch: String) {
-        guard try! remoteRepo.localBranches().indexOf({ $0.shortName == branch }) == nil else { return }
+    func add(branch: String) {
+        guard try! remoteRepo.localBranches().index(where: { $0.shortName == branch }) == nil else { return }
         let currentBranch = try! remoteRepo.currentBranch()
-        try! remoteRepo.createBranchNamed(branch, fromOID: currentBranch.OID!, message: nil)
+        try! remoteRepo.createBranchNamed(branch, from: currentBranch.oid!, message: nil)
     }
 
     private func makeInitialCommit() {
         let builder = try! GTTreeBuilder(tree: nil, repository: remoteRepo)
-        try! builder.addEntryWithData("initial".dataUsingEncoding(NSUTF8StringEncoding)!, fileName: "initial", fileMode: .Blob)
+        try! builder.addEntry(with: "initial".data(using: String.Encoding.utf8)!, fileName: "initial", fileMode: .blob)
         let tree = try! builder.writeTree()
-        try! remoteRepo.createCommitWithTree(tree, message: "initial commit", parents: nil, updatingReferenceNamed: "refs/heads/master")
+        try! remoteRepo.createCommit(with: tree, message: "initial commit", parents: nil, updatingReferenceNamed: "refs/heads/master")
     }
 
-    private static func createRemote(url: NSURL) -> GTRepository {
-        return try! GTRepository.initializeEmptyRepositoryAtFileURL(url, options: nil)
+    private static func createRemote(_ url: URL) -> GTRepository {
+        return try! GTRepository.initializeEmpty(atFileURL: url, options: nil)
     }
 
-    private static func createLocal(from remote: NSURL, to local: NSURL) -> GTRepository {
-        return try! GTRepository.cloneFromURL(remote, toWorkingDirectory: local, options: nil, transferProgressBlock: nil, checkoutProgressBlock: nil)
+    private static func createLocal(from remote: URL, to local: Foundation.URL) -> GTRepository {
+        return try! GTRepository.clone(from: remote, toWorkingDirectory: local, options: nil, transferProgressBlock: nil, checkoutProgressBlock: nil)
     }
 
     private func createXCSRemote() {
-        try! GTRemote.createRemoteWithName("xcs", URLString: xcsURL.path!, inRepository: localRepo)
+        try! GTRemote.createRemote(withName: "xcs", urlString: xcsURL.path, in: localRepo)
     }
 
     private func removeRepos() {
@@ -61,7 +61,7 @@ class TwoRemoteGitBuilder {
         TwoRemoteGitBuilder.remove(file: localURL)
     }
 
-    private static func remove(file file: NSURL) {
-        _ = try? NSFileManager.defaultManager().removeItemAtURL(file)
+    private static func remove(file: URL) {
+        _ = try? FileManager.default.removeItem(at: file)
     }
 }

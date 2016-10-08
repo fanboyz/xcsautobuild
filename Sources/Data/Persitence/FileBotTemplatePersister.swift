@@ -20,7 +20,8 @@ class FileBotTemplatePersister: BotTemplateSaver, BotTemplateLoader {
         return BotTemplate(name: name, data: data)
     }
 
-    func save(template: BotTemplate) {
-        template.data.writeToFile(file, atomically: true)
+    func save(_ template: BotTemplate) {
+        // TODO:
+        try? template.data.write(to: Foundation.URL(fileURLWithPath: file), options: [.atomic])
     }
 }

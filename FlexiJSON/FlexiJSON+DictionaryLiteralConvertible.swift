@@ -23,7 +23,7 @@
 
 import Swift
 
-extension FlexiJSON: DictionaryLiteralConvertible {
+extension FlexiJSON: ExpressibleByDictionaryLiteral {
 
     public init(dictionaryLiteral elements: (String, AnyObject)...) {
         let dictionary = elements.reduce([String: AnyObject]()) { d, pair in

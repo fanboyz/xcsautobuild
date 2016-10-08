@@ -21,31 +21,31 @@ class FileXCSBranchesDataStore: XCSBranchesDataStore {
         return XCSBranch(dictionary: branches[name])
     }
 
-    func save(branch branch: XCSBranch) {
+    func save(branch: XCSBranch) {
         var branches = loadBranches()
         branches[branch.name] = branch.dictionary
         save(branches: branches)
     }
 
-    func delete(branch branch: XCSBranch) {
+    func delete(branch: XCSBranch) {
         var branches = loadBranches()
-        branches.removeValueForKey(branch.name)
+        branches.removeValue(forKey: branch.name)
         save(branches: branches)
     }
 
-    private func loadBranches() -> [String: [String: AnyObject]] {
-        return NSDictionary(contentsOfFile: file) as? [String: [String: AnyObject]] ?? [:]
+    private func loadBranches() -> [String: [String: Any]] {
+        return NSDictionary(contentsOfFile: file) as? [String: [String: Any]] ?? [:]
     }
 
-    private func save(branches branches: [String: [String: AnyObject]]) {
+    private func save(branches: [String: [String: Any]]) {
         let dictionary = branches as NSDictionary
-        dictionary.writeToFile(file, atomically: true)
+        dictionary.write(toFile: file, atomically: true)
     }
 }
 
 extension XCSBranch {
 
-    private var dictionary: [String: AnyObject] {
+    fileprivate var dictionary: [String: Any] {
         var result = ["name": name]
         if let botID = botID {
             result["botID"] = botID
@@ -53,7 +53,7 @@ extension XCSBranch {
         return result
     }
 
-    private init?(dictionary: [String: AnyObject]?) {
+    fileprivate init?(dictionary: [String: Any]?) {
         guard let name = dictionary?["name"] as? String else { return nil }
         self.init(name: name, botID: dictionary?["botID"] as? String)
     }

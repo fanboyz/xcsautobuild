@@ -482,7 +482,7 @@ class Bot_JSONTransformableTests: XCTestCase {
         schedule = .commit
     }
 
-    func createWeeklySchedule(day: Day = .monday) {
+    func createWeeklySchedule(_ day: Day = .monday) {
         schedule = .periodically(.weekly(day))
     }
 
@@ -554,7 +554,7 @@ class Bot_JSONTransformableTests: XCTestCase {
         ))
     }
 
-    func createBlueprint(projectName projectName: String = "project_name") {
+    func createBlueprint(projectName: String = "project_name") {
         blueprint = Blueprint(
             location: location,
             projectName: projectName,
@@ -568,11 +568,11 @@ class Bot_JSONTransformableTests: XCTestCase {
         location = Location(branchName: name)
     }
 
-    func createAuthenticationStrategy(username username: String = "username", password: String = "p4ssw0rd") {
+    func createAuthenticationStrategy(username: String = "username", password: String = "p4ssw0rd") {
         authenticationStrategy = .basic(username, password)
     }
 
-    func createRepository(id id: String = "REMOTE_ID", url: String = "https://hello.com", fingerprint: String = "qwe123") {
+    func createRepository(id: String = "REMOTE_ID", url: String = "https://hello.com", fingerprint: String = "qwe123") {
         repository = Repository(id: id, url: url, fingerprint: fingerprint)
     }
 

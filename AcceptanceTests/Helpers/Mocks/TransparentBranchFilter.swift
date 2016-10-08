@@ -6,7 +6,7 @@ import Foundation
 
 class TransparentBranchFilter: BranchFilter {
 
-    func filterBranches(branches: [Branch]) -> [Branch] {
+    func filterBranches(_ branches: [Branch]) -> [Branch] {
         return branches
     }
 }

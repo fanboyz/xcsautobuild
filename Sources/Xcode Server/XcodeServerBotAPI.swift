@@ -6,15 +6,15 @@ import Foundation
 
 class XcodeServerBotAPI: BotDeleter {
 
+    fileprivate let getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>
+    fileprivate let getBotRequest: AnyXCSRequest<String, Data>
     private let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
-    private let getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
-    private let getBotRequest: AnyXCSRequest<String, NSData>
 
     init(
         getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>,
         deleteBotRequest: AnyXCSRequest<String, Void>,
-        getBotRequest: AnyXCSRequest<String, NSData>
+        getBotRequest: AnyXCSRequest<String, Data>
     ) {
         self.getBotsRequest = getBotsRequest
         self.deleteBotRequest = deleteBotRequest
@@ -28,20 +28,20 @@ class XcodeServerBotAPI: BotDeleter {
         }
     }
 
-    func getBots(completion: (([RemoteBot]) -> ())) {
+    func getBots(_ completion: @escaping (([RemoteBot]) -> ())) {
         getBotsRequest.send(()) { response in
             completion(response?.data ?? [])
         }
     }
 
-    func deleteBot(id id: String) {
+    func deleteBot(id: String) {
         deleteBotRequest.send(id) { _ in }
     }
 }
 
 extension XcodeServerBotAPI: BotTemplatesFetcher {
 
-    func fetchBotTemplates(completion: ([BotTemplate]) -> ()) {
+    func fetchBotTemplates(_ completion: @escaping ([BotTemplate]) -> ()) {
         getBots { [unowned self] bots in
             let templates = self.fetchTemplates(forRemoteBots: bots)
             completion(templates)
@@ -54,7 +54,7 @@ extension XcodeServerBotAPI: BotTemplatesFetcher {
 
     private func fetchTemplate(forRemoteBot bot: RemoteBot) -> BotTemplate? {
         guard let data = getBotRequest.send(bot.id)?.data,
-                  name = FlexiJSON(data: data)["name"].string else { return nil }
+                  let name = FlexiJSON(data: data)["name"].string else { return nil }
         return BotTemplate(name: name, data: data)
     }
 }

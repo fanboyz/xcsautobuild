@@ -32,7 +32,7 @@ class AnyXCSRequestTests: XCTestCase {
     // MARK: - parse
 
     func test_parse() {
-        request.parse(response: NSData())
+        request.parse(response: Data())
         XCTAssert(mockedRequest.didParse)
     }
 

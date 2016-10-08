@@ -6,17 +6,17 @@ import Foundation
 
 class GCDHelper: MainThreadCompletable {
 
-    func wrapInMainThread<T>(closure: ((T) -> ())?) -> (T) -> () {
+    func wrapInMainThread<T>(_ closure: ((T) -> ())?) -> (T) -> () {
         let closure = nonnullClosure(closure)
-        guard !NSThread.isMainThread() else { return closure }
+        guard !Thread.isMainThread else { return closure }
         return { argument in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 closure(argument)
             }
         }
     }
 
-    private func nonnullClosure<T>(closure: ((T) -> ())?) -> (T) -> () {
+    private func nonnullClosure<T>(_ closure: ((T) -> ())?) -> (T) -> () {
         return { argument in
             closure?(argument)
         }

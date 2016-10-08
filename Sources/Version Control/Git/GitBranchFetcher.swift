@@ -14,24 +14,24 @@ class GitBranchFetcher: BranchFetcher {
 
     init?(directory: String) {
         commandLine = CommandLine(directory: directory)
-        repo = try! GTRepository(URL: NSURL(fileURLWithPath: directory))
+        repo = try! GTRepository(url: Foundation.URL(fileURLWithPath: directory))
     }
 
-    func getRemoteBranchNames() -> [String] {
-        guard let remote = try? GTRemote(name: remoteName, inRepository: repo) else { return [] }
-        try! repo.fetchRemote(remote, withOptions: [GTRepositoryRemoteOptionsFetchPrune: true], progress: nil)
+    func fetchBranches() -> [Branch] {
+        guard let remote = try? GTRemote(name: remoteName, in: repo) else { return [] }
+        try! repo.fetch(remote, withOptions: [GTRepositoryRemoteOptionsFetchPrune: true], progress: nil)
         copyRemoteBranchesToCIRemote()
         let branches = try! repo.remoteBranches()
         return branches.filter { $0.remoteName == ciServerName }
-                       .flatMap { $0.shortName }
-                       .map { Branch(name: $0) }
+            .flatMap { $0.shortName }
+            .map { Branch(name: $0) }
     }
 
     private func copyRemoteBranchesToCIRemote() {
         gitCommand("push --prune \(ciServerName) +refs/remotes/\(remoteName)/*:refs/heads/*")
     }
 
-    private func gitCommand(arguments: String) -> String {
+    private func gitCommand(_ arguments: String) -> String {
         return commandLine.execute("/usr/bin/git \(arguments)")
     }
 }

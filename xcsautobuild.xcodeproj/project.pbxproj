@@ -1345,15 +1345,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		_____Configs_ /* Configs */ = {
+		"___RootGroup_" = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Configs_" /* Configs */,
+				143DA7961D46860C0019FDFA /* FlexiJSON */,
+				14C559C91D6899AF003B704C /* Sources */,
+				14C55A421D6899BE003B704C /* Tests */,
+				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
+				"____Products_" /* Products */,
+				9EC587D270EB844A35E1D35C /* Pods */,
+				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
+				35CDF6DE58051E7356102D09 /* Resources */,
 			);
-			name = Configs;
 			sourceTree = "<group>";
 		};
-		____Products_ /* Products */ = {
+		"____Products_" /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1459B3AD1D3EBE9D004D6FF9 /* xcsautobuild.app */,
@@ -1363,20 +1371,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		___RootGroup_ = {
+		"_____Configs_" /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				_____Configs_ /* Configs */,
-				143DA7961D46860C0019FDFA /* FlexiJSON */,
-				14C559C91D6899AF003B704C /* Sources */,
-				14C55A421D6899BE003B704C /* Tests */,
-				14E53A5C1D551E6B006FCBF8 /* AcceptanceTests */,
-				____Products_ /* Products */,
-				9EC587D270EB844A35E1D35C /* Pods */,
-				1F5EC4B3D381A1C95F7B6AD4 /* Frameworks */,
-				35CDF6DE58051E7356102D09 /* Resources */,
+				__PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
 			);
+			name = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1456,21 +1456,24 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HU45578K6L;
 						DevelopmentTeamName = "S HENRY";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					1459B3BC1D3EBE9E004D6FF9 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HU45578K6L;
 						DevelopmentTeamName = "S HENRY";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1459B3AC1D3EBE9D004D6FF9;
 					};
 					14E53A5A1D551E6B006FCBF8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
-			buildConfigurationList = ___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */;
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1478,8 +1481,8 @@
 				en,
 				Base,
 			);
-			mainGroup = ___RootGroup_;
-			productRefGroup = ____Products_ /* Products */;
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -2116,6 +2119,7 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "AcceptanceTests/Supporting Files/AcceptanceTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2163,10 +2167,18 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "AcceptanceTests/Supporting Files/AcceptanceTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		_______Debug_ /* Debug */ = {
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
 			buildSettings = {
@@ -2174,13 +2186,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
-		};
-		_____Release_ /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_xcsautobuild.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -2212,11 +2217,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		___RootConfs_ /* Build configuration list for PBXProject "xcsautobuild" */ = {
+		"___RootConfs_" /* Build configuration list for PBXProject "xcsautobuild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				_______Debug_ /* Debug */,
-				_____Release_ /* Release */,
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -5,5 +5,5 @@
 import Foundation
 
 protocol MainThreadCompletable {
-    func wrapInMainThread<T>(closure: ((T) -> ())?) -> (T) -> ()
+    func wrapInMainThread<T>(_ closure: ((T) -> ())?) -> (T) -> ()
 }

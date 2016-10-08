@@ -31,7 +31,7 @@ class BotTemplateCreatingInteractor: Command, BotNamable {
         }
     }
 
-    private func handleFetchedTemplates(templates: [BotTemplate]) {
+    private func handleFetchedTemplates(_ templates: [BotTemplate]) {
         let matching = templates.filter { $0.name == botName }.first
         guard let template = matching else {
             output?.didFailToFindTemplate()

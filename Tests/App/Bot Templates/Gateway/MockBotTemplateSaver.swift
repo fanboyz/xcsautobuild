@@ -8,7 +8,7 @@ import XCTest
 class MockBotTemplateSaver: BotTemplateSaver {
 
     var didSave = false
-    func save(template: BotTemplate) {
+    func save(_ template: BotTemplate) {
         didSave = true
     }
 }

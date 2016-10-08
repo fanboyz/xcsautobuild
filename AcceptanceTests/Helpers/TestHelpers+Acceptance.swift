@@ -5,12 +5,12 @@
 import Foundation
 
 func commaSeparatedList(from string: String) -> [String] {
-    return string.componentsSeparatedByString(",").filter { $0 != "" }
+    return string.components(separatedBy: ",").filter { $0 != "" }
 }
 
 func commaSeparatedString(from array: [String]) -> String {
     if let first = array.first {
-        return array[array.startIndex.advancedBy(1)..<array.endIndex].reduce(first) { $0 + "," + $1 }
+        return array[array.indices.suffix(from: array.startIndex.advanced(by: 1))].reduce(first) { $0 + "," + $1 }
     }
     return "nil"
 }
@@ -29,17 +29,17 @@ let testBotSynchroniser: BotSynchroniser = {
 class TestClass {}
 let testBundleClass = TestClass.self
 let testHost = "seans-macbook-pro-2.local"
-let testBundle = NSBundle(forClass: testBundleClass)
+let testBundle = Bundle(for: testBundleClass)
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"
 let testGitPath = testPath + "git/"
-let testLocalGitURL = NSURL(fileURLWithPath: testGitPath + "local")
-let testRemoteGitURL = NSURL(fileURLWithPath: testGitPath + "origin")
-let testXCSGitURL = NSURL(fileURLWithPath: testGitPath + "xcs")
-let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path!)
+let testLocalGitURL = Foundation.URL(fileURLWithPath: testGitPath + "local")
+let testRemoteGitURL = Foundation.URL(fileURLWithPath: testGitPath + "origin")
+let testXCSGitURL = Foundation.URL(fileURLWithPath: testGitPath + "xcs")
+let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path)
 
-func waitUntil(@autoclosure condition: () -> Bool, limit: Int = 20) {
+func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
     var count = 0
     while !condition() {
         wait(for: 0.05)
@@ -50,12 +50,12 @@ func waitUntil(@autoclosure condition: () -> Bool, limit: Int = 20) {
     }
 }
 
-func wait(for seconds: NSTimeInterval) {
-    NSThread.sleepForTimeInterval(seconds)
+func wait(for seconds: TimeInterval) {
+    Thread.sleep(forTimeInterval: seconds)
 }
 
-func load(fileName: String, _ ext: String) -> NSData! {
-    return NSData(contentsOfFile: testBundle.pathForResource(fileName, ofType: ext)!)
+func load(_ fileName: String, _ ext: String) -> Data! {
+    return (try? Data(contentsOf: Foundation.URL(fileURLWithPath: testBundle.path(forResource: fileName, ofType: ext)!)))
 }
 
 func fitnesseString(from bool: Bool) -> String {

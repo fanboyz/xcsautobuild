@@ -13,10 +13,10 @@ class TextFieldBotTemplateView: NSView {
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
-        resultLabel.hidden = true
+        resultLabel.isHidden = true
     }
 
-    @IBAction func didClickActionButton(sender: AnyObject) {
+    @IBAction func didClickActionButton(_ sender: AnyObject) {
         eventHandler.create(templateFromName: botNameField.stringValue)
     }
 }
@@ -24,12 +24,12 @@ class TextFieldBotTemplateView: NSView {
 extension TextFieldBotTemplateView: BotTemplateView {
 
     func showFailure() {
-        resultLabel.hidden = false
+        resultLabel.isHidden = false
         resultLabel.stringValue = "❌"
     }
 
     func showSuccess() {
-        resultLabel.hidden = false
+        resultLabel.isHidden = false
         resultLabel.stringValue = "✅"
     }
 }

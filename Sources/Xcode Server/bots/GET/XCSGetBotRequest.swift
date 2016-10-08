@@ -12,12 +12,12 @@ class XCSGetBotRequest: XCSRequest {
         self.network = network
     }
 
-    func createRequest(data: String) -> HTTPRequest {
+    func createRequest(_ data: String) -> HTTPRequest {
         let url = endpoint + "bots/" + data
         return HTTPRequest(url: url, method: .get, jsonBody: nil)
     }
 
-    func parse(response data: NSData) -> NSData? {
+    func parse(response data: Data) -> Data? {
         return data
     }
 }

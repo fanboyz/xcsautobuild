@@ -23,7 +23,7 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
     }
 
     var savedBranchIDs: [String] {
-        return savedBranchesArray.enumerate().map { String($0.0) }
+        return savedBranchesArray.enumerated().map { String($0.0) }
     }
 
     // MARK: - Output
@@ -56,8 +56,8 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
 
     override func test() {
         interactor.execute()
-        wait(for: 0.05)
-        numberOfCreatedBots = network.duplicateBotCount
-        numberOfDeletedBots = network.deleteBotCount
+        wait(0.05)
+        numberOfCreatedBots = network.duplicateBotCount as NSNumber!
+        numberOfDeletedBots = network.deleteBotCount as NSNumber!
     }
 }

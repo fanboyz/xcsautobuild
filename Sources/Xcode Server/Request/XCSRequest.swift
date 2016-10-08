@@ -18,10 +18,10 @@ protocol XCSRequest: class {
     associatedtype ResponseType
     var network: Network { get }
     var endpoint: String { get }
-    func createRequest(data: RequestDataType) -> HTTPRequest
-    func send(data: RequestDataType, completion: (XCSResponse<ResponseType>?) -> ())
-    func send(data: RequestDataType) -> XCSResponse<ResponseType>?
-    func parse(response data: NSData) -> ResponseType?
+    func createRequest(_ data: RequestDataType) -> HTTPRequest
+    func send(_ data: RequestDataType, completion: @escaping (XCSResponse<ResponseType>?) -> ())
+    func send(_ data: RequestDataType) -> XCSResponse<ResponseType>?
+    func parse(response data: Data) -> ResponseType?
 }
 
 extension XCSRequest {
@@ -29,25 +29,25 @@ extension XCSRequest {
     var endpoint: String {
         return "https://seans-macbook-pro-2.local:20343/api/"
     }
-
-    func send(data: RequestDataType, completion: (XCSResponse<ResponseType>?) -> ()) {
+    
+    func send(_ data: RequestDataType, completion: @escaping (XCSResponse<ResponseType>?) -> ()) {
         network.send(createRequest(data)) { [weak self] data, statusCode in
             completion(self?.parseResponse(fromData: data, statusCode: statusCode))
         }
     }
 
-    func send(data: RequestDataType) -> XCSResponse<ResponseType>? {
+    func send(_ data: RequestDataType) -> XCSResponse<ResponseType>? {
         var response: XCSResponse<ResponseType>?
-        let semaphore = dispatch_semaphore_create(0)
+        let semaphore = DispatchSemaphore(value: 0)
         send(data) { r in
             response = r
-            dispatch_semaphore_signal(semaphore)
+            semaphore.signal()
         }
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        semaphore.wait(timeout: DispatchTime.distantFuture)
         return response
     }
 
-    private func parseResponse(fromData data: NSData?, statusCode: Int?) -> XCSResponse<ResponseType>? {
+    private func parseResponse(fromData data: Data?, statusCode: Int?) -> XCSResponse<ResponseType>? {
         guard let data = data,
               let statusCode = statusCode,
               let parsed = parse(response: data) else { return nil }

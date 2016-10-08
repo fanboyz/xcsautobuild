@@ -9,7 +9,7 @@ import XCTest
 class XCSBotSynchroniserTests: XCTestCase {
 
     var syncer: XCSBotSynchroniser!
-    var mockedGetBotRequest: MockXCSRequest<String, NSData>!
+    var mockedGetBotRequest: MockXCSRequest<String, Data>!
     var mockedDuplicateBotRequest: MockXCSRequest<DuplicateBotRequestData, String>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedTemplateLoader: MockBotTemplateLoader!
@@ -151,7 +151,7 @@ class XCSBotSynchroniserTests: XCTestCase {
         mockedTemplateLoader.stubbedTemplate = nil
     }
 
-    func stubValidCreateBotResponse(botID botID: String) {
+    func stubValidCreateBotResponse(botID: String) {
         mockedDuplicateBotRequest.stubbedResponse = XCSResponse(data: botID, statusCode: 200)
     }
 
@@ -164,14 +164,14 @@ class XCSBotSynchroniserTests: XCTestCase {
     }
 
     func stubNotFoundGetBotResponse() {
-        mockedGetBotRequest.stubbedResponse = XCSResponse(data: NSData(), statusCode: 404)
+        mockedGetBotRequest.stubbedResponse = XCSResponse(data: Data(), statusCode: 404)
     }
 
     func stubValidGetBotResponse() {
-        mockedGetBotRequest.stubbedResponse = XCSResponse(data: NSData(), statusCode: 200)
+        mockedGetBotRequest.stubbedResponse = XCSResponse(data: Data(), statusCode: 200)
     }
 
-    func stubDeleteBotResponse(statusCode statusCode: Int) {
+    func stubDeleteBotResponse(statusCode: Int) {
         mockedDeleteBotRequest.stubbedResponse = XCSResponse(data: (), statusCode: statusCode)
     }
 

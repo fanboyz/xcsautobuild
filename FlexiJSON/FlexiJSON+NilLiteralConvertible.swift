@@ -23,7 +23,7 @@
 
 import Swift
 
-extension FlexiJSON: NilLiteralConvertible {
+extension FlexiJSON: ExpressibleByNilLiteral {
 
     public init(nilLiteral value: ()) {
         self.init(null: JSONNull())
