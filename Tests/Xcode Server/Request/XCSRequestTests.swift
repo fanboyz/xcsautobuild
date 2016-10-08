@@ -60,18 +60,18 @@ class XCSRequestTests: XCTestCase {
     // MARK: - send (sync)
 
     func test_sendSync_shouldCreateRequest() {
-        request.send("")
+        sendSync()
         XCTAssert(request.didCreateRequest)
     }
 
     func test_sendSync_shouldNotParseResponse_whenNoResponseData() {
-        request.send("")
+        sendSync()
         XCTAssertFalse(request.didParse)
     }
 
     func test_sendSync_shouldParseResponse_whenResponseData() {
         stubResponse()
-        request.send("")
+        sendSync()
         XCTAssert(request.didParse)
     }
 
@@ -85,14 +85,18 @@ class XCSRequestTests: XCTestCase {
 
     // MARK: - Helpers
 
-    func send() -> XCSResponse<NSData>? {
-        var response: XCSResponse<NSData>?
+    @discardableResult func send() -> XCSResponse<Data>? {
+        var response: XCSResponse<Data>?
         request.send("") { r in
             response = r
         }
         return response
     }
-
+    
+    @discardableResult func sendSync() -> XCSResponse<Data>? {
+        return request.send("")
+    }
+    
     func stubResponse(data: Data? = Data(), statusCode: Int? = 200) {
         mockedNetwork.stubbedResponse = data
         mockedNetwork.stubbedStatusCode = statusCode

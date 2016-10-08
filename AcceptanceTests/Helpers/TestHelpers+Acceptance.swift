@@ -34,9 +34,9 @@ let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"
 let testGitPath = testPath + "git/"
-let testLocalGitURL = Foundation.URL(fileURLWithPath: testGitPath + "local")
-let testRemoteGitURL = Foundation.URL(fileURLWithPath: testGitPath + "origin")
-let testXCSGitURL = Foundation.URL(fileURLWithPath: testGitPath + "xcs")
+let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
+let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
+let testXCSGitURL = URL(fileURLWithPath: testGitPath + "xcs")
 let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path)
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
@@ -55,7 +55,7 @@ func wait(for seconds: TimeInterval) {
 }
 
 func load(_ fileName: String, _ ext: String) -> Data! {
-    return (try? Data(contentsOf: Foundation.URL(fileURLWithPath: testBundle.path(forResource: fileName, ofType: ext)!)))
+    return (try? Data(contentsOf: URL(fileURLWithPath: testBundle.path(forResource: fileName, ofType: ext)!)))
 }
 
 func fitnesseString(from bool: Bool) -> String {

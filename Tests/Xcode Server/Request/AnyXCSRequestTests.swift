@@ -25,14 +25,14 @@ class AnyXCSRequestTests: XCTestCase {
     // MARK: - createRequest
     
     func test_createRequest() {
-        request.createRequest("")
+        createRequest()
         XCTAssert(mockedRequest.didCreateRequest)
     }
 
     // MARK: - parse
 
     func test_parse() {
-        request.parse(response: Data())
+        parse()
         XCTAssert(mockedRequest.didParse)
     }
 
@@ -41,5 +41,15 @@ class AnyXCSRequestTests: XCTestCase {
     func test_send() {
         request.send("") { _ in }
         XCTAssert(mockedRequest.didSend)
+    }
+    
+    // MARK: - Helpers
+    
+    func createRequest() {
+        _ = request.createRequest("")
+    }
+    
+    func parse() {
+        _ = request.parse(response: Data())
     }
 }

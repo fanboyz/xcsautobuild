@@ -8,10 +8,12 @@ class FileBotTemplatePersister: BotTemplateSaver, BotTemplateLoader {
 
     private let file: String
     private let dataLoader: DataLoader
+    private let dataWriter: DataWriter
 
-    init(file: String, dataLoader: DataLoader = DefaultDataLoader()) {
+    init(file: String, dataLoader: DataLoader = DefaultDataLoader(), dataWriter: DataWriter = DefaultDataWriter()) {
         self.file = file
         self.dataLoader = dataLoader
+        self.dataWriter = dataWriter
     }
 
     func load() -> BotTemplate? {
@@ -21,7 +23,6 @@ class FileBotTemplatePersister: BotTemplateSaver, BotTemplateLoader {
     }
 
     func save(_ template: BotTemplate) {
-        // TODO:
-        try? template.data.write(to: Foundation.URL(fileURLWithPath: file), options: [.atomic])
+        dataWriter.write(data: template.data, toFile: file)
     }
 }

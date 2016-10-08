@@ -78,13 +78,13 @@ class NSURLSessionNetworkTests: XCTestCase {
     }
 
     func test_sendRequest_shouldReturnNilStatusCode_whenWrongType() {
-        mockedSession.stubbedResponse = URLResponse(URL: testURL, MIMEType: nil, expectedContentLength: 0, textEncodingName: nil)
+        mockedSession.stubbedResponse = URLResponse(url: testURL, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
         XCTAssertNil(sendRequest().statusCode)
     }
 
     // MARK: - Helpers
 
-    func sendRequest() -> (data: Data?, statusCode: Int?) {
+    @discardableResult func sendRequest() -> (data: Data?, statusCode: Int?) {
         var response: (Data?, Int?)!
         network.send(testRequest) { r in
             response = r
@@ -93,11 +93,11 @@ class NSURLSessionNetworkTests: XCTestCase {
     }
 
     func createPostRequest() -> HTTPRequest {
-        return HTTPRequest(url: "", method: .post, jsonBody: json())
+        return HTTPRequest(url: testURL.absoluteString, method: .post, jsonBody: json())
     }
 
     func createGetRequestWithJSON() -> HTTPRequest {
-        return HTTPRequest(url: "", method: .get, jsonBody: json())
+        return HTTPRequest(url: testURL.absoluteString, method: .get, jsonBody: json())
     }
 
     func json() -> [String: Any] {

@@ -66,7 +66,7 @@ class WildcardBranchFilterTests: XCTestCase {
 
     func test_filterBranches_shouldIgnoreInvalidRegex() {
         filter.pattern = "[(])"
-        filterBranches() // should not crash
+        _ = filterBranches() // should not crash
     }
 
     func test_filterBranches_shouldStartMatchingFromBeginningOfTheString() {

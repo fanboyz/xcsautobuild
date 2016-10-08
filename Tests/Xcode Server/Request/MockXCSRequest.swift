@@ -28,7 +28,7 @@ class MockXCSRequest<RequestDataType, ResponseType>: XCSRequest {
 
     var didSend = false
     var didSendCount = 0
-    func send(_ data: RequestDataType, completion: (XCSResponse<ResponseType>?) -> ()) {
+    func send(_ data: RequestDataType, completion: @escaping (XCSResponse<ResponseType>?) -> ()) {
         didSend = true
         didSendCount += 1
         invokedData = data

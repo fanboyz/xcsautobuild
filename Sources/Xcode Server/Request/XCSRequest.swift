@@ -43,7 +43,7 @@ extension XCSRequest {
             response = r
             semaphore.signal()
         }
-        semaphore.wait(timeout: DispatchTime.distantFuture)
+        _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         return response
     }
 

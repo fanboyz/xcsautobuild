@@ -47,7 +47,7 @@ class TwoRemoteGitBuilder {
         return try! GTRepository.initializeEmpty(atFileURL: url, options: nil)
     }
 
-    private static func createLocal(from remote: URL, to local: Foundation.URL) -> GTRepository {
+    private static func createLocal(from remote: URL, to local: URL) -> GTRepository {
         return try! GTRepository.clone(from: remote, toWorkingDirectory: local, options: nil, transferProgressBlock: nil, checkoutProgressBlock: nil)
     }
 

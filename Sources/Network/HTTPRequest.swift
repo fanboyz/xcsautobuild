@@ -4,7 +4,6 @@
 
 import Foundation
 
-typealias URL = String
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
@@ -12,7 +11,7 @@ enum HTTPMethod: String {
 }
 
 struct HTTPRequest: Equatable {
-    var url: URL
+    var url: String
     var method: HTTPMethod
     var jsonBody: [String: Any]?
 }

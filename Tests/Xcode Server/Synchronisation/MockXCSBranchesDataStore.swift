@@ -23,13 +23,13 @@ class MockXCSBranchesDataStore: XCSBranchesDataStore {
     }
 
     var invokedSavedBranch: XCSBranch?
-    func save(_ branch: XCSBranch) {
+    func save(branch: XCSBranch) {
         invokedSavedBranch = branch
     }
 
     var didDelete = false
     var invokedDeletedBranch: XCSBranch?
-    func delete(_ branch: XCSBranch) {
+    func delete(branch: XCSBranch) {
         didDelete = true
         invokedDeletedBranch = branch
     }

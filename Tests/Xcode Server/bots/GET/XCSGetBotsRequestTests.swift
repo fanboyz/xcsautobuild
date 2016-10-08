@@ -55,7 +55,7 @@ class XCSGetBotsRequestTests: XCTestCase {
         return request.parse(response: response)
     }
 
-    func stubArrayResponse(_ array: [AnyObject]) {
+    func stubArrayResponse(_ array: [Any]) {
         let object = ["results": array]
         let data = try! JSONSerialization.data(withJSONObject: object, options: [])
         response = data

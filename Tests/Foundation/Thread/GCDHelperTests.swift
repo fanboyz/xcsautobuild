@@ -67,7 +67,7 @@ class GCDHelperTests: XCTestCase {
 
     // MARK: - Helpers
 
-    func wrapInMainThread(_ closure: () -> ()) {
+    func wrapInMainThread(_ closure: @escaping () -> ()) {
         helper.wrapInMainThread(closure)()
     }
 

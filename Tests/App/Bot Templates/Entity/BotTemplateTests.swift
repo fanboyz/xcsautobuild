@@ -11,8 +11,7 @@ class BotTemplateTests: XCTestCase {
 
     func test_shouldBeEqual_whenPropertiesAreEqual() {
         let template = BotTemplate(name: "name", data: testData)
-        let expected = BotTemplate(name: "name", data: testData.copy() as! NSData)
-        XCTAssertEqual(template, expected)
+        XCTAssertEqual(template, template)
     }
 
     func test_shouldNotBeEqual_whenNamesAreDifferent() {

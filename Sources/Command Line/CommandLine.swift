@@ -12,7 +12,7 @@ struct CommandLine {
         self.directory = directory
     }
 
-    func execute(_ command: String) -> String {
+    @discardableResult func execute(_ command: String) -> String {
         let components = command.components(separatedBy: " ")
 
         let task = Process()

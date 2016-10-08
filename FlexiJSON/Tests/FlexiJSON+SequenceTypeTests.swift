@@ -64,8 +64,8 @@ class FlexiJSON_SequenceTypeTests: XCTestCase {
         let json = FlexiJSON(dictionary: ["1":1, "2":2, "3":3])
         var expected: [FlexiJSON] = [["1":1], ["2":2], ["3":3]]
         for fragment in json {
-            if let i = expected.indexOf(fragment) {
-                expected.removeAtIndex(i)
+            if let i = expected.index(of: fragment) {
+                expected.remove(at: i)
             }
         }
         XCTAssert(expected.isEmpty)

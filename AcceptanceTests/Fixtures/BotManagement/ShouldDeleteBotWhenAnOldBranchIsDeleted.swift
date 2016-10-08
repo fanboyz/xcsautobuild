@@ -53,6 +53,6 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
     override func test() {
         interactor.execute()
         waitUntil(network.deleteBotCount != 0)
-        numberOfDeletedBots = network.deleteBotCount as NSNumber!
+        numberOfDeletedBots = network.deleteBotCount
     }
 }

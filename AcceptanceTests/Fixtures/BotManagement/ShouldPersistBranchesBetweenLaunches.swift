@@ -57,7 +57,7 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
     override func test() {
         interactor.execute()
         wait(0.05)
-        numberOfCreatedBots = network.duplicateBotCount as NSNumber!
-        numberOfDeletedBots = network.deleteBotCount as NSNumber!
+        numberOfCreatedBots = network.duplicateBotCount
+        numberOfDeletedBots = network.deleteBotCount
     }
 }

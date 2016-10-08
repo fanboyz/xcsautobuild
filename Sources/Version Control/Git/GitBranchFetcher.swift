@@ -14,7 +14,7 @@ class GitBranchFetcher: BranchFetcher {
 
     init?(directory: String) {
         commandLine = CommandLine(directory: directory)
-        repo = try! GTRepository(url: Foundation.URL(fileURLWithPath: directory))
+        repo = try! GTRepository(url: URL(fileURLWithPath: directory))
     }
 
     func fetchBranches() -> [Branch] {
@@ -31,7 +31,7 @@ class GitBranchFetcher: BranchFetcher {
         gitCommand("push --prune \(ciServerName) +refs/remotes/\(remoteName)/*:refs/heads/*")
     }
 
-    private func gitCommand(_ arguments: String) -> String {
+    @discardableResult private func gitCommand(_ arguments: String) -> String {
         return commandLine.execute("/usr/bin/git \(arguments)")
     }
 }

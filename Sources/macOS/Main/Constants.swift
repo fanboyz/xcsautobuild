@@ -8,16 +8,17 @@ class Constants {
 
     static let api: ThreadedXcodeServerBotAPI = {
         return ThreadedXcodeServerBotAPI(api: XcodeServerBotAPI(
-            getBotsRequest: AnyXCSRequest(XCSGetBotsRequest(network: Constants.network)),
-            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Constants.network)),
-            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Constants.network))
+            getBotsRequest: AnyXCSRequest(XCSGetBotsRequest(network: network)),
+            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
+            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network))
         ))
     }()
 
     static let botSynchroniser: XCSBotSynchroniser = {
         return XCSBotSynchroniser(
-            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Constants.network)),
-            createBotRequest: AnyXCSRequest(XCSPostBotsRequest(network: Constants.network)),
+            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network)),
+            duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: network)),
+            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
             botTemplateLoader: FileBotTemplatePersister(file: templateFile))
     }()
 }

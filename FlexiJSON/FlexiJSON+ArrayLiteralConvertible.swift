@@ -25,7 +25,7 @@ import Swift
 
 extension FlexiJSON: ExpressibleByArrayLiteral {
 
-    public init(arrayLiteral elements: AnyObject...) {
+    public init(arrayLiteral elements: Any...) {
         self.init(array: elements)
     }
 }

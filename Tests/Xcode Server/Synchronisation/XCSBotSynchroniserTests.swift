@@ -127,7 +127,7 @@ class XCSBotSynchroniserTests: XCTestCase {
 
     // MARK: - Helpers
 
-    func synchroniseBot(from branch: XCSBranch) -> XCSBranch {
+    @discardableResult func synchroniseBot(from branch: XCSBranch) -> XCSBranch {
         var result: XCSBranch!
         syncer.synchroniseBot(fromBranch: branch) { b in
             result = b

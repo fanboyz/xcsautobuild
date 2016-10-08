@@ -25,8 +25,8 @@ import Swift
 
 extension FlexiJSON: ExpressibleByDictionaryLiteral {
 
-    public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        let dictionary = elements.reduce([String: AnyObject]()) { d, pair in
+    public init(dictionaryLiteral elements: (String, Any)...) {
+        let dictionary = elements.reduce([String: Any]()) { d, pair in
             var d = d
             d[pair.0] = pair.1
             return d

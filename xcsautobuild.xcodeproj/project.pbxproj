@@ -143,7 +143,7 @@
 		14C55A851D6899BE003B704C /* FileBotTemplatePersisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A581D6899BE003B704C /* FileBotTemplatePersisterTests.swift */; };
 		14C55A871D6899BE003B704C /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5B1D6899BE003B704C /* MockCommand.swift */; };
 		14C55A881D6899BE003B704C /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5C1D6899BE003B704C /* MockDataLoader.swift */; };
-		14C55A891D6899BE003B704C /* MockNSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5D1D6899BE003B704C /* MockNSData.swift */; };
+		14C55A891D6899BE003B704C /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5D1D6899BE003B704C /* MockData.swift */; };
 		14C55A8A1D6899BE003B704C /* MockNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */; };
 		14C55A8B1D6899BE003B704C /* MockNSURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */; };
 		14C55A8C1D6899BE003B704C /* TestHelpers+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A611D6899BE003B704C /* TestHelpers+XCTest.swift */; };
@@ -165,6 +165,7 @@
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
+		14F9E9761DA90EA900D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
 		35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
@@ -366,7 +367,7 @@
 		14C55A581D6899BE003B704C /* FileBotTemplatePersisterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBotTemplatePersisterTests.swift; sourceTree = "<group>"; };
 		14C55A5B1D6899BE003B704C /* MockCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCommand.swift; sourceTree = "<group>"; };
 		14C55A5C1D6899BE003B704C /* MockDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
-		14C55A5D1D6899BE003B704C /* MockNSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSData.swift; sourceTree = "<group>"; };
+		14C55A5D1D6899BE003B704C /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSession.swift; sourceTree = "<group>"; };
 		14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSessionDataTask.swift; sourceTree = "<group>"; };
 		14C55A611D6899BE003B704C /* TestHelpers+XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestHelpers+XCTest.swift"; sourceTree = "<group>"; };
@@ -395,6 +396,7 @@
 		14E53A761D552933006FCBF8 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Empty.xib; path = AcceptanceTests/Empty.xib; sourceTree = SOURCE_ROOT; };
 		14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
 		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
+		14F9E9751DA90EA900D7F000 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		35CDF1333C289C523B4D465D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniserTests.swift; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 				143EE4571D6B84F0002A2436 /* Thread */,
 				14C559E61D6899AF003B704C /* Command.swift */,
 				14C559E71D6899AF003B704C /* DataLoader.swift */,
+				14F9E9751DA90EA900D7F000 /* DataWriter.swift */,
 				35CDF45E34B91196C78E1883 /* Branch Filter */,
 			);
 			path = Foundation;
@@ -985,7 +988,7 @@
 				143EE45C1D6B8539002A2436 /* Thread */,
 				14C55A5B1D6899BE003B704C /* MockCommand.swift */,
 				14C55A5C1D6899BE003B704C /* MockDataLoader.swift */,
-				14C55A5D1D6899BE003B704C /* MockNSData.swift */,
+				14C55A5D1D6899BE003B704C /* MockData.swift */,
 				14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */,
 				14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */,
 				35CDFDD0BD47F74DF30C9A3B /* BranchFilter */,
@@ -1633,6 +1636,7 @@
 				143DA7AA1D46860C0019FDFA /* FlexiJSON+Fragment.swift in Sources */,
 				14C55A181D6899AF003B704C /* CommandLine.swift in Sources */,
 				14C55A0E1D6899AF003B704C /* BotSyncingInteractor.swift in Sources */,
+				14F9E9761DA90EA900D7F000 /* DataWriter.swift in Sources */,
 				143DA7A81D46860C0019FDFA /* FlexiJSON+Either.swift in Sources */,
 				14C55A401D6899AF003B704C /* XcodeServerBotAPI.swift in Sources */,
 				143EE44E1D6B71C2002A2436 /* TextFieldBotTemplateView.swift in Sources */,
@@ -1713,7 +1717,7 @@
 				1456EE8F1D4E990A0044F458 /* FlexiJSON+NilLiteralConvertibleTests.swift in Sources */,
 				14C55A9A1D6899BE003B704C /* XCSRequestTests.swift in Sources */,
 				14C55A8C1D6899BE003B704C /* TestHelpers+XCTest.swift in Sources */,
-				14C55A891D6899BE003B704C /* MockNSData.swift in Sources */,
+				14C55A891D6899BE003B704C /* MockData.swift in Sources */,
 				1456EE911D4E990A0044F458 /* FlexiJSON+SequenceTypeTests.swift in Sources */,
 				14C55A801D6899BE003B704C /* BotTemplateTests.swift in Sources */,
 				14C55A971D6899BE003B704C /* Bot+JSONTransformableTests.swift in Sources */,
@@ -1977,7 +1981,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2036,7 +2039,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

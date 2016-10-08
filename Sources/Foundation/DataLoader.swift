@@ -11,7 +11,6 @@ protocol DataLoader {
 class DefaultDataLoader: DataLoader {
 
     func loadData(from file: String) -> Data? {
-        // TODO:
-        return (try? Data(contentsOf: Foundation.URL(fileURLWithPath: file)))
+        return try? Data(contentsOf: URL(fileURLWithPath: file))
     }
 }

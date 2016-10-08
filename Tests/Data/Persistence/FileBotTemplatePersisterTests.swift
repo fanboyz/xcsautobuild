@@ -8,25 +8,24 @@ import XCTest
 class FileBotTemplatePersisterTests: XCTestCase {
     
     var persister: FileBotTemplatePersister!
-    var mockedData: MockNSData!
+    var mockedDataWriter: MockDataWriter!
     var mockedDataLoader: MockDataLoader!
     let file = "test file"
     
     override func setUp() {
         super.setUp()
-        mockedData = MockNSData()
+        mockedDataWriter = MockDataWriter()
         mockedDataLoader = MockDataLoader()
-        persister = FileBotTemplatePersister(file: file, dataLoader: mockedDataLoader)
+        persister = FileBotTemplatePersister(file: file, dataLoader: mockedDataLoader, dataWriter: mockedDataWriter)
     }
     
     // MARK: - save
     
     func test_save_shouldWriteTemplateJSONToFile() {
-        let template = BotTemplate(name: "", data: mockedData)
+        let template = BotTemplate(name: "", data: Data())
         persister.save(template)
-        XCTAssert(mockedData.didWriteToFile)
-        XCTAssertEqual(mockedData.invokedAtomically, true)
-        XCTAssertEqual(mockedData.invokedPath, file)
+        XCTAssert(mockedDataWriter.didWriteToFile)
+        XCTAssertEqual(mockedDataWriter.invokedPath, file)
     }
 
     // MARK: - load

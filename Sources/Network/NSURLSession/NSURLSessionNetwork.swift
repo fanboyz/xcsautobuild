@@ -23,7 +23,7 @@ class NSURLSessionNetwork: Network {
 
     init(configuration: Configuration) {
         let delegate = NSURLSessionNetworkDelegate()
-        session = URLSession(configuration: .default, delegate: delegate, delegateQueue: nil)
+        session = URLSession(configuration: .default, delegate: delegate, delegateQueue: OperationQueue())
         self.delegate = delegate
         self.configuration = configuration
     }
@@ -37,13 +37,13 @@ class NSURLSessionNetwork: Network {
     }
 
     private func buildRequest(_ httpRequest: HTTPRequest) -> URLRequest {
-        let request = NSMutableURLRequest(url: Foundation.URL(string: httpRequest.url)!)
+        var request = URLRequest(url: URL(string: httpRequest.url)!)
         request.httpBody = body(from: httpRequest)
         request.httpMethod = httpRequest.method.rawValue
         request.addValue("5", forHTTPHeaderField: "X-XCSClientVersion")
         request.addValue("Basic \(encodedCredentials())", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        return request as URLRequest
+        return request
     }
 
     private func encodedCredentials() -> String {
