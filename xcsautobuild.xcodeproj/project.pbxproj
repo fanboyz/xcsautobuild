@@ -525,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				143EE44D1D6B71C2002A2436 /* TextFieldBotTemplateView.swift */,
+				143EE44F1D6B75D1002A2436 /* BotTemplateLauncher.swift */,
 			);
 			path = "Bot Template";
 			sourceTree = "<group>";
@@ -934,7 +935,6 @@
 				14C55A501D6899BE003B704C /* Gateway */,
 				14C55A531D6899BE003B704C /* Interactor */,
 				143EE4401D6B6CF0002A2436 /* View */,
-				143EE44F1D6B75D1002A2436 /* BotTemplateLauncher.swift */,
 			);
 			path = "Bot Templates";
 			sourceTree = "<group>";

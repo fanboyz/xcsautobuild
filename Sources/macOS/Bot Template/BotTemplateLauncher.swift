@@ -6,7 +6,7 @@ import Foundation
 
 class BotTemplateLauncher {
 
-    func launch(withView view: TextFieldBotTemplateView) {
+    func launch(view: TextFieldBotTemplateView) {
         let api = Constants.api
         let saver = FileBotTemplatePersister(file: Constants.templateFile)
         let interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateSaver: saver)
