@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import ObjectiveGit
 
 func commaSeparatedList(from string: String) -> [String] {
     return string.components(separatedBy: ",").filter { $0 != "" }
@@ -17,12 +18,12 @@ func commaSeparatedString(from array: [String]) -> String {
 
 let yes = "yes"
 let no = "no"
-let api = Constants.api
+let api = Dependencies.api
 let testBotSynchroniser: BotSynchroniser = {
     return XCSBotSynchroniser(
-        getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Constants.network)),
-        duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: Constants.network)),
-        deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Constants.network)),
+        getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Dependencies.network)),
+        duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: Dependencies.network)),
+        deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Dependencies.network)),
         botTemplateLoader: FileBotTemplatePersister(file: testTemplateFile)
     )
 }()
@@ -36,8 +37,8 @@ let testTemplateFile = testPath + "templates"
 let testGitPath = testPath + "git/"
 let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
-let testXCSGitURL = URL(fileURLWithPath: testGitPath + "xcs")
-let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path)
+let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path, remoteName: "origin", credential: credential)
+private let credential = try! GTCredential(userName: "", password: "")
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
     var count = 0

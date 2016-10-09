@@ -7,7 +7,7 @@
 import Foundation
 
 protocol GitFixture: class {
-    var gitBuilder: TwoRemoteGitBuilder! { get set }
+    var gitBuilder: GitBuilder! { get set }
 }
 
 extension GitFixture {
@@ -19,9 +19,8 @@ extension GitFixture {
     func setUpGit(branches: [String]) {
         remove(file: testLocalGitURL)
         remove(file: testRemoteGitURL)
-        remove(file: testXCSGitURL)
         gitBuilder = nil
-        gitBuilder = TwoRemoteGitBuilder(localURL: testLocalGitURL, remoteURL: testRemoteGitURL, xcsURL: testXCSGitURL)
+        gitBuilder = GitBuilder(localURL: testLocalGitURL, remoteURL: testRemoteGitURL)
         for branch in branches {
             gitBuilder.add(branch: branch)
         }

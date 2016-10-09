@@ -5,24 +5,19 @@
 import Foundation
 import ObjectiveGit
 
-class TwoRemoteGitBuilder {
+class GitBuilder {
 
     private let localRepo: GTRepository
     private let remoteRepo: GTRepository
-    private let xcsRepo: GTRepository
     private let remoteURL: URL
-    private let xcsURL: URL
     let localURL: URL
     var localPath: String { return localURL.path }
 
-    init(localURL: URL, remoteURL: URL, xcsURL: URL) {
+    init(localURL: URL, remoteURL: URL) {
         self.localURL = localURL
         self.remoteURL = remoteURL
-        self.xcsURL = xcsURL
-        remoteRepo = TwoRemoteGitBuilder.createRemote(remoteURL)
-        localRepo = TwoRemoteGitBuilder.createLocal(from: remoteURL, to: localURL)
-        xcsRepo = TwoRemoteGitBuilder.createRemote(xcsURL)
-        createXCSRemote()
+        remoteRepo = GitBuilder.createRemote(remoteURL)
+        localRepo = GitBuilder.createLocal(from: remoteURL, to: localURL)
         makeInitialCommit()
     }
 
@@ -40,7 +35,7 @@ class TwoRemoteGitBuilder {
         let builder = try! GTTreeBuilder(tree: nil, repository: remoteRepo)
         try! builder.addEntry(with: "initial".data(using: String.Encoding.utf8)!, fileName: "initial", fileMode: .blob)
         let tree = try! builder.writeTree()
-        try! remoteRepo.createCommit(with: tree, message: "initial commit", parents: nil, updatingReferenceNamed: "refs/heads/master")
+        try! remoteRepo.createCommit(with: tree, message: "initial commit", parents: nil, updatingReferenceNamed: "HEAD")
     }
 
     private static func createRemote(_ url: URL) -> GTRepository {
@@ -51,14 +46,9 @@ class TwoRemoteGitBuilder {
         return try! GTRepository.clone(from: remote, toWorkingDirectory: local, options: nil, transferProgressBlock: nil, checkoutProgressBlock: nil)
     }
 
-    private func createXCSRemote() {
-        try! GTRemote.createRemote(withName: "xcs", urlString: xcsURL.path, in: localRepo)
-    }
-
     private func removeRepos() {
-        TwoRemoteGitBuilder.remove(file: remoteURL)
-        TwoRemoteGitBuilder.remove(file: xcsURL)
-        TwoRemoteGitBuilder.remove(file: localURL)
+        GitBuilder.remove(file: remoteURL)
+        GitBuilder.remove(file: localURL)
     }
 
     private static func remove(file: URL) {

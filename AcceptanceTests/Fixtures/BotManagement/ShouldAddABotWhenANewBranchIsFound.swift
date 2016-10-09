@@ -18,7 +18,7 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
 
     // MARK: - Test
     var network: MockNetwork!
-    var gitBuilder: TwoRemoteGitBuilder!
+    var gitBuilder: GitBuilder!
     var interactor: BotSyncingInteractor!
 
     override func setUp() {
@@ -28,9 +28,9 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
         network.expectDuplicateBot(id: testTemplateBotID)
         setUpGit(branches: branchesArray)
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path)!,
+            branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
-            branchFilter: TransparentBranchFilter(),
+            branchFilter: IgnoreMasterBranchFilter(),
             branchesDataStore: FileXCSBranchesDataStore(file: testDataStoreFile)
         )
     }

@@ -19,7 +19,7 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
     }
 
     var savedBranchNames: [String] {
-        return savedBranchesArray.map({ Constants.convertToBotName(branchName: $0) })
+        return savedBranchesArray.map({ BotNameConverter.convertToBotName(branchName: $0) })
     }
 
     var savedBranchIDs: [String] {
@@ -32,7 +32,7 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
 
     // MARK: - Test
     var network: MockNetwork!
-    var gitBuilder: TwoRemoteGitBuilder!
+    var gitBuilder: GitBuilder!
     var interactor: BotSyncingInteractor!
 
     override func setUp() {
@@ -47,9 +47,9 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
         let branchesDataStore = FileXCSBranchesDataStore(file: testDataStoreFile)
         savedBranchesArray.forEach { branchesDataStore.save(branch: XCSBranch(name: $0, botID: $0)) }
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path)!,
+            branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
-            branchFilter: TransparentBranchFilter(),
+            branchFilter: IgnoreMasterBranchFilter(),
             branchesDataStore: branchesDataStore
         )
     }

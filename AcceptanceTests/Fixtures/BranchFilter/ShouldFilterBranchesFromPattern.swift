@@ -19,7 +19,7 @@ class ShouldFilterBranchesFromPattern: DecisionTable {
 
     // MARK: - Test
     var network: MockNetwork!
-    var git: TwoRemoteGitBuilder!
+    var git: GitBuilder!
     var interactor: BotSyncingInteractor!
 
     override func setUp() {

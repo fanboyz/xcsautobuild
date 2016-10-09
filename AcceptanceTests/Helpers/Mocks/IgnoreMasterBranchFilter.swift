@@ -4,9 +4,9 @@
 
 import Foundation
 
-class TransparentBranchFilter: BranchFilter {
+class IgnoreMasterBranchFilter: BranchFilter {
 
     func filter(_ branches: [Branch]) -> [Branch] {
-        return branches
+        return branches.filter { $0.name != "master" }
     }
 }

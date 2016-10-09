@@ -19,7 +19,7 @@ class XcodeServerSynchronisation: DecisionTable, GitFixture {
     let invalidBotID = "invalid_bot_id"
     let newBotID = "new_bot_id"
     let branch = "develop"
-    var gitBuilder: TwoRemoteGitBuilder!
+    var gitBuilder: GitBuilder!
     var mockedNetwork: MockNetwork!
     var interactor: BotSyncingInteractor!
     var branchesDataStore: FileXCSBranchesDataStore!
@@ -32,9 +32,9 @@ class XcodeServerSynchronisation: DecisionTable, GitFixture {
     override func test() {
         setUpBranchesDataStore()
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path)!,
+            branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
-            branchFilter: TransparentBranchFilter(),
+            branchFilter: IgnoreMasterBranchFilter(),
             branchesDataStore: branchesDataStore
         )
 
