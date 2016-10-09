@@ -170,6 +170,7 @@
 		14F9E9A61DAA3FE200D7F000 /* BranchFilterLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */; };
 		14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
 		14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
+		14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
 		35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
@@ -204,8 +205,6 @@
 		35CDF771662991B62EFC3BC1 /* MockXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */; };
 		35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */; };
 		35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */; };
-		35CDF93CA017E30867B153BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1333C289C523B4D465D /* Constants.swift */; };
-		35CDF942D90479BE7BAC1B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1333C289C523B4D465D /* Constants.swift */; };
 		35CDF95AF2F1667B94A4044A /* XCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */; };
 		35CDFA3520BE3215E9E66397 /* FileXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */; };
 		35CDFA725F09957C1F56892B /* MockXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */; };
@@ -402,7 +401,7 @@
 		14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterLauncher.swift; sourceTree = "<group>"; };
 		14F9E9A71DAA40D700D7F000 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		14F9E9A91DAA43E700D7F000 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		35CDF1333C289C523B4D465D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNameConverter.swift; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniserTests.swift; sourceTree = "<group>"; };
 		35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotSynchroniser.swift; sourceTree = "<group>"; };
@@ -1254,10 +1253,10 @@
 			children = (
 				35CDF7CC983EAEAD723DDF7D /* ViewController.swift */,
 				35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */,
-				35CDF1333C289C523B4D465D /* Constants.swift */,
 				35CDFF4D4F61AB5A7592A1B7 /* main.swift */,
 				14F9E9A71DAA40D700D7F000 /* Dependencies.swift */,
 				14F9E9A91DAA43E700D7F000 /* Locations.swift */,
+				14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1642,6 +1641,7 @@
 				14C55A061D6899AF003B704C /* BotCreator.swift in Sources */,
 				14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */,
 				143DA7A51D46860C0019FDFA /* FlexiJSON+ExpressibleByArrayLiteral.swift in Sources */,
+				14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */,
 				143DA7A91D46860C0019FDFA /* FlexiJSON+ExpressibleByFloatLiteral.swift in Sources */,
 				14C55A101D6899AF003B704C /* BotTemplate.swift in Sources */,
 				14C55A381D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */,
@@ -1664,7 +1664,6 @@
 				35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */,
 				35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */,
 				35CDF356A1580E398FD1CD12 /* AppDelegate.swift in Sources */,
-				35CDF942D90479BE7BAC1B2D /* Constants.swift in Sources */,
 				35CDFE95A5FCB752CC14DC62 /* main.swift in Sources */,
 				35CDF1767F0F3594D82388C6 /* BotTemplateLoader.swift in Sources */,
 				35CDF66BB9CB5812FE8C2450 /* XCSBranchesDataStore.swift in Sources */,
@@ -1809,7 +1808,6 @@
 				35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */,
 				35CDFF0050E8FC91B03987A8 /* TransparentBranchFilter.swift in Sources */,
 				35CDFF158D160F3BB854B510 /* PatternDataStore.swift in Sources */,
-				35CDF93CA017E30867B153BC /* Constants.swift in Sources */,
 				35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */,
 				35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */,
 				35CDFFE5459A887962EC27FA /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift in Sources */,
