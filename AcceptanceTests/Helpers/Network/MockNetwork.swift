@@ -15,8 +15,9 @@ class MockNetwork {
     var invokedDuplicateBotResponse: Data?
     var stubbedDuplicatedBotID = "6139a72b95fdeec94b49ec0a1f00191a"
     func expectDuplicateBot(id: String) {
-        stub(isHost(testHost) && isMethodPOST() && isPath("/api/bots/\(id)/duplicate")) { [unowned self] request in
-            self.invokedDuplicateBotResponse = request.OHHTTPStubs_HTTPBody()
+        _ = stub(condition: isHost(testHost) && isMethodPOST() && isPath("/api/bots/\(id)/duplicate")) { [unowned self] request in
+            let request = request as NSURLRequest
+            self.invokedDuplicateBotResponse = request.ohhttpStubs_HTTPBody()
             self.duplicateBotCount += 1
             var json = FlexiJSON(data: load("bots_post_response", "json"))
             json["_id"] = FlexiJSON(string: self.stubbedDuplicatedBotID)
@@ -26,24 +27,24 @@ class MockNetwork {
 
     var deleteBotCount = 0
     func expectDeleteBot(id: String) {
-        stub(isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
+        _ = stub(condition: isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
             self.deleteBotCount += 1
             return empty(204)
         }
     }
 
     func expectDeleteBotNotFound(id: String) {
-        stub(isMethodDELETE() && isPath("/api/bots/\(id)")) { _ in
+        _ = stub(condition: isMethodDELETE() && isPath("/api/bots/\(id)")) { _ in
             return empty(404)
         }
     }
 
     func stubGetBots(withNames names: [String], ids: [String]) {
-        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots")) { _ -> OHHTTPStubsResponse in
+        _ = stub(condition: isHost(testHost) && isMethodGET() && isPath("/api/bots")) { _ -> OHHTTPStubsResponse in
             var json = FlexiJSON(data: load("bots_get_response", "json"))
             json["count"] = FlexiJSON(int: Int64(names.count))
             let template = json["results"][0]
-            var array = [AnyObject]()
+            var array = [Any]()
             for i in 0..<names.count {
                 var bot = template
                 bot["name"] = FlexiJSON(string: names[i])
@@ -56,7 +57,7 @@ class MockNetwork {
     }
 
     func stubGetBot(withID id: String, name: String) {
-        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { request in
+        _ = stub(condition: isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { request in
             var json = FlexiJSON(data: load("bot_get_response", "json"))
             json["name"] = FlexiJSON(string: name)
             json["_id"] = FlexiJSON(string: id)
@@ -65,17 +66,17 @@ class MockNetwork {
     }
 
     func stubGetBotError(withID id: String, statusCode: Int32) {
-        stub(isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { _ in
+        _ = stub(condition: isHost(testHost) && isMethodGET() && isPath("/api/bots/\(id)")) { _ in
             OHHTTPStubsResponse(data: Data(), statusCode: statusCode, headers: nil)
         }
     }
 }
 
 func empty(_ statusCode: Int32) -> OHHTTPStubsResponse {
-    return OHHTTPStubsResponse(data: NSData(), statusCode: statusCode, headers: nil)
+    return OHHTTPStubsResponse(data: Data(), statusCode: statusCode, headers: nil)
 }
 
 func json(_ fileName: String) -> OHHTTPStubsResponse {
-    let file = testBundle.pathForResource(fileName, ofType: "json")!
-    return fixture(file, headers: nil)
+    let file = testBundle.path(forResource: fileName, ofType: "json")!
+    return fixture(filePath: file, headers: nil)
 }

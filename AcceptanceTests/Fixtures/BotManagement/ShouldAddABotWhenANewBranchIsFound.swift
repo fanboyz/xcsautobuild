@@ -28,7 +28,7 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
         network.expectDuplicateBot(id: testTemplateBotID)
         setUpGit(branches: branchesArray)
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path!)!,
+            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path)!,
             botSynchroniser: testBotSynchroniser,
             branchFilter: TransparentBranchFilter(),
             branchesDataStore: FileXCSBranchesDataStore(file: testDataStoreFile)
@@ -38,6 +38,6 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
     override func test() {
         interactor.execute()
         waitUntil(network.duplicateBotCount != 0)
-        numberOfCreatedBots = network.duplicateBotCount
+        numberOfCreatedBots = network.duplicateBotCount as NSNumber
     }
 }

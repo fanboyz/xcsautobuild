@@ -19,7 +19,7 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
     }
 
     var oldBranchNames: [String] {
-        return oldBranchesArray.map({ Constants.convertBranchNameToBotName($0) })
+        return oldBranchesArray.map({ Constants.convertToBotName(branchName: $0) })
     }
 
     var oldBranchIDs: [String] {
@@ -43,7 +43,7 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
         let branchesDataStore = FileXCSBranchesDataStore(file: testDataStoreFile)
         oldBranchesArray.forEach { branchesDataStore.save(branch: XCSBranch(name: $0, botID: $0)) }
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path!)!,
+            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path)!,
             botSynchroniser: testBotSynchroniser,
             branchFilter: TransparentBranchFilter(),
             branchesDataStore: branchesDataStore
@@ -53,6 +53,6 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
     override func test() {
         interactor.execute()
         waitUntil(network.deleteBotCount != 0)
-        numberOfDeletedBots = network.deleteBotCount
+        numberOfDeletedBots = network.deleteBotCount as NSNumber
     }
 }

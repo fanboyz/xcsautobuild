@@ -166,6 +166,7 @@
 		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
 		14F9E9761DA90EA900D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
+		14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
 		35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
@@ -1569,7 +1570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7A8776CEC9253BE5C37E6390 /* [CP] Copy Pods Resources */ = {
@@ -1800,6 +1801,7 @@
 				14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */,
 				1484B5DD1D62676200319088 /* FlexiJSON+ExpressibleByFloatLiteral.swift in Sources */,
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
+				14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */,
 				35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */,
 				35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */,
 				35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */,
@@ -2088,7 +2090,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2144,7 +2145,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

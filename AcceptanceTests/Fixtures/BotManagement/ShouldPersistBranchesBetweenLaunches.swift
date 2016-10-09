@@ -19,7 +19,7 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
     }
 
     var savedBranchNames: [String] {
-        return savedBranchesArray.map({ Constants.convertBranchNameToBotName($0) })
+        return savedBranchesArray.map({ Constants.convertToBotName(branchName: $0) })
     }
 
     var savedBranchIDs: [String] {
@@ -47,7 +47,7 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
         let branchesDataStore = FileXCSBranchesDataStore(file: testDataStoreFile)
         savedBranchesArray.forEach { branchesDataStore.save(branch: XCSBranch(name: $0, botID: $0)) }
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path!)!,
+            branchFetcher: GitBranchFetcher(directory: testLocalGitURL.path)!,
             botSynchroniser: testBotSynchroniser,
             branchFilter: TransparentBranchFilter(),
             branchesDataStore: branchesDataStore
@@ -56,8 +56,8 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
 
     override func test() {
         interactor.execute()
-        wait(0.05)
-        numberOfCreatedBots = network.duplicateBotCount
-        numberOfDeletedBots = network.deleteBotCount
+        wait(for: 0.05)
+        numberOfCreatedBots = network.duplicateBotCount as NSNumber
+        numberOfDeletedBots = network.deleteBotCount as NSNumber
     }
 }

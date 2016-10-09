@@ -21,7 +21,7 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
         network = MockNetwork()
         network.expectDuplicateBot(id: testTemplateBotID)
         setUpGit(branches: "develop")
-        let branchFetcher = GitBranchFetcher(directory: testLocalGitURL.path!)!
+        let branchFetcher = GitBranchFetcher(directory: testLocalGitURL.path)!
         interactor = BotSyncingInteractor(branchFetcher: branchFetcher, botSynchroniser: testBotSynchroniser, branchFilter: TransparentBranchFilter(), branchesDataStore: MockXCSBranchesDataStore())
     }
 
@@ -29,7 +29,7 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
         setUp()
         interactor.execute()
         waitUntil(network.duplicateBotCount != 0)
-        let expectedBody = ["name": Constants.convertBranchNameToBotName("develop")]
+        let expectedBody = ["name": Constants.convertToBotName(branchName: "develop")]
         let expectedData = FlexiJSON(dictionary: expectedBody).data!
         createdBotFromTemplate = fitnesseString(from: network.invokedDuplicateBotResponse == expectedData)
     }
