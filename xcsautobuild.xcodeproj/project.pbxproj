@@ -65,7 +65,7 @@
 		1484B5E31D62676200319088 /* FlexiJSON+ExpressibleByStringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A11D46860C0019FDFA /* FlexiJSON+ExpressibleByStringLiteral.swift */; };
 		1484B5E41D62676200319088 /* FlexiJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7A31D46860C0019FDFA /* FlexiJSON.swift */; };
 		1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBF1D591CBF00F1CA28 /* TestHelpers+Acceptance.swift */; };
-		1484B6061D6267F000319088 /* TwoRemoteGitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */; };
+		1484B6061D6267F000319088 /* GitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434561D5BDB8900025F90 /* GitBuilder.swift */; };
 		1484B6071D6267F500319088 /* ShouldCreateTemplateFromBotName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B5461D609C9C00319088 /* ShouldCreateTemplateFromBotName.swift */; };
 		1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A741D5528F8006FCBF8 /* ShouldAddABotWhenANewBranchIsFound.swift */; };
 		1484B6091D6267FC00319088 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBA1D59190000F1CA28 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift */; };
@@ -171,6 +171,12 @@
 		14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
 		14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
 		14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */; };
+		14F9E9B21DAA4A7C00D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
+		14F9E9B31DAA4A7C00D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
+		14F9E9B41DAA4A7C00D7F000 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */; };
+		14F9E9B71DAA4A8C00D7F000 /* BotTemplateEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4471D6B6F27002A2436 /* BotTemplateEventHandler.swift */; };
+		14F9E9B81DAA4A9100D7F000 /* BotTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4451D6B6DD8002A2436 /* BotTemplateView.swift */; };
+		14F9E9B91DAA4B0500D7F000 /* BotTemplatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE43E1D6B6CE3002A2436 /* BotTemplatePresenter.swift */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
 		35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
@@ -209,15 +215,13 @@
 		35CDFA3520BE3215E9E66397 /* FileXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */; };
 		35CDFA725F09957C1F56892B /* MockXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */; };
 		35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
-		35CDFBCCB72B9D290AF85CF2 /* GlobalBranchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF693CE4844D9C23D3200 /* GlobalBranchFilterTests.swift */; };
 		35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */; };
 		35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
 		35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
 		35CDFE46EEFE41F27F51E883 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
-		35CDFE6CCCD18435EAC3D896 /* MockPatternDataStoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7164807ABB4743D2D36 /* MockPatternDataStoreProvider.swift */; };
 		35CDFE95A5FCB752CC14DC62 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFF4D4F61AB5A7592A1B7 /* main.swift */; };
 		35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
-		35CDFF0050E8FC91B03987A8 /* TransparentBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */; };
+		35CDFF0050E8FC91B03987A8 /* IgnoreMasterBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */; };
 		35CDFF158D160F3BB854B510 /* PatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */; };
 		35CDFFACEDCE7B7716CCD36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */; };
 		35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */; };
@@ -305,7 +309,7 @@
 		143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDHelperTests.swift; sourceTree = "<group>"; };
 		143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainThreadCompletable.swift; sourceTree = "<group>"; };
 		143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadedXcodeServerBotAPI.swift; sourceTree = "<group>"; };
-		144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoRemoteGitBuilder.swift; sourceTree = "<group>"; };
+		144434561D5BDB8900025F90 /* GitBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitBuilder.swift; sourceTree = "<group>"; };
 		14491D5C1D89D583007BB3E3 /* DecisionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionTable.swift; sourceTree = "<group>"; };
 		14491D611D89D949007BB3E3 /* GitFixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitFixture.swift; sourceTree = "<group>"; };
 		1456EE7E1D4E990A0044F458 /* FlexiJSON+ExpressibleByArrayLiteralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ExpressibleByArrayLiteralTests.swift"; sourceTree = "<group>"; };
@@ -415,11 +419,9 @@
 		35CDF544D9207869F43D2FDF /* XCSBranch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranch.swift; sourceTree = "<group>"; };
 		35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF63E4BB29DD8ABF38CC8 /* XCSDuplicateBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDuplicateBotRequestTests.swift; sourceTree = "<group>"; };
-		35CDF693CE4844D9C23D3200 /* GlobalBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBranchFilterTests.swift; sourceTree = "<group>"; };
 		35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockXCSBranchesDataStore.swift; sourceTree = "<group>"; };
 		35CDF6D71A9BDB2677F843C7 /* MockBotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateLoader.swift; sourceTree = "<group>"; };
-		35CDF7164807ABB4743D2D36 /* MockPatternDataStoreProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPatternDataStoreProvider.swift; sourceTree = "<group>"; };
 		35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldFilterBranchesFromPattern.swift; sourceTree = "<group>"; };
 		35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35CDF7CC983EAEAD723DDF7D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -431,7 +433,7 @@
 		35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterView.swift; sourceTree = "<group>"; };
 		35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLoader.swift; sourceTree = "<group>"; };
-		35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentBranchFilter.swift; sourceTree = "<group>"; };
+		35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgnoreMasterBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
 		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
 		35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDuplicateBotRequest.swift; sourceTree = "<group>"; };
@@ -887,7 +889,6 @@
 			children = (
 				14C55A441D6899BE003B704C /* Bot Management */,
 				14C55A4D1D6899BE003B704C /* Bot Templates */,
-				35CDF4E6C7D8E4CFEF85D070 /* Branch Filter */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1097,7 +1098,7 @@
 				14491D5E1D89D87A007BB3E3 /* Lifecycle */,
 				1484B6161D6398CF00319088 /* Network */,
 				14CC5CBF1D591CBF00F1CA28 /* TestHelpers+Acceptance.swift */,
-				144434561D5BDB8900025F90 /* TwoRemoteGitBuilder.swift */,
+				144434561D5BDB8900025F90 /* GitBuilder.swift */,
 				35CDFA702D87C142BA20BA61 /* Mocks */,
 			);
 			path = Helpers;
@@ -1186,27 +1187,10 @@
 			path = duplicate;
 			sourceTree = "<group>";
 		};
-		35CDF43A55E580DCE550A155 /* Gateway */ = {
-			isa = PBXGroup;
-			children = (
-				35CDF693CE4844D9C23D3200 /* GlobalBranchFilterTests.swift */,
-				35CDF7164807ABB4743D2D36 /* MockPatternDataStoreProvider.swift */,
-			);
-			path = Gateway;
-			sourceTree = "<group>";
-		};
 		35CDF45E34B91196C78E1883 /* Branch Filter */ = {
 			isa = PBXGroup;
 			children = (
 				35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */,
-			);
-			path = "Branch Filter";
-			sourceTree = "<group>";
-		};
-		35CDF4E6C7D8E4CFEF85D070 /* Branch Filter */ = {
-			isa = PBXGroup;
-			children = (
-				35CDF43A55E580DCE550A155 /* Gateway */,
 			);
 			path = "Branch Filter";
 			sourceTree = "<group>";
@@ -1264,7 +1248,7 @@
 		35CDFA702D87C142BA20BA61 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				35CDFE739DD8D9E7FDD9A342 /* TransparentBranchFilter.swift */,
+				35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1727,8 +1711,6 @@
 				14C55A831D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift in Sources */,
 				35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */,
 				35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */,
-				35CDFBCCB72B9D290AF85CF2 /* GlobalBranchFilterTests.swift in Sources */,
-				35CDFE6CCCD18435EAC3D896 /* MockPatternDataStoreProvider.swift in Sources */,
 				35CDF5B07D2103F440BA2F9C /* MockBotTemplateLoader.swift in Sources */,
 				35CDF771662991B62EFC3BC1 /* MockXCSBranchesDataStore.swift in Sources */,
 				35CDF67DFA6C24351C1C57E2 /* FileXCSBranchesDataStoreTests.swift in Sources */,
@@ -1747,6 +1729,7 @@
 				143EE4651D6B90EF002A2436 /* GCDHelper.swift in Sources */,
 				1484B60A1D6267FC00319088 /* ShouldPersistBranchesBetweenLaunches.swift in Sources */,
 				1400495D1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift in Sources */,
+				14F9E9B21DAA4A7C00D7F000 /* Dependencies.swift in Sources */,
 				14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				1484B6181D63992C00319088 /* MockNetwork.swift in Sources */,
 				1484B5E41D62676200319088 /* FlexiJSON.swift in Sources */,
@@ -1759,7 +1742,7 @@
 				14C55A0B1D6899AF003B704C /* BotsFetcher.swift in Sources */,
 				143EE4661D6B90F2002A2436 /* MainThreadCompletable.swift in Sources */,
 				14C55A291D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
-				1484B6061D6267F000319088 /* TwoRemoteGitBuilder.swift in Sources */,
+				1484B6061D6267F000319088 /* GitBuilder.swift in Sources */,
 				1484B5DB1D62676200319088 /* FlexiJSON+ExpressibleByDictionaryLiteral.swift in Sources */,
 				14C55A151D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
 				1484B5DF1D62676200319088 /* FlexiJSON+ExpressibleByIntegerLiteral.swift in Sources */,
@@ -1777,6 +1760,7 @@
 				1484B5E11D62676200319088 /* FlexiJSON+IO.swift in Sources */,
 				1484B5DE1D62676200319088 /* FlexiJSON+Fragment.swift in Sources */,
 				14C55A331D6899AF003B704C /* XCSGetBotRequest.swift in Sources */,
+				14F9E9B31DAA4A7C00D7F000 /* Locations.swift in Sources */,
 				14C55A311D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */,
 				14C55A411D6899AF003B704C /* XcodeServerBotAPI.swift in Sources */,
 				1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */,
@@ -1790,10 +1774,12 @@
 				14C55A031D6899AF003B704C /* Branch.swift in Sources */,
 				14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */,
 				1484B5E21D62676200319088 /* FlexiJSON+Sequence.swift in Sources */,
+				14F9E9B81DAA4A9100D7F000 /* BotTemplateView.swift in Sources */,
 				14C55A3B1D6899AF003B704C /* Bot.swift in Sources */,
 				14887E211D663C5F009E245C /* ShouldPersistBotTemplate.swift in Sources */,
 				14C55A391D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */,
 				1484B5DA1D62676200319088 /* FlexiJSON+ExpressibleByBooleanLiteral.swift in Sources */,
+				14F9E9B91DAA4B0500D7F000 /* BotTemplatePresenter.swift in Sources */,
 				1484B5DC1D62676200319088 /* FlexiJSON+Either.swift in Sources */,
 				1484B5E01D62676200319088 /* FlexiJSON+ExpressibleByNilLiteral.swift in Sources */,
 				14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */,
@@ -1806,7 +1792,8 @@
 				35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */,
 				35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */,
 				35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */,
-				35CDFF0050E8FC91B03987A8 /* TransparentBranchFilter.swift in Sources */,
+				14F9E9B71DAA4A8C00D7F000 /* BotTemplateEventHandler.swift in Sources */,
+				35CDFF0050E8FC91B03987A8 /* IgnoreMasterBranchFilter.swift in Sources */,
 				35CDFF158D160F3BB854B510 /* PatternDataStore.swift in Sources */,
 				35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */,
 				35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */,
@@ -1817,6 +1804,7 @@
 				35CDF48DDE12AED013496C64 /* FileXCSBranchesDataStore.swift in Sources */,
 				35CDF6A2FBC7C445C9902B59 /* XCSBranch.swift in Sources */,
 				35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */,
+				14F9E9B41DAA4A7C00D7F000 /* BotNameConverter.swift in Sources */,
 				35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */,
 				35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */,
 				35CDFE46EEFE41F27F51E883 /* MockBotSynchroniser.swift in Sources */,
@@ -1898,7 +1886,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Resources/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "codes.seanhenry.xcsautobuild-macOS";
@@ -1949,7 +1936,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Resources/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "codes.seanhenry.xcsautobuild-macOS";
 				PRODUCT_NAME = xcsautobuild;
@@ -2004,7 +1990,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Resources/macOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "codes.seanhenry.xcsautobuild-macOSTests";
@@ -2056,7 +2041,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Resources/macOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "codes.seanhenry.xcsautobuild-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2110,7 +2094,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = AcceptanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = codes.seanhenry.AcceptanceTests;
@@ -2159,7 +2142,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = AcceptanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = codes.seanhenry.AcceptanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2190,6 +2172,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -2216,6 +2199,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
