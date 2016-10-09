@@ -19,6 +19,6 @@ class Constants {
             getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network)),
             duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: network)),
             deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
-            botTemplateLoader: FileBotTemplatePersister(file: templateFile))
+            botTemplateLoader: FileBotTemplatePersister(file: Locations.botTemplateFile.path))
     }()
 }

@@ -169,6 +169,7 @@
 		14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
 		14F9E9A61DAA3FE200D7F000 /* BranchFilterLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */; };
 		14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
+		14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
 		35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A491D6899BE003B704C /* MockBotDeleter.swift */; };
 		35CDF09F9AD7EF60D3809366 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
@@ -400,6 +401,7 @@
 		14F9E9751DA90EA900D7F000 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterLauncher.swift; sourceTree = "<group>"; };
 		14F9E9A71DAA40D700D7F000 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		14F9E9A91DAA43E700D7F000 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		35CDF1333C289C523B4D465D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniserTests.swift; sourceTree = "<group>"; };
@@ -1255,6 +1257,7 @@
 				35CDF1333C289C523B4D465D /* Constants.swift */,
 				35CDFF4D4F61AB5A7592A1B7 /* main.swift */,
 				14F9E9A71DAA40D700D7F000 /* Dependencies.swift */,
+				14F9E9A91DAA43E700D7F000 /* Locations.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1649,6 +1652,7 @@
 				143DA7AE1D46860C0019FDFA /* FlexiJSON+Sequence.swift in Sources */,
 				14C55A3E1D6899AF003B704C /* XCSRequest.swift in Sources */,
 				14C55A221D6899AF003B704C /* DataLoader.swift in Sources */,
+				14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */,
 				14C55A1C1D6899AF003B704C /* FileBotTemplatePersister.swift in Sources */,
 				143EE4461D6B6DD8002A2436 /* BotTemplateView.swift in Sources */,
 				143EE45B1D6B851E002A2436 /* GCDHelper.swift in Sources */,
