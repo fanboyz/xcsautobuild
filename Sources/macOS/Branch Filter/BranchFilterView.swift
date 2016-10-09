@@ -5,9 +5,9 @@
 import Foundation
 import AppKit
 
-class BranchFilterView: NSTextField, PatternDataStoreProvider {
-
-    var patternDataStore: PatternDataStore!
+class BranchFilterView: NSTextField {
+    
+    var filterPatternDataStore: PatternDataStore!
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
@@ -16,6 +16,6 @@ class BranchFilterView: NSTextField, PatternDataStoreProvider {
     }
 
     @objc private func textDidUpdate() {
-        patternDataStore.pattern = stringValue
+        filterPatternDataStore.pattern = stringValue
     }
 }
