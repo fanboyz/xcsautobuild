@@ -23,7 +23,7 @@ class XcodeServerBotAPI: BotDeleter {
 
     func deleteBot(forBranch branch: Branch) {
         getBots { bots in
-            bots.filter { $0.name == Constants.convertToBotName(branchName: branch.name) }
+            bots.filter { $0.name == BotNameConverter.convertToBotName(branchName: branch.name) }
                 .forEach { self.deleteBot(id: $0.id) }
         }
     }

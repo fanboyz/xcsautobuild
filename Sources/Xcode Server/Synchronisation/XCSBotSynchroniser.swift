@@ -50,7 +50,7 @@ class XCSBotSynchroniser: BotSynchroniser {
     }
 
     private func createBot(forNewBranch branch: XCSBranch, templateID: String, completion: (XCSBranch) -> ()) {
-        let templateData = DuplicateBotRequestData(id: templateID, name: Constants.convertToBotName(branchName: branch.name))
+        let templateData = DuplicateBotRequestData(id: templateID, name: BotNameConverter.convertToBotName(branchName: branch.name))
         if let newBotID = duplicateBotRequest.send(templateData)?.data {
             completion(XCSBranch(name: branch.name, botID: newBotID))
         } else {
