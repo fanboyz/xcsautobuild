@@ -4,7 +4,7 @@ class Dependencies {
     static let wildcardBranchFilter = WildcardBranchFilter()
     
     /// TODO: put this into a configuration file
-    static let network = NSURLSessionNetwork(configuration: NSURLSessionNetwork.Configuration(username: "sean", password: "8TEgaYap"))
+    static let network = NSURLSessionNetwork(configuration: NSURLSessionNetwork.Configuration(username: username, password: password))
     
     static let api: ThreadedXcodeServerBotAPI = {
         return ThreadedXcodeServerBotAPI(api: XcodeServerBotAPI(
