@@ -28,7 +28,7 @@ class XCSBotSynchroniser: BotSynchroniser {
             completion(branch)
             return
         }
-        guard let botID = branch.botID , doesBotExist(withID: botID) else {
+        guard let botID = branch.botID, doesBotExist(withID: botID) else {
             createBot(forNewBranch: branch, templateID: templateID, completion: completion)
             return
         }

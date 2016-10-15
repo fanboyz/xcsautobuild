@@ -10,7 +10,7 @@ class Locations {
         directory.appendingPathComponent("branchesData")
     }()
     
-    private static let directory: URL = {
+    static let directory: URL = {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         .appendingPathComponent("codes.seanhenry.xcsautobuild")
     }()

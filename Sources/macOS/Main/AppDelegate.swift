@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let windowController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController()! as! NSWindowController
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        try? FileManager.default.createDirectory(at: Locations.directory, withIntermediateDirectories: true, attributes: nil)
         let credential = try! GTCredential(
             userName: "git",
             publicKeyURL: URL(fileURLWithPath: publicKeyURL),
