@@ -78,10 +78,6 @@ class GCDHelperTests: XCTestCase {
     }
 
     func waitForOneLoop() {
-        let expectation = self.expectation(description: #function)
-        OperationQueue.main.addOperation {
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 5, handler: nil)
+        RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.05))
     }
 }
