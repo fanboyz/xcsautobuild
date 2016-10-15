@@ -1,5 +1,9 @@
+#!/usr/bin/env bash -l
 
+# Unit Tests
 xcrun xcodebuild -workspace xcsautobuild.xcworkspace -scheme xcsautobuild_macOS test | xcpretty
 
+# Acceptance Tests
+xcrun xcodebuild -workspace xcsautobuild.xcworkspace -scheme AcceptanceTests build | xcpretty
 FITNESSE="Pods/OCSlimProject/Pod/Support/SharedSupport/fitnesse-standalone.jar"
 java -jar "${FITNESSE}" -p 8080 -c "FrontPage.AcceptanceTests?suite&format=text"

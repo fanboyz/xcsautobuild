@@ -1,3 +1,0 @@
-#!/bin/bash -e
-xcodebuild -scheme AcceptanceTests -workspace xcsautobuild.xcworkspace | xcpretty
-java -jar ./Pods/OCSlimProject/Pod/Support/SharedSupport/fitnesse-standalone.jar -c "FrontPage.AcceptanceTests?suite&format=text" -p 8081
