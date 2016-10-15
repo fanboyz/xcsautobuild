@@ -12,6 +12,9 @@ import ObjectiveGit
 class AppDelegate: NSObject, NSApplicationDelegate {
     let remoteName = "origin"
     let directory = "/Users/sean/source/xcsautobuild"
+    let publicKeyURL = ""
+    let privateKeyURL = ""
+    let passphrase = ""
     var interactor: BotSyncingInteractor!
     let windowController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController()! as! NSWindowController
 
@@ -35,7 +38,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let viewController = windowController.contentViewController! as! ViewController
         BotTemplateLauncher().launch(view: viewController.templateView)
         windowController.showWindow(nil)
-    }
     }
 }
 

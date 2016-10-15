@@ -2,6 +2,8 @@
 class Dependencies {
     
     static let wildcardBranchFilter = WildcardBranchFilter()
+    static let username = ""
+    static let password = ""
     
     /// TODO: put this into a configuration file
     static let network = NSURLSessionNetwork(configuration: NSURLSessionNetwork.Configuration(username: username, password: password))
