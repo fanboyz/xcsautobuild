@@ -333,6 +333,7 @@
 		1484B61F1D63AA1300319088 /* bot_get_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bot_get_response.json; sourceTree = "<group>"; };
 		14887E201D663C5F009E245C /* ShouldPersistBotTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldPersistBotTemplate.swift; sourceTree = "<group>"; };
 		14887E241D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldOverwriteExistingBotTemplate.swift; sourceTree = "<group>"; };
+		1495AC891DB2482D00883F5E /* CI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CI; sourceTree = "<group>"; };
 		14C559CD1D6899AF003B704C /* Branch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		14C559CE1D6899AF003B704C /* RemoteBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteBot.swift; sourceTree = "<group>"; };
 		14C559D01D6899AF003B704C /* BotCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotCreator.swift; sourceTree = "<group>"; };
@@ -1332,6 +1333,7 @@
 		"___RootGroup_" = {
 			isa = PBXGroup;
 			children = (
+				1495AC891DB2482D00883F5E /* CI */,
 				__PBXFileRef_Package.swift /* Package.swift */,
 				"_____Configs_" /* Configs */,
 				143DA7961D46860C0019FDFA /* FlexiJSON */,
