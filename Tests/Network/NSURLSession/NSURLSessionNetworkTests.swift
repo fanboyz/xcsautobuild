@@ -46,7 +46,7 @@ class NSURLSessionNetworkTests: XCTestCase {
     func test_sendRequest_shouldSetHeaders() {
         sendRequest()
         let headers = mockedSession.invokedRequest?.allHTTPHeaderFields
-        XCTAssertEqual(headers?["X-XCSClientVersion"], "5")
+        XCTAssertEqual(headers?["X-XCSClientVersion"], "6") 
         XCTAssertEqual(headers?["Authorization"], "Basic \(encodedCredentials)")
         XCTAssertEqual(headers?["Content-Type"], "application/json")
     }

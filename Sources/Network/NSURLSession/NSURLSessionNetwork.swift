@@ -40,7 +40,7 @@ class NSURLSessionNetwork: Network {
         var request = URLRequest(url: URL(string: httpRequest.url)!)
         request.httpBody = body(from: httpRequest)
         request.httpMethod = httpRequest.method.rawValue
-        request.addValue("5", forHTTPHeaderField: "X-XCSClientVersion")
+        request.addValue("6", forHTTPHeaderField: "X-XCSClientVersion")
         request.addValue("Basic \(encodedCredentials())", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
