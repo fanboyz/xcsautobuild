@@ -17,11 +17,11 @@ class DecisionTable: NSObject, SlimDecisionTable {
     func test() {
     }
 
-    func reset() {
+    final func reset() {
         createFiles()
     }
 
-    func execute() {
+    final func execute() {
         setUp()
         test()
         tearDown()

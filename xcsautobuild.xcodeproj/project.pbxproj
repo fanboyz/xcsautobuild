@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1400495D1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1400495C1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift */; };
+		141403BB1DB2707000D6D6B5 /* ShouldDeleteABotWhenThePatternIsChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141403BA1DB2707000D6D6B5 /* ShouldDeleteABotWhenThePatternIsChanged.swift */; };
 		143DA7A51D46860C0019FDFA /* FlexiJSON+ExpressibleByArrayLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7971D46860C0019FDFA /* FlexiJSON+ExpressibleByArrayLiteral.swift */; };
 		143DA7A61D46860C0019FDFA /* FlexiJSON+ExpressibleByBooleanLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7981D46860C0019FDFA /* FlexiJSON+ExpressibleByBooleanLiteral.swift */; };
 		143DA7A71D46860C0019FDFA /* FlexiJSON+ExpressibleByDictionaryLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143DA7991D46860C0019FDFA /* FlexiJSON+ExpressibleByDictionaryLiteral.swift */; };
@@ -284,6 +285,7 @@
 
 /* Begin PBXFileReference section */
 		1400495C1D8C8BAC0038A87E /* XcodeServerSynchronisation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeServerSynchronisation.swift; sourceTree = "<group>"; };
+		141403BA1DB2707000D6D6B5 /* ShouldDeleteABotWhenThePatternIsChanged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldDeleteABotWhenThePatternIsChanged.swift; sourceTree = "<group>"; };
 		143DA7971D46860C0019FDFA /* FlexiJSON+ExpressibleByArrayLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ExpressibleByArrayLiteral.swift"; sourceTree = "<group>"; };
 		143DA7981D46860C0019FDFA /* FlexiJSON+ExpressibleByBooleanLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ExpressibleByBooleanLiteral.swift"; sourceTree = "<group>"; };
 		143DA7991D46860C0019FDFA /* FlexiJSON+ExpressibleByDictionaryLiteral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexiJSON+ExpressibleByDictionaryLiteral.swift"; sourceTree = "<group>"; };
@@ -1301,6 +1303,7 @@
 			isa = PBXGroup;
 			children = (
 				35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */,
+				141403BA1DB2707000D6D6B5 /* ShouldDeleteABotWhenThePatternIsChanged.swift */,
 			);
 			path = BranchFilter;
 			sourceTree = "<group>";
@@ -1765,6 +1768,7 @@
 				14F9E9B31DAA4A7C00D7F000 /* Locations.swift in Sources */,
 				14C55A311D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */,
 				14C55A411D6899AF003B704C /* XcodeServerBotAPI.swift in Sources */,
+				141403BB1DB2707000D6D6B5 /* ShouldDeleteABotWhenThePatternIsChanged.swift in Sources */,
 				1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */,
 				14491D621D89D949007BB3E3 /* GitFixture.swift in Sources */,
 				14C55A271D6899AF003B704C /* Network.swift in Sources */,

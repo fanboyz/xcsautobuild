@@ -26,8 +26,10 @@ class MockNetwork {
     }
 
     var deleteBotCount = 0
+    var deletedBotIDs = [String]()
     func expectDeleteBot(id: String) {
         _ = stub(condition: isMethodDELETE() && isPath("/api/bots/\(id)")) { [unowned self] _ in
+            self.deletedBotIDs.append(id)
             self.deleteBotCount += 1
             return empty(204)
         }
