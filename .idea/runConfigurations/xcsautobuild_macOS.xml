@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="xcsautobuild_macOS" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="xcsautobuild" TARGET_NAME="xcsautobuild_macOS" CONFIG_NAME="Debug" SCHEME_NAME="xcsautobuild_macOS" RUN_TARGET_PROJECT_NAME="xcsautobuild" RUN_TARGET_NAME="xcsautobuild_macOS" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+  <configuration default="false" name="xcsautobuild_macOS" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="xcsautobuild" TARGET_NAME="xcsautobuild_macOS" CONFIG_NAME="Debug" SCHEME_NAME="xcsautobuild_macOS" RUN_TARGET_PROJECT_NAME="xcsautobuild" RUN_TARGET_NAME="xcsautobuild_macOS" MAKE_ACTIVE="TRUE">
     <envs />
     <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
       <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
