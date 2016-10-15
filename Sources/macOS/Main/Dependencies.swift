@@ -1,9 +1,9 @@
 
 class Dependencies {
     
-    static let wildcardBranchFilter = WildcardBranchFilter()
     static let username = ""
     static let password = ""
+    static let wildcardBranchFilter = WildcardBranchFilter(patternDataStore: filePatternDataStore)
     
     /// TODO: put this into a configuration file
     static let network = NSURLSessionNetwork(configuration: NSURLSessionNetwork.Configuration(username: username, password: password))
@@ -22,5 +22,9 @@ class Dependencies {
             duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: network)),
             deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
             botTemplateLoader: FileBotTemplatePersister(file: Locations.botTemplateFile.path))
+    }()
+
+    static let filePatternDataStore: FilePatternDataStore = {
+        return FilePatternDataStore(file: Locations.patternFile.path)
     }()
 }

@@ -5,5 +5,6 @@
 import Foundation
 
 protocol PatternDataStore {
-    var pattern: String { get set }
+    func save(pattern: String)
+    func load() -> String?
 }

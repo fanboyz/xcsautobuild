@@ -4,10 +4,17 @@
 
 import Foundation
 
-class WildcardBranchFilter: BranchFilter, PatternDataStore {
+class WildcardBranchFilter: BranchFilter {
 
-    var pattern = ""
+    var pattern: String {
+        return patternDataStore.load() ?? wildcard
+    }
     private let wildcard = "*"
+    private let patternDataStore: PatternDataStore
+
+    init(patternDataStore: PatternDataStore) {
+        self.patternDataStore = patternDataStore
+    }
 
     func filter(_ branches: [Branch]) -> [Branch] {
         if pattern == "" { return [] }

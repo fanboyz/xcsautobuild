@@ -34,6 +34,7 @@ let testBundle = Bundle(for: testBundleClass)
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"
+let testFilterPatternFile = testPath + "templates"
 let testGitPath = testPath + "git/"
 let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")

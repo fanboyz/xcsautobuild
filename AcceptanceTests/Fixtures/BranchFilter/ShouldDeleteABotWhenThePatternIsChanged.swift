@@ -21,8 +21,9 @@ class ShouldDeleteABotWhenThePatternIsChanged: DecisionTable, GitFixture {
         expectToDeleteBot()
         saveExistingBranch()
         
-        let filter = WildcardBranchFilter()
-        filter.pattern = "non_matching"
+        let patternDataStore = FilePatternDataStore(file: testFilterPatternFile)
+        patternDataStore.save(pattern: "non_matching")
+        let filter = WildcardBranchFilter(patternDataStore: patternDataStore)
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,

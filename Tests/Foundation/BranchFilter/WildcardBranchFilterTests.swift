@@ -10,6 +10,7 @@ import XCTest
 class WildcardBranchFilterTests: XCTestCase {
 
     var filter: WildcardBranchFilter!
+    var mockedStore: MockPatternDataStore!
     let branches = [Branch(name: "feature/1"), Branch(name: "feature/2"), Branch(name: "hotfix/1"), Branch(name: "develop")]
     var featureBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "feature/2")] }
     var oneBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "hotfix/1")] }
@@ -18,64 +19,78 @@ class WildcardBranchFilterTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        filter = WildcardBranchFilter()
+        mockedStore = MockPatternDataStore()
+        filter = WildcardBranchFilter(patternDataStore: mockedStore)
+    }
+
+    // MARK: - pattern
+
+    func test_pattern_shouldLoadFromDataStore() {
+        setPattern("branch/*")
+        XCTAssertEqual(filter.pattern, mockedStore.stubbedPattern)
+    }
+
+    func test_pattern_shouldReturnWildcard_whenNoSavedPattern() {
+        setPattern(nil)
+        XCTAssertEqual(filter.pattern, "*")
     }
 
     // MARK: - filterBranches
 
     func test_filterBranches_shouldHandleEmptyString() {
+        setPattern("")
         XCTAssert(filterBranches().isEmpty)
     }
 
     func test_filterBranches_shouldReturnAllBranches_whenOnlyWildcard() {
-        filter.pattern = "*"
+        setPattern("*")
         XCTAssertEqual(filterBranches(), branches)
     }
 
     func test_filterBranches_shouldReturnExactMatch() {
-        filter.pattern = "feature/2"
+        setPattern("feature/2")
         XCTAssertEqual(filterBranches(), [Branch(name: "feature/2")])
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenSuffixedWithWildcard() {
-        filter.pattern = "feature/*"
+        setPattern("feature/*")
         XCTAssertEqual(filterBranches(), featureBranches)
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenPrefixedWithWildcard() {
-        filter.pattern = "*/1"
+        setPattern("*/1")
         XCTAssertEqual(filterBranches(), oneBranches)
     }
     
     func test_filterBranches_shouldReturnPartialMatches_whenPrefixedAndSuffixedWithWildcard() {
-        filter.pattern = "*e*"
+        setPattern("*e*")
         XCTAssertEqual(filterBranches(), eBranches)
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenMultipleWildcards() {
-        filter.pattern = "*dev*p*"
+        setPattern("*dev*p*")
         XCTAssertEqual(filterBranches(), developBranches)
     }
 
     func test_filterBranches_shouldMatchRegexSpecialCharacters() {
         let specialCharacters = "[]()+?{}^$.|/\\"
-        filter.pattern = specialCharacters
+        setPattern(specialCharacters)
         let branches = [Branch(name: specialCharacters)]
         XCTAssertEqual(filter.filter(branches), branches)
     }
 
     func test_filterBranches_shouldIgnoreInvalidRegex() {
-        filter.pattern = "[(])"
+        setPattern("[(])")
         _ = filterBranches() // should not crash
     }
 
     func test_filterBranches_shouldStartMatchingFromBeginningOfTheString() {
-        filter.pattern = "evelop"
+        setPattern("evelop")
         XCTAssert(filterBranches().isEmpty)
     }
 
     func test_filterBranches_shouldStopMatchingAtEndOfTheString() {
-        filter.pattern = "develo"
+        setPattern("develo")
         XCTAssert(filterBranches().isEmpty)
     }
 
@@ -83,5 +98,9 @@ class WildcardBranchFilterTests: XCTestCase {
 
     func filterBranches() -> [Branch] {
         return filter.filter(branches)
+    }
+
+    func setPattern(_ pattern: String?) {
+        mockedStore.stubbedPattern = pattern
     }
 }

@@ -17,3 +17,8 @@ The user may use exact matches or wildcards (*) to match one or more branches.
 |Should delete a bot when the pattern is changed|
 |existing bot ID          |bot deleted?         |
 |valid_bot_id             |yes                  |
+
+!3 Should remember pattern between launches
+|Should remember pattern between launches|
+|saved pattern     |restored pattern?    |
+|feature/*         |feature/*            |

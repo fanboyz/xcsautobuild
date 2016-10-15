@@ -16,6 +16,6 @@ class BranchFilterView: NSTextField {
     }
 
     @objc private func textDidUpdate() {
-        filterPatternDataStore.pattern = stringValue
+        filterPatternDataStore.save(pattern: stringValue)
     }
 }
