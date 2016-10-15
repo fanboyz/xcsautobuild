@@ -13,5 +13,6 @@ class BotTemplateLauncher {
         let presenter = BotTemplatePresenter(view: view, templateCreatingInteractor: interactor)
         view.eventHandler = presenter
         interactor.output = presenter
+        view.display(botName: saver.load()?.name ?? "")
     }
 }

@@ -19,6 +19,10 @@ class TextFieldBotTemplateView: NSView {
     @IBAction func didClickActionButton(_ sender: AnyObject) {
         eventHandler.createTemplate(fromName: botNameField.stringValue)
     }
+    
+    func display(botName: String) {
+        botNameField.stringValue = botName
+    }
 }
 
 extension TextFieldBotTemplateView: BotTemplateView {

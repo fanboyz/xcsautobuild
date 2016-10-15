@@ -13,6 +13,7 @@ class BranchFilterView: NSTextField {
         super.viewDidMoveToWindow()
         target = self
         action = #selector(BranchFilterView.textDidUpdate)
+        stringValue = filterPatternDataStore.load() ?? ""
     }
 
     @objc private func textDidUpdate() {
