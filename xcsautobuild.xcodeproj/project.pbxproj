@@ -31,7 +31,6 @@
 		144434581D5CF69B00025F90 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		144434591D5CF69B00025F90 /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1444345E1D5D1EDF00025F90 /* ObjectiveGit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		144570411DB3ACE100DE67AD /* FlexiJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; };
 		144570431DB3AD0600DE67AD /* FlexiJSON.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 144570421DB3AD0600DE67AD /* FlexiJSON.framework.dSYM */; };
 		144570441DB3AD3000DE67AD /* FlexiJSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14491D5D1D89D583007BB3E3 /* DecisionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14491D5C1D89D583007BB3E3 /* DecisionTable.swift */; };
@@ -49,6 +48,12 @@
 		1484B6201D63AA1300319088 /* bot_get_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1484B61F1D63AA1300319088 /* bot_get_response.json */; };
 		14887E211D663C5F009E245C /* ShouldPersistBotTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14887E201D663C5F009E245C /* ShouldPersistBotTemplate.swift */; };
 		14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14887E241D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift */; };
+		1495437F1DB41819004B97F1 /* FlexiJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; };
+		149543801DB41819004B97F1 /* FlexiJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		149543811DB41819004B97F1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
+		149543821DB41819004B97F1 /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1495438A1DB418A5004B97F1 /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
+		1495438B1DB418A5004B97F1 /* FlexiJSON.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 144570421DB3AD0600DE67AD /* FlexiJSON.framework.dSYM */; };
 		14C55A021D6899AF003B704C /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559CD1D6899AF003B704C /* Branch.swift */; };
 		14C55A031D6899AF003B704C /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559CD1D6899AF003B704C /* Branch.swift */; };
 		14C55A041D6899AF003B704C /* RemoteBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559CE1D6899AF003B704C /* RemoteBot.swift */; };
@@ -135,7 +140,6 @@
 		14C55A9C1D689A24003B704C /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A621D6899BE003B704C /* TestHelpers.swift */; };
 		14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A6E1D552875006FCBF8 /* AcceptanceTests.m */; };
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
-		14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
 		14F9E9761DA90EA900D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
 		14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
@@ -245,6 +249,30 @@
 				1444345E1D5D1EDF00025F90 /* ObjectiveGit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		149543831DB41819004B97F1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				149543801DB41819004B97F1 /* FlexiJSON.framework in Embed Frameworks */,
+				149543821DB41819004B97F1 /* ObjectiveGit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		149543851DB4186F004B97F1 /* Copy Carthage dSYM */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				1495438A1DB418A5004B97F1 /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */,
+				1495438B1DB418A5004B97F1 /* FlexiJSON.framework.dSYM in Copy Carthage dSYM */,
+			);
+			name = "Copy Carthage dSYM";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		14EEB6081D5A52DA0074C72D /* Copy Carthage dSYM */ = {
@@ -432,9 +460,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144570411DB3ACE100DE67AD /* FlexiJSON.framework in Frameworks */,
+				149543811DB41819004B97F1 /* ObjectiveGit.framework in Frameworks */,
+				1495437F1DB41819004B97F1 /* FlexiJSON.framework in Frameworks */,
 				D56C833677A4D1C73532AD81 /* Pods_AcceptanceTests.framework in Frameworks */,
-				14EEB6061D5A523D0074C72D /* ObjectiveGit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1317,6 +1345,7 @@
 				1459B3AA1D3EBE9D004D6FF9 /* Frameworks */,
 				1459B3AB1D3EBE9D004D6FF9 /* Resources */,
 				1444345A1D5CF69C00025F90 /* Embed Frameworks */,
+				149543851DB4186F004B97F1 /* Copy Carthage dSYM */,
 			);
 			buildRules = (
 			);
@@ -1357,8 +1386,8 @@
 				14E53A591D551E6B006FCBF8 /* FitNesse */,
 				A59FB1C6A8B6DD6F00FEA73C /* [CP] Embed Pods Frameworks */,
 				7A8776CEC9253BE5C37E6390 /* [CP] Copy Pods Resources */,
-				14EEB6071D5A52560074C72D /* Copy Carthage Frameworks */,
 				14EEB6081D5A52DA0074C72D /* Copy Carthage dSYM */,
+				149543831DB41819004B97F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1465,21 +1494,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Validate Project Build Settings\nif [ -z \"${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}\" ]; then\n   echo \"Missing expected OCSlimProject build settings. Running '$ pod update' may fix this problem\"\n   exit 1\nfi\n\n# Export Build Environment to Bundle Location\nENV_TARGET=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/env.sh\n\nfunction exportTestRunnerEnv {\n    mkdir -p \"$(dirname \"$ENV_TARGET\")\" && touch \"$ENV_TARGET\"\n    export | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)|(EXECUTABLE_PATH)' > $ENV_TARGET\n}\n\n# Write Test Runner Script To Project Root\nTESTRUNNER_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/RunTestsTargetWithSlimPort\nTESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\nfunction writeTestRunnerScript {\n    \n    if [ -f \"$TESTRUNNER_TARGET\" ]; then\n        rm $TESTRUNNER_TARGET\n    fi\n    \n    echo '#!/bin/sh' > $TESTRUNNER_TARGET\n    echo $TESTRUNNER_SOURCE '$1' >> $TESTRUNNER_TARGET\n    chmod +x $TESTRUNNER_TARGET\n    \n}\n\n# Symbolic Link LaunchFitnesse to Project Root\nLAUNCHFITNESSE_SCRIPTNAME=LaunchFitnesse\nLAUNCHFITNESSE_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\nLAUNCHFITNESSE_TARGET=${PROJECT_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\n\nfunction linkFitnesseScript {\n    \n    if [ -L $LAUNCHFITNESSE_TARGET ]; then\n        unlink $LAUNCHFITNESSE_TARGET\n    fi\n    \n    ln -s $LAUNCHFITNESSE_SOURCE $(dirname \"$LAUNCHFITNESSE_TARGET\")\n}\n\n\n###\n\nexportTestRunnerEnv\nwriteTestRunnerScript\nlinkFitnesseScript";
-		};
-		14EEB6071D5A52560074C72D /* Copy Carthage Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/ObjectiveGit.framework",
-			);
-			name = "Copy Carthage Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		5CADF7E42E68951D9E8AD523 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1969,7 +1983,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94DC8739FF38FC1AE9389FD6 /* Pods-AcceptanceTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2024,7 +2038,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C0DEDDCEA517D9139E233AC /* Pods-AcceptanceTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
