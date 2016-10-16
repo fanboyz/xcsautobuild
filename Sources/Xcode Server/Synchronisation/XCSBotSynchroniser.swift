@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import FlexiJSON
 
 class XCSBotSynchroniser: BotSynchroniser {
 

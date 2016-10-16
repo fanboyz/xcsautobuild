@@ -4,6 +4,8 @@
 
 import Foundation
 import OHHTTPStubs
+import FlexiJSON
+
 
 class MockNetwork {
 

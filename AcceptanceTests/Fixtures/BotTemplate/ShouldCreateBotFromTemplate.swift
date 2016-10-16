@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import FlexiJSON
 
 @objc(ShouldCreateBotFromTemplate)
 class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {

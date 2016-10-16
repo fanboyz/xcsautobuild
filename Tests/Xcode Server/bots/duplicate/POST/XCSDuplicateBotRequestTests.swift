@@ -4,6 +4,7 @@
 
 import Foundation
 import XCTest
+import FlexiJSON
 @testable import xcsautobuild
 
 class XCSDuplicateBotRequestTests: XCTestCase {

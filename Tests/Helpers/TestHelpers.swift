@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import FlexiJSON
 @testable import xcsautobuild
 
 private func createBot() -> Bot {

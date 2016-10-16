@@ -1,1 +1,2 @@
 github "libgit2/objective-git" "0.12.0"
+github "seanhenry/swift-flexi-json" "1.1.0"
