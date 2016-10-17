@@ -138,6 +138,7 @@
 		14C55A9A1D6899BE003B704C /* XCSRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A791D6899BE003B704C /* XCSRequestTests.swift */; };
 		14C55A9B1D6899BE003B704C /* XcodeServerBotAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A7A1D6899BE003B704C /* XcodeServerBotAPITests.swift */; };
 		14C55A9C1D689A24003B704C /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A621D6899BE003B704C /* TestHelpers.swift */; };
+		14D757291DB549710012E1B6 /* XCSPatchBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF45461609ADF1BE25120 /* XCSPatchBotRequest.swift */; };
 		14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A6E1D552875006FCBF8 /* AcceptanceTests.m */; };
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
@@ -161,6 +162,7 @@
 		35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7CC983EAEAD723DDF7D /* ViewController.swift */; };
 		35CDF217D99486016220533C /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
+		35CDF23DA78DA8D9003F59BB /* XCSPatchBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3ADD3F1F1AD507BFBC6 /* XCSPatchBotRequestTests.swift */; };
 		35CDF254C7B159442E253604 /* FilePatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF8651802C0D6A3DA07E2 /* FilePatternDataStore.swift */; };
 		35CDF27A72E7210120CC10E1 /* FilePatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF8651802C0D6A3DA07E2 /* FilePatternDataStore.swift */; };
 		35CDF2D7853E79BB308C6C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDFCF8BEDBEDDBDCEC328A /* Main.storyboard */; };
@@ -172,6 +174,7 @@
 		35CDF3754B8E797DDFE3EE02 /* DuplicateBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEED7257FD147E04A52D /* DuplicateBotRequestData.swift */; };
 		35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
+		35CDF3B2DFAB1E2F911D4731 /* PatchBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEE32CFCE3EEBF716677 /* PatchBotRequestData.swift */; };
 		35CDF41E0617222CC1EA5D79 /* MockPatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2497933622A39AB6277 /* MockPatternDataStore.swift */; };
 		35CDF48DDE12AED013496C64 /* FileXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */; };
 		35CDF543E6E93A9CDC48E3F7 /* PatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */; };
@@ -402,7 +405,9 @@
 		35CDF276E9296DFDC4AD5BF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranchesDataStore.swift; sourceTree = "<group>"; };
+		35CDF3ADD3F1F1AD507BFBC6 /* XCSPatchBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSPatchBotRequestTests.swift; sourceTree = "<group>"; };
 		35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateBotFromTemplate.swift; sourceTree = "<group>"; };
+		35CDF45461609ADF1BE25120 /* XCSPatchBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSPatchBotRequest.swift; sourceTree = "<group>"; };
 		35CDF4C666C73E7EA22D8969 /* FileXCSBranchesDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileXCSBranchesDataStoreTests.swift; sourceTree = "<group>"; };
 		35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileXCSBranchesDataStore.swift; sourceTree = "<group>"; };
 		35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBranchTests.swift; sourceTree = "<group>"; };
@@ -428,6 +433,7 @@
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
 		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
 		35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDuplicateBotRequest.swift; sourceTree = "<group>"; };
+		35CDFEE32CFCE3EEBF716677 /* PatchBotRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchBotRequestData.swift; sourceTree = "<group>"; };
 		35CDFEED7257FD147E04A52D /* DuplicateBotRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateBotRequestData.swift; sourceTree = "<group>"; };
 		35CDFF2799450FEFF3171DA8 /* FilePatternDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePatternDataStoreTests.swift; sourceTree = "<group>"; };
 		35CDFF3C8B451B517F3E93E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -788,6 +794,7 @@
 				14C559F41D6899AF003B704C /* DELETE */,
 				14C559F61D6899AF003B704C /* GET */,
 				35CDF22CD5A6DCD8D0F243C9 /* duplicate */,
+				35CDF3E6C1AFBC17BEC219B3 /* PATCH */,
 			);
 			path = bots;
 			sourceTree = "<group>";
@@ -1011,6 +1018,7 @@
 				14C55A6D1D6899BE003B704C /* DELETE */,
 				14C55A6F1D6899BE003B704C /* GET */,
 				35CDFBAF3CF0BE1DF1F97F75 /* duplicate */,
+				35CDF942F0A46D49EDFF4AEE /* PATCH */,
 			);
 			path = bots;
 			sourceTree = "<group>";
@@ -1148,6 +1156,15 @@
 			path = duplicate;
 			sourceTree = "<group>";
 		};
+		35CDF3E6C1AFBC17BEC219B3 /* PATCH */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF45461609ADF1BE25120 /* XCSPatchBotRequest.swift */,
+				35CDFEE32CFCE3EEBF716677 /* PatchBotRequestData.swift */,
+			);
+			path = PATCH;
+			sourceTree = "<group>";
+		};
 		35CDF45E34B91196C78E1883 /* Branch Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1212,6 +1229,14 @@
 				35CDF2497933622A39AB6277 /* MockPatternDataStore.swift */,
 			);
 			path = "Branch Filter";
+			sourceTree = "<group>";
+		};
+		35CDF942F0A46D49EDFF4AEE /* PATCH */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF3ADD3F1F1AD507BFBC6 /* XCSPatchBotRequestTests.swift */,
+			);
+			path = PATCH;
 			sourceTree = "<group>";
 		};
 		35CDFA702D87C142BA20BA61 /* Mocks */ = {
@@ -1548,6 +1573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C55A201D6899AF003B704C /* Command.swift in Sources */,
+				14D757291DB549710012E1B6 /* XCSPatchBotRequest.swift in Sources */,
 				14C55A2A1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				14C55A041D6899AF003B704C /* RemoteBot.swift in Sources */,
 				14C55A281D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
@@ -1603,6 +1629,7 @@
 				35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */,
 				35CDF58496D4BC87565A14D0 /* DuplicateBotRequestData.swift in Sources */,
 				35CDF254C7B159442E253604 /* FilePatternDataStore.swift in Sources */,
+				35CDF3B2DFAB1E2F911D4731 /* PatchBotRequestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1656,6 +1683,7 @@
 				35CDF2E6C2BA770DCCF95532 /* XCSDuplicateBotRequestTests.swift in Sources */,
 				35CDFFA53FEEACC6B0FFD55B /* FilePatternDataStoreTests.swift in Sources */,
 				35CDF41E0617222CC1EA5D79 /* MockPatternDataStore.swift in Sources */,
+				35CDF23DA78DA8D9003F59BB /* XCSPatchBotRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
