@@ -17,6 +17,6 @@
 |bot2    |bot1          |no                     |
 
 !2 Should create bot from template
-|Should create bot from template|
-|created bot from template?     |
-|yes                            |
+|Should create bot from template                       |
+|new branch |created bot from template?|new bot branch?|
+|feature/123|yes                       |feature/123    |

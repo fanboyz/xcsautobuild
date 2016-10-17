@@ -8,8 +8,12 @@ import FlexiJSON
 @objc(ShouldCreateBotFromTemplate)
 class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
 
+    // MARK: - Input
+    var newBranch: String!
+
     // MARK: - Output
     var createdBotFromTemplate: String!
+    var newBotBranch: String!
 
     // MARK: - Test
     var network: MockNetwork!
@@ -21,6 +25,7 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
         FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
         network = MockNetwork()
         network.expectDuplicateBot(id: testTemplateBotID)
+        network.expectPatchBot(id: testBotID)
         setUpGit(branches: "develop")
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,
@@ -31,11 +36,12 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
     }
 
     override func test() {
-        setUp()
         interactor.execute()
         waitUntil(network.duplicateBotCount != 0)
+        waitUntil(network.patchedBotBranchName != nil)
         let expectedBody = ["name": BotNameConverter.convertToBotName(branchName: "develop")]
         let expectedData = FlexiJSON(dictionary: expectedBody).data!
         createdBotFromTemplate = fitnesseString(from: network.invokedDuplicateBotResponse == expectedData)
+        newBotBranch = network.patchedBotBranchName
     }
 }

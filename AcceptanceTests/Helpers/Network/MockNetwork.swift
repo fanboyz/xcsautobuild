@@ -15,7 +15,7 @@ class MockNetwork {
 
     var duplicateBotCount = 0
     var invokedDuplicateBotResponse: Data?
-    var stubbedDuplicatedBotID = "6139a72b95fdeec94b49ec0a1f00191a"
+    var stubbedDuplicatedBotID = testBotID
     func expectDuplicateBot(id: String) {
         _ = stub(condition: isHost(testHost) && isMethodPOST() && isPath("/api/bots/\(id)/duplicate")) { [unowned self] request in
             let request = request as NSURLRequest
@@ -40,6 +40,19 @@ class MockNetwork {
     func expectDeleteBotNotFound(id: String) {
         _ = stub(condition: isMethodDELETE() && isPath("/api/bots/\(id)")) { _ in
             return empty(404)
+        }
+    }
+
+    var patchedBotBranchName: String?
+    func expectPatchBot(id: String) {
+        _ = stub(condition: isHost(testHost) && isMethodPATCH() && isPath("/api/bots/\(id)")) { [unowned self] request in
+            let request = request as NSURLRequest
+            let body = request.ohhttpStubs_HTTPBody()!
+            self.patchedBotBranchName = FlexiJSON(data: body)["lastRevisionBlueprint"][testPrimaryRepoKey]["DVTSourceControlBranchIdentifierKey"].string
+
+            var json = FlexiJSON(data: load("bots_post_response", "json"))
+            json["_id"] = FlexiJSON(string: self.stubbedDuplicatedBotID)
+            return OHHTTPStubsResponse(data: json.data!, statusCode: 201, headers: nil)
         }
     }
 

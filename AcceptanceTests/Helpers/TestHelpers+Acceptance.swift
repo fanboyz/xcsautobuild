@@ -40,6 +40,8 @@ let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
 let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path, remoteName: "origin", credential: credential)
 private let credential = try! GTCredential(userName: "", password: "")
+let testBotID = "6139a72b95fdeec94b49ec0a1f00191a"
+let testPrimaryRepoKey = "C214B4F4246A49E51CAE71AA5C1349A716302EB4"
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
     var count = 0
