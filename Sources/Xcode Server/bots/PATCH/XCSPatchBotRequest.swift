@@ -13,7 +13,7 @@ class XCSPatchBotRequest: XCSRequest {
         return HTTPRequest(url: endpoint + "/bots/\(data.id)", method: .patch, jsonBody: data.dictionary)
     }
     
-    func parse(response data: Data) -> String? {
-        return nil
+    func parse(response data: Data) -> Void? {
+        return ()
     }
 }

@@ -25,6 +25,6 @@ class XCSPatchBotRequestTests: XCTestCase {
     // MARK: - parse
 
     func test_parse() {
-        XCTAssertNil(request.parse(response: Data()))
+        XCTAssertNotNil(request.parse(response: Data()))
     }
 }

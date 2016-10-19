@@ -184,6 +184,7 @@
 		35CDF5B07D2103F440BA2F9C /* MockBotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D71A9BDB2677F843C7 /* MockBotTemplateLoader.swift */; };
 		35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */; };
 		35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
+		35CDF646BED6298E1B159ED6 /* bot_get_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1484B61F1D63AA1300319088 /* bot_get_response.json */; };
 		35CDF66BB9CB5812FE8C2450 /* XCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */; };
 		35CDF67DFA6C24351C1C57E2 /* FileXCSBranchesDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4C666C73E7EA22D8969 /* FileXCSBranchesDataStoreTests.swift */; };
 		35CDF6A2FBC7C445C9902B59 /* XCSBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF544D9207869F43D2FDF /* XCSBranch.swift */; };
@@ -1488,6 +1489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CDF646BED6298E1B159ED6 /* bot_get_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

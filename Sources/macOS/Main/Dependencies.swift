@@ -21,6 +21,7 @@ class Dependencies {
             getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network)),
             duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: network)),
             deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
+            patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(network: network)),
             botTemplateLoader: FileBotTemplatePersister(file: Locations.botTemplateFile.path))
     }()
 

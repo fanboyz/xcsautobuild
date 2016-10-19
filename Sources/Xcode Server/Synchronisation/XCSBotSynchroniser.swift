@@ -10,17 +10,20 @@ class XCSBotSynchroniser: BotSynchroniser {
     private let getBotRequest: AnyXCSRequest<String, Data>
     private let duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
+    private let patchBotRequest: AnyXCSRequest<PatchBotRequestData, Void>
     private let botTemplateLoader: BotTemplateLoader
 
     init(
         getBotRequest: AnyXCSRequest<String, Data>,
         duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>,
         deleteBotRequest: AnyXCSRequest<String, Void>,
+        patchBotRequest: AnyXCSRequest<PatchBotRequestData, Void>,
         botTemplateLoader: BotTemplateLoader
     ) {
         self.getBotRequest = getBotRequest
         self.duplicateBotRequest = duplicateBotRequest
         self.deleteBotRequest = deleteBotRequest
+        self.patchBotRequest = patchBotRequest
         self.botTemplateLoader = botTemplateLoader
     }
 
@@ -30,7 +33,8 @@ class XCSBotSynchroniser: BotSynchroniser {
             return
         }
         guard let botID = branch.botID, doesBotExist(withID: botID) else {
-            createBot(forNewBranch: branch, templateID: templateID, completion: completion)
+            let newBranch = createBot(forNewBranch: branch, templateID: templateID)
+            completion(newBranch)
             return
         }
         completion(branch)
@@ -50,13 +54,36 @@ class XCSBotSynchroniser: BotSynchroniser {
         return FlexiJSON(data: data)["_id"].string
     }
 
-    private func createBot(forNewBranch branch: XCSBranch, templateID: String, completion: (XCSBranch) -> ()) {
+    private func createBot(forNewBranch branch: XCSBranch, templateID: String) -> XCSBranch {
         let templateData = DuplicateBotRequestData(id: templateID, name: BotNameConverter.convertToBotName(branchName: branch.name))
-        if let newBotID = duplicateBotRequest.send(templateData)?.data {
-            completion(XCSBranch(name: branch.name, botID: newBotID))
-        } else {
-            completion(branch)
+        if let newBotID = duplicateBotRequest.send(templateData)?.data,
+           patch(branchName: branch.name, ontoBotWithID: newBotID) {
+            return XCSBranch(name: branch.name, botID: newBotID)
         }
+        return branch
+    }
+
+    private func patch(branchName: String, ontoBotWithID id: String) -> Bool {
+        guard var json = getBotJSON(from: id),
+              let primaryRepoKey = repositoryKey(from: json) else { return false }
+        set(branchName: branchName, in: &json, primaryRepoKey: primaryRepoKey)
+        if let response = patchBotRequest.send(PatchBotRequestData(id: id, dictionary: json.dictionary!)) {
+            return response.statusCode == 200
+        }
+        return false
+    }
+
+    private func getBotJSON(from id: String) -> FlexiJSON? {
+        guard let data = getBotRequest.send(id)?.data else { return nil }
+        return FlexiJSON(data: data)
+    }
+
+    private func repositoryKey(from json: FlexiJSON) -> String? {
+        return json["configuration"]["sourceControlBlueprint"]["DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey"].string
+    }
+
+    private func set(branchName: String, in json: inout FlexiJSON, primaryRepoKey: String) {
+        json["configuration"]["sourceControlBlueprint"]["DVTSourceControlWorkspaceBlueprintLocationsKey"][primaryRepoKey]["DVTSourceControlBranchIdentifierKey"] = FlexiJSON(string: branchName)
     }
 
     private func doesBotExist(withID botID: String) -> Bool {
