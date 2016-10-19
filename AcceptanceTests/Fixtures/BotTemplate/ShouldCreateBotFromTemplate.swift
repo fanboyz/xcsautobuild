@@ -19,14 +19,17 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
     var network: MockNetwork!
     var gitBuilder: GitBuilder!
     var interactor: BotSyncingInteractor!
-    let templateBotData = "{\"name\":\"xcsautobuild [develop]\"}".utf8Data
+    var templateBotData: Data {
+        return "{\"name\":\"xcsautobuild [\(newBranch)]\"}".utf8Data
+    }
 
     override func setUp() {
         FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
         network = MockNetwork()
         network.expectDuplicateBot(id: testTemplateBotID)
+        network.stubGetBot(withID: testBotID, name: BotNameConverter.convertToBotName(branchName: newBranch))
         network.expectPatchBot(id: testBotID)
-        setUpGit(branches: "develop")
+        setUpGit(branches: newBranch)
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
@@ -39,7 +42,7 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
         interactor.execute()
         waitUntil(network.duplicateBotCount != 0)
         waitUntil(network.patchedBotBranchName != nil)
-        let expectedBody = ["name": BotNameConverter.convertToBotName(branchName: "develop")]
+        let expectedBody = ["name": BotNameConverter.convertToBotName(branchName: newBranch)]
         let expectedData = FlexiJSON(dictionary: expectedBody).data!
         createdBotFromTemplate = fitnesseString(from: network.invokedDuplicateBotResponse == expectedData)
         newBotBranch = network.patchedBotBranchName

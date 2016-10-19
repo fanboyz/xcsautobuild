@@ -63,6 +63,11 @@ class NSURLSessionNetworkTests: XCTestCase {
         XCTAssertEqual(mockedSession.invokedRequest?.httpBody, jsonData())
     }
 
+    func test_sendRequest_shouldSetBody_whenPATCH() {
+        network.send(createPatchRequest(), completion: nil)
+        XCTAssertEqual(mockedSession.invokedRequest?.httpBody, jsonData())
+    }
+
     func test_sendRequest_shouldNotSetBody_whenGET() {
         network.send(createGetRequestWithJSON(), completion: nil)
         XCTAssertNil(mockedSession.invokedRequest?.httpBody)
@@ -94,6 +99,10 @@ class NSURLSessionNetworkTests: XCTestCase {
 
     func createPostRequest() -> HTTPRequest {
         return HTTPRequest(url: testURL.absoluteString, method: .post, jsonBody: json())
+    }
+
+    func createPatchRequest() -> HTTPRequest {
+        return HTTPRequest(url: testURL.absoluteString, method: .patch, jsonBody: json())
     }
 
     func createGetRequestWithJSON() -> HTTPRequest {

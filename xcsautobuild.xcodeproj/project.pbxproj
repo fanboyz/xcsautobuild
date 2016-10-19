@@ -35,6 +35,8 @@
 		144570441DB3AD3000DE67AD /* FlexiJSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14491D5D1D89D583007BB3E3 /* DecisionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14491D5C1D89D583007BB3E3 /* DecisionTable.swift */; };
 		14491D621D89D949007BB3E3 /* GitFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14491D611D89D949007BB3E3 /* GitFixture.swift */; };
+		145A3D7A1DB805E6003F7EA9 /* XCSPatchBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF45461609ADF1BE25120 /* XCSPatchBotRequest.swift */; };
+		145A3D7B1DB805F1003F7EA9 /* PatchBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEE32CFCE3EEBF716677 /* PatchBotRequestData.swift */; };
 		1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5CBF1D591CBF00F1CA28 /* TestHelpers+Acceptance.swift */; };
 		1484B6061D6267F000319088 /* GitBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144434561D5BDB8900025F90 /* GitBuilder.swift */; };
 		1484B6071D6267F500319088 /* ShouldCreateTemplateFromBotName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484B5461D609C9C00319088 /* ShouldCreateTemplateFromBotName.swift */; };
@@ -1699,6 +1701,7 @@
 				14F9E9B21DAA4A7C00D7F000 /* Dependencies.swift in Sources */,
 				14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				1484B6181D63992C00319088 /* MockNetwork.swift in Sources */,
+				145A3D7B1DB805F1003F7EA9 /* PatchBotRequestData.swift in Sources */,
 				1484B6091D6267FC00319088 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */,
 				14C55A9C1D689A24003B704C /* TestHelpers.swift in Sources */,
 				1484B6071D6267F500319088 /* ShouldCreateTemplateFromBotName.swift in Sources */,
@@ -1743,6 +1746,7 @@
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
 				14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */,
 				35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */,
+				145A3D7A1DB805E6003F7EA9 /* XCSPatchBotRequest.swift in Sources */,
 				35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */,
 				35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */,
 				35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */,

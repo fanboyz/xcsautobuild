@@ -48,11 +48,17 @@ class MockNetwork {
         _ = stub(condition: isHost(testHost) && isMethodPATCH() && isPath("/api/bots/\(id)")) { [unowned self] request in
             let request = request as NSURLRequest
             let body = request.ohhttpStubs_HTTPBody()!
-            self.patchedBotBranchName = FlexiJSON(data: body)["lastRevisionBlueprint"][testPrimaryRepoKey]["DVTSourceControlBranchIdentifierKey"].string
+            self.patchedBotBranchName = FlexiJSON(data: body)["configuration"]["sourceControlBlueprint"]["DVTSourceControlWorkspaceBlueprintLocationsKey"][testPrimaryRepoKey]["DVTSourceControlBranchIdentifierKey"].string
 
             var json = FlexiJSON(data: load("bots_post_response", "json"))
             json["_id"] = FlexiJSON(string: self.stubbedDuplicatedBotID)
             return OHHTTPStubsResponse(data: json.data!, statusCode: 201, headers: nil)
+        }
+    }
+    
+    func stubPatchBot(withID id: String) {
+        _ = stub(condition: isHost(testHost) && isMethodPATCH() && isPath("/api/bots/\(id)")) { _ in
+            return OHHTTPStubsResponse(data: load("bot_get_response", "json"), statusCode: 200, headers: nil)
         }
     }
 

@@ -52,7 +52,7 @@ class NSURLSessionNetwork: Network {
     }
 
     private func body(from request: HTTPRequest) -> Data? {
-        guard let json = request.jsonBody , request.method == .post else { return nil }
+        guard let json = request.jsonBody, request.method != .get else { return nil }
         return try? JSONSerialization.data(withJSONObject: json, options: [])
     }
 }

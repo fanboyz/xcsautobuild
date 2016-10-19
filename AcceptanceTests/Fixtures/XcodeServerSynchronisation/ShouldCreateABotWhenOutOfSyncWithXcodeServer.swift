@@ -31,6 +31,8 @@ class ShouldCreateABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
         mockedNetwork.expectDuplicateBot(id: testTemplateBotID)
         mockedNetwork.stubGetBot(withID: validBotID, name: "develop")
         mockedNetwork.stubGetBotError(withID: invalidBotID, statusCode: 404)
+        mockedNetwork.stubGetBot(withID: newBotID, name: "develop")
+        mockedNetwork.stubPatchBot(withID: newBotID)
         mockedNetwork.stubbedDuplicatedBotID = newBotID
     }
 }

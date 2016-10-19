@@ -24,13 +24,12 @@ let testBotSynchroniser: BotSynchroniser = {
         getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Dependencies.network)),
         duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: Dependencies.network)),
         deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Dependencies.network)),
+        patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(network: Dependencies.network)),
         botTemplateLoader: FileBotTemplatePersister(file: testTemplateFile)
     )
 }()
-class TestClass {}
-let testBundleClass = TestClass.self
+
 let testHost = "seans-macbook-pro-2.local"
-let testBundle = Bundle(for: testBundleClass)
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"
@@ -40,7 +39,6 @@ let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
 let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path, remoteName: "origin", credential: credential)
 private let credential = try! GTCredential(userName: "", password: "")
-let testBotID = "6139a72b95fdeec94b49ec0a1f00191a"
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
     var count = 0

@@ -10,7 +10,7 @@ class XCSPatchBotRequest: XCSRequest {
     }
     
     func createRequest(_ data: PatchBotRequestData) -> HTTPRequest {
-        return HTTPRequest(url: endpoint + "/bots/\(data.id)", method: .patch, jsonBody: data.dictionary)
+        return HTTPRequest(url: endpoint + "bots/\(data.id)", method: .patch, jsonBody: data.dictionary)
     }
     
     func parse(response data: Data) -> Void? {
