@@ -17,7 +17,7 @@ class XCSPatchBotRequestTests: XCTestCase {
     func test_createRequest() {
         let data = PatchBotRequestData(id: "bot_id", dictionary: ["name": "bot_name"])
         let result = request.createRequest(data)
-        XCTAssertEqual(result.url, request.endpoint + "bots/\(data.id)?overwriteBlueprint=true")
+        XCTAssertEqual(result.path, "/bots/\(data.id)?overwriteBlueprint=true")
         XCTAssertEqual(result.method, .patch)
         XCTAssertEqual(result.jsonBody as NSDictionary?, data.dictionary as NSDictionary)
     }

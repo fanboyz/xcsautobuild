@@ -10,7 +10,7 @@ class NSURLSessionNetworkTests: XCTestCase {
     var network: NSURLSessionNetwork!
     var mockedSession: MockNSURLSession!
     let encodedCredentials = "dXNlcm5hbWU6cGFzc3dvcmQ="
-    let configuration = NSURLSessionNetwork.Configuration(username: "username", password: "password")
+    let configuration = NSURLSessionNetwork.Configuration(baseURL: testURL, username: "username", password: "password")
     
     override func setUp() {
         super.setUp()
@@ -75,7 +75,7 @@ class NSURLSessionNetworkTests: XCTestCase {
 
     func test_sendRequest_shouldSetURL() {
         sendRequest()
-        XCTAssertEqual(mockedSession.invokedRequest?.url, testURL)
+        XCTAssertEqual(mockedSession.invokedRequest?.url, URL(string: configuration.baseURL.absoluteString + testRequest.path))
     }
 
     func test_sendRequest_shouldReturnNilStatusCode_whenResponseIsNil() {
@@ -98,15 +98,15 @@ class NSURLSessionNetworkTests: XCTestCase {
     }
 
     func createPostRequest() -> HTTPRequest {
-        return HTTPRequest(url: testURL.absoluteString, method: .post, jsonBody: json())
+        return HTTPRequest(path: testRequest.path, method: .post, jsonBody: json())
     }
 
     func createPatchRequest() -> HTTPRequest {
-        return HTTPRequest(url: testURL.absoluteString, method: .patch, jsonBody: json())
+        return HTTPRequest(path: testRequest.path, method: .patch, jsonBody: json())
     }
 
     func createGetRequestWithJSON() -> HTTPRequest {
-        return HTTPRequest(url: testURL.absoluteString, method: .get, jsonBody: json())
+        return HTTPRequest(path: testRequest.path, method: .get, jsonBody: json())
     }
 
     func json() -> [String: Any] {

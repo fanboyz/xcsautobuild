@@ -18,9 +18,9 @@ class XCSGetBotRequestTests: XCTestCase {
     // MARK: - createRequest
     
     func test_createRequest_shouldBuildPathWithBotID() {
-        let expectedURL = self.request.endpoint + "bots/" + id
+        let expectedPath = "/bots/\(id)"
         let request = createRequest()
-        XCTAssertEqual(request.url, expectedURL)
+        XCTAssertEqual(request.path, expectedPath)
         XCTAssertEqual(request.method, HTTPMethod.get)
         XCTAssertNil(request.jsonBody)
     }

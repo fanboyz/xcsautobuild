@@ -7,6 +7,7 @@ import Foundation
 class NSURLSessionNetwork: Network {
 
     struct Configuration {
+        let baseURL: URL
         let username: String
         let password: String
     }
@@ -37,7 +38,7 @@ class NSURLSessionNetwork: Network {
     }
 
     private func buildRequest(_ httpRequest: HTTPRequest) -> URLRequest {
-        var request = URLRequest(url: URL(string: httpRequest.url)!)
+        var request = URLRequest(url: configuration.baseURL.appendingPathComponent(httpRequest.path))
         request.httpBody = body(from: httpRequest)
         request.httpMethod = httpRequest.method.rawValue
         request.addValue("6", forHTTPHeaderField: "X-XCSClientVersion")

@@ -12,13 +12,13 @@ enum HTTPMethod: String {
 }
 
 struct HTTPRequest: Equatable {
-    var url: String
+    var path: String
     var method: HTTPMethod
     var jsonBody: [String: Any]?
 }
 
 func ==(lhs: HTTPRequest, rhs: HTTPRequest) -> Bool {
-    return lhs.url == rhs.url
+    return lhs.path == rhs.path
         && lhs.method == rhs.method
         && lhs.jsonBody as NSDictionary? == rhs.jsonBody as NSDictionary?
 }

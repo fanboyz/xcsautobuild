@@ -11,7 +11,7 @@ class MockXCSRequest<RequestDataType, ResponseType>: XCSRequest {
     var network: Network = MockNetwork()
 
     var didCreateRequest = false
-    var stubbedRequest = HTTPRequest(url: "", method: .get, jsonBody: [:])
+    var stubbedRequest = HTTPRequest(path: "", method: .get, jsonBody: [:])
     var invokedData: RequestDataType?
     func createRequest(_ data: RequestDataType) -> HTTPRequest {
         didCreateRequest = true

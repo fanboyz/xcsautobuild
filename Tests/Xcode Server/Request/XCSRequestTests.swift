@@ -14,12 +14,6 @@ class XCSRequestTests: XCTestCase {
         super.setUp()
         request = TestXCSRequest()
     }
-
-    // MARK: - endpoint
-
-    func test_endpoint() {
-        XCTAssertEqual(request.endpoint, "https://seans-macbook-pro-2.local:20343/api/")
-    }
     
     // MARK: - send
     

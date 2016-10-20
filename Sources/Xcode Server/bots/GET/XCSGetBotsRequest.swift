@@ -14,7 +14,7 @@ class XCSGetBotsRequest: XCSRequest {
     }
 
     func createRequest(_ data: Void) -> HTTPRequest {
-        return HTTPRequest(url: endpoint + "bots", method: .get, jsonBody: nil)
+        return HTTPRequest(path: "/bots", method: .get, jsonBody: nil)
     }
 
     func parse(response data: Data) -> [RemoteBot]? {

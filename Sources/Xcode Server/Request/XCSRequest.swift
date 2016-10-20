@@ -17,7 +17,6 @@ protocol XCSRequest: class {
     associatedtype RequestDataType
     associatedtype ResponseType
     var network: Network { get }
-    var endpoint: String { get }
     func createRequest(_ data: RequestDataType) -> HTTPRequest
     func send(_ data: RequestDataType, completion: @escaping (XCSResponse<ResponseType>?) -> ())
     func send(_ data: RequestDataType) -> XCSResponse<ResponseType>?
@@ -26,10 +25,6 @@ protocol XCSRequest: class {
 
 extension XCSRequest {
 
-    var endpoint: String {
-        return "https://seans-macbook-pro-2.local:20343/api/"
-    }
-    
     func send(_ data: RequestDataType, completion: @escaping (XCSResponse<ResponseType>?) -> ()) {
         network.send(createRequest(data)) { [weak self] data, statusCode in
             completion(self?.parseResponse(fromData: data, statusCode: statusCode))

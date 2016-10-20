@@ -14,7 +14,7 @@ class XCSDuplicateBotRequest: XCSRequest {
     }
 
     func createRequest(_ data: DuplicateBotRequestData) -> HTTPRequest {
-        return HTTPRequest(url: endpoint + "bots/\(data.id)/duplicate", method: .post, jsonBody: ["name": data.name])
+        return HTTPRequest(path: "/bots/\(data.id)/duplicate", method: .post, jsonBody: ["name": data.name])
     }
 
     func parse(response data: Data) -> String? {

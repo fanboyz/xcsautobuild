@@ -28,8 +28,8 @@ class HTTPRequestTests: XCTestCase {
     // MARK: - Helpers
 
     func isEqual(url: String = "url", method: HTTPMethod = .post, jsonBody: [String: Any] = ["key": "value"]) -> Bool {
-        let request = HTTPRequest(url: url, method: method, jsonBody: jsonBody)
-        let other = HTTPRequest(url: "url", method: .post, jsonBody: ["key": "value"])
+        let request = HTTPRequest(path: url, method: method, jsonBody: jsonBody)
+        let other = HTTPRequest(path: "url", method: .post, jsonBody: ["key": "value"])
         return request == other
     }
 }
