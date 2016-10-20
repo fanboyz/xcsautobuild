@@ -29,7 +29,7 @@ let testBotSynchroniser: BotSynchroniser = {
     )
 }()
 
-let testHost = "xcs-host.local"
+let testHost = Configuration.xcsHostName
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"

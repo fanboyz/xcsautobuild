@@ -13,8 +13,7 @@ class XCSGetBotRequest: XCSRequest {
     }
 
     func createRequest(_ data: String) -> HTTPRequest {
-        let url = "/bots/\(data)"
-        return HTTPRequest(path: url, method: .get, jsonBody: nil)
+        return HTTPRequest(path: "/bots/\(data)", method: .get, jsonBody: nil)
     }
 
     func parse(response data: Data) -> Data? {

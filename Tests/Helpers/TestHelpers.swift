@@ -45,7 +45,7 @@ private func createBot() -> Bot {
 let testRepoFingerprint = "93138D460F513226B44C11D1DC747F2BE36A21CE"
 let testRepoID = "C214B4F4246A49E51CAE71AA5C1349A716302EB4"
 let testBot = createBot()
-let testRequest = HTTPRequest(path: "/test/request/path", method: .get, jsonBody: [:])
+let testRequest = HTTPRequest(path: "/test/request/path?key=value", method: .get, jsonBody: [:])
 let testBranch = Branch(name: "test")
 let testTemplateBotID = "template_bot_id"
 let testTemplateBotJSON = ["name": "template bot", "_id": testTemplateBotID]

@@ -198,11 +198,13 @@
 		35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */; };
 		35CDF95AF2F1667B94A4044A /* XCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* XCSBranchesDataStore.swift */; };
 		35CDFA3520BE3215E9E66397 /* FileXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* FileXCSBranchesDataStore.swift */; };
+		35CDFA55E938A01BC81614A9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF90C51A3C1DB90D66184 /* Configuration.swift */; };
 		35CDFA725F09957C1F56892B /* MockXCSBranchesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */; };
 		35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
 		35CDFD2011F04DE879F89B88 /* XCSBranchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4EE1A641C7ED0882463 /* XCSBranchTests.swift */; };
 		35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
 		35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
+		35CDFE0AC8F5256FD9879715 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7BDBAD28A4C72C56823 /* Configuration.swift */; };
 		35CDFE46EEFE41F27F51E883 /* MockBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */; };
 		35CDFE95A5FCB752CC14DC62 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFF4D4F61AB5A7592A1B7 /* main.swift */; };
 		35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
@@ -421,9 +423,11 @@
 		35CDF6D4EFA814C2FB6665AA /* MockXCSBranchesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockXCSBranchesDataStore.swift; sourceTree = "<group>"; };
 		35CDF6D71A9BDB2677F843C7 /* MockBotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateLoader.swift; sourceTree = "<group>"; };
 		35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldFilterBranchesFromPattern.swift; sourceTree = "<group>"; };
+		35CDF7BDBAD28A4C72C56823 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35CDF7CC983EAEAD723DDF7D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35CDF8651802C0D6A3DA07E2 /* FilePatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePatternDataStore.swift; sourceTree = "<group>"; };
+		35CDF90C51A3C1DB90D66184 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		35CDF99F4BCD0800B6F4B869 /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDataStore.swift; sourceTree = "<group>"; };
 		35CDFA23CE88E81AA01AA7B7 /* XCSResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponseTests.swift; sourceTree = "<group>"; };
@@ -1070,6 +1074,7 @@
 				14CC5CBF1D591CBF00F1CA28 /* TestHelpers+Acceptance.swift */,
 				144434561D5BDB8900025F90 /* GitBuilder.swift */,
 				35CDFA702D87C142BA20BA61 /* Mocks */,
+				35CDF7BDBAD28A4C72C56823 /* Configuration.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1222,6 +1227,7 @@
 				14F9E9A71DAA40D700D7F000 /* Dependencies.swift */,
 				14F9E9A91DAA43E700D7F000 /* Locations.swift */,
 				14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */,
+				35CDF90C51A3C1DB90D66184 /* Configuration.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1634,6 +1640,7 @@
 				35CDF58496D4BC87565A14D0 /* DuplicateBotRequestData.swift in Sources */,
 				35CDF254C7B159442E253604 /* FilePatternDataStore.swift in Sources */,
 				35CDF3B2DFAB1E2F911D4731 /* PatchBotRequestData.swift in Sources */,
+				35CDFA55E938A01BC81614A9 /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1773,6 +1780,7 @@
 				35CDF217D99486016220533C /* XCSDuplicateBotRequest.swift in Sources */,
 				35CDF3754B8E797DDFE3EE02 /* DuplicateBotRequestData.swift in Sources */,
 				35CDF27A72E7210120CC10E1 /* FilePatternDataStore.swift in Sources */,
+				35CDFE0AC8F5256FD9879715 /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2017,7 +2025,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94DC8739FF38FC1AE9389FD6 /* Pods-AcceptanceTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2072,7 +2080,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C0DEDDCEA517D9139E233AC /* Pods-AcceptanceTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
