@@ -34,7 +34,7 @@
                 "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey": [
                                                                             {
                                                                             "DVTSourceControlWorkspaceBlueprintRemoteRepositoryEnforceTrustCertFingerprintKey": true,
-                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey": "https://seans-macbook-pro-2.local/git/xcsautobuild.git",
+                                                                            "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey": "https://xcs-host.local/git/xcsautobuild.git",
                                                                             "DVTSourceControlWorkspaceBlueprintRemoteRepositoryTrustedCertFingerprintKey": "93138D460F513226B44C11D1DC747F2BE36A21CE",
                                                                             "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey": "C214B4F4246A49E51CAE71AA5C1349A716302EB4",
                                                                             "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey": "com.apple.dt.Xcode.sourcecontrol.Git"

@@ -9,7 +9,6 @@ class XcodeServerBotAPI: BotDeleter {
 
     fileprivate let getBotsRequest: AnyXCSRequest<Void, [RemoteBot]>
     fileprivate let getBotRequest: AnyXCSRequest<String, Data>
-    private let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
     private let deleteBotRequest: AnyXCSRequest<String, Void>
 
     init(

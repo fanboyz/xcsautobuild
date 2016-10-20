@@ -12,7 +12,6 @@ class XcodeServerBotAPITests: XCTestCase {
     var mockedGetBotsRequest: MockXCSRequest<Void, [RemoteBot]>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedGetBotRequest: MockXCSRequest<String, Data>!
-    let endpoint = "https://seans-macbook-pro-2.local:20343/api/"
     let botID = "123"
     let botData: Data = {
         return FlexiJSON(dictionary: testBot.toJSON()).data!

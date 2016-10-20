@@ -29,7 +29,7 @@ let testBotSynchroniser: BotSynchroniser = {
     )
 }()
 
-let testHost = "seans-macbook-pro-2.local"
+let testHost = "xcs-host.local"
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"

@@ -9,25 +9,24 @@
 import Cocoa
 import ObjectiveGit
 
+struct Configuration {
+    static let xcsHostName = ""
+    static let xcsUserName = ""
+    static let xcsPassword = ""
+    static let gitRemoteName = ""
+    static let gitDirectory = ""
+    static let gitCredential = GTCredential()
+}
+
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let remoteName = "origin"
-    let directory = "/Users/sean/source/xcsautobuild"
-    let publicKeyURL = ""
-    let privateKeyURL = ""
-    let passphrase = ""
+    
     var interactor: BotSyncingInteractor!
     let windowController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController()! as! NSWindowController
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         try? FileManager.default.createDirectory(at: Locations.directory, withIntermediateDirectories: true, attributes: nil)
-        let credential = try! GTCredential(
-            userName: "git",
-            publicKeyURL: URL(fileURLWithPath: publicKeyURL),
-            privateKeyURL: URL(fileURLWithPath: privateKeyURL),
-            passphrase: passphrase
-        )
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: directory, remoteName: remoteName, credential: credential),
+            branchFetcher: GitBranchFetcher(directory: Configuration.gitDirectory, remoteName: Configuration.gitRemoteName, credential: Configuration.gitCredential),
             botSynchroniser: Dependencies.botSynchroniser,
             branchFilter: Dependencies.wildcardBranchFilter,
             branchesDataStore: FileXCSBranchesDataStore(file: Locations.branchesDataStore.path)
