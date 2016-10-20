@@ -1,17 +1,19 @@
 !3 Should filter branches from pattern
 The user may use exact matches or wildcards (*) to match one or more branches.
 
-|Should filter branches from pattern                                                                          |
-|pattern  |branches                                         |created bots?                                    |
-|*        |develop,feature/1,hotfix/2,release3              |develop,feature/1,hotfix/2,release3              |
-|develop  |develop,feature/1,hotfix/2,release3              |develop                                          |
-|develop  |develop,dev,develop1                             |develop                                          |
-|dev*     |develop,dev,1dev,develop1                        |develop,dev,develop1                             |
-|feature/*|develop,feature/1,hotfix/2,release3              |feature/1                                        |
-|feature/*|feature,feature/1,feature/2,feature/3            |feature/1,feature/2,feature/3                    |
-|*hotfix  |hotfix,hotfix/1,prefix/hotfix                    |hotfix,prefix/hotfix                             |
-|*release*|release,release/1,prefix/release,prefix/release/1|release,release/1,prefix/release,prefix/release/1|
-|*ea*     |develop,feature/1,hotfix/2,release3              |feature/1,release3                               |
+|Should filter branches from pattern                                                                                   |
+|pattern           |branches                                         |created bots?                                    |
+|*                 |develop,feature/1,hotfix/2,release3              |develop,feature/1,hotfix/2,release3              |
+|develop           |develop,feature/1,hotfix/2,release3              |develop                                          |
+|develop           |develop,dev,develop1                             |develop                                          |
+|dev*              |develop,dev,1dev,develop1                        |develop,dev,develop1                             |
+|feature/*         |develop,feature/1,hotfix/2,release3              |feature/1                                        |
+|feature/*         |feature,feature/1,feature/2,feature/3            |feature/1,feature/2,feature/3                    |
+|*hotfix           |hotfix,hotfix/1,prefix/hotfix                    |hotfix,prefix/hotfix                             |
+|*release*         |release,release/1,prefix/release,prefix/release/1|release,release/1,prefix/release,prefix/release/1|
+|*ea*              |develop,feature/1,hotfix/2,release3              |feature/1,release3                               |
+|feature/*,hotfix/*|develop,feature/1,hotfix/2,release3              |feature/1,hotfix/2                               |
+|develop,hotfix/2  |develop,feature/1,hotfix/2,release3              |develop,hotfix/2                                 |
 
 !3 Should delete a bot when the pattern is changed
 |Should delete a bot when the pattern is changed|

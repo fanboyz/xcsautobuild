@@ -1,5 +1,5 @@
+|FrontPage.AcceptanceTests.BranchFilter||21:27:51 Thu, Oct 20, 2016|
 |FrontPage.AcceptanceTests.BotTemplate||13:20:39 Mon, Oct 17, 2016|
-|FrontPage.AcceptanceTests.BranchFilter||15:35:23 Sat, Oct 15, 2016|
 |FrontPage.AcceptanceTests.BotManagement||23:39:30 Fri, Sep 16, 2016|
 |FrontPage.AcceptanceTests.XcodeServerSynchronisation||22:55:16 Fri, Sep 16, 2016|
 |FrontPage.AcceptanceTests.RepositoryConfiguration||21:05:10 Wed, Sep 07, 2016|

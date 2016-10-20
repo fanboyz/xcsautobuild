@@ -16,6 +16,6 @@ class ShouldRememberPatternBetweenLaunches: DecisionTable {
     }
     
     override func test() {
-        restoredPattern = WildcardBranchFilter(patternDataStore: dataStore).pattern
+        restoredPattern = WildcardBranchFilter(patternDataStore: dataStore).patterns.joined()
     }
 }
