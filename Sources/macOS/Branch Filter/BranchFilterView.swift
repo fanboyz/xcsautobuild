@@ -11,12 +11,22 @@ class BranchFilterView: NSTextField {
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
-        target = self
-        action = #selector(BranchFilterView.textDidUpdate)
         stringValue = filterPatternDataStore.load() ?? ""
+        delegate = self
     }
-
-    @objc private func textDidUpdate() {
+    
+    @IBAction func save(_ sender: NSButton?) {
         filterPatternDataStore.save(pattern: stringValue)
+    }
+}
+
+extension BranchFilterView: NSTextFieldDelegate {
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if commandSelector == #selector(NSTextView.insertNewline(_:)) {
+            textView.insertNewlineIgnoringFieldEditor(self)
+            return true
+        }
+        return false
     }
 }

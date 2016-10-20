@@ -20,7 +20,7 @@ class GitBranchFetcher: BranchFetcher {
     func fetchBranches() -> [Branch] {
         guard let remote = try? GTRemote(name: remoteName, in: repo) else { return [] }
         let options: [String: Any] = [
-            GTRepositoryRemoteOptionsFetchPrune: true,
+            GTRepositoryRemoteOptionsFetchPrune: false,
             GTRepositoryRemoteOptionsCredentialProvider: credentialProvider()
         ]
         try! repo.fetch(remote, withOptions: options, progress: nil)

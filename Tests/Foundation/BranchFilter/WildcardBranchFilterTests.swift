@@ -14,7 +14,9 @@ class WildcardBranchFilterTests: XCTestCase {
     let branches = [Branch(name: "feature/1"), Branch(name: "feature/2"), Branch(name: "hotfix/1"), Branch(name: "develop")]
     var featureBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "feature/2")] }
     var oneBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "hotfix/1")] }
-    var eBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "feature/2"), Branch(name: "develop")] }
+    var oneAndDevelopBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "hotfix/1"), Branch(name: "develop")] }
+    var featureAndDevelopBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "feature/2"), Branch(name: "develop")] }
+    var featureAndHotfixBranches: [Branch] { return [Branch(name: "feature/1"), Branch(name: "feature/2"), Branch(name: "hotfix/1")] }
     var developBranches: [Branch] { return [Branch(name: "develop")] }
 
     override func setUp() {
@@ -23,23 +25,43 @@ class WildcardBranchFilterTests: XCTestCase {
         filter = WildcardBranchFilter(patternDataStore: mockedStore)
     }
 
-    // MARK: - pattern
+    // MARK: - patterns
 
-    func test_pattern_shouldLoadFromDataStore() {
-        setPattern("branch/*")
-        XCTAssertEqual(filter.pattern, mockedStore.stubbedPattern)
+    func test_patterns_shouldLoadFromDataStore() {
+        setPatterns("branch/*")
+        XCTAssertEqual(filter.patterns, ["branch/*"])
     }
 
-    func test_pattern_shouldReturnWildcard_whenNoSavedPattern() {
+    func test_patterns_shouldLoadMultilinePatternFromDataStore() {
+        setPatterns("branch/*", "feature/*")
+        XCTAssertEqual(filter.patterns, ["branch/*", "feature/*"])
+    }
+
+    func test_patterns_shouldReturnWildcard_whenNoSavedPattern() {
         setPattern(nil)
-        XCTAssertEqual(filter.pattern, "*")
+        XCTAssertEqual(filter.patterns, ["*"])
+    }
+
+    func test_patterns_shouldReturnWildcard_whenSingleEmptyStringArray() {
+        setPattern("")
+        XCTAssertEqual(filter.patterns, ["*"])
+    }
+
+    func test_patterns_shouldIgnoreEmptyLines() {
+        setPatterns("", "feature/*", "")
+        XCTAssertEqual(filter.patterns, ["feature/*"])
+    }
+
+    func test_patterns_shouldIgnoreWhitespaceOnlyLines() {
+        setPatterns("      ", "feature/*", " ")
+        XCTAssertEqual(filter.patterns, ["feature/*"])
     }
 
     // MARK: - filterBranches
 
-    func test_filterBranches_shouldHandleEmptyString() {
+    func test_filterBranches_shouldReturnAllBranches_whenOnlyEmptyString() {
         setPattern("")
-        XCTAssert(filterBranches().isEmpty)
+        XCTAssertEqual(filterBranches(), branches)
     }
 
     func test_filterBranches_shouldReturnAllBranches_whenOnlyWildcard() {
@@ -64,7 +86,7 @@ class WildcardBranchFilterTests: XCTestCase {
     
     func test_filterBranches_shouldReturnPartialMatches_whenPrefixedAndSuffixedWithWildcard() {
         setPattern("*e*")
-        XCTAssertEqual(filterBranches(), eBranches)
+        XCTAssertEqual(filterBranches(), featureAndDevelopBranches)
     }
 
     func test_filterBranches_shouldReturnPartialMatches_whenMultipleWildcards() {
@@ -94,10 +116,23 @@ class WildcardBranchFilterTests: XCTestCase {
         XCTAssert(filterBranches().isEmpty)
     }
 
+    func test_filterBranches_shouldMatchFromAnyOfTheMultiplePatterns() {
+        setPatterns("feature/*", "hotfix/*")
+        XCTAssertEqual(filterBranches(), featureAndHotfixBranches)
+        setPatterns("f*", "*p")
+        XCTAssertEqual(filterBranches(), featureAndDevelopBranches)
+        setPatterns("*1", "*p")
+        XCTAssertEqual(filterBranches(), oneAndDevelopBranches)
+    }
+
     // MARK: - Helpers
 
     func filterBranches() -> [Branch] {
         return filter.filter(branches)
+    }
+
+    func setPatterns(_ patterns: String...) {
+        mockedStore.stubbedPattern = patterns.joined(separator: "\n")
     }
 
     func setPattern(_ pattern: String?) {

@@ -6,9 +6,14 @@ import Foundation
 
 class WildcardBranchFilter: BranchFilter {
 
-    var pattern: String {
-        return patternDataStore.load() ?? wildcard
+    var patterns: [String] {
+        let result = patternDataStore.load()?
+            .components(separatedBy: "\n")
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { $0 != "" } ?? ["*"]
+        return result.count > 0 ? result : ["*"]
     }
+    
     private let wildcard = "*"
     private let patternDataStore: PatternDataStore
 
@@ -17,16 +22,17 @@ class WildcardBranchFilter: BranchFilter {
     }
 
     func filter(_ branches: [Branch]) -> [Branch] {
-        if pattern == "" { return [] }
-        let escaped = escapeSpecialCharacters(in: pattern)
+        let escaped = escapeSpecialCharacters(in: patterns)
         let regexPattern = replaceWildcardWithRegexWildcard(escaped)
         let strictPattern = matchFromBeginningAndToEnd(regexPattern)
         return filter(branches, withPattern: strictPattern)
     }
 
-    private func escapeSpecialCharacters(in string: String) -> String {
+    private func escapeSpecialCharacters(in patterns: [String]) -> String {
         let matching = try! NSRegularExpression(pattern: specialCharacterPattern(), options: [])
-        return matching.stringByReplacingMatches(in: pattern, options: [], range: NSRange(0..<pattern.utf16.count), withTemplate: "\\\\$1")
+        return patterns.map { pattern in
+            matching.stringByReplacingMatches(in: pattern, options: [], range: NSRange(0..<pattern.utf16.count), withTemplate: "\\\\$1")
+        }.joined(separator: "|")
     }
 
     private func filter(_ branches: [Branch], withPattern pattern: String) -> [Branch] {
