@@ -125,7 +125,25 @@ class WildcardBranchFilterTests: XCTestCase {
         XCTAssertEqual(filterBranches(), oneAndDevelopBranches)
     }
 
+    func test_filterBranches_shouldBeCaseInsensitive() {
+        setPattern("feature/*")
+        let result = filter("Feature/1", "FEATURE/2", "FeATurE/3")
+        XCTAssertEqual(result, self.branches("Feature/1", "FEATURE/2", "FeATurE/3"))
+    }
+
     // MARK: - Helpers
+
+    func filter(_ branches: String...) -> [Branch] {
+        return filter.filter(self.branches(branches))
+    }
+
+    func branches(_ branches: String...) -> [Branch] {
+        return self.branches(branches)
+    }
+
+    func branches(_ branches: [String]) -> [Branch] {
+        return branches.map { Branch(name: $0) }
+    }
 
     func filterBranches() -> [Branch] {
         return filter.filter(branches)

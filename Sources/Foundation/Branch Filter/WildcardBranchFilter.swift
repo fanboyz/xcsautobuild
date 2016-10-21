@@ -36,7 +36,7 @@ class WildcardBranchFilter: BranchFilter {
     }
 
     private func filter(_ branches: [Branch], withPattern pattern: String) -> [Branch] {
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let regex = try! NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
         return branches.filter { regex.numberOfMatches(in: $0.name, options: [], range: NSMakeRange(0, $0.name.characters.count)) > 0 }
     }
 
