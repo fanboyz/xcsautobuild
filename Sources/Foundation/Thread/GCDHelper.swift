@@ -1,7 +1,7 @@
 
 import Foundation
 
-class GCDHelper: MainThreadCompletable {
+class GCDHelper {
 
     func wrapInMainThread<T>(_ closure: ((T) -> ())?) -> (T) -> () {
         let closure = nonnullClosure(closure)

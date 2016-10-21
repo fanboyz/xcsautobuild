@@ -20,14 +20,11 @@
 		143EE44A1D6B7066002A2436 /* MockTemplateCreatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4491D6B7066002A2436 /* MockTemplateCreatingInteractor.swift */; };
 		143EE44E1D6B71C2002A2436 /* TextFieldBotTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE44D1D6B71C2002A2436 /* TextFieldBotTemplateView.swift */; };
 		143EE4501D6B75D1002A2436 /* BotTemplateLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE44F1D6B75D1002A2436 /* BotTemplateLauncher.swift */; };
-		143EE4591D6B84FB002A2436 /* MainThreadCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */; };
 		143EE45B1D6B851E002A2436 /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45A1D6B851E002A2436 /* GCDHelper.swift */; };
 		143EE45E1D6B8543002A2436 /* GCDHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */; };
-		143EE4601D6B85AA002A2436 /* MockMainThreadCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */; };
 		143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */; };
 		143EE4641D6B90E9002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */; };
 		143EE4651D6B90EF002A2436 /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE45A1D6B851E002A2436 /* GCDHelper.swift */; };
-		143EE4661D6B90F2002A2436 /* MainThreadCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */; };
 		144434581D5CF69B00025F90 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
 		144434591D5CF69B00025F90 /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1444345E1D5D1EDF00025F90 /* ObjectiveGit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -50,6 +47,16 @@
 		1484B6201D63AA1300319088 /* bot_get_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1484B61F1D63AA1300319088 /* bot_get_response.json */; };
 		14887E211D663C5F009E245C /* ShouldPersistBotTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14887E201D663C5F009E245C /* ShouldPersistBotTemplate.swift */; };
 		14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14887E241D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift */; };
+		148CBC131DBAB15300598709 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC121DBAB15300598709 /* CommandLine.swift */; };
+		148CBC161DBAB21300598709 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC141DBAB21300598709 /* DataLoader.swift */; };
+		148CBC171DBAB21300598709 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC151DBAB21300598709 /* DataWriter.swift */; };
+		148CBC1A1DBAB24600598709 /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC181DBAB24600598709 /* MockDataLoader.swift */; };
+		148CBC1B1DBAB24600598709 /* MockDataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC191DBAB24600598709 /* MockDataWriter.swift */; };
+		148CBC1C1DBAB26400598709 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC141DBAB21300598709 /* DataLoader.swift */; };
+		148CBC1D1DBAB26400598709 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC151DBAB21300598709 /* DataWriter.swift */; };
+		148CBC1F1DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */; };
+		148CBC201DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */; };
+		148CBC251DBAB3DC00598709 /* MockPatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */; };
 		1495437F1DB41819004B97F1 /* FlexiJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; };
 		149543801DB41819004B97F1 /* FlexiJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		149543811DB41819004B97F1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
@@ -76,14 +83,10 @@
 		14C55A151D6899AF003B704C /* BotTemplateSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DB1D6899AF003B704C /* BotTemplateSaver.swift */; };
 		14C55A161D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DD1D6899AF003B704C /* BotTemplateCreatingInteractor.swift */; };
 		14C55A171D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DD1D6899AF003B704C /* BotTemplateCreatingInteractor.swift */; };
-		14C55A181D6899AF003B704C /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DF1D6899AF003B704C /* CommandLine.swift */; };
-		14C55A191D6899AF003B704C /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559DF1D6899AF003B704C /* CommandLine.swift */; };
 		14C55A1C1D6899AF003B704C /* FileBotTemplateDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E31D6899AF003B704C /* FileBotTemplateDataStore.swift */; };
 		14C55A1D1D6899AF003B704C /* FileBotTemplateDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E31D6899AF003B704C /* FileBotTemplateDataStore.swift */; };
 		14C55A201D6899AF003B704C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E61D6899AF003B704C /* Command.swift */; };
 		14C55A211D6899AF003B704C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E61D6899AF003B704C /* Command.swift */; };
-		14C55A221D6899AF003B704C /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E71D6899AF003B704C /* DataLoader.swift */; };
-		14C55A231D6899AF003B704C /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E71D6899AF003B704C /* DataLoader.swift */; };
 		14C55A241D6899AF003B704C /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E91D6899AF003B704C /* HTTPRequest.swift */; };
 		14C55A251D6899AF003B704C /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E91D6899AF003B704C /* HTTPRequest.swift */; };
 		14C55A261D6899AF003B704C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EA1D6899AF003B704C /* Network.swift */; };
@@ -117,8 +120,6 @@
 		14C55A841D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A551D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift */; };
 		14C55A851D6899BE003B704C /* FileBotTemplateDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A581D6899BE003B704C /* FileBotTemplateDataStoreTests.swift */; };
 		14C55A871D6899BE003B704C /* MockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5B1D6899BE003B704C /* MockCommand.swift */; };
-		14C55A881D6899BE003B704C /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5C1D6899BE003B704C /* MockDataLoader.swift */; };
-		14C55A891D6899BE003B704C /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5D1D6899BE003B704C /* MockData.swift */; };
 		14C55A8A1D6899BE003B704C /* MockNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */; };
 		14C55A8B1D6899BE003B704C /* MockNSURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */; };
 		14C55A8C1D6899BE003B704C /* TestHelpers+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A611D6899BE003B704C /* TestHelpers+XCTest.swift */; };
@@ -139,8 +140,6 @@
 		14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A6E1D552875006FCBF8 /* AcceptanceTests.m */; };
 		14E53A771D552933006FCBF8 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E53A761D552933006FCBF8 /* Empty.xib */; };
 		14EEB60A1D5A53060074C72D /* ObjectiveGit.framework.dSYM in Copy Carthage dSYM */ = {isa = PBXBuildFile; fileRef = 14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */; };
-		14F9E9761DA90EA900D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
-		14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9751DA90EA900D7F000 /* DataWriter.swift */; };
 		14F9E9A61DAA3FE200D7F000 /* BranchFilterLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */; };
 		14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
 		14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
@@ -164,15 +163,12 @@
 		35CDF27A72E7210120CC10E1 /* FilePatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF8651802C0D6A3DA07E2 /* FilePatternDataStore.swift */; };
 		35CDF2D7853E79BB308C6C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35CDFCF8BEDBEDDBDCEC328A /* Main.storyboard */; };
 		35CDF2E6C2BA770DCCF95532 /* XCSDuplicateBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF63E4BB29DD8ABF38CC8 /* XCSDuplicateBotRequestTests.swift */; };
-		35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF356A1580E398FD1CD12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */; };
 		35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */; };
 		35CDF37021A21EDE02A72C01 /* XCSResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFA23CE88E81AA01AA7B7 /* XCSResponseTests.swift */; };
 		35CDF3754B8E797DDFE3EE02 /* DuplicateBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEED7257FD147E04A52D /* DuplicateBotRequestData.swift */; };
-		35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */; };
 		35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
 		35CDF3B2DFAB1E2F911D4731 /* PatchBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEE32CFCE3EEBF716677 /* PatchBotRequestData.swift */; };
-		35CDF41E0617222CC1EA5D79 /* MockPatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2497933622A39AB6277 /* MockPatternDataStore.swift */; };
 		35CDF48DDE12AED013496C64 /* PlistBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* PlistBotDataStore.swift */; };
 		35CDF543E6E93A9CDC48E3F7 /* PatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */; };
 		35CDF56C9E5BC7809F43B9CF /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF544D9207869F43D2FDF /* Bot.swift */; };
@@ -305,10 +301,8 @@
 		143EE4491D6B7066002A2436 /* MockTemplateCreatingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTemplateCreatingInteractor.swift; sourceTree = "<group>"; };
 		143EE44D1D6B71C2002A2436 /* TextFieldBotTemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBotTemplateView.swift; sourceTree = "<group>"; };
 		143EE44F1D6B75D1002A2436 /* BotTemplateLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLauncher.swift; sourceTree = "<group>"; };
-		143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainThreadCompletable.swift; sourceTree = "<group>"; };
 		143EE45A1D6B851E002A2436 /* GCDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDHelper.swift; sourceTree = "<group>"; };
 		143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDHelperTests.swift; sourceTree = "<group>"; };
-		143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainThreadCompletable.swift; sourceTree = "<group>"; };
 		143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadedXcodeServerBotAPI.swift; sourceTree = "<group>"; };
 		144434561D5BDB8900025F90 /* GitBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitBuilder.swift; sourceTree = "<group>"; };
 		144570421DB3AD0600DE67AD /* FlexiJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = FlexiJSON.framework.dSYM; path = Carthage/Build/Mac/FlexiJSON.framework.dSYM; sourceTree = "<group>"; };
@@ -324,6 +318,13 @@
 		1484B61F1D63AA1300319088 /* bot_get_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bot_get_response.json; sourceTree = "<group>"; };
 		14887E201D663C5F009E245C /* ShouldPersistBotTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldPersistBotTemplate.swift; sourceTree = "<group>"; };
 		14887E241D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldOverwriteExistingBotTemplate.swift; sourceTree = "<group>"; };
+		148CBC121DBAB15300598709 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		148CBC141DBAB21300598709 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		148CBC151DBAB21300598709 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
+		148CBC181DBAB24600598709 /* MockDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
+		148CBC191DBAB24600598709 /* MockDataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataWriter.swift; sourceTree = "<group>"; };
+		148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
+		148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPatternDataStore.swift; sourceTree = "<group>"; };
 		1495AC891DB2482D00883F5E /* CI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CI; sourceTree = "<group>"; };
 		14C559CD1D6899AF003B704C /* Branch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		14C559CE1D6899AF003B704C /* RemoteBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteBot.swift; sourceTree = "<group>"; };
@@ -335,10 +336,8 @@
 		14C559DA1D6899AF003B704C /* BotNamesFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNamesFetcher.swift; sourceTree = "<group>"; };
 		14C559DB1D6899AF003B704C /* BotTemplateSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateSaver.swift; sourceTree = "<group>"; };
 		14C559DD1D6899AF003B704C /* BotTemplateCreatingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateCreatingInteractor.swift; sourceTree = "<group>"; };
-		14C559DF1D6899AF003B704C /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		14C559E31D6899AF003B704C /* FileBotTemplateDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBotTemplateDataStore.swift; sourceTree = "<group>"; };
 		14C559E61D6899AF003B704C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		14C559E71D6899AF003B704C /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		14C559E91D6899AF003B704C /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		14C559EA1D6899AF003B704C /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetwork.swift; sourceTree = "<group>"; };
@@ -361,8 +360,6 @@
 		14C55A551D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateCreatingInteractorOutput.swift; sourceTree = "<group>"; };
 		14C55A581D6899BE003B704C /* FileBotTemplateDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBotTemplateDataStoreTests.swift; sourceTree = "<group>"; };
 		14C55A5B1D6899BE003B704C /* MockCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCommand.swift; sourceTree = "<group>"; };
-		14C55A5C1D6899BE003B704C /* MockDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
-		14C55A5D1D6899BE003B704C /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSession.swift; sourceTree = "<group>"; };
 		14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSessionDataTask.swift; sourceTree = "<group>"; };
 		14C55A611D6899BE003B704C /* TestHelpers+XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestHelpers+XCTest.swift"; sourceTree = "<group>"; };
@@ -390,7 +387,6 @@
 		14E53A761D552933006FCBF8 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Empty.xib; path = AcceptanceTests/Empty.xib; sourceTree = SOURCE_ROOT; };
 		14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
 		14EEB6091D5A53060074C72D /* ObjectiveGit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ObjectiveGit.framework.dSYM; path = Carthage/Build/Mac/ObjectiveGit.framework.dSYM; sourceTree = "<group>"; };
-		14F9E9751DA90EA900D7F000 /* DataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWriter.swift; sourceTree = "<group>"; };
 		14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterLauncher.swift; sourceTree = "<group>"; };
 		14F9E9A71DAA40D700D7F000 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		14F9E9A91DAA43E700D7F000 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
@@ -398,7 +394,6 @@
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniserTests.swift; sourceTree = "<group>"; };
 		35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotSynchroniser.swift; sourceTree = "<group>"; };
-		35CDF2497933622A39AB6277 /* MockPatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPatternDataStore.swift; sourceTree = "<group>"; };
 		35CDF276E9296DFDC4AD5BF2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDF3195244D169FC9B96FD /* BotDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDataStore.swift; sourceTree = "<group>"; };
@@ -425,7 +420,6 @@
 		35CDFA23CE88E81AA01AA7B7 /* XCSResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponseTests.swift; sourceTree = "<group>"; };
 		35CDFA8D2FEFC2F134648AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = xcsautobuild_macOS/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSynchroniser.swift; sourceTree = "<group>"; };
-		35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterView.swift; sourceTree = "<group>"; };
 		35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLoader.swift; sourceTree = "<group>"; };
 		35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgnoreMasterBranchFilter.swift; sourceTree = "<group>"; };
@@ -515,7 +509,6 @@
 		143EE4571D6B84F0002A2436 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
-				143EE4581D6B84FB002A2436 /* MainThreadCompletable.swift */,
 				143EE45A1D6B851E002A2436 /* GCDHelper.swift */,
 			);
 			path = Thread;
@@ -525,7 +518,6 @@
 			isa = PBXGroup;
 			children = (
 				143EE45D1D6B8543002A2436 /* GCDHelperTests.swift */,
-				143EE45F1D6B85AA002A2436 /* MockMainThreadCompletable.swift */,
 			);
 			path = Thread;
 			sourceTree = "<group>";
@@ -601,11 +593,26 @@
 			path = GET;
 			sourceTree = "<group>";
 		};
+		148CBC111DBAB15300598709 /* Command Line */ = {
+			isa = PBXGroup;
+			children = (
+				148CBC121DBAB15300598709 /* CommandLine.swift */,
+			);
+			path = "Command Line";
+			sourceTree = "<group>";
+		};
+		148CBC211DBAB3D800598709 /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+				148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */,
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
 		14C559C91D6899AF003B704C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				14C559CA1D6899AF003B704C /* App */,
-				14C559DE1D6899AF003B704C /* Command Line */,
 				14C559E01D6899AF003B704C /* Data */,
 				14C559E51D6899AF003B704C /* Foundation */,
 				143EE44B1D6B715C002A2436 /* macOS */,
@@ -702,18 +709,12 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		14C559DE1D6899AF003B704C /* Command Line */ = {
-			isa = PBXGroup;
-			children = (
-				14C559DF1D6899AF003B704C /* CommandLine.swift */,
-			);
-			path = "Command Line";
-			sourceTree = "<group>";
-		};
 		14C559E01D6899AF003B704C /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				14C559E11D6899AF003B704C /* Persitence */,
+				148CBC141DBAB21300598709 /* DataLoader.swift */,
+				148CBC151DBAB21300598709 /* DataWriter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -731,11 +732,9 @@
 		14C559E51D6899AF003B704C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				148CBC111DBAB15300598709 /* Command Line */,
 				143EE4571D6B84F0002A2436 /* Thread */,
 				14C559E61D6899AF003B704C /* Command.swift */,
-				14C559E71D6899AF003B704C /* DataLoader.swift */,
-				14F9E9751DA90EA900D7F000 /* DataWriter.swift */,
-				35CDF45E34B91196C78E1883 /* Branch Filter */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -928,6 +927,8 @@
 			isa = PBXGroup;
 			children = (
 				14C55A571D6899BE003B704C /* Persistence */,
+				148CBC181DBAB24600598709 /* MockDataLoader.swift */,
+				148CBC191DBAB24600598709 /* MockDataWriter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -947,11 +948,8 @@
 			children = (
 				143EE45C1D6B8539002A2436 /* Thread */,
 				14C55A5B1D6899BE003B704C /* MockCommand.swift */,
-				14C55A5C1D6899BE003B704C /* MockDataLoader.swift */,
-				14C55A5D1D6899BE003B704C /* MockData.swift */,
 				14C55A5E1D6899BE003B704C /* MockNSURLSession.swift */,
 				14C55A5F1D6899BE003B704C /* MockNSURLSessionDataTask.swift */,
-				35CDFDD0BD47F74DF30C9A3B /* BranchFilter */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1147,14 +1145,6 @@
 			path = PATCH;
 			sourceTree = "<group>";
 		};
-		35CDF45E34B91196C78E1883 /* Branch Filter */ = {
-			isa = PBXGroup;
-			children = (
-				35CDFC1AE0F8A8601ABBBD7D /* WildcardBranchFilter.swift */,
-			);
-			path = "Branch Filter";
-			sourceTree = "<group>";
-		};
 		35CDF4FF3CBB3D6513D80414 /* Synchronisation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,7 +1198,8 @@
 		35CDF92EC2FC120BE2ECCEB8 /* Branch Filter */ = {
 			isa = PBXGroup;
 			children = (
-				35CDF2497933622A39AB6277 /* MockPatternDataStore.swift */,
+				148CBC211DBAB3D800598709 /* Gateway */,
+				35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */,
 			);
 			path = "Branch Filter";
 			sourceTree = "<group>";
@@ -1254,14 +1245,6 @@
 			path = POST;
 			sourceTree = "<group>";
 		};
-		35CDFDD0BD47F74DF30C9A3B /* BranchFilter */ = {
-			isa = PBXGroup;
-			children = (
-				35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */,
-			);
-			path = BranchFilter;
-			sourceTree = "<group>";
-		};
 		35CDFE1130C0D3E7693D26A2 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1286,6 +1269,7 @@
 			isa = PBXGroup;
 			children = (
 				35CDF87313D03BA0C08F1323 /* Gateway */,
+				148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */,
 			);
 			path = "Branch Filter";
 			sourceTree = "<group>";
@@ -1562,7 +1546,6 @@
 				14C55A281D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
 				14C55A141D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
 				14C55A0A1D6899AF003B704C /* BotsFetcher.swift in Sources */,
-				143EE4591D6B84FB002A2436 /* MainThreadCompletable.swift in Sources */,
 				14C55A3C1D6899AF003B704C /* AnyXCSRequest.swift in Sources */,
 				14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				143EE43F1D6B6CE3002A2436 /* BotTemplatePresenter.swift in Sources */,
@@ -1574,12 +1557,11 @@
 				14C55A121D6899AF003B704C /* BotNamesFetcher.swift in Sources */,
 				14C55A321D6899AF003B704C /* XCSGetBotRequest.swift in Sources */,
 				14C55A161D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */,
-				14C55A181D6899AF003B704C /* CommandLine.swift in Sources */,
 				14C55A0E1D6899AF003B704C /* BotSyncingInteractor.swift in Sources */,
-				14F9E9761DA90EA900D7F000 /* DataWriter.swift in Sources */,
 				14C55A401D6899AF003B704C /* XcodeServerBotAPI.swift in Sources */,
 				143EE44E1D6B71C2002A2436 /* TextFieldBotTemplateView.swift in Sources */,
 				14F9E9A61DAA3FE200D7F000 /* BranchFilterLauncher.swift in Sources */,
+				148CBC131DBAB15300598709 /* CommandLine.swift in Sources */,
 				14C55A061D6899AF003B704C /* BotCreator.swift in Sources */,
 				14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */,
 				14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */,
@@ -1588,14 +1570,13 @@
 				143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
 				14C55A341D6899AF003B704C /* XCSGetBotsRequest.swift in Sources */,
 				14C55A3E1D6899AF003B704C /* XCSRequest.swift in Sources */,
-				14C55A221D6899AF003B704C /* DataLoader.swift in Sources */,
 				14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */,
 				14C55A1C1D6899AF003B704C /* FileBotTemplateDataStore.swift in Sources */,
 				143EE4461D6B6DD8002A2436 /* BotTemplateView.swift in Sources */,
 				143EE45B1D6B851E002A2436 /* GCDHelper.swift in Sources */,
+				148CBC1F1DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */,
 				14C55A301D6899AF003B704C /* XCSDeleteBotRequest.swift in Sources */,
 				35CDF588AD0C837979D5A9DE /* BranchFilter.swift in Sources */,
-				35CDF376F61A86BCA24CDAB1 /* WildcardBranchFilter.swift in Sources */,
 				35CDF543E6E93A9CDC48E3F7 /* PatternDataStore.swift in Sources */,
 				35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */,
 				35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */,
@@ -1603,6 +1584,8 @@
 				35CDFE95A5FCB752CC14DC62 /* main.swift in Sources */,
 				35CDF1767F0F3594D82388C6 /* BotTemplateLoader.swift in Sources */,
 				35CDF66BB9CB5812FE8C2450 /* BotDataStore.swift in Sources */,
+				148CBC161DBAB21300598709 /* DataLoader.swift in Sources */,
+				148CBC171DBAB21300598709 /* DataWriter.swift in Sources */,
 				35CDFA3520BE3215E9E66397 /* PlistBotDataStore.swift in Sources */,
 				35CDF56C9E5BC7809F43B9CF /* Bot.swift in Sources */,
 				35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */,
@@ -1629,14 +1612,13 @@
 				14C55A951D6899BE003B704C /* XCSGetBotsRequestTests.swift in Sources */,
 				14C55A8B1D6899BE003B704C /* MockNSURLSessionDataTask.swift in Sources */,
 				143EE4421D6B6CFB002A2436 /* BotTemplatePresenterTests.swift in Sources */,
-				143EE4601D6B85AA002A2436 /* MockMainThreadCompletable.swift in Sources */,
-				14C55A881D6899BE003B704C /* MockDataLoader.swift in Sources */,
 				143EE44A1D6B7066002A2436 /* MockTemplateCreatingInteractor.swift in Sources */,
 				14C55A981D6899BE003B704C /* AnyXCSRequestTests.swift in Sources */,
 				14C55A7C1D6899BE003B704C /* MockBotCreator.swift in Sources */,
 				14C55A8D1D6899BE003B704C /* TestHelpers.swift in Sources */,
 				14C55A901D6899BE003B704C /* NSURLSessionNetworkTests.swift in Sources */,
 				143EE45E1D6B8543002A2436 /* GCDHelperTests.swift in Sources */,
+				148CBC1B1DBAB24600598709 /* MockDataWriter.swift in Sources */,
 				14C55A811D6899BE003B704C /* MockBotTemplateSaver.swift in Sources */,
 				14C55A991D6899BE003B704C /* MockXCSRequest.swift in Sources */,
 				14C55A7B1D6899BE003B704C /* BranchTests.swift in Sources */,
@@ -1644,14 +1626,15 @@
 				14C55A871D6899BE003B704C /* MockCommand.swift in Sources */,
 				14C55A921D6899BE003B704C /* MockBranchFetcher.swift in Sources */,
 				14C55A7F1D6899BE003B704C /* BotSyncingInteractorTests.swift in Sources */,
+				148CBC251DBAB3DC00598709 /* MockPatternDataStore.swift in Sources */,
 				14C55A8E1D6899BE003B704C /* HTTPRequestTests.swift in Sources */,
 				14C55A931D6899BE003B704C /* XCSDeleteBotRequestTests.swift in Sources */,
 				14C55A9A1D6899BE003B704C /* XCSRequestTests.swift in Sources */,
 				14C55A8C1D6899BE003B704C /* TestHelpers+XCTest.swift in Sources */,
-				14C55A891D6899BE003B704C /* MockData.swift in Sources */,
 				14C55A801D6899BE003B704C /* BotTemplateTests.swift in Sources */,
 				14C55A9B1D6899BE003B704C /* XcodeServerBotAPITests.swift in Sources */,
 				14C55A831D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift in Sources */,
+				148CBC1A1DBAB24600598709 /* MockDataLoader.swift in Sources */,
 				35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */,
 				35CDF5B87C953F301340FD3E /* WildcardBranchFilterTests.swift in Sources */,
 				35CDF5B07D2103F440BA2F9C /* MockBotTemplateLoader.swift in Sources */,
@@ -1663,7 +1646,6 @@
 				35CDF37021A21EDE02A72C01 /* XCSResponseTests.swift in Sources */,
 				35CDF2E6C2BA770DCCF95532 /* XCSDuplicateBotRequestTests.swift in Sources */,
 				35CDFFA53FEEACC6B0FFD55B /* FilePatternDataStoreTests.swift in Sources */,
-				35CDF41E0617222CC1EA5D79 /* MockPatternDataStore.swift in Sources */,
 				35CDF23DA78DA8D9003F59BB /* XCSPatchBotRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1682,11 +1664,9 @@
 				1484B6091D6267FC00319088 /* ShouldDeleteBotWhenAnOldBranchIsDeleted.swift in Sources */,
 				14C55A9C1D689A24003B704C /* TestHelpers.swift in Sources */,
 				1484B6071D6267F500319088 /* ShouldCreateTemplateFromBotName.swift in Sources */,
-				14C55A191D6899AF003B704C /* CommandLine.swift in Sources */,
 				14C55A2F1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				14C55A171D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */,
 				14C55A0B1D6899AF003B704C /* BotsFetcher.swift in Sources */,
-				143EE4661D6B90F2002A2436 /* MainThreadCompletable.swift in Sources */,
 				14C55A291D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
 				1484B6061D6267F000319088 /* GitBuilder.swift in Sources */,
 				14C55A151D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
@@ -1699,7 +1679,6 @@
 				14C55A211D6899AF003B704C /* Command.swift in Sources */,
 				14C55A0F1D6899AF003B704C /* BotSyncingInteractor.swift in Sources */,
 				14C55A251D6899AF003B704C /* HTTPRequest.swift in Sources */,
-				14C55A231D6899AF003B704C /* DataLoader.swift in Sources */,
 				14C55A051D6899AF003B704C /* RemoteBot.swift in Sources */,
 				14C55A331D6899AF003B704C /* XCSGetBotRequest.swift in Sources */,
 				14F9E9B31DAA4A7C00D7F000 /* Locations.swift in Sources */,
@@ -1719,10 +1698,9 @@
 				14F9E9B91DAA4B0500D7F000 /* BotTemplatePresenter.swift in Sources */,
 				14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */,
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,
-				14F9E9771DAA35AD00D7F000 /* DataWriter.swift in Sources */,
+				148CBC1C1DBAB26400598709 /* DataLoader.swift in Sources */,
 				35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */,
 				145A3D7A1DB805E6003F7EA9 /* XCSPatchBotRequest.swift in Sources */,
-				35CDF3345795A661B1F6B3BB /* WildcardBranchFilter.swift in Sources */,
 				35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */,
 				35CDF36098C8CCD77A950E5C /* MockBranchFilter.swift in Sources */,
 				35CDF03B4F23EB005EB0DED8 /* MockBotDeleter.swift in Sources */,
@@ -1742,11 +1720,13 @@
 				14F9E9B41DAA4A7C00D7F000 /* BotNameConverter.swift in Sources */,
 				35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */,
 				35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */,
+				148CBC1D1DBAB26400598709 /* DataWriter.swift in Sources */,
 				141403BD1DB2764200D6D6B5 /* ShouldRememberPatternBetweenLaunches.swift in Sources */,
 				35CDFE46EEFE41F27F51E883 /* MockBotSynchroniser.swift in Sources */,
 				35CDFA725F09957C1F56892B /* MockBotDataStore.swift in Sources */,
 				35CDF217D99486016220533C /* XCSDuplicateBotRequest.swift in Sources */,
 				35CDF3754B8E797DDFE3EE02 /* DuplicateBotRequestData.swift in Sources */,
+				148CBC201DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */,
 				35CDF27A72E7210120CC10E1 /* FilePatternDataStore.swift in Sources */,
 				35CDFE0AC8F5256FD9879715 /* Configuration.swift in Sources */,
 			);
