@@ -7,5 +7,7 @@ struct Configuration {
     static let xcsPassword = ""
     static let gitRemoteName = ""
     static let gitDirectory = ""
-    static let gitCredential = GTCredential()
+    static let gitCredentialProvider = GTCredentialProvider { _ in
+        return try! GTCredential()
+    }
 }

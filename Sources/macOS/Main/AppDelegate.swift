@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         try? FileManager.default.createDirectory(at: Locations.directory, withIntermediateDirectories: true, attributes: nil)
         interactor = BotSyncingInteractor(
-            branchFetcher: GitBranchFetcher(directory: Configuration.gitDirectory, remoteName: Configuration.gitRemoteName, credential: Configuration.gitCredential),
+            branchFetcher: GitBranchFetcher(directory: Configuration.gitDirectory, remoteName: Configuration.gitRemoteName, credentialProvider: Configuration.gitCredentialProvider),
             botSynchroniser: Dependencies.botSynchroniser,
             branchFilter: Dependencies.wildcardBranchFilter,
             branchesDataStore: FileXCSBranchesDataStore(file: Locations.branchesDataStore.path)

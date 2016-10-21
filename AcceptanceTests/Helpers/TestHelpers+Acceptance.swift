@@ -37,7 +37,7 @@ let testFilterPatternFile = testPath + "templates"
 let testGitPath = testPath + "git/"
 let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
-let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path, remoteName: "origin", credential: credential)
+let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path, remoteName: "origin", credentialProvider: Configuration.gitCredentialProvider)
 private let credential = try! GTCredential(userName: "", password: "")
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {

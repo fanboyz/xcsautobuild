@@ -9,11 +9,11 @@ class GitBranchFetcher: BranchFetcher {
 
     private let remoteName: String
     private let repo: GTRepository
-    private let credential: GTCredential
+    private let credentialProvider: GTCredentialProvider
 
-    init(directory: String, remoteName: String, credential: GTCredential) {
+    init(directory: String, remoteName: String, credentialProvider: GTCredentialProvider) {
         self.remoteName = remoteName
-        self.credential = credential
+        self.credentialProvider = credentialProvider
         repo = try! GTRepository(url: URL(fileURLWithPath: directory))
     }
 
@@ -21,7 +21,7 @@ class GitBranchFetcher: BranchFetcher {
         guard let remote = try? GTRemote(name: remoteName, in: repo) else { return [] }
         let options: [String: Any] = [
             GTRepositoryRemoteOptionsFetchPrune: false,
-            GTRepositoryRemoteOptionsCredentialProvider: credentialProvider()
+            GTRepositoryRemoteOptionsCredentialProvider: credentialProvider
         ]
         try! repo.fetch(remote, withOptions: options, progress: nil)
         let branches = try! repo.remoteBranches()
@@ -29,11 +29,5 @@ class GitBranchFetcher: BranchFetcher {
             .filter { $0.remoteName == remoteName }
             .flatMap { $0.shortName }
             .map { Branch(name: $0) }
-    }
-    
-    private func credentialProvider() -> GTCredentialProvider {
-        return GTCredentialProvider { [unowned self] (_, _, _) -> GTCredential in
-            self.credential
-        }
     }
 }
