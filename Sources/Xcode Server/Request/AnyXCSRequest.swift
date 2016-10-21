@@ -3,9 +3,9 @@ import Foundation
 
 class AnyXCSRequest<RequestDataType, ResponseType>: XCSRequest {
 
-    var network: Network { return _networkGetter() }
+    var network: HTTPRequestSender { return _networkGetter() }
     private let _send: (RequestDataType, @escaping (XCSResponse<ResponseType>?) -> ()) -> ()
-    private let _networkGetter: (() -> (Network))
+    private let _networkGetter: (() -> (HTTPRequestSender))
     private let _createRequest: (RequestDataType) -> (HTTPRequest)
     private let _parse: (Data) -> (ResponseType?)
 

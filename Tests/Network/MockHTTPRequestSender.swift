@@ -2,7 +2,7 @@
 import XCTest
 @testable import xcsautobuild
 
-class MockNetwork: Network {
+class MockHTTPRequestSender: HTTPRequestSender {
 
     var didSendRequest = false
     var invokedRequest: HTTPRequest?

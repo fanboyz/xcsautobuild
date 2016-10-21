@@ -3,9 +3,9 @@ import Foundation
 
 class XCSGetBotRequest: XCSRequest {
 
-    let network: Network
+    let network: HTTPRequestSender
 
-    init(network: Network) {
+    init(network: HTTPRequestSender) {
         self.network = network
     }
 

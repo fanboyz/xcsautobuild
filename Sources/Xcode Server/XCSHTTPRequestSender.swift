@@ -1,7 +1,7 @@
 
 import Foundation
 
-class NSURLSessionNetwork: Network {
+class XCSHTTPRequestSender: HTTPRequestSender {
 
     struct Configuration {
         let baseURL: URL

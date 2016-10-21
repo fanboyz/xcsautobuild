@@ -4,7 +4,7 @@ import Foundation
 class Dependencies {
     
     static let wildcardBranchFilter = WildcardBranchFilter(patternDataStore: filePatternDataStore)
-    static let network = NSURLSessionNetwork(configuration: NSURLSessionNetwork.Configuration(baseURL: URL(string: "https://\(Configuration.xcsHostName):20343/api")!, username: Configuration.xcsUserName, password: Configuration.xcsPassword))
+    static let network = XCSHTTPRequestSender(configuration: XCSHTTPRequestSender.Configuration(baseURL: URL(string: "https://\(Configuration.xcsHostName):20343/api")!, username: Configuration.xcsUserName, password: Configuration.xcsPassword))
     
     static let api: ThreadedXcodeServerBotAPI = {
         return ThreadedXcodeServerBotAPI(api: XcodeServerBotAPI(

@@ -5,7 +5,7 @@ import XCTest
 class XCSRequestTests: XCTestCase {
     
     var request: TestXCSRequest!
-    var mockedNetwork: MockNetwork { return request.mockedNetwork }
+    var mockedNetwork: MockHTTPRequestSender { return request.mockedNetwork }
     
     override func setUp() {
         super.setUp()
@@ -95,8 +95,8 @@ class XCSRequestTests: XCTestCase {
 
     class TestXCSRequest: XCSRequest {
 
-        var mockedNetwork = MockNetwork()
-        var network: Network {
+        var mockedNetwork = MockHTTPRequestSender()
+        var network: HTTPRequestSender {
             return mockedNetwork
         }
 

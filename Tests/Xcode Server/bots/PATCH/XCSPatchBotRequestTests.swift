@@ -4,11 +4,11 @@ import XCTest
 class XCSPatchBotRequestTests: XCTestCase {
 
     var request: XCSPatchBotRequest!
-    var mockedNetwork: MockNetwork!
+    var mockedNetwork: MockHTTPRequestSender!
 
     override func setUp() {
         super.setUp()
-        mockedNetwork = MockNetwork()
+        mockedNetwork = MockHTTPRequestSender()
         request = XCSPatchBotRequest(network: mockedNetwork)
     }
 

@@ -10,7 +10,7 @@ class XCSDuplicateBotRequestTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        request = XCSDuplicateBotRequest(network: MockNetwork())
+        request = XCSDuplicateBotRequest(network: MockHTTPRequestSender())
     }
 
     // MARK: - createRequest

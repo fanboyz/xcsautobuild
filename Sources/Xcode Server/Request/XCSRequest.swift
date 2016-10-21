@@ -13,7 +13,7 @@ struct XCSResponse<ResponseType> {
 protocol XCSRequest: class {
     associatedtype RequestDataType
     associatedtype ResponseType
-    var network: Network { get }
+    var network: HTTPRequestSender { get }
     func createRequest(_ data: RequestDataType) -> HTTPRequest
     func send(_ data: RequestDataType, completion: @escaping (XCSResponse<ResponseType>?) -> ())
     func send(_ data: RequestDataType) -> XCSResponse<ResponseType>?

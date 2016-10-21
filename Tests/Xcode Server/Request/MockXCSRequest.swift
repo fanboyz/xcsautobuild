@@ -5,7 +5,7 @@ import XCTest
 class MockXCSRequest<RequestDataType, ResponseType>: XCSRequest {
 
     var endpoint = "endpoint"
-    var network: Network = MockNetwork()
+    var network: HTTPRequestSender = MockHTTPRequestSender()
 
     var didCreateRequest = false
     var stubbedRequest = HTTPRequest(path: "", method: .get, jsonBody: [:])

@@ -2,23 +2,23 @@
 import XCTest
 @testable import xcsautobuild
 
-class NSURLSessionNetworkTests: XCTestCase {
+class XCSHTTPRequestSenderTests: XCTestCase {
     
-    var network: NSURLSessionNetwork!
+    var network: XCSHTTPRequestSender!
     var mockedSession: MockNSURLSession!
     let encodedCredentials = "dXNlcm5hbWU6cGFzc3dvcmQ="
-    let configuration = NSURLSessionNetwork.Configuration(baseURL: testURL, username: "username", password: "password")
+    let configuration = XCSHTTPRequestSender.Configuration(baseURL: testURL, username: "username", password: "password")
     
     override func setUp() {
         super.setUp()
         mockedSession = MockNSURLSession()
-        network = NSURLSessionNetwork(session: mockedSession, configuration: configuration)
+        network = XCSHTTPRequestSender(session: mockedSession, configuration: configuration)
     }
 
     // MARK: - session
 
     func test_session_shouldSetDelegate() {
-        network = NSURLSessionNetwork(configuration: configuration)
+        network = XCSHTTPRequestSender(configuration: configuration)
         XCTAssert(network.session.delegate === network.delegate)
     }
     

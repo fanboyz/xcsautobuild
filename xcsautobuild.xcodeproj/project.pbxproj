@@ -89,10 +89,10 @@
 		14C55A211D6899AF003B704C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E61D6899AF003B704C /* Command.swift */; };
 		14C55A241D6899AF003B704C /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E91D6899AF003B704C /* HTTPRequest.swift */; };
 		14C55A251D6899AF003B704C /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559E91D6899AF003B704C /* HTTPRequest.swift */; };
-		14C55A261D6899AF003B704C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EA1D6899AF003B704C /* Network.swift */; };
-		14C55A271D6899AF003B704C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EA1D6899AF003B704C /* Network.swift */; };
-		14C55A281D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */; };
-		14C55A291D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */; };
+		14C55A261D6899AF003B704C /* HTTPRequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EA1D6899AF003B704C /* HTTPRequestSender.swift */; };
+		14C55A271D6899AF003B704C /* HTTPRequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EA1D6899AF003B704C /* HTTPRequestSender.swift */; };
+		14C55A281D6899AF003B704C /* XCSHTTPRequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EC1D6899AF003B704C /* XCSHTTPRequestSender.swift */; };
+		14C55A291D6899AF003B704C /* XCSHTTPRequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EC1D6899AF003B704C /* XCSHTTPRequestSender.swift */; };
 		14C55A2A1D6899AF003B704C /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EE1D6899AF003B704C /* BranchFetcher.swift */; };
 		14C55A2B1D6899AF003B704C /* BranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559EE1D6899AF003B704C /* BranchFetcher.swift */; };
 		14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F11D6899AF003B704C /* GitBranchFetcher.swift */; };
@@ -125,8 +125,8 @@
 		14C55A8C1D6899BE003B704C /* TestHelpers+XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A611D6899BE003B704C /* TestHelpers+XCTest.swift */; };
 		14C55A8D1D6899BE003B704C /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A621D6899BE003B704C /* TestHelpers.swift */; };
 		14C55A8E1D6899BE003B704C /* HTTPRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A641D6899BE003B704C /* HTTPRequestTests.swift */; };
-		14C55A8F1D6899BE003B704C /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A651D6899BE003B704C /* MockNetwork.swift */; };
-		14C55A901D6899BE003B704C /* NSURLSessionNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A671D6899BE003B704C /* NSURLSessionNetworkTests.swift */; };
+		14C55A8F1D6899BE003B704C /* MockHTTPRequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A651D6899BE003B704C /* MockHTTPRequestSender.swift */; };
+		14C55A901D6899BE003B704C /* XCSHTTPRequestSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A671D6899BE003B704C /* XCSHTTPRequestSenderTests.swift */; };
 		14C55A921D6899BE003B704C /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		14C55A931D6899BE003B704C /* XCSDeleteBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6E1D6899BE003B704C /* XCSDeleteBotRequestTests.swift */; };
 		14C55A941D6899BE003B704C /* XCSGetBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A701D6899BE003B704C /* XCSGetBotRequestTests.swift */; };
@@ -339,8 +339,8 @@
 		14C559E31D6899AF003B704C /* FileBotTemplateDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBotTemplateDataStore.swift; sourceTree = "<group>"; };
 		14C559E61D6899AF003B704C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		14C559E91D6899AF003B704C /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		14C559EA1D6899AF003B704C /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetwork.swift; sourceTree = "<group>"; };
+		14C559EA1D6899AF003B704C /* HTTPRequestSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestSender.swift; sourceTree = "<group>"; };
+		14C559EC1D6899AF003B704C /* XCSHTTPRequestSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSHTTPRequestSender.swift; sourceTree = "<group>"; };
 		14C559EE1D6899AF003B704C /* BranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFetcher.swift; sourceTree = "<group>"; };
 		14C559F11D6899AF003B704C /* GitBranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitBranchFetcher.swift; sourceTree = "<group>"; };
 		14C559F51D6899AF003B704C /* XCSDeleteBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDeleteBotRequest.swift; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 		14C55A611D6899BE003B704C /* TestHelpers+XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestHelpers+XCTest.swift"; sourceTree = "<group>"; };
 		14C55A621D6899BE003B704C /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		14C55A641D6899BE003B704C /* HTTPRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestTests.swift; sourceTree = "<group>"; };
-		14C55A651D6899BE003B704C /* MockNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
-		14C55A671D6899BE003B704C /* NSURLSessionNetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionNetworkTests.swift; sourceTree = "<group>"; };
+		14C55A651D6899BE003B704C /* MockHTTPRequestSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTPRequestSender.swift; sourceTree = "<group>"; };
+		14C55A671D6899BE003B704C /* XCSHTTPRequestSenderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSHTTPRequestSenderTests.swift; sourceTree = "<group>"; };
 		14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFetcher.swift; sourceTree = "<group>"; };
 		14C55A6E1D6899BE003B704C /* XCSDeleteBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDeleteBotRequestTests.swift; sourceTree = "<group>"; };
 		14C55A701D6899BE003B704C /* XCSGetBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotRequestTests.swift; sourceTree = "<group>"; };
@@ -743,18 +743,9 @@
 			isa = PBXGroup;
 			children = (
 				14C559E91D6899AF003B704C /* HTTPRequest.swift */,
-				14C559EA1D6899AF003B704C /* Network.swift */,
-				14C559EB1D6899AF003B704C /* NSURLSession */,
+				14C559EA1D6899AF003B704C /* HTTPRequestSender.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		14C559EB1D6899AF003B704C /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				14C559EC1D6899AF003B704C /* NSURLSessionNetwork.swift */,
-			);
-			path = NSURLSession;
 			sourceTree = "<group>";
 		};
 		14C559ED1D6899AF003B704C /* Version Control */ = {
@@ -779,9 +770,10 @@
 			children = (
 				14C559F31D6899AF003B704C /* bots */,
 				14C559FE1D6899AF003B704C /* Request */,
+				35CDF2285C1C8FA722724293 /* Synchronisation */,
 				14C55A011D6899AF003B704C /* XcodeServerBotAPI.swift */,
 				143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */,
-				35CDF2285C1C8FA722724293 /* Synchronisation */,
+				14C559EC1D6899AF003B704C /* XCSHTTPRequestSender.swift */,
 			);
 			path = "Xcode Server";
 			sourceTree = "<group>";
@@ -967,18 +959,9 @@
 			isa = PBXGroup;
 			children = (
 				14C55A641D6899BE003B704C /* HTTPRequestTests.swift */,
-				14C55A651D6899BE003B704C /* MockNetwork.swift */,
-				14C55A661D6899BE003B704C /* NSURLSession */,
+				14C55A651D6899BE003B704C /* MockHTTPRequestSender.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		14C55A661D6899BE003B704C /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				14C55A671D6899BE003B704C /* NSURLSessionNetworkTests.swift */,
-			);
-			path = NSURLSession;
 			sourceTree = "<group>";
 		};
 		14C55A681D6899BE003B704C /* Version Control */ = {
@@ -994,8 +977,9 @@
 			children = (
 				14C55A6C1D6899BE003B704C /* bots */,
 				14C55A761D6899BE003B704C /* Request */,
-				14C55A7A1D6899BE003B704C /* XcodeServerBotAPITests.swift */,
 				35CDF4FF3CBB3D6513D80414 /* Synchronisation */,
+				14C55A7A1D6899BE003B704C /* XcodeServerBotAPITests.swift */,
+				14C55A671D6899BE003B704C /* XCSHTTPRequestSenderTests.swift */,
 			);
 			path = "Xcode Server";
 			sourceTree = "<group>";
@@ -1543,13 +1527,13 @@
 				14D757291DB549710012E1B6 /* XCSPatchBotRequest.swift in Sources */,
 				14C55A2A1D6899AF003B704C /* BranchFetcher.swift in Sources */,
 				14C55A041D6899AF003B704C /* RemoteBot.swift in Sources */,
-				14C55A281D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
+				14C55A281D6899AF003B704C /* XCSHTTPRequestSender.swift in Sources */,
 				14C55A141D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
 				14C55A0A1D6899AF003B704C /* BotsFetcher.swift in Sources */,
 				14C55A3C1D6899AF003B704C /* AnyXCSRequest.swift in Sources */,
 				14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				143EE43F1D6B6CE3002A2436 /* BotTemplatePresenter.swift in Sources */,
-				14C55A261D6899AF003B704C /* Network.swift in Sources */,
+				14C55A261D6899AF003B704C /* HTTPRequestSender.swift in Sources */,
 				14C55A081D6899AF003B704C /* BotDeleter.swift in Sources */,
 				143EE4501D6B75D1002A2436 /* BotTemplateLauncher.swift in Sources */,
 				14C55A021D6899AF003B704C /* Branch.swift in Sources */,
@@ -1602,7 +1586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C55A8F1D6899BE003B704C /* MockNetwork.swift in Sources */,
+				14C55A8F1D6899BE003B704C /* MockHTTPRequestSender.swift in Sources */,
 				14C55A841D6899BE003B704C /* MockBotTemplateCreatingInteractorOutput.swift in Sources */,
 				14C55A941D6899BE003B704C /* XCSGetBotRequestTests.swift in Sources */,
 				143EE4441D6B6DC9002A2436 /* MockBotTemplateView.swift in Sources */,
@@ -1616,7 +1600,7 @@
 				14C55A981D6899BE003B704C /* AnyXCSRequestTests.swift in Sources */,
 				14C55A7C1D6899BE003B704C /* MockBotCreator.swift in Sources */,
 				14C55A8D1D6899BE003B704C /* TestHelpers.swift in Sources */,
-				14C55A901D6899BE003B704C /* NSURLSessionNetworkTests.swift in Sources */,
+				14C55A901D6899BE003B704C /* XCSHTTPRequestSenderTests.swift in Sources */,
 				143EE45E1D6B8543002A2436 /* GCDHelperTests.swift in Sources */,
 				148CBC1B1DBAB24600598709 /* MockDataWriter.swift in Sources */,
 				14C55A811D6899BE003B704C /* MockBotTemplateSaver.swift in Sources */,
@@ -1667,7 +1651,7 @@
 				14C55A2F1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				14C55A171D6899AF003B704C /* BotTemplateCreatingInteractor.swift in Sources */,
 				14C55A0B1D6899AF003B704C /* BotsFetcher.swift in Sources */,
-				14C55A291D6899AF003B704C /* NSURLSessionNetwork.swift in Sources */,
+				14C55A291D6899AF003B704C /* XCSHTTPRequestSender.swift in Sources */,
 				1484B6061D6267F000319088 /* GitBuilder.swift in Sources */,
 				14C55A151D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
 				14C55A071D6899AF003B704C /* BotCreator.swift in Sources */,
@@ -1687,7 +1671,7 @@
 				141403BB1DB2707000D6D6B5 /* ShouldDeleteABotWhenThePatternIsChanged.swift in Sources */,
 				1484B6051D6267E900319088 /* TestHelpers+Acceptance.swift in Sources */,
 				14491D621D89D949007BB3E3 /* GitFixture.swift in Sources */,
-				14C55A271D6899AF003B704C /* Network.swift in Sources */,
+				14C55A271D6899AF003B704C /* HTTPRequestSender.swift in Sources */,
 				143EE4641D6B90E9002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
 				14C55A091D6899AF003B704C /* BotDeleter.swift in Sources */,
 				14C55A3F1D6899AF003B704C /* XCSRequest.swift in Sources */,

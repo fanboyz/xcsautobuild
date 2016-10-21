@@ -3,9 +3,9 @@ import Foundation
 
 class XCSDeleteBotRequest: XCSRequest {
 
-    let network: Network
+    let network: HTTPRequestSender
 
-    init(network: Network) {
+    init(network: HTTPRequestSender) {
         self.network = network
     }
 
