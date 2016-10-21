@@ -55,10 +55,6 @@ func wait(for seconds: TimeInterval) {
     Thread.sleep(forTimeInterval: seconds)
 }
 
-func load(_ fileName: String, _ ext: String) -> Data! {
-    return (try? Data(contentsOf: URL(fileURLWithPath: testBundle.path(forResource: fileName, ofType: ext)!)))
-}
-
 func fitnesseString(from bool: Bool) -> String {
     return bool ? yes : no
 }

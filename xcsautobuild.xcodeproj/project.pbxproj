@@ -100,10 +100,6 @@
 		14C55A331D6899AF003B704C /* XCSGetBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F71D6899AF003B704C /* XCSGetBotRequest.swift */; };
 		14C55A341D6899AF003B704C /* XCSGetBotsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F81D6899AF003B704C /* XCSGetBotsRequest.swift */; };
 		14C55A351D6899AF003B704C /* XCSGetBotsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559F81D6899AF003B704C /* XCSGetBotsRequest.swift */; };
-		14C55A381D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559FC1D6899AF003B704C /* Bot+JSONTransformable.swift */; };
-		14C55A391D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559FC1D6899AF003B704C /* Bot+JSONTransformable.swift */; };
-		14C55A3A1D6899AF003B704C /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559FD1D6899AF003B704C /* Bot.swift */; };
-		14C55A3B1D6899AF003B704C /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559FD1D6899AF003B704C /* Bot.swift */; };
 		14C55A3C1D6899AF003B704C /* AnyXCSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559FF1D6899AF003B704C /* AnyXCSRequest.swift */; };
 		14C55A3D1D6899AF003B704C /* AnyXCSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C559FF1D6899AF003B704C /* AnyXCSRequest.swift */; };
 		14C55A3E1D6899AF003B704C /* XCSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A001D6899AF003B704C /* XCSRequest.swift */; };
@@ -134,7 +130,6 @@
 		14C55A931D6899BE003B704C /* XCSDeleteBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6E1D6899BE003B704C /* XCSDeleteBotRequestTests.swift */; };
 		14C55A941D6899BE003B704C /* XCSGetBotRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A701D6899BE003B704C /* XCSGetBotRequestTests.swift */; };
 		14C55A951D6899BE003B704C /* XCSGetBotsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A711D6899BE003B704C /* XCSGetBotsRequestTests.swift */; };
-		14C55A971D6899BE003B704C /* Bot+JSONTransformableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A751D6899BE003B704C /* Bot+JSONTransformableTests.swift */; };
 		14C55A981D6899BE003B704C /* AnyXCSRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A771D6899BE003B704C /* AnyXCSRequestTests.swift */; };
 		14C55A991D6899BE003B704C /* MockXCSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A781D6899BE003B704C /* MockXCSRequest.swift */; };
 		14C55A9A1D6899BE003B704C /* XCSRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A791D6899BE003B704C /* XCSRequestTests.swift */; };
@@ -352,8 +347,6 @@
 		14C559F51D6899AF003B704C /* XCSDeleteBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDeleteBotRequest.swift; sourceTree = "<group>"; };
 		14C559F71D6899AF003B704C /* XCSGetBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotRequest.swift; sourceTree = "<group>"; };
 		14C559F81D6899AF003B704C /* XCSGetBotsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotsRequest.swift; sourceTree = "<group>"; };
-		14C559FC1D6899AF003B704C /* Bot+JSONTransformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bot+JSONTransformable.swift"; sourceTree = "<group>"; };
-		14C559FD1D6899AF003B704C /* Bot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bot.swift; sourceTree = "<group>"; };
 		14C559FF1D6899AF003B704C /* AnyXCSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyXCSRequest.swift; sourceTree = "<group>"; };
 		14C55A001D6899AF003B704C /* XCSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSRequest.swift; sourceTree = "<group>"; };
 		14C55A011D6899AF003B704C /* XcodeServerBotAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeServerBotAPI.swift; sourceTree = "<group>"; };
@@ -381,7 +374,6 @@
 		14C55A6E1D6899BE003B704C /* XCSDeleteBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDeleteBotRequestTests.swift; sourceTree = "<group>"; };
 		14C55A701D6899BE003B704C /* XCSGetBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotRequestTests.swift; sourceTree = "<group>"; };
 		14C55A711D6899BE003B704C /* XCSGetBotsRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSGetBotsRequestTests.swift; sourceTree = "<group>"; };
-		14C55A751D6899BE003B704C /* Bot+JSONTransformableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bot+JSONTransformableTests.swift"; sourceTree = "<group>"; };
 		14C55A771D6899BE003B704C /* AnyXCSRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyXCSRequestTests.swift; sourceTree = "<group>"; };
 		14C55A781D6899BE003B704C /* MockXCSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockXCSRequest.swift; sourceTree = "<group>"; };
 		14C55A791D6899BE003B704C /* XCSRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSRequestTests.swift; sourceTree = "<group>"; };
@@ -786,7 +778,6 @@
 			isa = PBXGroup;
 			children = (
 				14C559F31D6899AF003B704C /* bots */,
-				14C559FB1D6899AF003B704C /* Model */,
 				14C559FE1D6899AF003B704C /* Request */,
 				14C55A011D6899AF003B704C /* XcodeServerBotAPI.swift */,
 				143EE4611D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift */,
@@ -821,15 +812,6 @@
 				14C559F81D6899AF003B704C /* XCSGetBotsRequest.swift */,
 			);
 			path = GET;
-			sourceTree = "<group>";
-		};
-		14C559FB1D6899AF003B704C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				14C559FC1D6899AF003B704C /* Bot+JSONTransformable.swift */,
-				14C559FD1D6899AF003B704C /* Bot.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		14C559FE1D6899AF003B704C /* Request */ = {
@@ -1011,7 +993,6 @@
 			isa = PBXGroup;
 			children = (
 				14C55A6C1D6899BE003B704C /* bots */,
-				14C55A741D6899BE003B704C /* Model */,
 				14C55A761D6899BE003B704C /* Request */,
 				14C55A7A1D6899BE003B704C /* XcodeServerBotAPITests.swift */,
 				35CDF4FF3CBB3D6513D80414 /* Synchronisation */,
@@ -1045,14 +1026,6 @@
 				14C55A711D6899BE003B704C /* XCSGetBotsRequestTests.swift */,
 			);
 			path = GET;
-			sourceTree = "<group>";
-		};
-		14C55A741D6899BE003B704C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				14C55A751D6899BE003B704C /* Bot+JSONTransformableTests.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		14C55A761D6899BE003B704C /* Request */ = {
@@ -1593,7 +1566,6 @@
 				14C55A3C1D6899AF003B704C /* AnyXCSRequest.swift in Sources */,
 				14C55A2E1D6899AF003B704C /* GitBranchFetcher.swift in Sources */,
 				143EE43F1D6B6CE3002A2436 /* BotTemplatePresenter.swift in Sources */,
-				14C55A3A1D6899AF003B704C /* Bot.swift in Sources */,
 				14C55A261D6899AF003B704C /* Network.swift in Sources */,
 				14C55A081D6899AF003B704C /* BotDeleter.swift in Sources */,
 				143EE4501D6B75D1002A2436 /* BotTemplateLauncher.swift in Sources */,
@@ -1612,7 +1584,6 @@
 				14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */,
 				14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */,
 				14C55A101D6899AF003B704C /* BotTemplate.swift in Sources */,
-				14C55A381D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */,
 				143EE4481D6B6F27002A2436 /* BotTemplateEventHandler.swift in Sources */,
 				143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
 				14C55A341D6899AF003B704C /* XCSGetBotsRequest.swift in Sources */,
@@ -1679,7 +1650,6 @@
 				14C55A8C1D6899BE003B704C /* TestHelpers+XCTest.swift in Sources */,
 				14C55A891D6899BE003B704C /* MockData.swift in Sources */,
 				14C55A801D6899BE003B704C /* BotTemplateTests.swift in Sources */,
-				14C55A971D6899BE003B704C /* Bot+JSONTransformableTests.swift in Sources */,
 				14C55A9B1D6899BE003B704C /* XcodeServerBotAPITests.swift in Sources */,
 				14C55A831D6899BE003B704C /* BotTemplateCreatingInteractorTests.swift in Sources */,
 				35CDF5BA31BE2FDEBCAAFAB8 /* MockBranchFilter.swift in Sources */,
@@ -1745,9 +1715,7 @@
 				14C55A031D6899AF003B704C /* Branch.swift in Sources */,
 				14E53A701D552875006FCBF8 /* AcceptanceTests.m in Sources */,
 				14F9E9B81DAA4A9100D7F000 /* BotTemplateView.swift in Sources */,
-				14C55A3B1D6899AF003B704C /* Bot.swift in Sources */,
 				14887E211D663C5F009E245C /* ShouldPersistBotTemplate.swift in Sources */,
-				14C55A391D6899AF003B704C /* Bot+JSONTransformable.swift in Sources */,
 				14F9E9B91DAA4B0500D7F000 /* BotTemplatePresenter.swift in Sources */,
 				14887E251D663F33009E245C /* ShouldOverwriteExistingBotTemplate.swift in Sources */,
 				1484B6081D6267FC00319088 /* ShouldAddABotWhenANewBranchIsFound.swift in Sources */,

@@ -14,7 +14,7 @@ class XcodeServerBotAPITests: XCTestCase {
     var mockedGetBotRequest: MockXCSRequest<String, Data>!
     let botID = "123"
     let botData: Data = {
-        return FlexiJSON(dictionary: testBot.toJSON()).data!
+        return load("bot_get_response", "json")
     }()
     let botJSON = ["name": "template"]
     
@@ -94,7 +94,7 @@ class XcodeServerBotAPITests: XCTestCase {
     func test_fetchBotTemplates_shouldConvertBotsToTemplates() {
         stubGetBotsResponse()
         stubGetBotResponse()
-        XCTAssertEqual(fetchBotTemplates(), [BotTemplate(name: "bot1", data: botData)])
+        XCTAssertEqual(fetchBotTemplates(), [BotTemplate(name: testBotName, data: botData)])
     }
 
     func test_fetchBotTemplates_shouldIgnoreBotsWithUnexpectedData() {
