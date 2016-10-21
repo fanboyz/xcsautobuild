@@ -1,8 +1,3 @@
-//
-//  GitFixture.swift
-//
-//
-//
 
 import Foundation
 

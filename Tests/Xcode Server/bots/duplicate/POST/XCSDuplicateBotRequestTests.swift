@@ -1,6 +1,3 @@
-//
-// Created by Sean Henry on 20/09/2016.
-//
 
 import Foundation
 import XCTest

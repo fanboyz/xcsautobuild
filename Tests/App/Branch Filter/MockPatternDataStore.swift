@@ -1,6 +1,3 @@
-//
-// Created by Sean Henry on 15/10/2016.
-//
 
 import Foundation
 @testable import xcsautobuild

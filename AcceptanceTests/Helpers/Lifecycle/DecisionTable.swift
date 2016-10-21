@@ -1,8 +1,3 @@
-//
-//  DecisionTable.swift
-//
-//
-//
 
 import Foundation
 
