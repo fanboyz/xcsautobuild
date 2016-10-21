@@ -60,6 +60,8 @@
 		148CBC2C1DBAB91300598709 /* XCSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC2B1DBAB91300598709 /* XCSResponse.swift */; };
 		148CBC2D1DBAB91300598709 /* XCSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC2B1DBAB91300598709 /* XCSResponse.swift */; };
 		148CBC301DBAB99600598709 /* XCSResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC2F1DBAB99600598709 /* XCSResponseTests.swift */; };
+		148CBC321DBABC8200598709 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC311DBABC8200598709 /* BotNameConverter.swift */; };
+		148CBC331DBABC8200598709 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC311DBABC8200598709 /* BotNameConverter.swift */; };
 		1495437F1DB41819004B97F1 /* FlexiJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; };
 		149543801DB41819004B97F1 /* FlexiJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 142E70E41DB39A61006E5288 /* FlexiJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		149543811DB41819004B97F1 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEB6051D5A523D0074C72D /* ObjectiveGit.framework */; };
@@ -146,10 +148,8 @@
 		14F9E9A61DAA3FE200D7F000 /* BranchFilterLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */; };
 		14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
 		14F9E9AA1DAA43E700D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
-		14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */; };
 		14F9E9B21DAA4A7C00D7F000 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A71DAA40D700D7F000 /* Dependencies.swift */; };
 		14F9E9B31DAA4A7C00D7F000 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9A91DAA43E700D7F000 /* Locations.swift */; };
-		14F9E9B41DAA4A7C00D7F000 /* BotNameConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */; };
 		14F9E9B71DAA4A8C00D7F000 /* BotTemplateEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4471D6B6F27002A2436 /* BotTemplateEventHandler.swift */; };
 		14F9E9B81DAA4A9100D7F000 /* BotTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE4451D6B6DD8002A2436 /* BotTemplateView.swift */; };
 		14F9E9B91DAA4B0500D7F000 /* BotTemplatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EE43E1D6B6CE3002A2436 /* BotTemplatePresenter.swift */; };
@@ -329,6 +329,7 @@
 		148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPatternDataStore.swift; sourceTree = "<group>"; };
 		148CBC2B1DBAB91300598709 /* XCSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponse.swift; sourceTree = "<group>"; };
 		148CBC2F1DBAB99600598709 /* XCSResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponseTests.swift; sourceTree = "<group>"; };
+		148CBC311DBABC8200598709 /* BotNameConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNameConverter.swift; sourceTree = "<group>"; };
 		1495AC891DB2482D00883F5E /* CI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CI; sourceTree = "<group>"; };
 		14C559CD1D6899AF003B704C /* Branch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		14C559CE1D6899AF003B704C /* RemoteBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteBot.swift; sourceTree = "<group>"; };
@@ -394,7 +395,6 @@
 		14F9E9A51DAA3FE200D7F000 /* BranchFilterLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterLauncher.swift; sourceTree = "<group>"; };
 		14F9E9A71DAA40D700D7F000 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		14F9E9A91DAA43E700D7F000 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNameConverter.swift; sourceTree = "<group>"; };
 		35CDF14AAA1BAF05F48938CC /* MockBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBranchFilter.swift; sourceTree = "<group>"; };
 		35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniserTests.swift; sourceTree = "<group>"; };
 		35CDF185418D6BE3B4264457 /* MockBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotSynchroniser.swift; sourceTree = "<group>"; };
@@ -658,6 +658,7 @@
 				14C559CC1D6899AF003B704C /* Entity */,
 				14C559CF1D6899AF003B704C /* Gateway */,
 				14C559D41D6899AF003B704C /* Interactor */,
+				148CBC311DBABC8200598709 /* BotNameConverter.swift */,
 			);
 			path = "Bot Management";
 			sourceTree = "<group>";
@@ -1193,7 +1194,6 @@
 				35CDFF4D4F61AB5A7592A1B7 /* main.swift */,
 				14F9E9A71DAA40D700D7F000 /* Dependencies.swift */,
 				14F9E9A91DAA43E700D7F000 /* Locations.swift */,
-				14F9E9AB1DAA45E500D7F000 /* BotNameConverter.swift */,
 				35CDF90C51A3C1DB90D66184 /* Configuration.swift */,
 			);
 			path = Main;
@@ -1569,7 +1569,6 @@
 				148CBC131DBAB15300598709 /* CommandLine.swift in Sources */,
 				14C55A061D6899AF003B704C /* BotCreator.swift in Sources */,
 				14F9E9A81DAA40D700D7F000 /* Dependencies.swift in Sources */,
-				14F9E9AC1DAA45E500D7F000 /* BotNameConverter.swift in Sources */,
 				14C55A101D6899AF003B704C /* BotTemplate.swift in Sources */,
 				143EE4481D6B6F27002A2436 /* BotTemplateEventHandler.swift in Sources */,
 				143EE4621D6B8E05002A2436 /* ThreadedXcodeServerBotAPI.swift in Sources */,
@@ -1594,6 +1593,7 @@
 				35CDFA3520BE3215E9E66397 /* PlistBotDataStore.swift in Sources */,
 				35CDF56C9E5BC7809F43B9CF /* Bot.swift in Sources */,
 				35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */,
+				148CBC321DBABC8200598709 /* BotNameConverter.swift in Sources */,
 				35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */,
 				35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */,
 				35CDF58496D4BC87565A14D0 /* DuplicateBotRequestData.swift in Sources */,
@@ -1675,6 +1675,7 @@
 				14C55A291D6899AF003B704C /* XCSHTTPRequestSender.swift in Sources */,
 				1484B6061D6267F000319088 /* GitBuilder.swift in Sources */,
 				14C55A151D6899AF003B704C /* BotTemplateSaver.swift in Sources */,
+				148CBC331DBABC8200598709 /* BotNameConverter.swift in Sources */,
 				14C55A071D6899AF003B704C /* BotCreator.swift in Sources */,
 				14C55A131D6899AF003B704C /* BotNamesFetcher.swift in Sources */,
 				14C55A111D6899AF003B704C /* BotTemplate.swift in Sources */,
@@ -1723,7 +1724,6 @@
 				35CDF48DDE12AED013496C64 /* PlistBotDataStore.swift in Sources */,
 				35CDF6A2FBC7C445C9902B59 /* Bot.swift in Sources */,
 				35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */,
-				14F9E9B41DAA4A7C00D7F000 /* BotNameConverter.swift in Sources */,
 				35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */,
 				35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */,
 				148CBC1D1DBAB26400598709 /* DataWriter.swift in Sources */,
