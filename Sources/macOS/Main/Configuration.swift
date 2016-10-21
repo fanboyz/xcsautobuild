@@ -8,6 +8,6 @@ struct Configuration {
     static let gitRemoteName = ""
     static let gitDirectory = ""
     static let gitCredentialProvider = GTCredentialProvider { _ in
-        return try! GTCredential()
+        return GTCredential()
     }
 }
