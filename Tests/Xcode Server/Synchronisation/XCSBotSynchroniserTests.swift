@@ -15,8 +15,8 @@ class XCSBotSynchroniserTests: XCTestCase {
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedPatchBotRequest: MockXCSRequest<PatchBotRequestData, Void>!
     var mockedTemplateLoader: MockBotTemplateLoader!
-    let master = XCSBranch(name: "master", botID: "master_bot_id")
-    let newBranch = XCSBranch(name: "new", botID: nil)
+    let master = Bot(branchName: "master", id: "master_bot_id")
+    let newBot = Bot(branchName: "new", id: nil)
     let newBotID = "new_bot_id"
 
     override func setUp() {
@@ -46,9 +46,9 @@ class XCSBotSynchroniserTests: XCTestCase {
     }
 
     func test_synchroniseBot_shouldCreateBot_whenNoBotID() {
-        synchroniseBot(from: newBranch)
+        synchroniseBot(from: newBot)
         XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.id, testTemplateBotID)
-        XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.name, botName(for: newBranch))
+        XCTAssertEqual(mockedDuplicateBotRequest.invokedData?.name, botName(for: newBot))
     }
 
     func test_synchroniseBot_shouldSendGetBotRequest() {
@@ -75,57 +75,57 @@ class XCSBotSynchroniserTests: XCTestCase {
         XCTAssertFalse(mockedDuplicateBotRequest.didSend)
     }
 
-    func test_synchroniseBot_shouldCompleteWithSameBranch_whenNoTemplate() {
+    func test_synchroniseBot_shouldCompleteWithSameBot_whenNoTemplate() {
         stubNoTemplate()
         XCTAssertEqual(synchroniseBot(from: master), master)
     }
 
-    func test_synchroniseBot_shouldCompleteWithNewBranch_whenBotIDDoesNotExist() {
-        let duplicatedBranch = XCSBranch(name: newBranch.name, botID: newBotID)
-        stubValidDuplicateBotResponse(botID: duplicatedBranch.botID!)
+    func test_synchroniseBot_shouldCompleteWithNewBot_whenBotIDDoesNotExist() {
+        let duplicatedBot = Bot(branchName: newBot.branchName, id: newBotID)
+        stubValidDuplicateBotResponse(botID: duplicatedBot.id!)
         stubValidGetDuplicatedBotResponse()
         stubValidPatchBotResponse()
-        XCTAssertEqual(synchroniseBot(from: newBranch), duplicatedBranch)
+        XCTAssertEqual(synchroniseBot(from: newBot), duplicatedBot)
     }
 
-    func test_synchroniseBot_shouldCompleteWithSameBranch_whenBotIDDoesNotExist_andNetworkRequestFails() {
+    func test_synchroniseBot_shouldCompleteWithSameBot_whenBotIDDoesNotExist_andNetworkRequestFails() {
         stubInvalidDuplicateBotResponse()
-        XCTAssertEqual(synchroniseBot(from: newBranch), newBranch)
+        XCTAssertEqual(synchroniseBot(from: newBot), newBot)
     }
 
-    func test_synchroniseBot_shouldCompleteWithNewBranch_whenBotDoesNotExistOnServer() {
-        let duplicatedBranch = XCSBranch(name: master.name, botID: newBotID)
+    func test_synchroniseBot_shouldCompleteWithNewBot_whenBotDoesNotExistOnServer() {
+        let duplicatedBot = Bot(branchName: master.branchName, id: newBotID)
         stubNotFoundGetBotResponse()
         stubValidDuplicateBotResponse(botID: newBotID)
         stubValidGetDuplicatedBotResponse()
         stubValidPatchBotResponse()
-        XCTAssertEqual(synchroniseBot(from: master), duplicatedBranch)
+        XCTAssertEqual(synchroniseBot(from: master), duplicatedBot)
     }
 
-    func test_synchroniseBot_shouldCompleteWithSameBranch_whenBotAlreadyExistsOnServer() {
+    func test_synchroniseBot_shouldCompleteWithSameBot_whenBotAlreadyExistsOnServer() {
         stubValidGetBotResponse()
         XCTAssertEqual(synchroniseBot(from: master), master)
     }
 
     func test_synchroniseBot_shouldPatchBotBranchName() {
-        let duplicatedBranch = XCSBranch(name: newBranch.name, botID: newBotID)
+        let duplicatedBot = Bot(branchName: newBot.branchName, id: newBotID)
         stubValidGetDuplicatedBotResponse()
         stubValidDuplicateBotResponse(botID: newBotID)
         stubValidPatchBotResponse()
-        XCTAssertEqual(synchroniseBot(from: newBranch), duplicatedBranch)
+        XCTAssertEqual(synchroniseBot(from: newBot), duplicatedBot)
         XCTAssertEqual(mockedPatchBotRequest.invokedData?.id, newBotID)
-        XCTAssertEqual(branchName(fromBotDictionary: mockedPatchBotRequest.invokedData!.dictionary), newBranch.name)
+        XCTAssertEqual(branchName(fromBotDictionary: mockedPatchBotRequest.invokedData!.dictionary), newBot.branchName)
     }
 
-    func test_synchroniseBot_shouldCompleteWithSameBranch_whenFailingToPatch() {
+    func test_synchroniseBot_shouldCompleteWithSameBot_whenFailingToPatch() {
         stubValidDuplicateBotResponse(botID: newBotID)
-        XCTAssertEqual(synchroniseBot(from: newBranch), newBranch)
+        XCTAssertEqual(synchroniseBot(from: newBot), newBot)
     }
 
     // MARK: - deleteBot
 
     func test_deleteBot_shouldCompleteWithTrue_whenNoBotID() {
-        XCTAssert(deleteBot(from: newBranch))
+        XCTAssert(deleteBot(from: newBot))
     }
 
     func test_deleteBot_shouldCompleteWithTrue_whenNetworkRespondsWith404NotFound() {
@@ -150,17 +150,17 @@ class XCSBotSynchroniserTests: XCTestCase {
 
     // MARK: - Helpers
 
-    @discardableResult func synchroniseBot(from branch: XCSBranch) -> XCSBranch {
-        var result: XCSBranch!
-        syncer.synchroniseBot(fromBranch: branch) { b in
+    @discardableResult func synchroniseBot(from bot: Bot) -> Bot {
+        var result: Bot!
+        syncer.synchronise(bot) { b in
             result = b
         }
         return result
     }
 
-    func deleteBot(from branch: XCSBranch) -> Bool {
+    func deleteBot(from bot: Bot) -> Bool {
         var result: Bool!
-        syncer.deleteBot(fromBranch: branch) { r in
+        syncer.delete(bot) { r in
             result = r
         }
         return result
@@ -212,8 +212,8 @@ class XCSBotSynchroniserTests: XCTestCase {
         mockedPatchBotRequest.stubbedResponse = XCSResponse(data: (), statusCode: 200)
     }
 
-    func botName(for branch: XCSBranch) -> String {
-        return "xcsautobuild [\(branch.name)]"
+    func botName(for bot: Bot) -> String {
+        return "xcsautobuild [\(bot.branchName)]"
     }
 
     func branchName(fromBotDictionary dictionary: [String: Any]) -> String? {

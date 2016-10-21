@@ -31,7 +31,7 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
             branchFilter: IgnoreMasterBranchFilter(),
-            branchesDataStore: FileXCSBranchesDataStore(file: testDataStoreFile)
+            botDataStore: FileBotDataStore(file: testDataStoreFile)
         )
     }
 

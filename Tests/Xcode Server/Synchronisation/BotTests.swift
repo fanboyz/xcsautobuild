@@ -6,7 +6,7 @@ import Foundation
 import XCTest
 @testable import xcsautobuild
 
-class XCSBranchTests: XCTestCase {
+class BotTests: XCTestCase {
 
     // MARK: - ==
 
@@ -14,22 +14,22 @@ class XCSBranchTests: XCTestCase {
         XCTAssert(isEqual())
     }
 
-    func test_shouldNotBeEqual_whenNamesAreNotEqual() {
+    func test_shouldNotBeEqual_whenBranchNamesAreNotEqual() {
         XCTAssertFalse(isEqual(name: "different"))
     }
 
-    func test_shouldNotBeEqual_whenBotIDsAreNotEqual() {
-        XCTAssertFalse(isEqual(botID: "different"))
+    func test_shouldNotBeEqual_whenIDsAreNotEqual() {
+        XCTAssertFalse(isEqual(id: "different"))
     }
 
     // MARK: - Helpers
 
     func isEqual(
             name: String = "name",
-            botID: String = "botID"
+            id: String = "botID"
     ) -> Bool {
-        let branch = XCSBranch(name: "name", botID: "botID")
-        let other = XCSBranch(name: name, botID: botID)
-        return branch == other
+        let bot = Bot(branchName: "name", id: "botID")
+        let other = Bot(branchName: name, id: id)
+        return bot == other
     }
 }

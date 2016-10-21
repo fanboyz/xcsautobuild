@@ -40,13 +40,13 @@ class ShouldDeleteBotWhenAnOldBranchIsDeleted: DecisionTable, GitFixture {
         network.stubGetBots(withNames: oldBranchNames, ids: oldBranchIDs)
         oldBranchesArray.forEach { network.expectDeleteBot(id: $0) }
         setUpGit(branches: branchesArray)
-        let branchesDataStore = FileXCSBranchesDataStore(file: testDataStoreFile)
-        oldBranchesArray.forEach { branchesDataStore.save(branch: XCSBranch(name: $0, botID: $0)) }
+        let botDataStore = FileBotDataStore(file: testDataStoreFile)
+        oldBranchesArray.forEach { botDataStore.save(Bot(branchName: $0, id: $0)) }
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
             branchFilter: IgnoreMasterBranchFilter(),
-            branchesDataStore: branchesDataStore
+            botDataStore: botDataStore
         )
     }
 

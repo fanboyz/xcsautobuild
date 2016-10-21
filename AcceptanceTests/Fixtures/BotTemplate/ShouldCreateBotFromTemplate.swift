@@ -34,7 +34,7 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
             branchFilter: IgnoreMasterBranchFilter(),
-            branchesDataStore: MockXCSBranchesDataStore()
+            botDataStore: MockBotDataStore()
         )
     }
 

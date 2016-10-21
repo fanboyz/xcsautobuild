@@ -23,7 +23,7 @@ class ShouldDeleteABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
     override func test() {
         super.test()
         botDeleted = fitnesseString(from: mockedNetwork.deleteBotCount == 1)
-        branchDeleted = fitnesseString(from: branchesDataStore.load(fromBranchName: branch) == nil)
+        branchDeleted = fitnesseString(from: botDataStore.load(fromBranchName: branch) == nil)
     }
 
     override func setUpMockedNetwork() {

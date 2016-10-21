@@ -23,7 +23,7 @@ class ShouldCreateABotWhenOutOfSyncWithXcodeServer: XcodeServerSynchronisation {
     override func test() {
         super.test()
         botCreated = fitnesseString(from: mockedNetwork.duplicateBotCount == 1)
-        branchBotID = branchesDataStore.load(fromBranchName: "develop")?.botID
+        branchBotID = botDataStore.load(fromBranchName: "develop")?.id
     }
 
     override func setUpMockedNetwork() {

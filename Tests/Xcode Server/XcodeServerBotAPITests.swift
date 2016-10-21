@@ -3,7 +3,6 @@
 //
 
 import XCTest
-import FlexiJSON
 @testable import xcsautobuild
 
 class XcodeServerBotAPITests: XCTestCase {

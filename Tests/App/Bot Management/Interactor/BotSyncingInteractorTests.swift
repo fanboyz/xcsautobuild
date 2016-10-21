@@ -11,21 +11,21 @@ class BotSyncingInteractorTests: XCTestCase {
     var mockedBranchFetcher: MockBranchFetcher!
     var mockedBotSynchroniser: MockBotSynchroniser!
     var mockedBranchFilter: MockBranchFilter!
-    var mockedBranchesDataStore: MockXCSBranchesDataStore!
-    let master = XCSBranch(name: "master", botID: "bot_id")
-    let develop = XCSBranch(name: "develop", botID: "bot_id_2")
+    var mockedBotDataStore: MockBotDataStore!
+    let master = Bot(branchName: "master", id: "bot_id")
+    let develop = Bot(branchName: "develop", id: "bot_id_2")
 
     override func setUp() {
         super.setUp()
         mockedBranchFetcher = MockBranchFetcher()
         mockedBotSynchroniser = MockBotSynchroniser()
         mockedBranchFilter = MockBranchFilter()
-        mockedBranchesDataStore = MockXCSBranchesDataStore()
+        mockedBotDataStore = MockBotDataStore()
         interactor = BotSyncingInteractor(
                 branchFetcher: mockedBranchFetcher,
                 botSynchroniser: mockedBotSynchroniser,
                 branchFilter: mockedBranchFilter,
-                branchesDataStore: mockedBranchesDataStore
+                botDataStore: mockedBotDataStore
             )
     }
     
@@ -36,90 +36,90 @@ class BotSyncingInteractorTests: XCTestCase {
         XCTAssert(mockedBranchFetcher.didFetchBranches)
     }
 
-    func test_execute_shouldSyncBranch_whenExistsInStoredBranches() {
-        stubFetchedBranchNames([master.name])
-        stubStoredBranch(master)
+    func test_execute_shouldSyncBot_whenBotBranchNameExistsInBotDataStore() {
+        stubFetchedBranchNames([master.branchName])
+        stubStoredBot(master)
         execute()
-        XCTAssertEqual(synchronisedBranches(), [master])
+        XCTAssertEqual(synchronisedBots(), [master])
     }
 
-    func test_execute_shouldSyncBranches_whenTheyExistInStoredBranches() {
-        stubFetchedBranchNames([develop.name, master.name])
-        stubStoredBranches([master, develop])
+    func test_execute_shouldSyncBots_whenTheirBranchNamesExistInBotDataStore() {
+        stubFetchedBranchNames([develop.branchName, master.branchName])
+        stubStoredBots([master, develop])
         execute()
-        XCTAssertEqual(synchronisedBranches(), [master, develop])
+        XCTAssertEqual(synchronisedBots(), [master, develop])
     }
 
-    func test_execute_shouldSyncBranches_whenTheyDoNotExistInStoredBranches() {
+    func test_execute_shouldSyncBots_whenTheirBranchNamesDoNotExistInBotDataStore() {
         stubFetchedBranchNames(["new"])
         execute()
-        XCTAssertEqual(synchronisedBranches(), [XCSBranch(name: "new", botID: nil)])
+        XCTAssertEqual(synchronisedBots(), [Bot(branchName: "new", id: nil)])
     }
 
     func test_execute_shouldFilterBranches() {
-        let expected = [XCSBranch(name: "3", botID: nil)]
+        let expected = [Bot(branchName: "3", id: nil)]
         let fetchedBranches = ["1", "2", "3"]
         stubFetchedBranchNames(fetchedBranches)
-        stubStoredBranches(expected)
+        stubStoredBots(expected)
         mockedBranchFilter.stubbedFilteredBranches = [Branch(name: "3")]
         execute()
         XCTAssertEqual(filteredBranchNames(), fetchedBranches)
-        XCTAssertEqual(synchronisedBranches(), expected)
+        XCTAssertEqual(synchronisedBots(), expected)
     }
 
-    func test_execute_shouldSaveSynchronisationResults_whenNewBranch() {
-        let newBranch = XCSBranch(name: master.name, botID: nil)
-        stubFetchedBranchNames([master.name])
-        mockedBotSynchroniser.stubbedSynchronisedBranch = newBranch
+    func test_execute_shouldSaveSynchronisationResults_whenNewBot() {
+        let newBot = Bot(branchName: master.branchName, id: nil)
+        stubFetchedBranchNames([master.branchName])
+        mockedBotSynchroniser.stubbedSynchronisedBot = newBot
         execute()
-        XCTAssertEqual(mockedBranchesDataStore.invokedSavedBranch, newBranch)
+        XCTAssertEqual(mockedBotDataStore.invokedSavedBot, newBot)
     }
 
-    func test_execute_shouldSaveSynchronisationResults_whenExistingBranchOutOfSync() {
-        let invalidBranch = XCSBranch(name: master.name, botID: "invalid_bot_id")
-        let validBranch = XCSBranch(name: master.name, botID: "valid_bot_id")
-        stubFetchedBranchNames([master.name])
-        stubStoredBranch(invalidBranch)
-        mockedBotSynchroniser.stubbedSynchronisedBranch = validBranch
+    func test_execute_shouldSaveSynchronisationResults_whenExistingBotOutOfSync() {
+        let invalidBot = Bot(branchName: master.branchName, id: "invalid_bot_id")
+        let validBot = Bot(branchName: master.branchName, id: "valid_bot_id")
+        stubFetchedBranchNames([master.branchName])
+        stubStoredBot(invalidBot)
+        mockedBotSynchroniser.stubbedSynchronisedBot = validBot
         execute()
-        XCTAssertEqual(mockedBranchesDataStore.invokedSavedBranch, validBranch)
+        XCTAssertEqual(mockedBotDataStore.invokedSavedBot, validBot)
     }
 
     func test_execute_shouldDeleteBots_whenStoredBranchIsNotContainedInFilteredBranches() {
-        stubFetchedBranchNames([develop.name])
-        stubStoredBranches([develop, master])
+        stubFetchedBranchNames([develop.branchName])
+        stubStoredBots([develop, master])
         execute()
-        XCTAssertEqual(mockedBotSynchroniser.invokedDeletedBranch, master)
+        XCTAssertEqual(mockedBotSynchroniser.invokedDeletedBot, master)
     }
 
-    func test_execute_shouldDeleteBots_whenStoredBranchesAreNotContainedInFilteredBranches() {
+    func test_execute_shouldDeleteBots_whenStoredBotBranchNamesAreNotContainedInFilteredBranches() {
         stubFetchedBranchNames([])
-        stubStoredBranches([develop, master])
+        stubStoredBots([develop, master])
         execute()
-        XCTAssertEqual(mockedBotSynchroniser.invokedDeletedBranches, [develop, master])
+        XCTAssertEqual(mockedBotSynchroniser.invokedDeletedBots, [develop, master])
     }
 
-    func test_execute_shouldNotDeleteBot_whenStoredBranchIsNotContainedInFilteredBranches() {
-        stubFetchedBranchNames([develop.name])
-        stubStoredBranch(develop)
+    func test_execute_shouldNotDeleteBot_whenStoredBotBranchNameIsNotContainedInFilteredBranches() {
+        stubFetchedBranchNames([develop.branchName])
+        stubStoredBot(develop)
         execute()
-        XCTAssertFalse(mockedBotSynchroniser.didDeleteBot)
+        XCTAssertFalse(mockedBotSynchroniser.didDelete)
     }
 
-    func test_execute_shouldDeleteBranchFromDataStore_whenBotIsDeleted() {
+    func test_execute_shouldDeleteBotFromDataStore_whenBotIsDeleted() {
         stubFetchedBranchNames([])
-        stubStoredBranch(develop)
+        stubStoredBot(develop)
         stubSuccessfulBotDeletion()
         execute()
-        XCTAssertEqual(mockedBranchesDataStore.invokedDeletedBranch, develop)
+        XCTAssertEqual(mockedBotDataStore.invokedDeletedBot, develop)
     }
 
-    func test_execute_shouldNotDeleteBranchFromDataStore_whenDeletingTheBotFails() {
+    func test_execute_shouldNotDeleteBotFromDataStore_whenDeletingTheBotFails() {
         stubFetchedBranchNames([])
-        stubStoredBranch(develop)
+        stubStoredBot(develop)
         stubUnsuccessfulBotDeletion()
         execute()
-        XCTAssertFalse(mockedBranchesDataStore.didDelete)
+        XCTAssertFalse(mockedBotDataStore.didDelete)
     }
 
     // MARK: - Helpers
@@ -134,16 +134,16 @@ class BotSyncingInteractorTests: XCTestCase {
         mockedBranchFetcher.stubbedBranches = branches
     }
 
-    func stubStoredBranch(_ branch: XCSBranch) {
-        stubStoredBranches([branch])
+    func stubStoredBot(_ bot: Bot) {
+        stubStoredBots([bot])
     }
 
-    func stubStoredBranches(_ branches: [XCSBranch]) {
-        mockedBranchesDataStore.stubbedLoadedBranches = branches
+    func stubStoredBots(_ bots: [Bot]) {
+        mockedBotDataStore.stubbedLoadedBots = bots
     }
 
-    func synchronisedBranches() -> [XCSBranch] {
-        return mockedBotSynchroniser.invokedSynchronisedBranches
+    func synchronisedBots() -> [Bot] {
+        return mockedBotSynchroniser.invokedSynchronisedBots
     }
 
     func filteredBranchNames() -> [String] {

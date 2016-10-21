@@ -27,21 +27,21 @@ class XCSBotSynchroniser: BotSynchroniser {
         self.botTemplateLoader = botTemplateLoader
     }
 
-    func synchroniseBot(fromBranch branch: XCSBranch, completion: (XCSBranch) -> ()) {
-        guard let templateID = loadTemplateID(forBranch: branch) else {
-            completion(branch)
+    func synchronise(_ bot: Bot, completion: (Bot) -> ()) {
+        guard let templateID = loadTemplateID() else {
+            completion(bot)
             return
         }
-        guard let botID = branch.botID, doesBotExist(withID: botID) else {
-            let newBranch = createBot(forNewBranch: branch, templateID: templateID)
-            completion(newBranch)
+        guard let botID = bot.id, doesBotExist(withID: botID) else {
+            let newBot = createBot(fromBranchName: bot.branchName, templateID: templateID)
+            completion(newBot)
             return
         }
-        completion(branch)
+        completion(bot)
     }
 
-    func deleteBot(fromBranch branch: XCSBranch, completion: (Bool) -> ()) {
-        guard let botID = branch.botID else {
+    func delete(_ bot: Bot, completion: (Bool) -> ()) {
+        guard let botID = bot.id else {
             completion(true)
             return
         }
@@ -49,18 +49,18 @@ class XCSBotSynchroniser: BotSynchroniser {
         completion(isBotDeleted(fromResponse: response))
     }
 
-    private func loadTemplateID(forBranch branch: XCSBranch) -> String? {
+    private func loadTemplateID() -> String? {
         guard let data = botTemplateLoader.load()?.data else { return nil }
         return FlexiJSON(data: data)["_id"].string
     }
 
-    private func createBot(forNewBranch branch: XCSBranch, templateID: String) -> XCSBranch {
-        let templateData = DuplicateBotRequestData(id: templateID, name: BotNameConverter.convertToBotName(branchName: branch.name))
+    private func createBot(fromBranchName branchName: String, templateID: String) -> Bot {
+        let templateData = DuplicateBotRequestData(id: templateID, name: BotNameConverter.convertToBotName(branchName: branchName))
         if let newBotID = duplicateBotRequest.send(templateData)?.data,
-           patch(branchName: branch.name, ontoBotWithID: newBotID) {
-            return XCSBranch(name: branch.name, botID: newBotID)
+           patch(branchName: branchName, ontoBotWithID: newBotID) {
+            return Bot(branchName: branchName, id: newBotID)
         }
-        return branch
+        return Bot(branchName: branchName, id: nil)
     }
 
     private func patch(branchName: String, ontoBotWithID id: String) -> Bool {

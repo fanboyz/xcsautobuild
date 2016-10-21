@@ -6,8 +6,8 @@ class Locations {
         directory.appendingPathComponent("templates")
     }()
     
-    static let branchesDataStore: URL = {
-        directory.appendingPathComponent("branchesData")
+    static let botDataStore: URL = {
+        directory.appendingPathComponent("botDataStore")
     }()
 
     static let patternFile: URL = {
@@ -16,6 +16,6 @@ class Locations {
     
     static let directory: URL = {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        .appendingPathComponent("codes.seanhenry.xcsautobuild")
+            .appendingPathComponent(Bundle.main.bundleIdentifier!)
     }()
 }

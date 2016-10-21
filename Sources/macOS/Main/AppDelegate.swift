@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             branchFetcher: GitBranchFetcher(directory: Configuration.gitDirectory, remoteName: Configuration.gitRemoteName, credentialProvider: Configuration.gitCredentialProvider),
             botSynchroniser: Dependencies.botSynchroniser,
             branchFilter: Dependencies.wildcardBranchFilter,
-            branchesDataStore: FileXCSBranchesDataStore(file: Locations.branchesDataStore.path)
+            botDataStore: FileBotDataStore(file: Locations.botDataStore.path)
         )
         Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [unowned self] _ in
             self.interactor.execute()

@@ -5,6 +5,6 @@
 import Foundation
 
 protocol BotSynchroniser {
-    func synchroniseBot(fromBranch branch: XCSBranch, completion: (XCSBranch) -> ())
-    func deleteBot(fromBranch branch: XCSBranch, completion: (Bool) -> ())
+    func synchronise(_ bot: Bot, completion: (Bot) -> ())
+    func delete(_ bot: Bot, completion: (Bool) -> ())
 }

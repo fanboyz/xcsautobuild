@@ -9,24 +9,24 @@ class BotSyncingInteractor: Command {
     private let branchFetcher: BranchFetcher
     private let botSynchroniser: BotSynchroniser
     private let branchFilter: BranchFilter
-    private let branchesDataStore: XCSBranchesDataStore
+    private let botDataStore: BotDataStore
 
-    init(branchFetcher: BranchFetcher, botSynchroniser: BotSynchroniser, branchFilter: BranchFilter, branchesDataStore: XCSBranchesDataStore) {
+    init(branchFetcher: BranchFetcher, botSynchroniser: BotSynchroniser, branchFilter: BranchFilter, botDataStore: BotDataStore) {
         self.branchFetcher = branchFetcher
         self.botSynchroniser = botSynchroniser
         self.branchFilter = branchFilter
-        self.branchesDataStore = branchesDataStore
+        self.botDataStore = botDataStore
     }
 
     func execute() {
         let filteredBranches = fetchFilteredBranches()
-        let storedBranches = branchesDataStore.load()
-        let newBranches = findNewBranches(in: filteredBranches, byExcludingMatchingBranchesIn: storedBranches)
-        let existingBranches = findExistingBranches(in: storedBranches, byMatchingBranchesIn: filteredBranches)
-        let deletedBranches = findExpiredBranches(in : storedBranches, byMatchingBranchesIn: filteredBranches)
-        synchroniseBots(from: newBranches)
-        synchroniseBots(from: existingBranches)
-        deleteBots(from: deletedBranches)
+        let storedBots = botDataStore.load()
+        let newBranches = findNewBranches(in: filteredBranches, byExcludingMatchingBotsIn: storedBots)
+        let existingBots = findExistingBots(in: storedBots, byMatchingBranchesIn: filteredBranches)
+        let botsToDelete = findExpiredBots(in: storedBots, byMatchingBranchesIn: filteredBranches)
+        createBots(from: newBranches)
+        synchronise(existingBots)
+        delete(botsToDelete)
     }
 
     private func fetchFilteredBranches() -> [Branch] {
@@ -34,62 +34,58 @@ class BotSyncingInteractor: Command {
         return branchFilter.filter(allBranches)
     }
 
-    private func findNewBranches(in branches: [Branch], byExcludingMatchingBranchesIn excluding: [XCSBranch]) -> [Branch] {
+    private func findNewBranches(in branches: [Branch], byExcludingMatchingBotsIn bots: [Bot]) -> [Branch] {
         return branches.filter { branch in
-            return !excluding.contains(where: sameNames(branch))
+            return !bots.contains(where: sameNames(branch))
         }
     }
 
-    private func sameNames(_ branch: Branch) -> (XCSBranch) -> Bool {
-        return { other in branch.name == other.name }
+    private func sameNames(_ branch: Branch) -> (Bot) -> Bool {
+        return { bot in branch.name == bot.branchName }
     }
 
-    private func findExistingBranches(in branches: [XCSBranch], byMatchingBranchesIn matching: [Branch]) -> [XCSBranch] {
-        return branches.filter { branch in
-            matching.contains(where: sameNames(branch))
+    private func findExistingBots(in bots: [Bot], byMatchingBranchesIn branches: [Branch]) -> [Bot] {
+        return bots.filter { bot in
+            branches.contains(where: sameNames(bot))
         }
     }
 
-    private func findExpiredBranches(in branches: [XCSBranch], byMatchingBranchesIn matching: [Branch]) -> [XCSBranch] {
-        return branches.filter { branch in
-            !matching.contains(where: sameNames(branch))
+    private func findExpiredBots(in bots: [Bot], byMatchingBranchesIn branches: [Branch]) -> [Bot] {
+        return bots.filter { bot in
+            !branches.contains(where: sameNames(bot))
         }
     }
 
-    private func sameNames(_ branch: XCSBranch) -> (Branch) -> Bool {
-        return { other in branch.name == other.name }
+    private func sameNames(_ bot: Bot) -> (Branch) -> Bool {
+        return { branch in bot.branchName == branch.name }
     }
 
-    private func synchroniseBots(from branches: [Branch]) {
-        branches.map(toXCSBranch).forEach(synchroniseBot)
+    private func createBots(from branches: [Branch]) {
+        branches.map(toBot).forEach(synchronise)
     }
 
-    private func toXCSBranch(_ branch: Branch) -> XCSBranch {
-        return newBranch(fromName: branch.name)
+    private func toBot(_ branch: Branch) -> Bot {
+        return Bot(branchName: branch.name, id: nil)
     }
 
-    private func synchroniseBots(from branches: [XCSBranch]) {
-        branches.forEach(synchroniseBot)
+    private func synchronise(_ bots: [Bot]) {
+        bots.forEach(synchronise)
     }
 
-    private func synchroniseBot(from branch: XCSBranch) {
-        botSynchroniser.synchroniseBot(fromBranch: branch) { [weak self] resultBranch in
-            self?.branchesDataStore.save(branch: resultBranch)
+    private func synchronise(_ bot: Bot) {
+        botSynchroniser.synchronise(bot) { [weak self] resultBot in
+            self?.botDataStore.save(resultBot)
         }
     }
 
-    private func newBranch(fromName name: String) -> XCSBranch {
-        return XCSBranch(name: name, botID: nil)
+    private func delete(_ bots: [Bot]) {
+        bots.forEach(delete)
     }
 
-    private func deleteBots(from branches: [XCSBranch]) {
-        branches.forEach(deleteBot)
-    }
-
-    private func deleteBot(from branch: XCSBranch) {
-        botSynchroniser.deleteBot(fromBranch: branch) { [weak self] result in
-            guard result else { return }
-            self?.branchesDataStore.delete(branch: branch)
+    private func delete(_ bot: Bot) {
+        botSynchroniser.delete(bot) { [weak self] isSuccess in
+            guard isSuccess else { return }
+            self?.botDataStore.delete(bot)
         }
     }
 }

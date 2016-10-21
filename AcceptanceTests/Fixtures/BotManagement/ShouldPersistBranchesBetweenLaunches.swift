@@ -44,13 +44,13 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
         network.stubGetBots(withNames: savedBranchNames, ids: savedBranchIDs)
         savedBranchesArray.forEach { network.expectDeleteBot(id: $0) }
         setUpGit(branches: branchesArray)
-        let branchesDataStore = FileXCSBranchesDataStore(file: testDataStoreFile)
-        savedBranchesArray.forEach { branchesDataStore.save(branch: XCSBranch(name: $0, botID: $0)) }
+        let botDataStore = FileBotDataStore(file: testDataStoreFile)
+        savedBranchesArray.forEach { botDataStore.save(Bot(branchName: $0, id: $0)) }
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
             branchFilter: IgnoreMasterBranchFilter(),
-            branchesDataStore: branchesDataStore
+            botDataStore: botDataStore
         )
     }
 

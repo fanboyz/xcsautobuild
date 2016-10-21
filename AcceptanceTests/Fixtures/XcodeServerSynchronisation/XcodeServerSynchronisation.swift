@@ -22,7 +22,7 @@ class XcodeServerSynchronisation: DecisionTable, GitFixture {
     var gitBuilder: GitBuilder!
     var mockedNetwork: MockNetwork!
     var interactor: BotSyncingInteractor!
-    var branchesDataStore: FileXCSBranchesDataStore!
+    var botDataStore: FileBotDataStore!
 
     override func setUp() {
         setUpMockedNetwork()
@@ -30,20 +30,20 @@ class XcodeServerSynchronisation: DecisionTable, GitFixture {
     }
 
     override func test() {
-        setUpBranchesDataStore()
+        setUpBotDataStore()
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
             branchFilter: IgnoreMasterBranchFilter(),
-            branchesDataStore: branchesDataStore
+            botDataStore: botDataStore
         )
 
         interactor.execute()
     }
 
-    private func setUpBranchesDataStore() {
-        branchesDataStore = FileXCSBranchesDataStore(file: testDataStoreFile)
-        branchesDataStore.save(branch: XCSBranch(name: branch, botID: botID))
+    private func setUpBotDataStore() {
+        botDataStore = FileBotDataStore(file: testDataStoreFile)
+        botDataStore.save(Bot(branchName: branch, id: botID))
     }
 
     func setUpMockedNetwork() {
