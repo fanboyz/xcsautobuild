@@ -9,7 +9,6 @@
 import Cocoa
 import ObjectiveGit
 
-
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var interactor: BotSyncingInteractor!
