@@ -3,15 +3,15 @@ import Foundation
 class Locations {
     
     static let botTemplateFile: URL = {
-        directory.appendingPathComponent("templates")
+        directory.appendingPathComponent("botTemplate.json")
     }()
     
-    static let botDataStore: URL = {
-        directory.appendingPathComponent("botDataStore")
+    static let synchronisedBotsFile: URL = {
+        directory.appendingPathComponent("botDataStore.plist")
     }()
 
     static let patternFile: URL = {
-        directory.appendingPathComponent("pattern")
+        directory.appendingPathComponent("pattern.txt")
     }()
     
     static let directory: URL = {

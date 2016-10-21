@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  xcsautobuild_macOS
-//
-//  Created by Sean Henry on 19/07/2016.
-//
-//
 
 import Cocoa
 import ObjectiveGit
@@ -20,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             branchFetcher: GitBranchFetcher(directory: Configuration.gitDirectory, remoteName: Configuration.gitRemoteName, credentialProvider: Configuration.gitCredentialProvider),
             botSynchroniser: Dependencies.botSynchroniser,
             branchFilter: Dependencies.wildcardBranchFilter,
-            botDataStore: FileBotDataStore(file: Locations.botDataStore.path)
+            botDataStore: PlistBotDataStore(file: Locations.synchronisedBotsFile.path)
         )
         Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [unowned self] _ in
             self.interactor.execute()

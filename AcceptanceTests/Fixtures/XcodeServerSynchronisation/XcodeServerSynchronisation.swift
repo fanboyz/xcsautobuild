@@ -17,11 +17,11 @@ class XcodeServerSynchronisation: DecisionTable, GitFixture {
     var gitBuilder: GitBuilder!
     var mockedNetwork: MockNetwork!
     var interactor: BotSyncingInteractor!
-    var botDataStore: FileBotDataStore!
+    var botDataStore: PlistBotDataStore!
 
     override func setUp() {
         setUpMockedNetwork()
-        FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
+        FileBotTemplateDataStore(file: testTemplateFile).save(testBotTemplate)
     }
 
     override func test() {
@@ -37,7 +37,7 @@ class XcodeServerSynchronisation: DecisionTable, GitFixture {
     }
 
     private func setUpBotDataStore() {
-        botDataStore = FileBotDataStore(file: testDataStoreFile)
+        botDataStore = PlistBotDataStore(file: testDataStoreFile)
         botDataStore.save(Bot(branchName: branch, id: botID))
     }
 

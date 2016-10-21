@@ -22,7 +22,7 @@ let testBotSynchroniser: BotSynchroniser = {
         duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: Dependencies.network)),
         deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Dependencies.network)),
         patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(network: Dependencies.network)),
-        botTemplateLoader: FileBotTemplatePersister(file: testTemplateFile)
+        botTemplateLoader: FileBotTemplateDataStore(file: testTemplateFile)
     )
 }()
 

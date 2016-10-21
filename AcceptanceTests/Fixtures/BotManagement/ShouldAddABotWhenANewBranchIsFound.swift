@@ -20,7 +20,7 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
 
     override func setUp() {
         numberOfCreatedBots = nil
-        FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
+        FileBotTemplateDataStore(file: testTemplateFile).save(testBotTemplate)
         network = MockNetwork()
         network.expectDuplicateBot(id: testTemplateBotID)
         setUpGit(branches: branchesArray)
@@ -28,7 +28,7 @@ class ShouldAddABotWhenANewBranchIsFound: DecisionTable, GitFixture {
             branchFetcher: testGitBranchFetcher,
             botSynchroniser: testBotSynchroniser,
             branchFilter: IgnoreMasterBranchFilter(),
-            botDataStore: FileBotDataStore(file: testDataStoreFile)
+            botDataStore: PlistBotDataStore(file: testDataStoreFile)
         )
     }
 

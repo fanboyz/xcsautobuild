@@ -2,9 +2,9 @@
 import XCTest
 @testable import xcsautobuild
 
-class FileBotTemplatePersisterTests: XCTestCase {
+class FileBotTemplateDataStoreTests: XCTestCase {
     
-    var persister: FileBotTemplatePersister!
+    var persister: FileBotTemplateDataStore!
     var mockedDataWriter: MockDataWriter!
     var mockedDataLoader: MockDataLoader!
     let file = "test file"
@@ -13,7 +13,7 @@ class FileBotTemplatePersisterTests: XCTestCase {
         super.setUp()
         mockedDataWriter = MockDataWriter()
         mockedDataLoader = MockDataLoader()
-        persister = FileBotTemplatePersister(file: file, dataLoader: mockedDataLoader, dataWriter: mockedDataWriter)
+        persister = FileBotTemplateDataStore(file: file, dataLoader: mockedDataLoader, dataWriter: mockedDataWriter)
     }
     
     // MARK: - save

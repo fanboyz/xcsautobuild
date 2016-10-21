@@ -1,7 +1,7 @@
 
 import Foundation
 
-class FileBotDataStore: BotDataStore {
+class PlistBotDataStore: BotDataStore {
 
     private let file: String
 

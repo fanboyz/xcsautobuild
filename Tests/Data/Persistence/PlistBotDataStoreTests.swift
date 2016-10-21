@@ -3,9 +3,9 @@ import Foundation
 import XCTest
 @testable import xcsautobuild
 
-class FileBotDataStoreTests: XCTestCase {
+class PlistBotDataStoreTests: XCTestCase {
 
-    var store: FileBotDataStore!
+    var store: PlistBotDataStore!
     var bot: Bot!
     let file = NSTemporaryDirectory() + "TestBots"
     let develop = Bot(branchName: "develop", id: "master_bot_id")
@@ -15,7 +15,7 @@ class FileBotDataStoreTests: XCTestCase {
     override func setUp() {
         super.setUp()
         deleteFile()
-        store = FileBotDataStore(file: file)
+        store = PlistBotDataStore(file: file)
     }
 
     override func tearDown() {

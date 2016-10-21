@@ -2,7 +2,7 @@
 import Foundation
 import FlexiJSON
 
-class FileBotTemplatePersister: BotTemplateSaver, BotTemplateLoader {
+class FileBotTemplateDataStore: BotTemplateSaver, BotTemplateLoader {
 
     private let file: String
     private let dataLoader: DataLoader

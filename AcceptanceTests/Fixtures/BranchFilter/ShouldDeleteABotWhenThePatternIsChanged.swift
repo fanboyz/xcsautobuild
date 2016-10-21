@@ -10,13 +10,13 @@ class ShouldDeleteABotWhenThePatternIsChanged: DecisionTable, GitFixture {
     
     // MARK: - test
     let branch = "develop"
-    var botDataStore: FileBotDataStore!
+    var botDataStore: PlistBotDataStore!
     var gitBuilder: GitBuilder!
     var network: MockNetwork!
     var interactor: BotSyncingInteractor!
     
     override func setUp() {
-        FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
+        FileBotTemplateDataStore(file: testTemplateFile).save(testBotTemplate)
         setUpGit(branches: "develop")
         expectToDeleteBot()
         saveExistingBranch()
@@ -44,7 +44,7 @@ class ShouldDeleteABotWhenThePatternIsChanged: DecisionTable, GitFixture {
     }
     
     private func saveExistingBranch() {
-        botDataStore = FileBotDataStore(file: testDataStoreFile)
+        botDataStore = PlistBotDataStore(file: testDataStoreFile)
         botDataStore.save(Bot(branchName: branch, id: existingBotID))
     }
 }

@@ -35,13 +35,13 @@ class ShouldPersistBranchesBetweenLaunches: DecisionTable, GitFixture {
     override func setUp() {
         numberOfDeletedBots = nil
         numberOfCreatedBots = nil
-        FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
+        FileBotTemplateDataStore(file: testTemplateFile).save(testBotTemplate)
         network = MockNetwork()
         network.expectDuplicateBot(id: testTemplateBotID)
         network.stubGetBots(withNames: savedBranchNames, ids: savedBranchIDs)
         savedBranchesArray.forEach { network.expectDeleteBot(id: $0) }
         setUpGit(branches: branchesArray)
-        let botDataStore = FileBotDataStore(file: testDataStoreFile)
+        let botDataStore = PlistBotDataStore(file: testDataStoreFile)
         savedBranchesArray.forEach { botDataStore.save(Bot(branchName: $0, id: $0)) }
         interactor = BotSyncingInteractor(
             branchFetcher: testGitBranchFetcher,

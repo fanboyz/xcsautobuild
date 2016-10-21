@@ -21,7 +21,7 @@ class ShouldCreateBotFromTemplate: DecisionTable, GitFixture {
     }
 
     override func setUp() {
-        FileBotTemplatePersister(file: testTemplateFile).save(testBotTemplate)
+        FileBotTemplateDataStore(file: testTemplateFile).save(testBotTemplate)
         network = MockNetwork()
         network.expectDuplicateBot(id: testTemplateBotID)
         network.stubGetBot(withID: testBotID, name: BotNameConverter.convertToBotName(branchName: newBranch))

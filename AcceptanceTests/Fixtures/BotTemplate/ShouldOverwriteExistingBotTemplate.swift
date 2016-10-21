@@ -18,7 +18,7 @@ class ShouldOverwriteExistingBotTemplate: DecisionTable {
     var interactor: BotTemplateCreatingInteractor!
     var network: MockNetwork!
     var finished = false
-    var persister: FileBotTemplatePersister!
+    var persister: FileBotTemplateDataStore!
 
     override func setUp() {
         finished = false
@@ -29,7 +29,7 @@ class ShouldOverwriteExistingBotTemplate: DecisionTable {
         network = MockNetwork()
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }
-        persister = FileBotTemplatePersister(file: testTemplateFile)
+        persister = FileBotTemplateDataStore(file: testTemplateFile)
         persister.save(testBotTemplate)
         interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateSaver: persister)
         interactor.botName = botName

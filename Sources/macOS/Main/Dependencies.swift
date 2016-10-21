@@ -20,7 +20,7 @@ class Dependencies {
             duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: network)),
             deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
             patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(network: network)),
-            botTemplateLoader: FileBotTemplatePersister(file: Locations.botTemplateFile.path))
+            botTemplateLoader: FileBotTemplateDataStore(file: Locations.botTemplateFile.path))
     }()
 
     static let filePatternDataStore: FilePatternDataStore = {
