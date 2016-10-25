@@ -187,13 +187,19 @@
 		35CDF756528B834A8338B6F4 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */; };
 		35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A481D6899BE003B704C /* MockBotCreator.swift */; };
 		35CDF771662991B62EFC3BC1 /* MockBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockBotDataStore.swift */; };
+		35CDF80CC13067E0D9953141 /* XCSConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */; };
 		35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */; };
 		35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */; };
 		35CDF95AF2F1667B94A4044A /* BotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* BotDataStore.swift */; };
 		35CDFA3520BE3215E9E66397 /* PlistBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* PlistBotDataStore.swift */; };
 		35CDFA55E938A01BC81614A9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF90C51A3C1DB90D66184 /* Configuration.swift */; };
 		35CDFA725F09957C1F56892B /* MockBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockBotDataStore.swift */; };
+		35CDFACAD13EEC9BAE8D802D /* XCSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7A32954DB75201FF46A /* XCSConfiguration.swift */; };
+		35CDFAD3A68B0ED1E4C75E2C /* PlistXCSConfigurationDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3C296129F62C80A4F30 /* PlistXCSConfigurationDataStoreTests.swift */; };
+		35CDFB1AD82C8B02B5139803 /* PlistXCSConfigurationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE2FB99F69A1EDE9F1C4 /* PlistXCSConfigurationDataStore.swift */; };
 		35CDFB47B6E0165279D74E99 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
+		35CDFC68C29BDF5FA567FFD9 /* PlistXCSConfigurationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE2FB99F69A1EDE9F1C4 /* PlistXCSConfigurationDataStore.swift */; };
+		35CDFCE8FE04783FDF212FEA /* XCSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7A32954DB75201FF46A /* XCSConfiguration.swift */; };
 		35CDFD2011F04DE879F89B88 /* BotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4EE1A641C7ED0882463 /* BotTests.swift */; };
 		35CDFD689C73C24EF075F8AC /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
 		35CDFD825DB89FDEE202D4E6 /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
@@ -402,6 +408,7 @@
 		35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSBotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDF3195244D169FC9B96FD /* BotDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDataStore.swift; sourceTree = "<group>"; };
 		35CDF3ADD3F1F1AD507BFBC6 /* XCSPatchBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSPatchBotRequestTests.swift; sourceTree = "<group>"; };
+		35CDF3C296129F62C80A4F30 /* PlistXCSConfigurationDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistXCSConfigurationDataStoreTests.swift; sourceTree = "<group>"; };
 		35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateBotFromTemplate.swift; sourceTree = "<group>"; };
 		35CDF45461609ADF1BE25120 /* XCSPatchBotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSPatchBotRequest.swift; sourceTree = "<group>"; };
 		35CDF4C666C73E7EA22D8969 /* PlistBotDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistBotDataStoreTests.swift; sourceTree = "<group>"; };
@@ -414,6 +421,7 @@
 		35CDF6D4EFA814C2FB6665AA /* MockBotDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotDataStore.swift; sourceTree = "<group>"; };
 		35CDF6D71A9BDB2677F843C7 /* MockBotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateLoader.swift; sourceTree = "<group>"; };
 		35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldFilterBranchesFromPattern.swift; sourceTree = "<group>"; };
+		35CDF7A32954DB75201FF46A /* XCSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSConfiguration.swift; sourceTree = "<group>"; };
 		35CDF7BDBAD28A4C72C56823 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35CDF7CC983EAEAD723DDF7D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +433,8 @@
 		35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterView.swift; sourceTree = "<group>"; };
 		35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLoader.swift; sourceTree = "<group>"; };
+		35CDFE2FB99F69A1EDE9F1C4 /* PlistXCSConfigurationDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistXCSConfigurationDataStore.swift; sourceTree = "<group>"; };
+		35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSConfigurationTests.swift; sourceTree = "<group>"; };
 		35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgnoreMasterBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
 		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
@@ -648,6 +658,7 @@
 				14C559CB1D6899AF003B704C /* Bot Management */,
 				14C559D61D6899AF003B704C /* Bot Templates */,
 				35CDFEE31ACF2138929D930D /* Branch Filter */,
+				35CDF545FCB5184A69CEA07C /* Configuration */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -747,6 +758,7 @@
 				35CDF4E6062D30949A94EE13 /* PlistBotDataStore.swift */,
 				14C559E31D6899AF003B704C /* FileBotTemplateDataStore.swift */,
 				35CDF8651802C0D6A3DA07E2 /* FilePatternDataStore.swift */,
+				35CDFE2FB99F69A1EDE9F1C4 /* PlistXCSConfigurationDataStore.swift */,
 			);
 			path = Persitence;
 			sourceTree = "<group>";
@@ -858,6 +870,7 @@
 				14C55A441D6899BE003B704C /* Bot Management */,
 				14C55A4D1D6899BE003B704C /* Bot Templates */,
 				35CDF92EC2FC120BE2ECCEB8 /* Branch Filter */,
+				35CDF668C3349CBCB0D29816 /* Configuration */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -956,6 +969,7 @@
 				35CDF4C666C73E7EA22D8969 /* PlistBotDataStoreTests.swift */,
 				14C55A581D6899BE003B704C /* FileBotTemplateDataStoreTests.swift */,
 				35CDFF2799450FEFF3171DA8 /* FilePatternDataStoreTests.swift */,
+				35CDF3C296129F62C80A4F30 /* PlistXCSConfigurationDataStoreTests.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -1143,6 +1157,14 @@
 			path = duplicate;
 			sourceTree = "<group>";
 		};
+		35CDF32D422CDA0F248308B4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF7A32954DB75201FF46A /* XCSConfiguration.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		35CDF3E6C1AFBC17BEC219B3 /* PATCH */ = {
 			isa = PBXGroup;
 			children = (
@@ -1160,6 +1182,22 @@
 			path = Synchronisation;
 			sourceTree = "<group>";
 		};
+		35CDF545FCB5184A69CEA07C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF32D422CDA0F248308B4 /* Entity */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		35CDF668C3349CBCB0D29816 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				35CDF89CA4560BEF76F8C1E6 /* Entity */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		35CDF6DE58051E7356102D09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1175,6 +1213,14 @@
 				35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */,
 			);
 			path = Gateway;
+			sourceTree = "<group>";
+		};
+		35CDF89CA4560BEF76F8C1E6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		35CDF8A686373A336C206EF4 /* POST */ = {
@@ -1600,6 +1646,8 @@
 				35CDF254C7B159442E253604 /* FilePatternDataStore.swift in Sources */,
 				35CDF3B2DFAB1E2F911D4731 /* PatchBotRequestData.swift in Sources */,
 				35CDFA55E938A01BC81614A9 /* Configuration.swift in Sources */,
+				35CDFB1AD82C8B02B5139803 /* PlistXCSConfigurationDataStore.swift in Sources */,
+				35CDFCE8FE04783FDF212FEA /* XCSConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,6 +1700,8 @@
 				35CDF2E6C2BA770DCCF95532 /* XCSDuplicateBotRequestTests.swift in Sources */,
 				35CDFFA53FEEACC6B0FFD55B /* FilePatternDataStoreTests.swift in Sources */,
 				35CDF23DA78DA8D9003F59BB /* XCSPatchBotRequestTests.swift in Sources */,
+				35CDFAD3A68B0ED1E4C75E2C /* PlistXCSConfigurationDataStoreTests.swift in Sources */,
+				35CDF80CC13067E0D9953141 /* XCSConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1735,6 +1785,8 @@
 				148CBC201DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */,
 				35CDF27A72E7210120CC10E1 /* FilePatternDataStore.swift in Sources */,
 				35CDFE0AC8F5256FD9879715 /* Configuration.swift in Sources */,
+				35CDFC68C29BDF5FA567FFD9 /* PlistXCSConfigurationDataStore.swift in Sources */,
+				35CDFACAD13EEC9BAE8D802D /* XCSConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
