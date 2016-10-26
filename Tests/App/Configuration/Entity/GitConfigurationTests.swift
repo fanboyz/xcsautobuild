@@ -2,8 +2,6 @@ import XCTest
 import ObjectiveGit
 @testable import xcsautobuild
 
-let testCredential = GitConfiguration.Credential.http(userName: "userName", password: "password")
-let testSSHCredential = GitConfiguration.Credential.ssh(userName: "userName", password: "password", publicKeyFile: testFile, privateKeyFile: testFile)
 
 class GitConfigurationTests: XCTestCase {
 

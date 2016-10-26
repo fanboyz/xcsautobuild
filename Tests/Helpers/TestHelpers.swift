@@ -18,8 +18,12 @@ let testBotData = FlexiJSON(dictionary: testBotJSON).data!
 let testPrimaryRepoKey = "C214B4F4246A49E51CAE71AA5C1349A716302EB4"
 let testData = "data".data(using: String.Encoding.utf8)!
 let testURL = URL(string: "https://test.com")!
-let testFile = URL(fileURLWithPath: "testFile")
+let testFile = URL(fileURLWithPath: "/testFile")
 let testBundle = Bundle(for: TestClass.self)
+let testGitConfiguration = GitConfiguration(directory: testFile, remoteName: "origin", credential: testCredential)
+let testSSHGitConfiguration = GitConfiguration(directory: testFile, remoteName: "origin", credential: testSSHCredential)
+let testCredential = GitConfiguration.Credential.http(userName: "userName", password: "password")
+let testSSHCredential = GitConfiguration.Credential.ssh(userName: "userName", password: "password", publicKeyFile: testFile, privateKeyFile: testFile)
 
 private class TestClass {}
 

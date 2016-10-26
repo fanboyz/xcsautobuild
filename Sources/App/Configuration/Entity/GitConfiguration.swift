@@ -14,13 +14,15 @@ struct GitConfiguration: Equatable {
     let credential: Credential
 
     func credentialProvider() throws -> GTCredentialProvider {
-        return try GTCredentialProvider { _ in
+        return GTCredentialProvider { (_, _, _) -> (GTCredential) in
+            let credential: GTCredential?
             switch self.credential {
                 case let .http(userName, password):
-                    return try GTCredential(userName: userName, password: password)
+                    credential = try? GTCredential(userName: userName, password: password)
                 case let .ssh(userName, password, publicKeyFile, privateKeyFile):
-                    return try GTCredential(userName: userName, publicKeyURL: publicKeyFile, privateKeyURL: privateKeyURL, passphrase: password)
+                    credential = try? GTCredential(userName: userName, publicKeyURL: publicKeyFile, privateKeyURL: privateKeyFile, passphrase: password)
             }
+            return credential ?? GTCredential()
         }
     }
 }
