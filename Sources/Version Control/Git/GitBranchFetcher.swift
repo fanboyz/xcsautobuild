@@ -8,10 +8,10 @@ class GitBranchFetcher: BranchFetcher {
     private let repo: GTRepository
     private let credentialProvider: GTCredentialProvider
 
-    init(directory: String, remoteName: String, credentialProvider: GTCredentialProvider) {
+    init(directory: URL, remoteName: String, credentialProvider: GTCredentialProvider) {
         self.remoteName = remoteName
         self.credentialProvider = credentialProvider
-        repo = try! GTRepository(url: URL(fileURLWithPath: directory))
+        repo = try! GTRepository(url: directory)
     }
 
     func fetchBranches() -> [Branch] {

@@ -95,9 +95,9 @@ class XCSRequestTests: XCTestCase {
 
     class TestXCSRequest: XCSRequest {
 
-        var mockedNetwork = MockHTTPRequestSender()
-        var network: HTTPRequestSender {
-            return mockedNetwork
+        var mockedRequestSender = MockHTTPRequestSender()
+        var requestSender: HTTPRequestSender {
+            return mockedRequestSender
         }
 
         var didCreateRequest = false

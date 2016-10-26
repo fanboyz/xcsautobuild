@@ -8,7 +8,7 @@ class XCSDeleteBotRequestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        request = XCSDeleteBotRequest(network: MockHTTPRequestSender())
+        request = XCSDeleteBotRequest(requestSender: MockHTTPRequestSender())
     }
     
     // MARK: - createRequest

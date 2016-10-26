@@ -3,10 +3,10 @@ import Foundation
 
 class XCSPatchBotRequest: XCSRequest {
     
-    let network: HTTPRequestSender
+    let requestSender: HTTPRequestSender
     
-    init(network: HTTPRequestSender) {
-        self.network = network
+    init(requestSender: HTTPRequestSender) {
+        self.requestSender = requestSender
     }
     
     func createRequest(_ data: PatchBotRequestData) -> HTTPRequest {

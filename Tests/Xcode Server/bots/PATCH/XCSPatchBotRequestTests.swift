@@ -9,7 +9,7 @@ class XCSPatchBotRequestTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockedNetwork = MockHTTPRequestSender()
-        request = XCSPatchBotRequest(network: mockedNetwork)
+        request = XCSPatchBotRequest(requestSender: mockedNetwork)
     }
 
     // MARK: - createRequest

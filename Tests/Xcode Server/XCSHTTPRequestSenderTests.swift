@@ -4,7 +4,7 @@ import XCTest
 
 class XCSHTTPRequestSenderTests: XCTestCase {
     
-    var network: XCSHTTPRequestSender!
+    var requestSender: XCSHTTPRequestSender!
     var mockedSession: MockNSURLSession!
     let encodedCredentials = "dXNlcm5hbWU6cGFzc3dvcmQ="
     let configuration = XCSHTTPRequestSender.Configuration(baseURL: testURL, username: "username", password: "password")
@@ -12,14 +12,14 @@ class XCSHTTPRequestSenderTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockedSession = MockNSURLSession()
-        network = XCSHTTPRequestSender(session: mockedSession, configuration: configuration)
+        requestSender = XCSHTTPRequestSender(session: mockedSession, configuration: configuration)
     }
 
     // MARK: - session
 
     func test_session_shouldSetDelegate() {
-        network = XCSHTTPRequestSender(configuration: configuration)
-        XCTAssert(network.session.delegate === network.delegate)
+        requestSender = XCSHTTPRequestSender(configuration: configuration)
+        XCTAssert(requestSender.session.delegate === requestSender.delegate)
     }
     
     // MARK: - sendRequest
@@ -49,24 +49,24 @@ class XCSHTTPRequestSenderTests: XCTestCase {
     }
 
     func test_sendRequest_shouldSetHTTPMethod() {
-        network.send(createPostRequest(), completion: nil)
+        requestSender.send(createPostRequest(), completion: nil)
         XCTAssertEqual(mockedSession.invokedRequest?.httpMethod, "POST")
         sendRequest()
         XCTAssertEqual(mockedSession.invokedRequest?.httpMethod, "GET")
     }
 
     func test_sendRequest_shouldSetBody_whenPOST() {
-        network.send(createPostRequest(), completion: nil)
+        requestSender.send(createPostRequest(), completion: nil)
         XCTAssertEqual(mockedSession.invokedRequest?.httpBody, jsonData())
     }
 
     func test_sendRequest_shouldSetBody_whenPATCH() {
-        network.send(createPatchRequest(), completion: nil)
+        requestSender.send(createPatchRequest(), completion: nil)
         XCTAssertEqual(mockedSession.invokedRequest?.httpBody, jsonData())
     }
 
     func test_sendRequest_shouldNotSetBody_whenGET() {
-        network.send(createGetRequestWithJSON(), completion: nil)
+        requestSender.send(createGetRequestWithJSON(), completion: nil)
         XCTAssertNil(mockedSession.invokedRequest?.httpBody)
     }
 
@@ -88,7 +88,7 @@ class XCSHTTPRequestSenderTests: XCTestCase {
 
     @discardableResult func sendRequest() -> (data: Data?, statusCode: Int?) {
         var response: (Data?, Int?)!
-        network.send(testRequest) { r in
+        requestSender.send(testRequest) { r in
             response = r
         }
         return response

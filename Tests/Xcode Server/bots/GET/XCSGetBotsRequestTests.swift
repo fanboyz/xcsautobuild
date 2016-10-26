@@ -9,7 +9,7 @@ class XCSGetBotsRequestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        request = XCSGetBotsRequest(network: MockHTTPRequestSender())
+        request = XCSGetBotsRequest(requestSender: MockHTTPRequestSender())
     }
 
     // MARK: - createRequest

@@ -3,10 +3,10 @@ import Foundation
 
 class XCSDeleteBotRequest: XCSRequest {
 
-    let network: HTTPRequestSender
+    let requestSender: HTTPRequestSender
 
-    init(network: HTTPRequestSender) {
-        self.network = network
+    init(requestSender: HTTPRequestSender) {
+        self.requestSender = requestSender
     }
 
     func createRequest(_ data: String) -> HTTPRequest {
