@@ -158,6 +158,7 @@
 		35CDF1498AB41A295BD10CDF /* BranchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */; };
 		35CDF1767F0F3594D82388C6 /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
 		35CDF1A78E44DDFA45EE1EA7 /* BotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */; };
+		35CDF1AFFA0CACF0C72B3FC5 /* GitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE30C95FCC89486065B5 /* GitConfiguration.swift */; };
 		35CDF1E23CE8CEA8182F53B6 /* MockBranchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A6A1D6899BE003B704C /* MockBranchFetcher.swift */; };
 		35CDF1EE3E16EBF51AABF311 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF7CC983EAEAD723DDF7D /* ViewController.swift */; };
 		35CDF217D99486016220533C /* XCSDuplicateBotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEB1D690C5D508E660F3 /* XCSDuplicateBotRequest.swift */; };
@@ -171,6 +172,7 @@
 		35CDF3754B8E797DDFE3EE02 /* DuplicateBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEED7257FD147E04A52D /* DuplicateBotRequestData.swift */; };
 		35CDF39D2D6F5CD4B6FDFEFD /* BotTemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */; };
 		35CDF3B2DFAB1E2F911D4731 /* PatchBotRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFEE32CFCE3EEBF716677 /* PatchBotRequestData.swift */; };
+		35CDF3F20CA571CFAE3B88E6 /* GitConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF682FB852D4C1AEDCE90 /* GitConfigurationTests.swift */; };
 		35CDF48DDE12AED013496C64 /* PlistBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* PlistBotDataStore.swift */; };
 		35CDF543E6E93A9CDC48E3F7 /* PatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */; };
 		35CDF56C9E5BC7809F43B9CF /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF544D9207869F43D2FDF /* Bot.swift */; };
@@ -190,6 +192,7 @@
 		35CDF80CC13067E0D9953141 /* XCSConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */; };
 		35CDF8F6EAA7E1D4849CB55F /* XCSBotSynchroniserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF16594C6BC6A770D8889 /* XCSBotSynchroniserTests.swift */; };
 		35CDF8FE3309244F92A93C2E /* ShouldCreateBotFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF452F3EA3469E091677D /* ShouldCreateBotFromTemplate.swift */; };
+		35CDF934E6CFBE6BB2608CD4 /* GitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE30C95FCC89486065B5 /* GitConfiguration.swift */; };
 		35CDF95AF2F1667B94A4044A /* BotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* BotDataStore.swift */; };
 		35CDFA3520BE3215E9E66397 /* PlistBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* PlistBotDataStore.swift */; };
 		35CDFA55E938A01BC81614A9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF90C51A3C1DB90D66184 /* Configuration.swift */; };
@@ -417,6 +420,7 @@
 		35CDF544D9207869F43D2FDF /* Bot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bot.swift; sourceTree = "<group>"; };
 		35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF63E4BB29DD8ABF38CC8 /* XCSDuplicateBotRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSDuplicateBotRequestTests.swift; sourceTree = "<group>"; };
+		35CDF682FB852D4C1AEDCE90 /* GitConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitConfigurationTests.swift; sourceTree = "<group>"; };
 		35CDF695C14C9B9FC8EC4ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35CDF6D4EFA814C2FB6665AA /* MockBotDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotDataStore.swift; sourceTree = "<group>"; };
 		35CDF6D71A9BDB2677F843C7 /* MockBotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBotTemplateLoader.swift; sourceTree = "<group>"; };
@@ -434,6 +438,7 @@
 		35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterView.swift; sourceTree = "<group>"; };
 		35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLoader.swift; sourceTree = "<group>"; };
 		35CDFE2FB99F69A1EDE9F1C4 /* PlistXCSConfigurationDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistXCSConfigurationDataStore.swift; sourceTree = "<group>"; };
+		35CDFE30C95FCC89486065B5 /* GitConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitConfiguration.swift; sourceTree = "<group>"; };
 		35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSConfigurationTests.swift; sourceTree = "<group>"; };
 		35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgnoreMasterBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
@@ -1161,6 +1166,7 @@
 			isa = PBXGroup;
 			children = (
 				35CDF7A32954DB75201FF46A /* XCSConfiguration.swift */,
+				35CDFE30C95FCC89486065B5 /* GitConfiguration.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1219,6 +1225,7 @@
 			isa = PBXGroup;
 			children = (
 				35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */,
+				35CDF682FB852D4C1AEDCE90 /* GitConfigurationTests.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1648,6 +1655,7 @@
 				35CDFA55E938A01BC81614A9 /* Configuration.swift in Sources */,
 				35CDFB1AD82C8B02B5139803 /* PlistXCSConfigurationDataStore.swift in Sources */,
 				35CDFCE8FE04783FDF212FEA /* XCSConfiguration.swift in Sources */,
+				35CDF934E6CFBE6BB2608CD4 /* GitConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1702,6 +1710,7 @@
 				35CDF23DA78DA8D9003F59BB /* XCSPatchBotRequestTests.swift in Sources */,
 				35CDFAD3A68B0ED1E4C75E2C /* PlistXCSConfigurationDataStoreTests.swift in Sources */,
 				35CDF80CC13067E0D9953141 /* XCSConfigurationTests.swift in Sources */,
+				35CDF3F20CA571CFAE3B88E6 /* GitConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1787,6 +1796,7 @@
 				35CDFE0AC8F5256FD9879715 /* Configuration.swift in Sources */,
 				35CDFC68C29BDF5FA567FFD9 /* PlistXCSConfigurationDataStore.swift in Sources */,
 				35CDFACAD13EEC9BAE8D802D /* XCSConfiguration.swift in Sources */,
+				35CDF1AFFA0CACF0C72B3FC5 /* GitConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

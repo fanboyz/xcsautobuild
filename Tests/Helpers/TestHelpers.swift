@@ -18,6 +18,7 @@ let testBotData = FlexiJSON(dictionary: testBotJSON).data!
 let testPrimaryRepoKey = "C214B4F4246A49E51CAE71AA5C1349A716302EB4"
 let testData = "data".data(using: String.Encoding.utf8)!
 let testURL = URL(string: "https://test.com")!
+let testFile = URL(fileURLWithPath: "testFile")
 let testBundle = Bundle(for: TestClass.self)
 
 private class TestClass {}
