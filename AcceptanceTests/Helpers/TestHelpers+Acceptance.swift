@@ -15,8 +15,6 @@ func commaSeparatedString(from array: [String]) -> String {
 
 let yes = "yes"
 let no = "no"
-//
-// delete Configuration classes
 let xcsConfiguration = XCSConfiguration(host: "test-host", userName: "xcs_username", password: "xcs_password")
 let requestSender = Dependencies.createRequestSender(xcsConfiguration: xcsConfiguration)
 let api = Dependencies.createAPI(requestSender: requestSender)
@@ -30,7 +28,7 @@ let testBotSynchroniser: BotSynchroniser = {
     )
 }()
 
-let testHost = Configuration.xcsHostName
+let testHost = xcsConfiguration.host
 let testPath = NSTemporaryDirectory() + "fitnesse_tests/"
 let testDataStoreFile = testPath + "data_store"
 let testTemplateFile = testPath + "templates"
@@ -38,8 +36,9 @@ let testFilterPatternFile = testPath + "templates"
 let testGitPath = testPath + "git/"
 let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
-let testGitBranchFetcher = GitBranchFetcher(directory: URL(fileURLWithPath: testLocalGitURL.path), remoteName: "origin", credentialProvider: Configuration.gitCredentialProvider)
+let testGitBranchFetcher = GitBranchFetcher(directory: URL(fileURLWithPath: testLocalGitURL.path), remoteName: "origin", credentialProvider: credentialProvider)
 private let credential = try! GTCredential(userName: "", password: "")
+private let credentialProvider = GTCredentialProvider { _ in credential }
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
     var count = 0
