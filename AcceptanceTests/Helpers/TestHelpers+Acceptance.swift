@@ -15,13 +15,17 @@ func commaSeparatedString(from array: [String]) -> String {
 
 let yes = "yes"
 let no = "no"
-let api = Dependencies.api
+//
+// delete Configuration classes
+let xcsConfiguration = XCSConfiguration(host: "test-host", userName: "xcs_username", password: "xcs_password")
+let requestSender = Dependencies.createRequestSender(xcsConfiguration: xcsConfiguration)
+let api = Dependencies.createAPI(requestSender: requestSender)
 let testBotSynchroniser: BotSynchroniser = {
     return XCSBotSynchroniser(
-        getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: Dependencies.network)),
-        duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: Dependencies.network)),
-        deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: Dependencies.network)),
-        patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(network: Dependencies.network)),
+        getBotRequest:  AnyXCSRequest(XCSGetBotRequest(requestSender: requestSender)),
+        duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(requestSender: requestSender)),
+        deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(requestSender: requestSender)),
+        patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(requestSender: requestSender)),
         botTemplateLoader: FileBotTemplateDataStore(file: testTemplateFile)
     )
 }()
@@ -34,7 +38,7 @@ let testFilterPatternFile = testPath + "templates"
 let testGitPath = testPath + "git/"
 let testLocalGitURL = URL(fileURLWithPath: testGitPath + "local")
 let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
-let testGitBranchFetcher = GitBranchFetcher(directory: testLocalGitURL.path, remoteName: "origin", credentialProvider: Configuration.gitCredentialProvider)
+let testGitBranchFetcher = GitBranchFetcher(directory: URL(fileURLWithPath: testLocalGitURL.path), remoteName: "origin", credentialProvider: Configuration.gitCredentialProvider)
 private let credential = try! GTCredential(userName: "", password: "")
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {

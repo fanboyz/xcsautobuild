@@ -2,28 +2,37 @@
 import Foundation
 
 class Dependencies {
-    
-    static let wildcardBranchFilter = WildcardBranchFilter(patternDataStore: filePatternDataStore)
-    static let network = XCSHTTPRequestSender(configuration: XCSHTTPRequestSender.Configuration(baseURL: URL(string: "https://\(Configuration.xcsHostName):20343/api")!, username: Configuration.xcsUserName, password: Configuration.xcsPassword))
-    
-    static let api: ThreadedXcodeServerBotAPI = {
-        return ThreadedXcodeServerBotAPI(api: XcodeServerBotAPI(
-            getBotsRequest: AnyXCSRequest(XCSGetBotsRequest(network: network)),
-            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
-            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network))
-        ))
-    }()
-    
-    static let botSynchroniser: XCSBotSynchroniser = {
-        return XCSBotSynchroniser(
-            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(network: network)),
-            duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(network: network)),
-            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(network: network)),
-            patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(network: network)),
-            botTemplateLoader: FileBotTemplateDataStore(file: Locations.botTemplateFile.path))
-    }()
 
-    static let filePatternDataStore: FilePatternDataStore = {
-        return FilePatternDataStore(file: Locations.patternFile.path)
-    }()
+    static let filePatternDataStore = FilePatternDataStore(file: Locations.patternFile.path)
+    static let xcsConfigurationDataStore = PlistXCSConfigurationDataStore(file: Locations.xcsConfigurationFile)
+    static let gitConfigurationDataStore = PlistGitConfigurationDataStore(file: Locations.gitConfigurationFile)
+    static let synchronisedBotsDataStore = PlistBotDataStore(file: Locations.synchronisedBotsFile.path)
+    static let wildcardBranchFilter = WildcardBranchFilter(patternDataStore: filePatternDataStore)
+
+    static func createRequestSender(xcsConfiguration: XCSConfiguration) -> XCSHTTPRequestSender {
+        let configuration = XCSHTTPRequestSender.Configuration(
+            baseURL: URL(string: "https://\(xcsConfiguration.host):20343/api")!,
+            username: xcsConfiguration.userName,
+            password: xcsConfiguration.password
+        )
+        return XCSHTTPRequestSender(configuration: configuration)
+    }
+    
+    static func createAPI(requestSender: HTTPRequestSender) -> ThreadedXcodeServerBotAPI {
+        return ThreadedXcodeServerBotAPI(api: XcodeServerBotAPI(
+            getBotsRequest: AnyXCSRequest(XCSGetBotsRequest(requestSender: requestSender)),
+            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(requestSender: requestSender)),
+            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(requestSender: requestSender))
+        ))
+    }
+    
+    static func botSynchroniser(requestSender: HTTPRequestSender) -> XCSBotSynchroniser {
+        return XCSBotSynchroniser(
+            getBotRequest:  AnyXCSRequest(XCSGetBotRequest(requestSender: requestSender)),
+            duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(requestSender: requestSender)),
+            deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(requestSender: requestSender)),
+            patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(requestSender: requestSender)),
+            botTemplateLoader: FileBotTemplateDataStore(file: Locations.botTemplateFile.path)
+        )
+    }
 }

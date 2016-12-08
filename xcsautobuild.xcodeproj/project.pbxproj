@@ -186,6 +186,7 @@
 		35CDF66BB9CB5812FE8C2450 /* BotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* BotDataStore.swift */; };
 		35CDF67DFA6C24351C1C57E2 /* PlistBotDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4C666C73E7EA22D8969 /* PlistBotDataStoreTests.swift */; };
 		35CDF6A2FBC7C445C9902B59 /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF544D9207869F43D2FDF /* Bot.swift */; };
+		35CDF70CADAEC107B1945E9A /* BotManagementLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE60114BC56ED095F38C /* BotManagementLauncher.swift */; };
 		35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */; };
 		35CDF756528B834A8338B6F4 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */; };
 		35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A481D6899BE003B704C /* MockBotCreator.swift */; };
@@ -215,6 +216,7 @@
 		35CDFE969A749C6E7AF9C50F /* XCSBotSynchroniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF2D13C9109CE06D845AA /* XCSBotSynchroniser.swift */; };
 		35CDFF0050E8FC91B03987A8 /* IgnoreMasterBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */; };
 		35CDFF158D160F3BB854B510 /* PatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */; };
+		35CDFF2D865B953BEE3DDB5C /* BotManagementLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE60114BC56ED095F38C /* BotManagementLauncher.swift */; };
 		35CDFFA53FEEACC6B0FFD55B /* FilePatternDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFF2799450FEFF3171DA8 /* FilePatternDataStoreTests.swift */; };
 		35CDFFACEDCE7B7716CCD36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */; };
 		35CDFFC8215C31E9BA7E26E3 /* ShouldFilterBranchesFromPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF78C8FFE7A6B549F5A1E /* ShouldFilterBranchesFromPattern.swift */; };
@@ -445,6 +447,7 @@
 		35CDFE2FB99F69A1EDE9F1C4 /* PlistXCSConfigurationDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistXCSConfigurationDataStore.swift; sourceTree = "<group>"; };
 		35CDFE30C95FCC89486065B5 /* GitConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitConfiguration.swift; sourceTree = "<group>"; };
 		35CDFE45CB4731674628A892 /* XCSConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSConfigurationTests.swift; sourceTree = "<group>"; };
+		35CDFE60114BC56ED095F38C /* BotManagementLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotManagementLauncher.swift; sourceTree = "<group>"; };
 		35CDFE739DD8D9E7FDD9A342 /* IgnoreMasterBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IgnoreMasterBranchFilter.swift; sourceTree = "<group>"; };
 		35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilter.swift; sourceTree = "<group>"; };
 		35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilterTests.swift; sourceTree = "<group>"; };
@@ -516,6 +519,7 @@
 				143EE44C1D6B7178002A2436 /* Bot Template */,
 				35CDFBB6DDA7E77C8A374D0B /* Branch Filter */,
 				35CDF8D2591576FB4125D908 /* Main */,
+				35CDF9EF643BAC57CFC40CCE /* Bot Management */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -1276,6 +1280,14 @@
 			path = PATCH;
 			sourceTree = "<group>";
 		};
+		35CDF9EF643BAC57CFC40CCE /* Bot Management */ = {
+			isa = PBXGroup;
+			children = (
+				35CDFE60114BC56ED095F38C /* BotManagementLauncher.swift */,
+			);
+			path = "Bot Management";
+			sourceTree = "<group>";
+		};
 		35CDFA702D87C142BA20BA61 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1664,6 +1676,7 @@
 				35CDFCE8FE04783FDF212FEA /* XCSConfiguration.swift in Sources */,
 				35CDF934E6CFBE6BB2608CD4 /* GitConfiguration.swift in Sources */,
 				35CDF7B136DB6513266D8ABC /* PlistGitConfigurationDataStore.swift in Sources */,
+				35CDFF2D865B953BEE3DDB5C /* BotManagementLauncher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1807,6 +1820,7 @@
 				35CDFACAD13EEC9BAE8D802D /* XCSConfiguration.swift in Sources */,
 				35CDF1AFFA0CACF0C72B3FC5 /* GitConfiguration.swift in Sources */,
 				35CDFBC09D78C1E2CC287636 /* PlistGitConfigurationDataStore.swift in Sources */,
+				35CDF70CADAEC107B1945E9A /* BotManagementLauncher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

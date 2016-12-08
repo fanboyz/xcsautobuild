@@ -7,6 +7,7 @@ class TextFieldBotTemplateView: NSView {
     var eventHandler: BotTemplateEventHandler!
     @IBOutlet var botNameField: NSTextField!
     @IBOutlet var resultLabel: NSTextField!
+    @IBOutlet var actionButton: NSButton!
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
@@ -15,6 +16,13 @@ class TextFieldBotTemplateView: NSView {
 
     @IBAction func didClickActionButton(_ sender: AnyObject) {
         eventHandler.createTemplate(fromName: botNameField.stringValue)
+    }
+
+    var isEnabled: Bool = true {
+        didSet {
+            botNameField.isEnabled = isEnabled
+            actionButton.isEnabled = isEnabled
+        }
     }
     
     func display(botName: String) {
