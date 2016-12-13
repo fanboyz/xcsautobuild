@@ -1,7 +1,7 @@
 
 import Foundation
 
-class PlistGitConfigurationDataStore {
+class PlistGitConfigurationDataStore: DataStore {
 
     private let file: URL
 
@@ -14,8 +14,8 @@ class PlistGitConfigurationDataStore {
         return GitConfiguration(dictionary: dictionary)
     }
 
-    func save(_ configuration: GitConfiguration) {
-        configuration.dictionary.write(to: file, atomically: true)
+    func save(_ data: GitConfiguration) {
+        data.dictionary.write(to: file, atomically: true)
     }
 }
 

@@ -9,9 +9,9 @@ struct GitConfiguration: Equatable {
         case ssh(userName: String, password: String, publicKeyFile: URL, privateKeyFile: URL)
     }
 
-    let directory: URL
-    let remoteName: String
-    let credential: Credential
+    var directory: URL
+    var remoteName: String
+    var credential: Credential
 
     func credentialProvider() throws -> GTCredentialProvider {
         return GTCredentialProvider { (_, _, _) -> (GTCredential) in
