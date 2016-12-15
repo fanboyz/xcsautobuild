@@ -8,9 +8,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         try? FileManager.default.createDirectory(at: Locations.directory, withIntermediateDirectories: true, attributes: nil)
-        let viewController = windowController.contentViewController! as! ViewController
+        let tabControllerController = windowController.contentViewController! as! NSTabViewController
+        let viewController = tabControllerController.childViewControllers[1] as! ViewController
         BotTemplateLauncher().launch(view: viewController.templateView)
         BranchFilterLauncher().launch(view: viewController.branchFilterView)
+        let gitConfigurationView = tabControllerController.childViewControllers[0].view as! TogglingGitConfigurationView
+        GitConfigurationLauncher().launch(view: gitConfigurationView)
+
         windowController.showWindow(nil)
 
         Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [unowned self] _ in

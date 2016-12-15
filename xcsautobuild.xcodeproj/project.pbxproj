@@ -198,6 +198,7 @@
 		35CDF6AB6C03D6D8C8E82FD5 /* AnyDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFFD6DE56B9781B79FFB0 /* AnyDataStore.swift */; };
 		35CDF70CADAEC107B1945E9A /* BotManagementLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE60114BC56ED095F38C /* BotManagementLauncher.swift */; };
 		35CDF70F2E5FFD519953FB88 /* BranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFE7F476AA8474B6D7400 /* BranchFilter.swift */; };
+		35CDF73FE9E8A5679ECEA6F5 /* GitConfigurationLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFAA783FA5EF1FFA14B9F /* GitConfigurationLauncher.swift */; };
 		35CDF756528B834A8338B6F4 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF5673F269206815185F7 /* ShouldDeleteABotWhenOutOfSyncWithXcodeServer.swift */; };
 		35CDF75FEDE3D573EAC6507E /* GitConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1EC286004B4E8AAA6AA /* GitConfigurationView.swift */; };
 		35CDF7617B1D642CBDA3AADD /* MockBotCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C55A481D6899BE003B704C /* MockBotCreator.swift */; };
@@ -461,6 +462,7 @@
 		35CDF99F4BCD0800B6F4B869 /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDataStore.swift; sourceTree = "<group>"; };
 		35CDFA8D2FEFC2F134648AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = xcsautobuild_macOS/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		35CDFAA783FA5EF1FFA14B9F /* GitConfigurationLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitConfigurationLauncher.swift; sourceTree = "<group>"; };
 		35CDFB6DDF513E5B42929900 /* BotSynchroniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotSynchroniser.swift; sourceTree = "<group>"; };
 		35CDFD34BA3FF2E6356F4594 /* BranchFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchFilterView.swift; sourceTree = "<group>"; };
 		35CDFDEE916F04DF6C905D49 /* BotTemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotTemplateLoader.swift; sourceTree = "<group>"; };
@@ -1187,6 +1189,7 @@
 			isa = PBXGroup;
 			children = (
 				35CDF8F7D6F740CF3ABD30DF /* TogglingGitConfigurationView.swift */,
+				35CDFAA783FA5EF1FFA14B9F /* GitConfigurationLauncher.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1747,6 +1750,7 @@
 				35CDF8DB7A6ABCAE3FB02B2F /* AnyDataStore.swift in Sources */,
 				35CDFA1C524B59899042C5BE /* TogglingGitConfigurationView.swift in Sources */,
 				35CDF99F94DF7BBC0F420436 /* GitConfigurationViewEventHandler.swift in Sources */,
+				35CDF73FE9E8A5679ECEA6F5 /* GitConfigurationLauncher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
