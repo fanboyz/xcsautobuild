@@ -13,7 +13,7 @@ class BranchFilterView: NSTextField {
     }
     
     @IBAction func save(_ sender: NSButton?) {
-        filterPatternDataStore.save(pattern: stringValue)
+        filterPatternDataStore.save(stringValue)
     }
 }
 

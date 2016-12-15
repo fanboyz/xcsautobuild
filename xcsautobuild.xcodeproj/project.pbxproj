@@ -57,7 +57,6 @@
 		148CBC1D1DBAB26400598709 /* DataWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC151DBAB21300598709 /* DataWriter.swift */; };
 		148CBC1F1DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */; };
 		148CBC201DBAB3B400598709 /* WildcardBranchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */; };
-		148CBC251DBAB3DC00598709 /* MockPatternDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */; };
 		148CBC2C1DBAB91300598709 /* XCSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC2B1DBAB91300598709 /* XCSResponse.swift */; };
 		148CBC2D1DBAB91300598709 /* XCSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC2B1DBAB91300598709 /* XCSResponse.swift */; };
 		148CBC301DBAB99600598709 /* XCSResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CBC2F1DBAB99600598709 /* XCSResponseTests.swift */; };
@@ -356,7 +355,6 @@
 		148CBC181DBAB24600598709 /* MockDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		148CBC191DBAB24600598709 /* MockDataWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataWriter.swift; sourceTree = "<group>"; };
 		148CBC1E1DBAB3B400598709 /* WildcardBranchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildcardBranchFilter.swift; sourceTree = "<group>"; };
-		148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPatternDataStore.swift; sourceTree = "<group>"; };
 		148CBC2B1DBAB91300598709 /* XCSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponse.swift; sourceTree = "<group>"; };
 		148CBC2F1DBAB99600598709 /* XCSResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCSResponseTests.swift; sourceTree = "<group>"; };
 		148CBC311DBABC8200598709 /* BotNameConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNameConverter.swift; sourceTree = "<group>"; };
@@ -661,14 +659,6 @@
 				148CBC121DBAB15300598709 /* CommandLine.swift */,
 			);
 			path = "Command Line";
-			sourceTree = "<group>";
-		};
-		148CBC211DBAB3D800598709 /* Gateway */ = {
-			isa = PBXGroup;
-			children = (
-				148CBC221DBAB3D800598709 /* MockPatternDataStore.swift */,
-			);
-			path = Gateway;
 			sourceTree = "<group>";
 		};
 		148CBC2A1DBAB91300598709 /* Response */ = {
@@ -1314,7 +1304,6 @@
 		35CDF92EC2FC120BE2ECCEB8 /* Branch Filter */ = {
 			isa = PBXGroup;
 			children = (
-				148CBC211DBAB3D800598709 /* Gateway */,
 				35CDFEAEFC1F4269A440E5D6 /* WildcardBranchFilterTests.swift */,
 			);
 			path = "Branch Filter";
@@ -1783,7 +1772,6 @@
 				14C55A871D6899BE003B704C /* MockCommand.swift in Sources */,
 				14C55A921D6899BE003B704C /* MockBranchFetcher.swift in Sources */,
 				14C55A7F1D6899BE003B704C /* BotSyncingInteractorTests.swift in Sources */,
-				148CBC251DBAB3DC00598709 /* MockPatternDataStore.swift in Sources */,
 				14C55A8E1D6899BE003B704C /* HTTPRequestTests.swift in Sources */,
 				14C55A931D6899BE003B704C /* XCSDeleteBotRequestTests.swift in Sources */,
 				14C55A9A1D6899BE003B704C /* XCSRequestTests.swift in Sources */,

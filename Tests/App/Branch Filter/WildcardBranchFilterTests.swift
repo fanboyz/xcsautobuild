@@ -7,12 +7,12 @@ import XCTest
 class WildcardBranchFilterTests: XCTestCase {
 
     var filter: WildcardBranchFilter!
-    var mockedStore: MockPatternDataStore!
+    var mockedStore: MockDataStore<String>!
 
     override func setUp() {
         super.setUp()
-        mockedStore = MockPatternDataStore()
-        filter = WildcardBranchFilter(patternDataStore: mockedStore)
+        mockedStore = MockDataStore()
+        filter = WildcardBranchFilter(patternDataStore: AnyDataStore(mockedStore))
     }
 
     // MARK: - patterns
@@ -127,10 +127,10 @@ class WildcardBranchFilterTests: XCTestCase {
     }
 
     func setPatterns(_ patterns: String...) {
-        mockedStore.stubbedPattern = patterns.joined(separator: "\n")
+        mockedStore.stubbedData = patterns.joined(separator: "\n")
     }
 
     func setPattern(_ pattern: String?) {
-        mockedStore.stubbedPattern = pattern
+        mockedStore.stubbedData = pattern
     }
 }

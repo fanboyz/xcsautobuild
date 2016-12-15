@@ -3,7 +3,7 @@ import Foundation
 
 class Dependencies {
 
-    static let filePatternDataStore = FilePatternDataStore(file: Locations.patternFile.path)
+    static let filePatternDataStore = AnyDataStore(FilePatternDataStore(file: Locations.patternFile.path))
     static let xcsConfigurationDataStore = PlistXCSConfigurationDataStore(file: Locations.xcsConfigurationFile)
     static let gitConfigurationDataStore = PlistGitConfigurationDataStore(file: Locations.gitConfigurationFile)
     static let synchronisedBotsDataStore = PlistBotDataStore(file: Locations.synchronisedBotsFile.path)

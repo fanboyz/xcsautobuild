@@ -24,15 +24,15 @@ class FilePatternDataStoreTests: XCTestCase {
 
     func test_save_shouldSavePattern() {
         let pattern = "feature/*"
-        store.save(pattern: pattern)
+        store.save(pattern)
         store = FilePatternDataStore(file: file);
         XCTAssertEqual(store.load(), pattern)
     }
 
     func test_save_shouldOverwritePattern() {
-        store.save(pattern: "feature/*")
+        store.save("feature/*")
         let pattern = "release/*"
-        store.save(pattern: pattern)
+        store.save(pattern)
         store = FilePatternDataStore(file: file);
         XCTAssertEqual(store.load(), pattern)
     }
