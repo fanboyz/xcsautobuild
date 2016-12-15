@@ -1,7 +1,7 @@
 
 import Foundation
 
-class PlistXCSConfigurationDataStore {
+class PlistXCSConfigurationDataStore: DataStore {
 
     private let file: URL
 

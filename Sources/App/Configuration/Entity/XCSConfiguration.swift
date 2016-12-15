@@ -1,8 +1,8 @@
 
 struct XCSConfiguration: Equatable {
-    let host: String
-    let userName: String
-    let password: String
+    var host: String
+    var userName: String
+    var password: String
 }
 
 func ==(lhs: XCSConfiguration, rhs: XCSConfiguration) -> Bool {

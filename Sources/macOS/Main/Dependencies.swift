@@ -5,8 +5,8 @@ class Dependencies {
 
     static let filePatternDataStore = AnyDataStore(FilePatternDataStore(file: Locations.patternFile.path))
     static let botTemplateDataStore = AnyDataStore(FileBotTemplateDataStore(file: Locations.botTemplateFile.path))
-    static let xcsConfigurationDataStore = PlistXCSConfigurationDataStore(file: Locations.xcsConfigurationFile)
-    static let gitConfigurationDataStore = PlistGitConfigurationDataStore(file: Locations.gitConfigurationFile)
+    static let xcsConfigurationDataStore = AnyDataStore(PlistXCSConfigurationDataStore(file: Locations.xcsConfigurationFile))
+    static let gitConfigurationDataStore = AnyDataStore(PlistGitConfigurationDataStore(file: Locations.gitConfigurationFile))
     static let synchronisedBotsDataStore = PlistBotDataStore(file: Locations.synchronisedBotsFile.path)
     static let wildcardBranchFilter = WildcardBranchFilter(patternDataStore: filePatternDataStore)
 
