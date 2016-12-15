@@ -979,7 +979,7 @@
         <scene sceneID="Bqe-Bv-teu">
             <objects>
                 <viewController title="Git Config" id="dQb-Ud-3Cn" sceneMemberID="viewController">
-                    <view key="view" id="Mjv-ao-BwZ" customClass="TogglingGitConfigurationView" customModule="xcsautobuild" customModuleProvider="target">
+                    <view key="view" id="Mjv-ao-BwZ" customClass="GitConfigurationForm" customModule="xcsautobuild" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="216"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

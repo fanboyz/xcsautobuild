@@ -11,7 +11,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let tabControllerController = windowController.contentViewController! as! NSTabViewController
         let xcsConfigurationView = tabControllerController.childViewControllers[0].view as! XCSConfigurationForm
         XCSConfigurationLauncher().launch(view: xcsConfigurationView)
-        let gitConfigurationView = tabControllerController.childViewControllers[1].view as! TogglingGitConfigurationView
+        let gitConfigurationView = tabControllerController.childViewControllers[1].view as! GitConfigurationForm
         GitConfigurationLauncher().launch(view: gitConfigurationView)
         let viewController = tabControllerController.childViewControllers[2] as! ViewController
         BotTemplateLauncher().launch(view: viewController.templateView)

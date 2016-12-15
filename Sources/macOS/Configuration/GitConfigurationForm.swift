@@ -2,7 +2,7 @@
 import Foundation
 import AppKit
 
-class TogglingGitConfigurationView: NSView, GitConfigurationView, NSTextFieldDelegate {
+class GitConfigurationForm: NSView, GitConfigurationView, NSTextFieldDelegate {
 
     var eventHandler: GitConfigurationViewEventHandler! {
         didSet {

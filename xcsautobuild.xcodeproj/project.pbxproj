@@ -215,7 +215,7 @@
 		35CDF95AF2F1667B94A4044A /* BotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3195244D169FC9B96FD /* BotDataStore.swift */; };
 		35CDF99F94DF7BBC0F420436 /* GitConfigurationViewEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF3EA8BD984C44C3D3B35 /* GitConfigurationViewEventHandler.swift */; };
 		35CDF9E3A552CD1FF9323311 /* MockXCSConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDFAD13DC8AAEC22369897 /* MockXCSConfigurationView.swift */; };
-		35CDFA1C524B59899042C5BE /* TogglingGitConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF8F7D6F740CF3ABD30DF /* TogglingGitConfigurationView.swift */; };
+		35CDFA1C524B59899042C5BE /* GitConfigurationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF8F7D6F740CF3ABD30DF /* GitConfigurationForm.swift */; };
 		35CDFA3520BE3215E9E66397 /* PlistBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF4E6062D30949A94EE13 /* PlistBotDataStore.swift */; };
 		35CDFA725F09957C1F56892B /* MockBotDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF6D4EFA814C2FB6665AA /* MockBotDataStore.swift */; };
 		35CDFAC27D24DE6E11314D13 /* GitConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDF1EC286004B4E8AAA6AA /* GitConfigurationView.swift */; };
@@ -464,7 +464,7 @@
 		35CDF7C402E8B64FA0C4E234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35CDF7CC983EAEAD723DDF7D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35CDF8651802C0D6A3DA07E2 /* FilePatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePatternDataStore.swift; sourceTree = "<group>"; };
-		35CDF8F7D6F740CF3ABD30DF /* TogglingGitConfigurationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogglingGitConfigurationView.swift; sourceTree = "<group>"; };
+		35CDF8F7D6F740CF3ABD30DF /* GitConfigurationForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitConfigurationForm.swift; sourceTree = "<group>"; };
 		35CDF97F6B82677B1456386A /* AnyDataStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDataStoreTests.swift; sourceTree = "<group>"; };
 		35CDF99F4BCD0800B6F4B869 /* ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldCreateABotWhenOutOfSyncWithXcodeServer.swift; sourceTree = "<group>"; };
 		35CDF9AD258DEB1CF68B557D /* PatternDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDataStore.swift; sourceTree = "<group>"; };
@@ -1187,7 +1187,7 @@
 		35CDF17B6F31FAA2C527EDB2 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				35CDF8F7D6F740CF3ABD30DF /* TogglingGitConfigurationView.swift */,
+				35CDF8F7D6F740CF3ABD30DF /* GitConfigurationForm.swift */,
 				35CDFAA783FA5EF1FFA14B9F /* GitConfigurationLauncher.swift */,
 				35CDFA4BA5B4DD1F74529F97 /* XCSConfigurationForm.swift */,
 				35CDF0C15A49D1D2D31B14CE /* XCSConfigurationLauncher.swift */,
@@ -1752,7 +1752,7 @@
 				35CDF92446BF80963253911C /* GitConfigurationPresenter.swift in Sources */,
 				35CDF69A3A22A14471CD0B4E /* DataStore.swift in Sources */,
 				35CDF8DB7A6ABCAE3FB02B2F /* AnyDataStore.swift in Sources */,
-				35CDFA1C524B59899042C5BE /* TogglingGitConfigurationView.swift in Sources */,
+				35CDFA1C524B59899042C5BE /* GitConfigurationForm.swift in Sources */,
 				35CDF99F94DF7BBC0F420436 /* GitConfigurationViewEventHandler.swift in Sources */,
 				35CDF73FE9E8A5679ECEA6F5 /* GitConfigurationLauncher.swift in Sources */,
 				35CDF7E7AF17EFDDAA23FF25 /* XCSConfigurationPresenter.swift in Sources */,
