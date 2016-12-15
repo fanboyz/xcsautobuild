@@ -4,6 +4,7 @@ import Foundation
 class Dependencies {
 
     static let filePatternDataStore = AnyDataStore(FilePatternDataStore(file: Locations.patternFile.path))
+    static let botTemplateDataStore = AnyDataStore(FileBotTemplateDataStore(file: Locations.botTemplateFile.path))
     static let xcsConfigurationDataStore = PlistXCSConfigurationDataStore(file: Locations.xcsConfigurationFile)
     static let gitConfigurationDataStore = PlistGitConfigurationDataStore(file: Locations.gitConfigurationFile)
     static let synchronisedBotsDataStore = PlistBotDataStore(file: Locations.synchronisedBotsFile.path)
@@ -32,7 +33,7 @@ class Dependencies {
             duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(requestSender: requestSender)),
             deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(requestSender: requestSender)),
             patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(requestSender: requestSender)),
-            botTemplateLoader: FileBotTemplateDataStore(file: Locations.botTemplateFile.path)
+            botTemplateDataStore: botTemplateDataStore
         )
     }
 }

@@ -26,7 +26,7 @@ class ShouldCreateTemplateFromBotName: DecisionTable {
         network = MockNetwork()
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }
-        interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateSaver: FileBotTemplateDataStore(file: testTemplateFile))
+        interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateDataStore: botTemplateDataStore)
         interactor.botName = botName
         interactor.output = self
         interactor.execute()

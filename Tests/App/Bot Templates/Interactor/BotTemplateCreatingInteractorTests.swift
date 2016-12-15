@@ -6,15 +6,15 @@ class BotTemplateCreatingInteractorTests: XCTestCase {
     
     var interactor: BotTemplateCreatingInteractor!
     var mockedBotTemplatesFetcher: MockBotTemplatesFetcher!
-    var mockedBotTemplateSaver: MockBotTemplateSaver!
+    var mockedBotTemplateDataStore: MockDataStore<BotTemplate>!
     var mockedOutput: MockBotTemplateCreatingInteractorOutput!
     
     override func setUp() {
         super.setUp()
         mockedBotTemplatesFetcher = MockBotTemplatesFetcher()
-        mockedBotTemplateSaver = MockBotTemplateSaver()
+        mockedBotTemplateDataStore = MockDataStore()
         mockedOutput = MockBotTemplateCreatingInteractorOutput()
-        interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: mockedBotTemplatesFetcher, botTemplateSaver: mockedBotTemplateSaver)
+        interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: mockedBotTemplatesFetcher, botTemplateDataStore: AnyDataStore(mockedBotTemplateDataStore))
         interactor.output = mockedOutput
         interactor.botName = testBotTemplate.name
     }
@@ -29,19 +29,19 @@ class BotTemplateCreatingInteractorTests: XCTestCase {
     func test_execute_shouldSaveBotTemplate_whenNamesMatch() {
         stubMatchingTemplate()
         interactor.execute()
-        XCTAssert(mockedBotTemplateSaver.didSave)
+        XCTAssert(mockedBotTemplateDataStore.didSave)
     }
 
     func test_execute_shouldNotSaveBotTemplate_whenNoTemplates() {
         stubNoTemplates()
         interactor.execute()
-        XCTAssertFalse(mockedBotTemplateSaver.didSave)
+        XCTAssertFalse(mockedBotTemplateDataStore.didSave)
     }
 
     func test_execute_shouldNotSaveBotTemplate_whenNamesDoNotMatch() {
         stubNonMatchingTemplate()
         interactor.execute()
-        XCTAssertFalse(mockedBotTemplateSaver.didSave)
+        XCTAssertFalse(mockedBotTemplateDataStore.didSave)
     }
 
     func test_execute_shouldNotifyOutput_whenNoTemplates() {

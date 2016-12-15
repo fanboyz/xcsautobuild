@@ -1,0 +1,2 @@
+
+typealias BotTemplateDataStore = AnyDataStore<BotTemplate>

@@ -27,8 +27,7 @@ class ShouldFilterBranchesFromPattern: DecisionTable {
         let branchFetcher = MockBranchFetcher()
         let mockedBotSynchroniser = MockBotSynchroniser()
         branchFetcher.stubbedBranches = branchesArray.map { Branch(name: $0) }
-        let patternDataStore = FilePatternDataStore(file: testFilterPatternFile)
-        patternDataStore.save(pattern: pattern.components(separatedBy: ",").joined(separator: "\n"))
+        patternDataStore.save(pattern.components(separatedBy: ",").joined(separator: "\n"))
         let filter = WildcardBranchFilter(patternDataStore: patternDataStore)
         let interactor = BotSyncingInteractor(branchFetcher: branchFetcher, botSynchroniser: mockedBotSynchroniser, branchFilter: filter, botDataStore: MockBotDataStore())
         interactor.execute()

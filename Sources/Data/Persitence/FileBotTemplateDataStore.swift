@@ -2,7 +2,7 @@
 import Foundation
 import FlexiJSON
 
-class FileBotTemplateDataStore: BotTemplateSaver, BotTemplateLoader {
+class FileBotTemplateDataStore: DataStore {
 
     private let file: String
     private let dataLoader: DataLoader
@@ -20,7 +20,7 @@ class FileBotTemplateDataStore: BotTemplateSaver, BotTemplateLoader {
         return BotTemplate(name: name, data: data)
     }
 
-    func save(_ template: BotTemplate) {
-        dataWriter.write(data: template.data, toFile: file)
+    func save(_ data: BotTemplate) {
+        dataWriter.write(data: data.data, toFile: file)
     }
 }

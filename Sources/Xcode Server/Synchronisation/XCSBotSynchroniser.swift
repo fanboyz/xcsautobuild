@@ -8,20 +8,20 @@ class XCSBotSynchroniser: BotSynchroniser {
     private let duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>
     private let deleteBotRequest: AnyXCSRequest<String, Void>
     private let patchBotRequest: AnyXCSRequest<PatchBotRequestData, Void>
-    private let botTemplateLoader: BotTemplateLoader
+    private let botTemplateDataStore: BotTemplateDataStore
 
     init(
         getBotRequest: AnyXCSRequest<String, Data>,
         duplicateBotRequest: AnyXCSRequest<DuplicateBotRequestData, String>,
         deleteBotRequest: AnyXCSRequest<String, Void>,
         patchBotRequest: AnyXCSRequest<PatchBotRequestData, Void>,
-        botTemplateLoader: BotTemplateLoader
+        botTemplateDataStore: BotTemplateDataStore
     ) {
         self.getBotRequest = getBotRequest
         self.duplicateBotRequest = duplicateBotRequest
         self.deleteBotRequest = deleteBotRequest
         self.patchBotRequest = patchBotRequest
-        self.botTemplateLoader = botTemplateLoader
+        self.botTemplateDataStore = botTemplateDataStore
     }
 
     func synchronise(_ bot: Bot, completion: (Bot) -> ()) {
@@ -47,7 +47,7 @@ class XCSBotSynchroniser: BotSynchroniser {
     }
 
     private func loadTemplateID() -> String? {
-        guard let data = botTemplateLoader.load()?.data else { return nil }
+        guard let data = botTemplateDataStore.load()?.data else { return nil }
         return FlexiJSON(data: data)["_id"].string
     }
 

@@ -11,7 +11,7 @@ class XCSBotSynchroniserTests: XCTestCase {
     var mockedDuplicateBotRequest: MockXCSRequest<DuplicateBotRequestData, String>!
     var mockedDeleteBotRequest: MockXCSRequest<String, Void>!
     var mockedPatchBotRequest: MockXCSRequest<PatchBotRequestData, Void>!
-    var mockedTemplateLoader: MockBotTemplateLoader!
+    var mockedTemplateDataStore: MockDataStore<BotTemplate>!
     let master = Bot(branchName: "master", id: "master_bot_id")
     let newBot = Bot(branchName: "new", id: nil)
     let newBotID = "new_bot_id"
@@ -22,13 +22,13 @@ class XCSBotSynchroniserTests: XCTestCase {
         mockedDuplicateBotRequest = MockXCSRequest()
         mockedDeleteBotRequest = MockXCSRequest()
         mockedPatchBotRequest = MockXCSRequest()
-        mockedTemplateLoader = MockBotTemplateLoader()
+        mockedTemplateDataStore = MockDataStore()
         syncer = XCSBotSynchroniser(
             getBotRequest: AnyXCSRequest(mockedGetBotRequest),
             duplicateBotRequest: AnyXCSRequest(mockedDuplicateBotRequest),
             deleteBotRequest: AnyXCSRequest(mockedDeleteBotRequest),
             patchBotRequest: AnyXCSRequest(mockedPatchBotRequest),
-            botTemplateLoader: mockedTemplateLoader
+            botTemplateDataStore: AnyDataStore(mockedTemplateDataStore)
         )
         stubValidTemplate()
     }
@@ -164,11 +164,11 @@ class XCSBotSynchroniserTests: XCTestCase {
     }
 
     func stubValidTemplate() {
-        mockedTemplateLoader.stubbedTemplate = testBotTemplate
+        mockedTemplateDataStore.stubbedData = testBotTemplate
     }
 
     func stubNoTemplate() {
-        mockedTemplateLoader.stubbedTemplate = nil
+        mockedTemplateDataStore.stubbedData = nil
     }
 
     func stubValidDuplicateBotResponse(botID: String) {

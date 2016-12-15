@@ -9,13 +9,11 @@ class ShouldRememberPatternBetweenLaunches: DecisionTable {
     var restoredPattern: String!
     
     // MARK: - test
-    let dataStore = FilePatternDataStore(file: testFilterPatternFile)
-    
     override func setUp() {
-        dataStore.save(pattern: savedPattern)
+        patternDataStore.save(savedPattern)
     }
     
     override func test() {
-        restoredPattern = WildcardBranchFilter(patternDataStore: dataStore).patterns.joined()
+        restoredPattern = WildcardBranchFilter(patternDataStore: patternDataStore).patterns.joined()
     }
 }

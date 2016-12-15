@@ -2,9 +2,11 @@
 
 class MockDataStore<DataType>: DataStore {
 
+    var didSave = false
     var invokedData: DataType?
 
     func save(_ data: DataType) {
+        didSave = true
         invokedData = data
     }
 

@@ -24,7 +24,7 @@ let testBotSynchroniser: BotSynchroniser = {
         duplicateBotRequest: AnyXCSRequest(XCSDuplicateBotRequest(requestSender: requestSender)),
         deleteBotRequest: AnyXCSRequest(XCSDeleteBotRequest(requestSender: requestSender)),
         patchBotRequest: AnyXCSRequest(XCSPatchBotRequest(requestSender: requestSender)),
-        botTemplateLoader: FileBotTemplateDataStore(file: testTemplateFile)
+        botTemplateDataStore: botTemplateDataStore
     )
 }()
 
@@ -39,6 +39,9 @@ let testRemoteGitURL = URL(fileURLWithPath: testGitPath + "origin")
 let testGitBranchFetcher = GitBranchFetcher(directory: URL(fileURLWithPath: testLocalGitURL.path), remoteName: "origin", credentialProvider: credentialProvider)
 private let credential = try! GTCredential(userName: "", password: "")
 private let credentialProvider = GTCredentialProvider { _ in credential }
+
+let botTemplateDataStore = AnyDataStore(FileBotTemplateDataStore(file: testTemplateFile))
+let patternDataStore = AnyDataStore(FilePatternDataStore(file: testFilterPatternFile))
 
 func waitUntil(_ condition: @autoclosure () -> Bool, limit: Int = 20) {
     var count = 0

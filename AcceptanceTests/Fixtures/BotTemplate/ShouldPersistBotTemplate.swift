@@ -17,7 +17,6 @@ class ShouldPersistBotTemplate: DecisionTable {
     // MARK: - test
     var interactor: BotTemplateCreatingInteractor!
     var network: MockNetwork!
-    var persister: FileBotTemplateDataStore!
 
     override func setUp() {
         didPersist = nil
@@ -27,8 +26,7 @@ class ShouldPersistBotTemplate: DecisionTable {
         network = MockNetwork()
         network.stubGetBots(withNames: availableBotsArray, ids: availableBotsArray)
         availableBotsArray.forEach { network.stubGetBot(withID: $0, name: $0) }
-        persister = FileBotTemplateDataStore(file: testTemplateFile)
-        interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateSaver: persister)
+        interactor = BotTemplateCreatingInteractor(botTemplatesFetcher: api, botTemplateDataStore: botTemplateDataStore)
         interactor.botName = botName
         interactor.output = self
         interactor.execute()
@@ -39,7 +37,7 @@ class ShouldPersistBotTemplate: DecisionTable {
 extension ShouldPersistBotTemplate: BotTemplateCreatingInteractorOutput {
 
     func didCreateTemplate() {
-        didPersist = persister.load() != nil ? yes : no
+        didPersist = botTemplateDataStore.load() != nil ? yes : no
     }
 
     func didFailToFindTemplate() {

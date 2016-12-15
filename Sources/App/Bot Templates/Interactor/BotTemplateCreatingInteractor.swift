@@ -13,13 +13,13 @@ protocol BotNamable {
 class BotTemplateCreatingInteractor: Command, BotNamable {
 
     private let botTemplatesFetcher: BotTemplatesFetcher
-    private let botTemplateSaver: BotTemplateSaver
+    private let botTemplateDataStore: BotTemplateDataStore
     weak var output: BotTemplateCreatingInteractorOutput?
     var botName = ""
 
-    init(botTemplatesFetcher: BotTemplatesFetcher, botTemplateSaver: BotTemplateSaver) {
+    init(botTemplatesFetcher: BotTemplatesFetcher, botTemplateDataStore: BotTemplateDataStore) {
         self.botTemplatesFetcher = botTemplatesFetcher
-        self.botTemplateSaver = botTemplateSaver
+        self.botTemplateDataStore = botTemplateDataStore
     }
 
     func execute() {
@@ -34,7 +34,7 @@ class BotTemplateCreatingInteractor: Command, BotNamable {
             output?.didFailToFindTemplate()
             return
         }
-        botTemplateSaver.save(template)
+        botTemplateDataStore.save(template)
         output?.didCreateTemplate()
     }
 }
